@@ -8,14 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		0A77CA5C18B94045005230B0 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A77CA5B18B94045005230B0 /* Foundation.framework */; };
-		0A77CA6118B94045005230B0 /* Leech.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 0A77CA6018B94045005230B0 /* Leech.h */; };
-		0A77CA6318B94045005230B0 /* Leech.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A77CA6218B94045005230B0 /* Leech.m */; };
 		0A77CA6A18B94045005230B0 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A77CA6918B94045005230B0 /* XCTest.framework */; };
 		0A77CA6B18B94045005230B0 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A77CA5B18B94045005230B0 /* Foundation.framework */; };
 		0A77CA6D18B94045005230B0 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A77CA6C18B94045005230B0 /* UIKit.framework */; };
 		0A77CA7018B94045005230B0 /* libLeech.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A77CA5818B94045005230B0 /* libLeech.a */; };
 		0A77CA7618B94045005230B0 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0A77CA7418B94045005230B0 /* InfoPlist.strings */; };
-		0A77CA7818B94045005230B0 /* LeechTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A77CA7718B94045005230B0 /* LeechTests.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,7 +32,6 @@
 			dstPath = "include/$(PRODUCT_NAME)";
 			dstSubfolderSpec = 16;
 			files = (
-				0A77CA6118B94045005230B0 /* Leech.h in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -45,14 +41,11 @@
 		0A77CA5818B94045005230B0 /* libLeech.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libLeech.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		0A77CA5B18B94045005230B0 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		0A77CA5F18B94045005230B0 /* Leech-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Leech-Prefix.pch"; sourceTree = "<group>"; };
-		0A77CA6018B94045005230B0 /* Leech.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Leech.h; sourceTree = "<group>"; };
-		0A77CA6218B94045005230B0 /* Leech.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Leech.m; sourceTree = "<group>"; };
 		0A77CA6818B94045005230B0 /* LeechTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LeechTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0A77CA6918B94045005230B0 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		0A77CA6C18B94045005230B0 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
 		0A77CA7318B94045005230B0 /* LeechTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "LeechTests-Info.plist"; sourceTree = "<group>"; };
 		0A77CA7518B94045005230B0 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		0A77CA7718B94045005230B0 /* LeechTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LeechTests.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,8 +103,6 @@
 		0A77CA5D18B94045005230B0 /* Leech */ = {
 			isa = PBXGroup;
 			children = (
-				0A77CA6018B94045005230B0 /* Leech.h */,
-				0A77CA6218B94045005230B0 /* Leech.m */,
 				0A77CA5E18B94045005230B0 /* Supporting Files */,
 			);
 			path = Leech;
@@ -128,7 +119,6 @@
 		0A77CA7118B94045005230B0 /* LeechTests */ = {
 			isa = PBXGroup;
 			children = (
-				0A77CA7718B94045005230B0 /* LeechTests.m */,
 				0A77CA7218B94045005230B0 /* Supporting Files */,
 			);
 			path = LeechTests;
@@ -187,6 +177,7 @@
 		0A77CA5018B94045005230B0 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				CLASSPREFIX = LTT;
 				LastUpgradeCheck = 0510;
 				ORGANIZATIONNAME = "Swagger Soft";
 			};
@@ -224,7 +215,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0A77CA6318B94045005230B0 /* Leech.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -232,7 +222,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0A77CA7818B94045005230B0 /* LeechTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
