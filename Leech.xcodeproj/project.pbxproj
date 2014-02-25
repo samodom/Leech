@@ -25,6 +25,7 @@
 		0A77CA9E18BABCAE005230B0 /* MockNotificationCenterTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A77CA9D18BABCAE005230B0 /* MockNotificationCenterTests.m */; };
 		0A77CAA118BABCE3005230B0 /* LTTFakeNotificationDispatchEntry.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A77CAA018BABCE3005230B0 /* LTTFakeNotificationDispatchEntry.m */; };
 		0A77CAA218BABCE3005230B0 /* LTTFakeNotificationDispatchEntry.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A77CAA018BABCE3005230B0 /* LTTFakeNotificationDispatchEntry.m */; };
+		0AC33AAF18BD107D00D3F342 /* Leech.h in Copy Files */ = {isa = PBXBuildFile; fileRef = 0AC33AAE18BD0DA100D3F342 /* Leech.h */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +45,7 @@
 			dstPath = "include/$(PRODUCT_NAME)";
 			dstSubfolderSpec = 16;
 			files = (
+				0AC33AAF18BD107D00D3F342 /* Leech.h in Copy Files */,
 			);
 			name = "Copy Files";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -73,6 +75,7 @@
 		0A77CA9D18BABCAE005230B0 /* MockNotificationCenterTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MockNotificationCenterTests.m; sourceTree = "<group>"; };
 		0A77CA9F18BABCE3005230B0 /* LTTFakeNotificationDispatchEntry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTTFakeNotificationDispatchEntry.h; sourceTree = "<group>"; };
 		0A77CAA018BABCE3005230B0 /* LTTFakeNotificationDispatchEntry.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LTTFakeNotificationDispatchEntry.m; sourceTree = "<group>"; };
+		0AC33AAE18BD0DA100D3F342 /* Leech.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Leech.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -133,6 +136,7 @@
 			children = (
 				0A77CA9F18BABCE3005230B0 /* LTTFakeNotificationDispatchEntry.h */,
 				0A77CAA018BABCE3005230B0 /* LTTFakeNotificationDispatchEntry.m */,
+				0AC33AAE18BD0DA100D3F342 /* Leech.h */,
 				0A77CA8618B94398005230B0 /* LTTMethodSwizzler.h */,
 				0A77CA8718B94398005230B0 /* LTTMethodSwizzler.m */,
 				0A77CA9918BABC89005230B0 /* LTTMockNotificationCenter.h */,
@@ -463,6 +467,7 @@
 				0A77CA7D18B94045005230B0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		0A77CA7E18B94045005230B0 /* Build configuration list for PBXNativeTarget "LeechTests" */ = {
 			isa = XCConfigurationList;
@@ -471,6 +476,7 @@
 				0A77CA8018B94045005230B0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
