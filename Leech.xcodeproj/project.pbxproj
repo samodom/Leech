@@ -26,6 +26,15 @@
 		0A77CAA118BABCE3005230B0 /* LTTFakeNotificationDispatchEntry.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A77CAA018BABCE3005230B0 /* LTTFakeNotificationDispatchEntry.m */; };
 		0A77CAA218BABCE3005230B0 /* LTTFakeNotificationDispatchEntry.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A77CAA018BABCE3005230B0 /* LTTFakeNotificationDispatchEntry.m */; };
 		0AC33AAF18BD107D00D3F342 /* Leech.h in Copy Files */ = {isa = PBXBuildFile; fileRef = 0AC33AAE18BD0DA100D3F342 /* Leech.h */; };
+		0AC33ABC18BD321F00D3F342 /* MockHTTPResponseTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AC33ABB18BD321F00D3F342 /* MockHTTPResponseTests.m */; };
+		0AC33ABF18BD325700D3F342 /* LTTMockHTTPResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AC33ABE18BD325700D3F342 /* LTTMockHTTPResponse.m */; };
+		0AC33AC018BD325700D3F342 /* LTTMockHTTPResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AC33ABE18BD325700D3F342 /* LTTMockHTTPResponse.m */; };
+		0AC33AC318BD3D3C00D3F342 /* Boston City Flow.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 0AC33AC218BD3D3C00D3F342 /* Boston City Flow.jpg */; };
+		0AC33AC418BD3F7100D3F342 /* LTTFakeNotificationDispatchEntry.h in Copy Files */ = {isa = PBXBuildFile; fileRef = 0A77CA9F18BABCE3005230B0 /* LTTFakeNotificationDispatchEntry.h */; };
+		0AC33AC518BD3F7100D3F342 /* LTTMethodSwizzler.h in Copy Files */ = {isa = PBXBuildFile; fileRef = 0A77CA8618B94398005230B0 /* LTTMethodSwizzler.h */; };
+		0AC33AC618BD3F7100D3F342 /* LTTMockHTTPResponse.h in Copy Files */ = {isa = PBXBuildFile; fileRef = 0AC33ABD18BD325700D3F342 /* LTTMockHTTPResponse.h */; };
+		0AC33AC718BD3F7100D3F342 /* LTTMockNotificationCenter.h in Copy Files */ = {isa = PBXBuildFile; fileRef = 0A77CA9918BABC89005230B0 /* LTTMockNotificationCenter.h */; };
+		0AC33AC818BD3F7100D3F342 /* UIViewController+Leech.h in Copy Files */ = {isa = PBXBuildFile; fileRef = 0A77CA8F18BAA05C005230B0 /* UIViewController+Leech.h */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,6 +54,11 @@
 			dstPath = "include/$(PRODUCT_NAME)";
 			dstSubfolderSpec = 16;
 			files = (
+				0AC33AC418BD3F7100D3F342 /* LTTFakeNotificationDispatchEntry.h in Copy Files */,
+				0AC33AC518BD3F7100D3F342 /* LTTMethodSwizzler.h in Copy Files */,
+				0AC33AC618BD3F7100D3F342 /* LTTMockHTTPResponse.h in Copy Files */,
+				0AC33AC718BD3F7100D3F342 /* LTTMockNotificationCenter.h in Copy Files */,
+				0AC33AC818BD3F7100D3F342 /* UIViewController+Leech.h in Copy Files */,
 				0AC33AAF18BD107D00D3F342 /* Leech.h in Copy Files */,
 			);
 			name = "Copy Files";
@@ -76,6 +90,10 @@
 		0A77CA9F18BABCE3005230B0 /* LTTFakeNotificationDispatchEntry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTTFakeNotificationDispatchEntry.h; sourceTree = "<group>"; };
 		0A77CAA018BABCE3005230B0 /* LTTFakeNotificationDispatchEntry.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LTTFakeNotificationDispatchEntry.m; sourceTree = "<group>"; };
 		0AC33AAE18BD0DA100D3F342 /* Leech.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Leech.h; sourceTree = "<group>"; };
+		0AC33ABB18BD321F00D3F342 /* MockHTTPResponseTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MockHTTPResponseTests.m; sourceTree = "<group>"; };
+		0AC33ABD18BD325700D3F342 /* LTTMockHTTPResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTTMockHTTPResponse.h; sourceTree = "<group>"; };
+		0AC33ABE18BD325700D3F342 /* LTTMockHTTPResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LTTMockHTTPResponse.m; sourceTree = "<group>"; };
+		0AC33AC218BD3D3C00D3F342 /* Boston City Flow.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Boston City Flow.jpg"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -134,11 +152,13 @@
 		0A77CA5D18B94045005230B0 /* Leech */ = {
 			isa = PBXGroup;
 			children = (
+				0AC33AAE18BD0DA100D3F342 /* Leech.h */,
 				0A77CA9F18BABCE3005230B0 /* LTTFakeNotificationDispatchEntry.h */,
 				0A77CAA018BABCE3005230B0 /* LTTFakeNotificationDispatchEntry.m */,
-				0AC33AAE18BD0DA100D3F342 /* Leech.h */,
 				0A77CA8618B94398005230B0 /* LTTMethodSwizzler.h */,
 				0A77CA8718B94398005230B0 /* LTTMethodSwizzler.m */,
+				0AC33ABD18BD325700D3F342 /* LTTMockHTTPResponse.h */,
+				0AC33ABE18BD325700D3F342 /* LTTMockHTTPResponse.m */,
 				0A77CA9918BABC89005230B0 /* LTTMockNotificationCenter.h */,
 				0A77CA9A18BABC89005230B0 /* LTTMockNotificationCenter.m */,
 				0A77CA5E18B94045005230B0 /* Supporting Files */,
@@ -159,9 +179,10 @@
 		0A77CA7118B94045005230B0 /* LeechTests */ = {
 			isa = PBXGroup;
 			children = (
+				0AC33AC118BD3CF600D3F342 /* Sample Data */,
 				0A77CA9618BAA180005230B0 /* Mocks+ */,
-				0A77CA8518B942EF005230B0 /* Test Classes */,
 				0A77CA7218B94045005230B0 /* Supporting Files */,
+				0A77CA8518B942EF005230B0 /* Test Classes */,
 			);
 			path = LeechTests;
 			sourceTree = "<group>";
@@ -179,6 +200,7 @@
 			isa = PBXGroup;
 			children = (
 				0A77CA8318B942EA005230B0 /* MethodSwizzlerTests.m */,
+				0AC33ABB18BD321F00D3F342 /* MockHTTPResponseTests.m */,
 				0A77CA9D18BABCAE005230B0 /* MockNotificationCenterTests.m */,
 				0A77CA8D18BA9EB5005230B0 /* UIViewControllerTests.m */,
 			);
@@ -192,6 +214,14 @@
 				0A77CA9418BAA17B005230B0 /* TestViewController.m */,
 			);
 			name = "Mocks+";
+			sourceTree = "<group>";
+		};
+		0AC33AC118BD3CF600D3F342 /* Sample Data */ = {
+			isa = PBXGroup;
+			children = (
+				0AC33AC218BD3D3C00D3F342 /* Boston City Flow.jpg */,
+			);
+			name = "Sample Data";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -266,6 +296,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0A77CA7618B94045005230B0 /* InfoPlist.strings in Resources */,
+				0AC33AC318BD3D3C00D3F342 /* Boston City Flow.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -276,6 +307,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0AC33ABF18BD325700D3F342 /* LTTMockHTTPResponse.m in Sources */,
 				0A77CA9118BAA05C005230B0 /* UIViewController+Leech.m in Sources */,
 				0A77CA8818B94398005230B0 /* LTTMethodSwizzler.m in Sources */,
 				0A77CAA118BABCE3005230B0 /* LTTFakeNotificationDispatchEntry.m in Sources */,
@@ -291,6 +323,8 @@
 				0A77CA8418B942EA005230B0 /* MethodSwizzlerTests.m in Sources */,
 				0A77CAA218BABCE3005230B0 /* LTTFakeNotificationDispatchEntry.m in Sources */,
 				0A77CA8E18BA9EB5005230B0 /* UIViewControllerTests.m in Sources */,
+				0AC33ABC18BD321F00D3F342 /* MockHTTPResponseTests.m in Sources */,
+				0AC33AC018BD325700D3F342 /* LTTMockHTTPResponse.m in Sources */,
 				0A77CA9E18BABCAE005230B0 /* MockNotificationCenterTests.m in Sources */,
 				0A77CA9C18BABC89005230B0 /* LTTMockNotificationCenter.m in Sources */,
 				0A77CA8918B94398005230B0 /* LTTMethodSwizzler.m in Sources */,
