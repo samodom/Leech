@@ -20,15 +20,18 @@
 
 @implementation MockURLDataTaskTests {
     LTTMockURLDataTask *task;
+    NSURL *URL;
 }
 
 - (void)setUp {
     [super setUp];
 
     task = [LTTMockURLDataTask new];
+    URL = [NSURL URLWithString:@"http://www.example.com/"];
 }
 
 - (void)tearDown {
+    URL = nil;
     task = nil;
 
     [super tearDown];
@@ -41,6 +44,22 @@
 - (void)testTaskHasState {
     task.state = NSURLSessionTaskStateRunning;
     XCTAssertEqual(task.state, NSURLSessionTaskStateRunning, @"Task should remember its state");
+}
+
+- (void)testTaskHasURL {
+    task.URL = URL;
+    XCTAssertEqualObjects(task.URL, URL, @"Task should remember its URL");
+}
+
+- (void)testTaskHasCompletionHandler {
+    __block BOOL blockPerformed = NO;
+    data_task_completion_t handler = ^(NSData *data, NSURLResponse *response, NSError *error) {
+        blockPerformed = YES;
+    };
+    task.completionHandler = handler;
+    task.completionHandler(nil, nil, nil);
+    XCTAssertEqualObjects(task.completionHandler, handler, @"Task should remember its completion handler");
+    XCTAssertTrue(blockPerformed, @"The block should be executable");
 }
 
 - (void)testTaskCanBeCanceled {

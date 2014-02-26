@@ -8,9 +8,13 @@
 
 #import <Foundation/Foundation.h>
 
+typedef void (^data_task_completion_t)(NSData *data, NSURLResponse *response, NSError *error);
+
 @interface LTTMockURLDataTask : NSObject
 
 @property NSURLSessionTaskState state;
+@property (strong) NSURL *URL;
+@property (strong) data_task_completion_t completionHandler;
 
 - (BOOL)wasAskedToCancel;
 
