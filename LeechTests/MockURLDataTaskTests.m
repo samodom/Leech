@@ -62,10 +62,26 @@
     XCTAssertTrue(blockPerformed, @"The block should be executable");
 }
 
+- (void)testTaskCanBeResumed {
+    XCTAssertFalse([task wasAskedToResume], @"Task should not report having been asked to resume by default");
+    [(NSURLSessionDataTask*)task resume];
+    XCTAssertTrue([task wasAskedToResume], @"Task should report having been asked to resume");
+    XCTAssertEqual(task.state, NSURLSessionTaskStateRunning, @"The state should reflect the task running");
+}
+
+- (void)testTaskCanBeSuspended {
+    XCTAssertFalse([task wasAskedToSuspend], @"Task should report being suspended by default");
+    [(NSURLSessionDataTask*)task resume];
+    [(NSURLSessionDataTask*)task suspend];
+    XCTAssertTrue([task wasAskedToSuspend], @"Task should report having been asked to suspend");
+    XCTAssertEqual(task.state, NSURLSessionTaskStateSuspended, @"The state should reflect the task being suspended");
+}
+
 - (void)testTaskCanBeCanceled {
     XCTAssertFalse([task wasAskedToCancel], @"Task should not report having been asked to cancel by default");
     [(NSURLSessionDataTask*)task cancel];
     XCTAssertTrue([task wasAskedToCancel], @"Task should report having been asked to cancel");
+    XCTAssertEqual(task.state, NSURLSessionTaskStateCanceling, @"The state should reflect the task canceling");
 }
 
 @end

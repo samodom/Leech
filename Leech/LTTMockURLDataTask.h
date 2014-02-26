@@ -16,6 +16,8 @@ typedef void (^data_task_completion_t)(NSData *data, NSURLResponse *response, NS
 @property (strong) NSURL *URL;
 @property (strong) data_task_completion_t completionHandler;
 
+- (BOOL)wasAskedToResume;
+- (BOOL)wasAskedToSuspend;
 - (BOOL)wasAskedToCancel;
 
 @end

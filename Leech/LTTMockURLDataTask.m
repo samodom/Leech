@@ -9,11 +9,32 @@
 #import "LTTMockURLDataTask.h"
 
 @implementation LTTMockURLDataTask {
+    BOOL resumed;
+    BOOL suspended;
     BOOL cancelled;
+}
+
+- (void)resume {
+    resumed = YES;
+    self.state = NSURLSessionTaskStateRunning;
+}
+
+- (BOOL)wasAskedToResume {
+    return resumed;
+}
+
+- (void)suspend {
+    suspended = YES;
+    self.state = NSURLSessionTaskStateSuspended;
+}
+
+- (BOOL)wasAskedToSuspend {
+    return suspended;
 }
 
 - (void)cancel {
     cancelled = YES;
+    self.state = NSURLSessionTaskStateCanceling;
 }
 
 - (BOOL)wasAskedToCancel {
