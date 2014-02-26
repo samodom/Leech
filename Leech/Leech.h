@@ -13,6 +13,7 @@
 #import "LTTFakeNotificationDispatchEntry.h"
 #import "LTTMethodSwizzler.h"
 #import "LTTMockHTTPResponse.h"
+#import "LTTMockURLDataTask.h"
 
 #import "UIViewController+Leech.h"
 
