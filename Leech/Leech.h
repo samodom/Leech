@@ -14,6 +14,7 @@
 #import "LTTMethodSwizzler.h"
 #import "LTTMockHTTPResponse.h"
 #import "LTTMockURLDataTask.h"
+#import "LTTMockURLSession.h"
 
 #import "UIViewController+Leech.h"
 
