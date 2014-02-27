@@ -27,7 +27,7 @@
     [super setUp];
 
     path = [[NSBundle mainBundle] pathForResource:@"Boston City Flow" ofType:@"jpg"];
-    response = [LTTMockHTTPResponse responseWithStatus:200 payloadFile:path];
+    response = [LTTMockHTTPResponse responseWithStatus:200 payloadFile:@"Boston City Flow" ofType:@"jpg"];
 }
 
 - (void)tearDown {
@@ -51,7 +51,7 @@
 }
 
 - (void)testPayloadCanBeEmpty {
-    response = [LTTMockHTTPResponse responseWithStatus:404 payloadFile:nil];
+    response = [LTTMockHTTPResponse responseWithStatus:404 payloadFile:nil ofType:nil];
     XCTAssertTrue([response isKindOfClass:[LTTMockHTTPResponse class]], @"There should still be a response created");
     XCTAssertNil(response.responseData, @"There should be no response data with an empty payload");
 }

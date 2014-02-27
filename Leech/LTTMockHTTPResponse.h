@@ -13,6 +13,6 @@
 @property NSUInteger statusCode;
 @property (strong) NSData *responseData;
 
-+ (LTTMockHTTPResponse*)responseWithStatus:(NSUInteger)status payloadFile:(NSString*)payloadFile;
++ (LTTMockHTTPResponse*)responseWithStatus:(NSUInteger)status payloadFile:(NSString*)payloadFile ofType:(NSString*)fileType;
 
 @end

@@ -10,10 +10,16 @@
 
 @implementation LTTMockHTTPResponse
 
-+ (LTTMockHTTPResponse *)responseWithStatus:(NSUInteger)status payloadFile:(NSString *)payloadFile {
++ (LTTMockHTTPResponse *)responseWithStatus:(NSUInteger)status payloadFile:(NSString *)payloadFile ofType:(NSString *)fileType {
     LTTMockHTTPResponse *response = [LTTMockHTTPResponse new];
     response.statusCode = status;
-    response.responseData = [NSData dataWithContentsOfFile:payloadFile];
+
+    if (payloadFile.length) {
+        NSBundle *bundle = [NSBundle bundleForClass:[self class]];
+        NSString *path = [bundle pathForResource:payloadFile ofType:fileType];
+        response.responseData = [NSData dataWithContentsOfFile:path];
+    }
+
     return response;
 }
 
