@@ -14,6 +14,8 @@
     BOOL cancelled;
 }
 
+#pragma mark - State
+
 - (void)resume {
     resumed = YES;
     self.state = NSURLSessionTaskStateRunning;
@@ -39,6 +41,12 @@
 
 - (BOOL)wasAskedToCancel {
     return cancelled;
+}
+
+#pragma mark - Request
+
+- (NSURLRequest*)originalRequest {
+    return [NSURLRequest requestWithURL:self.URL];
 }
 
 @end

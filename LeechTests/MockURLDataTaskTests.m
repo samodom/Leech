@@ -51,6 +51,13 @@
     XCTAssertEqualObjects(task.URL, URL, @"Task should remember its URL");
 }
 
+- (void)testTaskProvidesOriginalRequestWithURL {
+    task.URL = URL;
+    NSURLRequest *request = [(NSURLSessionDataTask*)task originalRequest];
+    XCTAssertTrue([request isKindOfClass:[NSURLRequest class]], @"Task should return an original URL request");
+    XCTAssertEqualObjects(request.URL, URL, @"The request should have the task's URL");
+}
+
 - (void)testTaskHasCompletionHandler {
     __block BOOL blockPerformed = NO;
     data_task_completion_t handler = ^(NSData *data, NSURLResponse *response, NSError *error) {
