@@ -21,18 +21,20 @@
 
 @implementation MockURLSessionTests {
     LTTMockURLSession *session;
-    NSURL *URL;
+    NSURL *dataURLOne, *dataURLTwo;
 }
 
 - (void)setUp {
     [super setUp];
 
     session = [LTTMockURLSession new];
-    URL = [NSURL URLWithString:@"http://www.example.com"];
+    dataURLOne = [NSURL URLWithString:@"http://www.example.com/one"];
+    dataURLTwo = [NSURL URLWithString:@"http://www.example.com/two"];
 }
 
 - (void)tearDown {
-    URL = nil;
+    dataURLOne = nil;
+    dataURLTwo = nil;
     session = nil;
 
     [super tearDown];
@@ -46,10 +48,37 @@
     data_task_completion_t handler = ^(NSData *data, NSURLResponse *response, NSError *error) {
         ;
     };
-    LTTMockURLDataTask *task = (LTTMockURLDataTask*) [(NSURLSession*)session dataTaskWithURL:URL completionHandler:handler];
+    LTTMockURLDataTask *task = (LTTMockURLDataTask*) [(NSURLSession*)session dataTaskWithURL:dataURLOne completionHandler:handler];
     XCTAssertTrue([task isKindOfClass:[LTTMockURLDataTask class]], @"A mock data task should be returned");
-    XCTAssertEqualObjects(task.URL, URL, @"Mock task should be passed the URL");
+    XCTAssertEqualObjects(task.URL, dataURLOne, @"Mock task should be passed the URL");
     XCTAssertEqualObjects(task.completionHandler, handler, @"Mock task should be passed the completion handler");
+}
+
+- (void)testSessionProvidesTasksWithCompletionHandler {
+    __block NSArray *currentDataTasks;
+    task_list_completion_t handler = ^(NSArray *dataTasks, NSArray *uploadTasks, NSArray *downloadTasks) {
+        currentDataTasks = dataTasks;
+    };
+    [(NSURLSession*)session getTasksWithCompletionHandler:handler];
+    XCTAssertEqual(currentDataTasks.count, (NSUInteger)0, @"There should be no tasks");
+    LTTMockURLDataTask *dataTaskOne = (LTTMockURLDataTask*) [(NSURLSession*)session dataTaskWithURL:dataURLOne completionHandler:nil];
+    [(NSURLSessionDataTask*)dataTaskOne resume];
+    [(NSURLSession*)session getTasksWithCompletionHandler:handler];
+    XCTAssertEqualObjects(currentDataTasks, @[dataTaskOne], @"There should be one task");
+    LTTMockURLDataTask *dataTaskTwo = (LTTMockURLDataTask*) [(NSURLSession*)session dataTaskWithURL:dataURLTwo completionHandler:nil];
+    [(NSURLSessionDataTask*)dataTaskTwo resume];
+    [(NSURLSession*)session getTasksWithCompletionHandler:handler];
+    NSArray *expected = @[dataTaskOne, dataTaskTwo];
+    XCTAssertEqualObjects(currentDataTasks, expected, @"There should be two tasks");
+    [(NSURLSessionDataTask*)dataTaskOne suspend];
+    [(NSURLSession*)session getTasksWithCompletionHandler:handler];
+    XCTAssertEqualObjects(currentDataTasks, expected, @"There should still be two tasks");
+    [(NSURLSessionDataTask*)dataTaskOne cancel];
+    [(NSURLSession*)session getTasksWithCompletionHandler:handler];
+    XCTAssertEqualObjects(currentDataTasks, @[dataTaskOne], @"There should only be one task left");
+    [(NSURLSessionDataTask*)dataTaskTwo cancel];
+    [(NSURLSession*)session getTasksWithCompletionHandler:handler];
+    XCTAssertEqual(currentDataTasks.count, (NSUInteger)0, @"There should be no tasks left");
 }
 
 @end
