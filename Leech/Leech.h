@@ -16,6 +16,7 @@
 #import "LTTMockURLDataTask.h"
 #import "LTTMockURLSession.h"
 #import "LTTSampleFileLoader.h"
+#import "LTTTimeFreezer.h"
 
 #import "UIViewController+Leech.h"
 

@@ -31,6 +31,10 @@
 		0AA51B7818C06F7B00A63B92 /* dictionary.json in Resources */ = {isa = PBXBuildFile; fileRef = 0AA51B7718C06F7B00A63B92 /* dictionary.json */; };
 		0AA51B7A18C06F8500A63B92 /* array.json in Resources */ = {isa = PBXBuildFile; fileRef = 0AA51B7918C06F8500A63B92 /* array.json */; };
 		0AA51B7B18C0725200A63B92 /* LTTSampleFileLoader.h in Copy Files */ = {isa = PBXBuildFile; fileRef = 0AA51B7118C06F2100A63B92 /* LTTSampleFileLoader.h */; };
+		0AA51B8918C409F800A63B92 /* TimeFreezerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AA51B8818C409F800A63B92 /* TimeFreezerTests.m */; };
+		0AA51B9018C40ABA00A63B92 /* LTTTimeFreezer.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AA51B8F18C40ABA00A63B92 /* LTTTimeFreezer.m */; };
+		0AA51B9118C40ABA00A63B92 /* LTTTimeFreezer.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AA51B8F18C40ABA00A63B92 /* LTTTimeFreezer.m */; };
+		0AA51B9218C40F3100A63B92 /* LTTTimeFreezer.h in Copy Files */ = {isa = PBXBuildFile; fileRef = 0AA51B8E18C40ABA00A63B92 /* LTTTimeFreezer.h */; };
 		0AC33AAF18BD107D00D3F342 /* Leech.h in Copy Files */ = {isa = PBXBuildFile; fileRef = 0AC33AAE18BD0DA100D3F342 /* Leech.h */; };
 		0AC33ABC18BD321F00D3F342 /* MockHTTPResponseTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AC33ABB18BD321F00D3F342 /* MockHTTPResponseTests.m */; };
 		0AC33ABF18BD325700D3F342 /* LTTMockHTTPResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AC33ABE18BD325700D3F342 /* LTTMockHTTPResponse.m */; };
@@ -68,6 +72,7 @@
 			dstPath = "include/$(PRODUCT_NAME)";
 			dstSubfolderSpec = 16;
 			files = (
+				0AA51B9218C40F3100A63B92 /* LTTTimeFreezer.h in Copy Files */,
 				0AA51B7B18C0725200A63B92 /* LTTSampleFileLoader.h in Copy Files */,
 				0AC33AD618BDCCA400D3F342 /* LTTMockURLSession.h in Copy Files */,
 				0AC33AD518BDC7D400D3F342 /* LTTMockURLDataTask.h in Copy Files */,
@@ -111,6 +116,9 @@
 		0AA51B7518C06F3D00A63B92 /* SampleFileLoaderTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SampleFileLoaderTests.m; sourceTree = "<group>"; };
 		0AA51B7718C06F7B00A63B92 /* dictionary.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = dictionary.json; sourceTree = "<group>"; };
 		0AA51B7918C06F8500A63B92 /* array.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = array.json; sourceTree = "<group>"; };
+		0AA51B8818C409F800A63B92 /* TimeFreezerTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TimeFreezerTests.m; sourceTree = "<group>"; };
+		0AA51B8E18C40ABA00A63B92 /* LTTTimeFreezer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTTTimeFreezer.h; sourceTree = "<group>"; };
+		0AA51B8F18C40ABA00A63B92 /* LTTTimeFreezer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LTTTimeFreezer.m; sourceTree = "<group>"; };
 		0AC33AAE18BD0DA100D3F342 /* Leech.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Leech.h; sourceTree = "<group>"; };
 		0AC33ABB18BD321F00D3F342 /* MockHTTPResponseTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MockHTTPResponseTests.m; sourceTree = "<group>"; };
 		0AC33ABD18BD325700D3F342 /* LTTMockHTTPResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTTMockHTTPResponse.h; sourceTree = "<group>"; };
@@ -195,6 +203,8 @@
 				0AC33ACC18BDC41000D3F342 /* LTTMockURLSession.m */,
 				0AA51B7118C06F2100A63B92 /* LTTSampleFileLoader.h */,
 				0AA51B7218C06F2100A63B92 /* LTTSampleFileLoader.m */,
+				0AA51B8E18C40ABA00A63B92 /* LTTTimeFreezer.h */,
+				0AA51B8F18C40ABA00A63B92 /* LTTTimeFreezer.m */,
 				0A77CA5E18B94045005230B0 /* Supporting Files */,
 				0A77CA8F18BAA05C005230B0 /* UIViewController+Leech.h */,
 				0A77CA9018BAA05C005230B0 /* UIViewController+Leech.m */,
@@ -239,6 +249,7 @@
 				0AC33ACF18BDC58500D3F342 /* MockURLDataTaskTests.m */,
 				0AC33AC918BDC3C700D3F342 /* MockURLSessionTests.m */,
 				0AA51B7518C06F3D00A63B92 /* SampleFileLoaderTests.m */,
+				0AA51B8818C409F800A63B92 /* TimeFreezerTests.m */,
 				0A77CA8D18BA9EB5005230B0 /* UIViewControllerTests.m */,
 			);
 			name = "Test Classes";
@@ -354,6 +365,7 @@
 				0AC33ACD18BDC41000D3F342 /* LTTMockURLSession.m in Sources */,
 				0A77CAA118BABCE3005230B0 /* LTTFakeNotificationDispatchEntry.m in Sources */,
 				0AA51B7318C06F2100A63B92 /* LTTSampleFileLoader.m in Sources */,
+				0AA51B9018C40ABA00A63B92 /* LTTTimeFreezer.m in Sources */,
 				0AC33AD318BDC5DB00D3F342 /* LTTMockURLDataTask.m in Sources */,
 				0A77CA9B18BABC89005230B0 /* LTTMockNotificationCenter.m in Sources */,
 			);
@@ -377,6 +389,8 @@
 				0AC33AD018BDC58500D3F342 /* MockURLDataTaskTests.m in Sources */,
 				0AA51B7418C06F2100A63B92 /* LTTSampleFileLoader.m in Sources */,
 				0A77CA9518BAA17B005230B0 /* TestViewController.m in Sources */,
+				0AA51B8918C409F800A63B92 /* TimeFreezerTests.m in Sources */,
+				0AA51B9118C40ABA00A63B92 /* LTTTimeFreezer.m in Sources */,
 				0AA51B7618C06F3D00A63B92 /* SampleFileLoaderTests.m in Sources */,
 				0AC33ACA18BDC3C700D3F342 /* MockURLSessionTests.m in Sources */,
 			);
