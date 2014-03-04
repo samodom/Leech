@@ -10,6 +10,13 @@
 
 @interface LTTSampleFileLoader : NSObject
 
+#pragma mark - Raw Data
+
++ (NSData*)loadDataFromFile:(NSString*)fileName ofType:(NSString*)fileType;
++ (NSString*)loadStringFromFile:(NSString*)fileName ofType:(NSString*)fileType;
+
+#pragma mark - JSON
+
 + (NSDictionary*)loadDictionaryFromJSONFile:(NSString*)jsonFileName;
 + (NSArray*)loadArrayFromJSONFile:(NSString*)jsonFileName;
 

@@ -35,6 +35,7 @@
 		0AA51B9018C40ABA00A63B92 /* LTTTimeFreezer.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AA51B8F18C40ABA00A63B92 /* LTTTimeFreezer.m */; };
 		0AA51B9118C40ABA00A63B92 /* LTTTimeFreezer.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AA51B8F18C40ABA00A63B92 /* LTTTimeFreezer.m */; };
 		0AA51B9218C40F3100A63B92 /* LTTTimeFreezer.h in Copy Files */ = {isa = PBXBuildFile; fileRef = 0AA51B8E18C40ABA00A63B92 /* LTTTimeFreezer.h */; };
+		0ABD4CC118C67912003BDD76 /* sample.txt in Resources */ = {isa = PBXBuildFile; fileRef = 0ABD4CC018C67912003BDD76 /* sample.txt */; };
 		0AC33AAF18BD107D00D3F342 /* Leech.h in Copy Files */ = {isa = PBXBuildFile; fileRef = 0AC33AAE18BD0DA100D3F342 /* Leech.h */; };
 		0AC33ABC18BD321F00D3F342 /* MockHTTPResponseTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AC33ABB18BD321F00D3F342 /* MockHTTPResponseTests.m */; };
 		0AC33ABF18BD325700D3F342 /* LTTMockHTTPResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AC33ABE18BD325700D3F342 /* LTTMockHTTPResponse.m */; };
@@ -119,6 +120,7 @@
 		0AA51B8818C409F800A63B92 /* TimeFreezerTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TimeFreezerTests.m; sourceTree = "<group>"; };
 		0AA51B8E18C40ABA00A63B92 /* LTTTimeFreezer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTTTimeFreezer.h; sourceTree = "<group>"; };
 		0AA51B8F18C40ABA00A63B92 /* LTTTimeFreezer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LTTTimeFreezer.m; sourceTree = "<group>"; };
+		0ABD4CC018C67912003BDD76 /* sample.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = sample.txt; sourceTree = "<group>"; };
 		0AC33AAE18BD0DA100D3F342 /* Leech.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Leech.h; sourceTree = "<group>"; };
 		0AC33ABB18BD321F00D3F342 /* MockHTTPResponseTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MockHTTPResponseTests.m; sourceTree = "<group>"; };
 		0AC33ABD18BD325700D3F342 /* LTTMockHTTPResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTTMockHTTPResponse.h; sourceTree = "<group>"; };
@@ -270,6 +272,7 @@
 				0AA51B7918C06F8500A63B92 /* array.json */,
 				0AC33AC218BD3D3C00D3F342 /* Boston City Flow.jpg */,
 				0AA51B7718C06F7B00A63B92 /* dictionary.json */,
+				0ABD4CC018C67912003BDD76 /* sample.txt */,
 			);
 			name = "Sample Data";
 			sourceTree = "<group>";
@@ -349,6 +352,7 @@
 				0AA51B7A18C06F8500A63B92 /* array.json in Resources */,
 				0AA51B7818C06F7B00A63B92 /* dictionary.json in Resources */,
 				0AC33AC318BD3D3C00D3F342 /* Boston City Flow.jpg in Resources */,
+				0ABD4CC118C67912003BDD76 /* sample.txt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
