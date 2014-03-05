@@ -19,5 +19,6 @@
 #import "LTTTimeFreezer.h"
 
 #import "UIViewController+Leech.h"
+#import "NSManagedObjectContext+Leech.h"
 
 #endif
