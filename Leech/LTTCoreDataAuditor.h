@@ -1,5 +1,5 @@
 //
-//  NSManagedObjectContext+Leech.h
+//  LTTCoreDataAuditor.h
 //  Leech
 //
 //  Created by Sam Odom on 3/4/14.
@@ -10,7 +10,7 @@ typedef void (^core_data_perform_t)(void);
 
 #import <CoreData/CoreData.h>
 
-@interface NSManagedObjectContext (Leech)
+@interface LTTCoreDataAuditor : NSObject
 
 + (void)auditPerformBlock;
 + (void)stopAuditingPerformBlock;

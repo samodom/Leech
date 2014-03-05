@@ -1,5 +1,5 @@
 //
-//  NSManagedObjectContext+Leech.m
+//  LTTCoreDataAuditor.m
 //  Leech
 //
 //  Created by Sam Odom on 3/4/14.
@@ -8,13 +8,25 @@
 
 #import <objc/runtime.h>
 
-#import "NSManagedObjectContext+Leech.h"
+#import "LTTCoreDataAuditor.h"
 
 #import "LTTMethodSwizzler.h"
 
 const char *ManagedObjectContextBlockToPerformKey = "ManagedObjectContextBlockToPerformKey";
 
 @implementation NSManagedObjectContext (Leech)
+
+- (void)Leech_PerformBlock:(core_data_perform_t)block {
+    objc_setAssociatedObject([NSManagedObjectContext class], ManagedObjectContextBlockToPerformKey, block, OBJC_ASSOCIATION_RETAIN);
+}
+
+- (void)Leech_PerformBlockAndWait:(core_data_perform_t)block {
+    objc_setAssociatedObject([NSManagedObjectContext class], ManagedObjectContextBlockToPerformKey, block, OBJC_ASSOCIATION_RETAIN);
+}
+
+@end
+
+@implementation LTTCoreDataAuditor
 
 #pragma mark - Perform block methods
 
@@ -28,10 +40,6 @@ const char *ManagedObjectContextBlockToPerformKey = "ManagedObjectContextBlockTo
     [LTTMethodSwizzler swapInstanceMethodsForClass:[NSManagedObjectContext class] selectorOne:@selector(performBlock:) selectorTwo:@selector(Leech_PerformBlock:)];
 }
 
-- (void)Leech_PerformBlock:(core_data_perform_t)block {
-    objc_setAssociatedObject([NSManagedObjectContext class], ManagedObjectContextBlockToPerformKey, block, OBJC_ASSOCIATION_RETAIN);
-}
-
 + (void)stopAuditingPerformBlock {
     objc_setAssociatedObject([NSManagedObjectContext class], ManagedObjectContextBlockToPerformKey, nil, OBJC_ASSOCIATION_ASSIGN);
     [LTTMethodSwizzler swapInstanceMethodsForClass:[NSManagedObjectContext class] selectorOne:@selector(performBlock:) selectorTwo:@selector(Leech_PerformBlock:)];
@@ -41,10 +49,6 @@ const char *ManagedObjectContextBlockToPerformKey = "ManagedObjectContextBlockTo
 
 + (void)auditPerformBlockAndWait {
     [LTTMethodSwizzler swapInstanceMethodsForClass:[NSManagedObjectContext class] selectorOne:@selector(performBlockAndWait:) selectorTwo:@selector(Leech_PerformBlockAndWait:)];
-}
-
-- (void)Leech_PerformBlockAndWait:(core_data_perform_t)block {
-    objc_setAssociatedObject([NSManagedObjectContext class], ManagedObjectContextBlockToPerformKey, block, OBJC_ASSOCIATION_RETAIN);
 }
 
 + (void)stopAuditingPerformBlockAndWait {

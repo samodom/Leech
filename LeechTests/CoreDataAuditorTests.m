@@ -1,5 +1,5 @@
 //
-//  NSManagedObjectContextTests.m
+//  CoreDataAuditorTests.m
 //  Leech
 //
 //  Created by Sam Odom on 3/4/14.
@@ -13,13 +13,13 @@
 
 
 //  Production
-#import "NSManagedObjectContext+Leech.h"
+#import "LTTCoreDataAuditor.h"
 
-@interface NSManagedObjectContextTests : XCTestCase
+@interface CoreDataAuditorTests : XCTestCase
 
 @end
 
-@implementation NSManagedObjectContextTests {
+@implementation CoreDataAuditorTests {
     NSManagedObjectContext *context;
     core_data_perform_t blockToPerform;
 }
@@ -41,10 +41,10 @@
 
 - (void) testAuditingPerformBlockSwizzlesMethods {
     IMP realImplementation = method_getImplementation(class_getClassMethod([NSManagedObjectContext class], @selector(performBlock:)));
-    [NSManagedObjectContext auditPerformBlock];
+    [LTTCoreDataAuditor auditPerformBlock];
     IMP currentImplementation = method_getImplementation(class_getClassMethod([NSManagedObjectContext class], @selector(performBlock:)));
     XCTAssertNotEqual(currentImplementation, realImplementation, @"The method should be swizzled");
-    [NSManagedObjectContext stopAuditingPerformBlock];
+    [LTTCoreDataAuditor stopAuditingPerformBlock];
     currentImplementation = method_getImplementation(class_getClassMethod([NSManagedObjectContext class], @selector(performBlock:)));
     XCTAssertEqual(currentImplementation, realImplementation, @"The method should no longer be swizzled");
 }
@@ -54,24 +54,24 @@
     blockToPerform = ^ {
         blockPerformed = YES;
     };
-    [NSManagedObjectContext auditPerformBlock];
+    [LTTCoreDataAuditor auditPerformBlock];
     [context performBlock:blockToPerform];
-    core_data_perform_t capturedBlock = [NSManagedObjectContext blockToPerform];
+    core_data_perform_t capturedBlock = [LTTCoreDataAuditor blockToPerform];
     XCTAssertEqualObjects(capturedBlock, blockToPerform, @"The block to perform should be captured");
     XCTAssertFalse(blockPerformed, @"The block should not have been performed");
     capturedBlock();
     XCTAssertTrue(blockPerformed, @"The block should have been performed now");
-    [NSManagedObjectContext stopAuditingPerformBlock];
+    [LTTCoreDataAuditor stopAuditingPerformBlock];
 }
 
 #pragma mark -performBlockAndWait:
 
 - (void) testAuditingPerformBlockAndWaitSwizzlesMethods {
     IMP realImplementation = method_getImplementation(class_getClassMethod([NSManagedObjectContext class], @selector(performBlockAndWait:)));
-    [NSManagedObjectContext auditPerformBlockAndWait];
+    [LTTCoreDataAuditor auditPerformBlockAndWait];
     IMP currentImplementation = method_getImplementation(class_getClassMethod([NSManagedObjectContext class], @selector(performBlockAndWait:)));
     XCTAssertNotEqual(currentImplementation, realImplementation, @"The method should be swizzled");
-    [NSManagedObjectContext stopAuditingPerformBlockAndWait];
+    [LTTCoreDataAuditor stopAuditingPerformBlockAndWait];
     currentImplementation = method_getImplementation(class_getClassMethod([NSManagedObjectContext class], @selector(performBlockAndWait:)));
     XCTAssertEqual(currentImplementation, realImplementation, @"The method should no longer be swizzled");
 }
@@ -81,14 +81,14 @@
     blockToPerform = ^ {
         blockPerformed = YES;
     };
-    [NSManagedObjectContext auditPerformBlockAndWait];
+    [LTTCoreDataAuditor auditPerformBlockAndWait];
     [context performBlockAndWait:blockToPerform];
-    core_data_perform_t capturedBlock = [NSManagedObjectContext blockToPerform];
+    core_data_perform_t capturedBlock = [LTTCoreDataAuditor blockToPerform];
     XCTAssertEqualObjects(capturedBlock, blockToPerform, @"The block to perform should be captured");
     XCTAssertFalse(blockPerformed, @"The block should not have been performed");
     capturedBlock();
     XCTAssertTrue(blockPerformed, @"The block should have been performed now");
-    [NSManagedObjectContext stopAuditingPerformBlockAndWait];
+    [LTTCoreDataAuditor stopAuditingPerformBlockAndWait];
 }
 
 @end
