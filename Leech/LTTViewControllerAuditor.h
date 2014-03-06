@@ -1,5 +1,5 @@
 //
-//  UIViewController+Leech.h
+//  LTTViewControllerAuditor.h
 //  Leech
 //
 //  Created by Sam Odom on 2/23/14.
@@ -8,37 +8,42 @@
 
 #import <UIKit/UIKit.h>
 
-@interface UIViewController (Leech)
+@interface LTTViewControllerAuditor : NSObject
 
 #pragma mark - View
 
+#pragma mark -viewDidLoad
+
 + (void)auditViewDidLoadMethod:(BOOL)forward;
 + (void)stopAuditingViewDidLoadMethod;
-- (BOOL)didCallSuperViewDidLoad;
++ (BOOL)didCallSuperViewDidLoad;
+
+#pragma mark -viewWillAppear:
 
 + (void)auditViewWillAppearMethod:(BOOL)forward;
 + (void)stopAuditingViewWillAppearMethod;
-- (BOOL)didCallSuperViewWillAppear;
-- (BOOL)viewWillAppearAnimatedFlag;
++ (BOOL)didCallSuperViewWillAppear;
++ (BOOL)viewWillAppearAnimatedFlag;
+
+#pragma mark -viewDidAppear:
 
 + (void)auditViewDidAppearMethod:(BOOL)forward;
 + (void)stopAuditingViewDidAppearMethod;
-- (BOOL)didCallSuperViewDidAppear;
-- (BOOL)viewDidAppearAnimatedFlag;
++ (BOOL)didCallSuperViewDidAppear;
++ (BOOL)viewDidAppearAnimatedFlag;
+
+#pragma mark -viewWillDisappear:
 
 + (void)auditViewWillDisappearMethod:(BOOL)forward;
 + (void)stopAuditingViewWillDisappearMethod;
-- (BOOL)didCallSuperViewWillDisappear;
-- (BOOL)viewWillDisappearAnimatedFlag;
++ (BOOL)didCallSuperViewWillDisappear;
++ (BOOL)viewWillDisappearAnimatedFlag;
+
+#pragma mark -viewDidDisappear:
 
 + (void)auditViewDidDisappearMethod:(BOOL)forward;
 + (void)stopAuditingViewDidDisappearMethod;
-- (BOOL)didCallSuperViewDidDisappear;
-- (BOOL)viewDidDisappearAnimatedFlag;
-
-
-#pragma mark - Auditing cleanup
-
-- (void)clearAuditData;
++ (BOOL)didCallSuperViewDidDisappear;
++ (BOOL)viewDidDisappearAnimatedFlag;
 
 @end

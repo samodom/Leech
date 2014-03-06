@@ -18,8 +18,6 @@
 #import "LTTSampleFileLoader.h"
 #import "LTTTimeFreezer.h"
 #import "LTTCoreDataAuditor.h"
-
-#import "UIViewController+Leech.h"
-#import "NSManagedObjectContext+Leech.h"
+#import "LTTViewControllerAuditor.h"
 
 #endif

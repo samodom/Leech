@@ -16,9 +16,9 @@
 		0A77CA8418B942EA005230B0 /* MethodSwizzlerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A77CA8318B942EA005230B0 /* MethodSwizzlerTests.m */; };
 		0A77CA8818B94398005230B0 /* LTTMethodSwizzler.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A77CA8718B94398005230B0 /* LTTMethodSwizzler.m */; };
 		0A77CA8918B94398005230B0 /* LTTMethodSwizzler.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A77CA8718B94398005230B0 /* LTTMethodSwizzler.m */; };
-		0A77CA8E18BA9EB5005230B0 /* UIViewControllerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A77CA8D18BA9EB5005230B0 /* UIViewControllerTests.m */; };
-		0A77CA9118BAA05C005230B0 /* UIViewController+Leech.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A77CA9018BAA05C005230B0 /* UIViewController+Leech.m */; };
-		0A77CA9218BAA05C005230B0 /* UIViewController+Leech.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A77CA9018BAA05C005230B0 /* UIViewController+Leech.m */; };
+		0A77CA8E18BA9EB5005230B0 /* ViewControllerAuditorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A77CA8D18BA9EB5005230B0 /* ViewControllerAuditorTests.m */; };
+		0A77CA9118BAA05C005230B0 /* LTTViewControllerAuditor.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A77CA9018BAA05C005230B0 /* LTTViewControllerAuditor.m */; };
+		0A77CA9218BAA05C005230B0 /* LTTViewControllerAuditor.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A77CA9018BAA05C005230B0 /* LTTViewControllerAuditor.m */; };
 		0A77CA9518BAA17B005230B0 /* TestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A77CA9418BAA17B005230B0 /* TestViewController.m */; };
 		0A77CA9B18BABC89005230B0 /* LTTMockNotificationCenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A77CA9A18BABC89005230B0 /* LTTMockNotificationCenter.m */; };
 		0A77CA9C18BABC89005230B0 /* LTTMockNotificationCenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A77CA9A18BABC89005230B0 /* LTTMockNotificationCenter.m */; };
@@ -36,10 +36,10 @@
 		0AA51B9118C40ABA00A63B92 /* LTTTimeFreezer.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AA51B8F18C40ABA00A63B92 /* LTTTimeFreezer.m */; };
 		0AA51B9218C40F3100A63B92 /* LTTTimeFreezer.h in Copy Files */ = {isa = PBXBuildFile; fileRef = 0AA51B8E18C40ABA00A63B92 /* LTTTimeFreezer.h */; };
 		0ABD4CC118C67912003BDD76 /* sample.txt in Resources */ = {isa = PBXBuildFile; fileRef = 0ABD4CC018C67912003BDD76 /* sample.txt */; };
-		0ABD4CCA18C6AEFB003BDD76 /* NSManagedObjectContextTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0ABD4CC918C6AEFB003BDD76 /* NSManagedObjectContextTests.m */; };
-		0ABD4CCD18C6AF69003BDD76 /* NSManagedObjectContext+Leech.m in Sources */ = {isa = PBXBuildFile; fileRef = 0ABD4CCC18C6AF69003BDD76 /* NSManagedObjectContext+Leech.m */; };
-		0ABD4CCE18C6AF69003BDD76 /* NSManagedObjectContext+Leech.m in Sources */ = {isa = PBXBuildFile; fileRef = 0ABD4CCC18C6AF69003BDD76 /* NSManagedObjectContext+Leech.m */; };
-		0ABD4CCF18C6B8DA003BDD76 /* NSManagedObjectContext+Leech.h in Copy Files */ = {isa = PBXBuildFile; fileRef = 0ABD4CCB18C6AF69003BDD76 /* NSManagedObjectContext+Leech.h */; };
+		0ABD4CCA18C6AEFB003BDD76 /* CoreDataAuditorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0ABD4CC918C6AEFB003BDD76 /* CoreDataAuditorTests.m */; };
+		0ABD4CCD18C6AF69003BDD76 /* LTTCoreDataAuditor.m in Sources */ = {isa = PBXBuildFile; fileRef = 0ABD4CCC18C6AF69003BDD76 /* LTTCoreDataAuditor.m */; };
+		0ABD4CCE18C6AF69003BDD76 /* LTTCoreDataAuditor.m in Sources */ = {isa = PBXBuildFile; fileRef = 0ABD4CCC18C6AF69003BDD76 /* LTTCoreDataAuditor.m */; };
+		0ABD4CCF18C6B8DA003BDD76 /* LTTCoreDataAuditor.h in Copy Files */ = {isa = PBXBuildFile; fileRef = 0ABD4CCB18C6AF69003BDD76 /* LTTCoreDataAuditor.h */; };
 		0AC33AAF18BD107D00D3F342 /* Leech.h in Copy Files */ = {isa = PBXBuildFile; fileRef = 0AC33AAE18BD0DA100D3F342 /* Leech.h */; };
 		0AC33ABC18BD321F00D3F342 /* MockHTTPResponseTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AC33ABB18BD321F00D3F342 /* MockHTTPResponseTests.m */; };
 		0AC33ABF18BD325700D3F342 /* LTTMockHTTPResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AC33ABE18BD325700D3F342 /* LTTMockHTTPResponse.m */; };
@@ -49,7 +49,7 @@
 		0AC33AC518BD3F7100D3F342 /* LTTMethodSwizzler.h in Copy Files */ = {isa = PBXBuildFile; fileRef = 0A77CA8618B94398005230B0 /* LTTMethodSwizzler.h */; };
 		0AC33AC618BD3F7100D3F342 /* LTTMockHTTPResponse.h in Copy Files */ = {isa = PBXBuildFile; fileRef = 0AC33ABD18BD325700D3F342 /* LTTMockHTTPResponse.h */; };
 		0AC33AC718BD3F7100D3F342 /* LTTMockNotificationCenter.h in Copy Files */ = {isa = PBXBuildFile; fileRef = 0A77CA9918BABC89005230B0 /* LTTMockNotificationCenter.h */; };
-		0AC33AC818BD3F7100D3F342 /* UIViewController+Leech.h in Copy Files */ = {isa = PBXBuildFile; fileRef = 0A77CA8F18BAA05C005230B0 /* UIViewController+Leech.h */; };
+		0AC33AC818BD3F7100D3F342 /* LTTViewControllerAuditor.h in Copy Files */ = {isa = PBXBuildFile; fileRef = 0A77CA8F18BAA05C005230B0 /* LTTViewControllerAuditor.h */; };
 		0AC33ACA18BDC3C700D3F342 /* MockURLSessionTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AC33AC918BDC3C700D3F342 /* MockURLSessionTests.m */; };
 		0AC33ACD18BDC41000D3F342 /* LTTMockURLSession.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AC33ACC18BDC41000D3F342 /* LTTMockURLSession.m */; };
 		0AC33ACE18BDC41000D3F342 /* LTTMockURLSession.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AC33ACC18BDC41000D3F342 /* LTTMockURLSession.m */; };
@@ -77,7 +77,7 @@
 			dstPath = "include/$(PRODUCT_NAME)";
 			dstSubfolderSpec = 16;
 			files = (
-				0ABD4CCF18C6B8DA003BDD76 /* NSManagedObjectContext+Leech.h in Copy Files */,
+				0ABD4CCF18C6B8DA003BDD76 /* LTTCoreDataAuditor.h in Copy Files */,
 				0AA51B9218C40F3100A63B92 /* LTTTimeFreezer.h in Copy Files */,
 				0AA51B7B18C0725200A63B92 /* LTTSampleFileLoader.h in Copy Files */,
 				0AC33AD618BDCCA400D3F342 /* LTTMockURLSession.h in Copy Files */,
@@ -86,7 +86,7 @@
 				0AC33AC518BD3F7100D3F342 /* LTTMethodSwizzler.h in Copy Files */,
 				0AC33AC618BD3F7100D3F342 /* LTTMockHTTPResponse.h in Copy Files */,
 				0AC33AC718BD3F7100D3F342 /* LTTMockNotificationCenter.h in Copy Files */,
-				0AC33AC818BD3F7100D3F342 /* UIViewController+Leech.h in Copy Files */,
+				0AC33AC818BD3F7100D3F342 /* LTTViewControllerAuditor.h in Copy Files */,
 				0AC33AAF18BD107D00D3F342 /* Leech.h in Copy Files */,
 			);
 			name = "Copy Files";
@@ -107,9 +107,9 @@
 		0A77CA8618B94398005230B0 /* LTTMethodSwizzler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTTMethodSwizzler.h; sourceTree = "<group>"; };
 		0A77CA8718B94398005230B0 /* LTTMethodSwizzler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LTTMethodSwizzler.m; sourceTree = "<group>"; };
 		0A77CA8A18B94AE1005230B0 /* libobjc.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libobjc.dylib; path = usr/lib/libobjc.dylib; sourceTree = SDKROOT; };
-		0A77CA8D18BA9EB5005230B0 /* UIViewControllerTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIViewControllerTests.m; sourceTree = "<group>"; };
-		0A77CA8F18BAA05C005230B0 /* UIViewController+Leech.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+Leech.h"; sourceTree = "<group>"; };
-		0A77CA9018BAA05C005230B0 /* UIViewController+Leech.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+Leech.m"; sourceTree = "<group>"; };
+		0A77CA8D18BA9EB5005230B0 /* ViewControllerAuditorTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewControllerAuditorTests.m; sourceTree = "<group>"; };
+		0A77CA8F18BAA05C005230B0 /* LTTViewControllerAuditor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTTViewControllerAuditor.h; sourceTree = "<group>"; };
+		0A77CA9018BAA05C005230B0 /* LTTViewControllerAuditor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LTTViewControllerAuditor.m; sourceTree = "<group>"; };
 		0A77CA9318BAA17B005230B0 /* TestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestViewController.h; sourceTree = "<group>"; };
 		0A77CA9418BAA17B005230B0 /* TestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestViewController.m; sourceTree = "<group>"; };
 		0A77CA9918BABC89005230B0 /* LTTMockNotificationCenter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTTMockNotificationCenter.h; sourceTree = "<group>"; };
@@ -126,9 +126,10 @@
 		0AA51B8E18C40ABA00A63B92 /* LTTTimeFreezer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTTTimeFreezer.h; sourceTree = "<group>"; };
 		0AA51B8F18C40ABA00A63B92 /* LTTTimeFreezer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LTTTimeFreezer.m; sourceTree = "<group>"; };
 		0ABD4CC018C67912003BDD76 /* sample.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = sample.txt; sourceTree = "<group>"; };
-		0ABD4CC918C6AEFB003BDD76 /* NSManagedObjectContextTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSManagedObjectContextTests.m; sourceTree = "<group>"; };
-		0ABD4CCB18C6AF69003BDD76 /* NSManagedObjectContext+Leech.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSManagedObjectContext+Leech.h"; sourceTree = "<group>"; };
-		0ABD4CCC18C6AF69003BDD76 /* NSManagedObjectContext+Leech.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSManagedObjectContext+Leech.m"; sourceTree = "<group>"; };
+		0ABD4CC918C6AEFB003BDD76 /* CoreDataAuditorTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoreDataAuditorTests.m; sourceTree = "<group>"; };
+		0ABD4CCB18C6AF69003BDD76 /* LTTCoreDataAuditor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTTCoreDataAuditor.h; sourceTree = "<group>"; };
+		0ABD4CCC18C6AF69003BDD76 /* LTTCoreDataAuditor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LTTCoreDataAuditor.m; sourceTree = "<group>"; };
+		0ABD4CD018C6F2C0003BDD76 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		0AC33AAE18BD0DA100D3F342 /* Leech.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Leech.h; sourceTree = "<group>"; };
 		0AC33ABB18BD321F00D3F342 /* MockHTTPResponseTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MockHTTPResponseTests.m; sourceTree = "<group>"; };
 		0AC33ABD18BD325700D3F342 /* LTTMockHTTPResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTTMockHTTPResponse.h; sourceTree = "<group>"; };
@@ -187,6 +188,7 @@
 		0A77CA5A18B94045005230B0 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				0ABD4CD018C6F2C0003BDD76 /* UIKit.framework */,
 				0A77CA8A18B94AE1005230B0 /* libobjc.dylib */,
 				0A77CA5B18B94045005230B0 /* Foundation.framework */,
 				0A77CA6918B94045005230B0 /* XCTest.framework */,
@@ -199,6 +201,8 @@
 			isa = PBXGroup;
 			children = (
 				0AC33AAE18BD0DA100D3F342 /* Leech.h */,
+				0ABD4CCB18C6AF69003BDD76 /* LTTCoreDataAuditor.h */,
+				0ABD4CCC18C6AF69003BDD76 /* LTTCoreDataAuditor.m */,
 				0A77CA9F18BABCE3005230B0 /* LTTFakeNotificationDispatchEntry.h */,
 				0A77CAA018BABCE3005230B0 /* LTTFakeNotificationDispatchEntry.m */,
 				0A77CA8618B94398005230B0 /* LTTMethodSwizzler.h */,
@@ -215,10 +219,8 @@
 				0AA51B7218C06F2100A63B92 /* LTTSampleFileLoader.m */,
 				0AA51B8E18C40ABA00A63B92 /* LTTTimeFreezer.h */,
 				0AA51B8F18C40ABA00A63B92 /* LTTTimeFreezer.m */,
-				0ABD4CCB18C6AF69003BDD76 /* NSManagedObjectContext+Leech.h */,
-				0ABD4CCC18C6AF69003BDD76 /* NSManagedObjectContext+Leech.m */,
-				0A77CA8F18BAA05C005230B0 /* UIViewController+Leech.h */,
-				0A77CA9018BAA05C005230B0 /* UIViewController+Leech.m */,
+				0A77CA8F18BAA05C005230B0 /* LTTViewControllerAuditor.h */,
+				0A77CA9018BAA05C005230B0 /* LTTViewControllerAuditor.m */,
 				0A77CA5E18B94045005230B0 /* Supporting Files */,
 			);
 			path = Leech;
@@ -255,7 +257,7 @@
 		0A77CA8518B942EF005230B0 /* Test Classes */ = {
 			isa = PBXGroup;
 			children = (
-				0ABD4CC918C6AEFB003BDD76 /* NSManagedObjectContextTests.m */,
+				0ABD4CC918C6AEFB003BDD76 /* CoreDataAuditorTests.m */,
 				0A77CA8318B942EA005230B0 /* MethodSwizzlerTests.m */,
 				0AC33ABB18BD321F00D3F342 /* MockHTTPResponseTests.m */,
 				0A77CA9D18BABCAE005230B0 /* MockNotificationCenterTests.m */,
@@ -263,7 +265,7 @@
 				0AC33AC918BDC3C700D3F342 /* MockURLSessionTests.m */,
 				0AA51B7518C06F3D00A63B92 /* SampleFileLoaderTests.m */,
 				0AA51B8818C409F800A63B92 /* TimeFreezerTests.m */,
-				0A77CA8D18BA9EB5005230B0 /* UIViewControllerTests.m */,
+				0A77CA8D18BA9EB5005230B0 /* ViewControllerAuditorTests.m */,
 			);
 			name = "Test Classes";
 			sourceTree = "<group>";
@@ -335,6 +337,11 @@
 				CLASSPREFIX = LTT;
 				LastUpgradeCheck = 0510;
 				ORGANIZATIONNAME = "Swagger Soft";
+				TargetAttributes = {
+					0A77CA6718B94045005230B0 = {
+						TestTargetID = 0A77CA5718B94045005230B0;
+					};
+				};
 			};
 			buildConfigurationList = 0A77CA5318B94045005230B0 /* Build configuration list for PBXProject "Leech" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -375,8 +382,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				0AC33ABF18BD325700D3F342 /* LTTMockHTTPResponse.m in Sources */,
-				0ABD4CCD18C6AF69003BDD76 /* NSManagedObjectContext+Leech.m in Sources */,
-				0A77CA9118BAA05C005230B0 /* UIViewController+Leech.m in Sources */,
+				0ABD4CCD18C6AF69003BDD76 /* LTTCoreDataAuditor.m in Sources */,
+				0A77CA9118BAA05C005230B0 /* LTTViewControllerAuditor.m in Sources */,
 				0A77CA8818B94398005230B0 /* LTTMethodSwizzler.m in Sources */,
 				0AC33ACD18BDC41000D3F342 /* LTTMockURLSession.m in Sources */,
 				0A77CAA118BABCE3005230B0 /* LTTFakeNotificationDispatchEntry.m in Sources */,
@@ -391,18 +398,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0A77CA9218BAA05C005230B0 /* UIViewController+Leech.m in Sources */,
+				0A77CA9218BAA05C005230B0 /* LTTViewControllerAuditor.m in Sources */,
 				0A77CA8418B942EA005230B0 /* MethodSwizzlerTests.m in Sources */,
 				0A77CAA218BABCE3005230B0 /* LTTFakeNotificationDispatchEntry.m in Sources */,
 				0AC33ACE18BDC41000D3F342 /* LTTMockURLSession.m in Sources */,
-				0A77CA8E18BA9EB5005230B0 /* UIViewControllerTests.m in Sources */,
+				0A77CA8E18BA9EB5005230B0 /* ViewControllerAuditorTests.m in Sources */,
 				0AC33AD418BDC5DB00D3F342 /* LTTMockURLDataTask.m in Sources */,
 				0AC33ABC18BD321F00D3F342 /* MockHTTPResponseTests.m in Sources */,
 				0AC33AC018BD325700D3F342 /* LTTMockHTTPResponse.m in Sources */,
 				0A77CA9E18BABCAE005230B0 /* MockNotificationCenterTests.m in Sources */,
-				0ABD4CCA18C6AEFB003BDD76 /* NSManagedObjectContextTests.m in Sources */,
+				0ABD4CCA18C6AEFB003BDD76 /* CoreDataAuditorTests.m in Sources */,
 				0A77CA9C18BABC89005230B0 /* LTTMockNotificationCenter.m in Sources */,
-				0ABD4CCE18C6AF69003BDD76 /* NSManagedObjectContext+Leech.m in Sources */,
+				0ABD4CCE18C6AF69003BDD76 /* LTTCoreDataAuditor.m in Sources */,
 				0A77CA8918B94398005230B0 /* LTTMethodSwizzler.m in Sources */,
 				0AC33AD018BDC58500D3F342 /* MockURLDataTaskTests.m in Sources */,
 				0AA51B7418C06F2100A63B92 /* LTTSampleFileLoader.m in Sources */,
@@ -513,6 +520,7 @@
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -525,6 +533,7 @@
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
@@ -542,8 +551,13 @@
 					"DEBUG=1",
 					"$(inherited)",
 				);
+				"GCC_PREPROCESSOR_DEFINITIONS[arch=*]" = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
 				INFOPLIST_FILE = "LeechTests/LeechTests-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = xctest;
 			};
 			name = Debug;
@@ -560,6 +574,7 @@
 				GCC_PREFIX_HEADER = "Leech/Leech-Prefix.pch";
 				INFOPLIST_FILE = "LeechTests/LeechTests-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = xctest;
 			};
 			name = Release;
