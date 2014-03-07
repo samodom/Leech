@@ -19,5 +19,7 @@
 #import "LTTTimeFreezer.h"
 #import "LTTCoreDataAuditor.h"
 #import "LTTViewControllerAuditor.h"
+#import "LTTLayoutConstraintChecker.h"
+
 
 #endif
