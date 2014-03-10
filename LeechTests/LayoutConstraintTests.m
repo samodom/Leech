@@ -72,7 +72,13 @@
 #pragma mark - Equivalence
 
 - (void)testLayoutConstraintsAreEquivalent {
-    otherConstraint = [constraint copy];
+    otherConstraint = [NSLayoutConstraint constraintWithItem:constraint.firstItem
+                                                   attribute:constraint.firstAttribute
+                                                   relatedBy:constraint.relation
+                                                      toItem:constraint.secondItem
+                                                   attribute:constraint.secondAttribute
+                                                  multiplier:constraint.multiplier
+                                                    constant:constraint.constant];
     XCTAssertTrue([LTTLayoutConstraintChecker constraint:constraint equalToConstraint:otherConstraint], @"The two constraints should be considered equivalent");
 }
 

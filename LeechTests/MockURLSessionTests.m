@@ -75,7 +75,7 @@
     XCTAssertEqualObjects(currentDataTasks, expected, @"There should still be two tasks");
     [(NSURLSessionDataTask*)dataTaskOne cancel];
     [(NSURLSession*)session getTasksWithCompletionHandler:handler];
-    XCTAssertEqualObjects(currentDataTasks, @[dataTaskOne], @"There should only be one task left");
+    XCTAssertEqualObjects(currentDataTasks, @[dataTaskTwo], @"There should only be one task left");
     [(NSURLSessionDataTask*)dataTaskTwo cancel];
     [(NSURLSession*)session getTasksWithCompletionHandler:handler];
     XCTAssertEqual(currentDataTasks.count, (NSUInteger)0, @"There should be no tasks left");

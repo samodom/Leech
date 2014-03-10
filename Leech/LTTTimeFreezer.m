@@ -28,7 +28,7 @@ const char *LTTTimeFreezerFrozenDateKey = "LTTTimeFreezerFrozenDateKey";
 @implementation LTTTimeFreezer
 
 + (void)freezeTime {
-    NSAssert(objc_getAssociatedObject(self, LTTTimeFreezerFrozenDateKey) == nil, @"Freezing time when it's already frozen is a programming error");
+    NSAssert(![self timeIsFrozen], @"Freezing time when it's already frozen is a programming error");
     @synchronized([NSDate class]) {
         NSDate *date = [NSDate date];
         [NSDate swizzleDateMethods];

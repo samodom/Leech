@@ -40,12 +40,12 @@
 #pragma mark -performBlock:
 
 - (void) testAuditingPerformBlockSwizzlesMethods {
-    IMP realImplementation = method_getImplementation(class_getClassMethod([NSManagedObjectContext class], @selector(performBlock:)));
+    IMP realImplementation = method_getImplementation(class_getInstanceMethod([NSManagedObjectContext class], @selector(performBlock:)));
     [LTTCoreDataAuditor auditPerformBlock];
-    IMP currentImplementation = method_getImplementation(class_getClassMethod([NSManagedObjectContext class], @selector(performBlock:)));
+    IMP currentImplementation = method_getImplementation(class_getInstanceMethod([NSManagedObjectContext class], @selector(performBlock:)));
     XCTAssertNotEqual(currentImplementation, realImplementation, @"The method should be swizzled");
     [LTTCoreDataAuditor stopAuditingPerformBlock];
-    currentImplementation = method_getImplementation(class_getClassMethod([NSManagedObjectContext class], @selector(performBlock:)));
+    currentImplementation = method_getImplementation(class_getInstanceMethod([NSManagedObjectContext class], @selector(performBlock:)));
     XCTAssertEqual(currentImplementation, realImplementation, @"The method should no longer be swizzled");
 }
 
@@ -67,12 +67,12 @@
 #pragma mark -performBlockAndWait:
 
 - (void) testAuditingPerformBlockAndWaitSwizzlesMethods {
-    IMP realImplementation = method_getImplementation(class_getClassMethod([NSManagedObjectContext class], @selector(performBlockAndWait:)));
+    IMP realImplementation = method_getImplementation(class_getInstanceMethod([NSManagedObjectContext class], @selector(performBlockAndWait:)));
     [LTTCoreDataAuditor auditPerformBlockAndWait];
-    IMP currentImplementation = method_getImplementation(class_getClassMethod([NSManagedObjectContext class], @selector(performBlockAndWait:)));
+    IMP currentImplementation = method_getImplementation(class_getInstanceMethod([NSManagedObjectContext class], @selector(performBlockAndWait:)));
     XCTAssertNotEqual(currentImplementation, realImplementation, @"The method should be swizzled");
     [LTTCoreDataAuditor stopAuditingPerformBlockAndWait];
-    currentImplementation = method_getImplementation(class_getClassMethod([NSManagedObjectContext class], @selector(performBlockAndWait:)));
+    currentImplementation = method_getImplementation(class_getInstanceMethod([NSManagedObjectContext class], @selector(performBlockAndWait:)));
     XCTAssertEqual(currentImplementation, realImplementation, @"The method should no longer be swizzled");
 }
 

@@ -26,7 +26,7 @@
 - (void)setUp {
     [super setUp];
 
-    path = [[NSBundle mainBundle] pathForResource:@"Boston City Flow" ofType:@"jpg"];
+    path = [[NSBundle bundleForClass:[self class]] pathForResource:@"Boston City Flow" ofType:@"jpg"];
     response = [LTTMockHTTPResponse responseWithStatus:200 payloadFile:@"Boston City Flow" ofType:@"jpg"];
 }
 
