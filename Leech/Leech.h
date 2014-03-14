@@ -20,6 +20,7 @@
 #import "LTTCoreDataAuditor.h"
 #import "LTTViewControllerAuditor.h"
 #import "LTTLayoutConstraintChecker.h"
+#import "LTTMockTextField.h"
 
 
 #endif

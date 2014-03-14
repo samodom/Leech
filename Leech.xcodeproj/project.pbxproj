@@ -43,6 +43,10 @@
 		0ABD4CCD18C6AF69003BDD76 /* LTTCoreDataAuditor.m in Sources */ = {isa = PBXBuildFile; fileRef = 0ABD4CCC18C6AF69003BDD76 /* LTTCoreDataAuditor.m */; };
 		0ABD4CCE18C6AF69003BDD76 /* LTTCoreDataAuditor.m in Sources */ = {isa = PBXBuildFile; fileRef = 0ABD4CCC18C6AF69003BDD76 /* LTTCoreDataAuditor.m */; };
 		0ABD4CCF18C6B8DA003BDD76 /* LTTCoreDataAuditor.h in Copy Files */ = {isa = PBXBuildFile; fileRef = 0ABD4CCB18C6AF69003BDD76 /* LTTCoreDataAuditor.h */; };
+		0AC0E33218D24D9F0078C01B /* MockTextFieldTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AC0E33118D24D9F0078C01B /* MockTextFieldTests.m */; };
+		0AC0E33518D24DBC0078C01B /* LTTMockTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AC0E33418D24DBC0078C01B /* LTTMockTextField.m */; };
+		0AC0E33618D24DBC0078C01B /* LTTMockTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AC0E33418D24DBC0078C01B /* LTTMockTextField.m */; };
+		0AC0E33718D24DDB0078C01B /* LTTMockTextField.h in Copy Files */ = {isa = PBXBuildFile; fileRef = 0AC0E33318D24DBC0078C01B /* LTTMockTextField.h */; };
 		0AC33AAF18BD107D00D3F342 /* Leech.h in Copy Files */ = {isa = PBXBuildFile; fileRef = 0AC33AAE18BD0DA100D3F342 /* Leech.h */; };
 		0AC33ABC18BD321F00D3F342 /* MockHTTPResponseTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AC33ABB18BD321F00D3F342 /* MockHTTPResponseTests.m */; };
 		0AC33ABF18BD325700D3F342 /* LTTMockHTTPResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AC33ABE18BD325700D3F342 /* LTTMockHTTPResponse.m */; };
@@ -81,6 +85,7 @@
 			dstPath = "include/$(PRODUCT_NAME)";
 			dstSubfolderSpec = 16;
 			files = (
+				0AC0E33718D24DDB0078C01B /* LTTMockTextField.h in Copy Files */,
 				0A369FD218C94723008611E5 /* LTTLayoutConstraintChecker.h in Copy Files */,
 				0ABD4CCF18C6B8DA003BDD76 /* LTTCoreDataAuditor.h in Copy Files */,
 				0AA51B9218C40F3100A63B92 /* LTTTimeFreezer.h in Copy Files */,
@@ -137,6 +142,9 @@
 		0ABD4CCB18C6AF69003BDD76 /* LTTCoreDataAuditor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTTCoreDataAuditor.h; sourceTree = "<group>"; };
 		0ABD4CCC18C6AF69003BDD76 /* LTTCoreDataAuditor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LTTCoreDataAuditor.m; sourceTree = "<group>"; };
 		0ABD4CD018C6F2C0003BDD76 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		0AC0E33118D24D9F0078C01B /* MockTextFieldTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MockTextFieldTests.m; sourceTree = "<group>"; };
+		0AC0E33318D24DBC0078C01B /* LTTMockTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTTMockTextField.h; sourceTree = "<group>"; };
+		0AC0E33418D24DBC0078C01B /* LTTMockTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LTTMockTextField.m; sourceTree = "<group>"; };
 		0AC33AAE18BD0DA100D3F342 /* Leech.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Leech.h; sourceTree = "<group>"; };
 		0AC33ABB18BD321F00D3F342 /* MockHTTPResponseTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MockHTTPResponseTests.m; sourceTree = "<group>"; };
 		0AC33ABD18BD325700D3F342 /* LTTMockHTTPResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTTMockHTTPResponse.h; sourceTree = "<group>"; };
@@ -221,6 +229,8 @@
 				0AC33ABE18BD325700D3F342 /* LTTMockHTTPResponse.m */,
 				0A77CA9918BABC89005230B0 /* LTTMockNotificationCenter.h */,
 				0A77CA9A18BABC89005230B0 /* LTTMockNotificationCenter.m */,
+				0AC0E33318D24DBC0078C01B /* LTTMockTextField.h */,
+				0AC0E33418D24DBC0078C01B /* LTTMockTextField.m */,
 				0AC33AD118BDC5DB00D3F342 /* LTTMockURLDataTask.h */,
 				0AC33AD218BDC5DB00D3F342 /* LTTMockURLDataTask.m */,
 				0AC33ACB18BDC41000D3F342 /* LTTMockURLSession.h */,
@@ -272,6 +282,7 @@
 				0A77CA8318B942EA005230B0 /* MethodSwizzlerTests.m */,
 				0AC33ABB18BD321F00D3F342 /* MockHTTPResponseTests.m */,
 				0A77CA9D18BABCAE005230B0 /* MockNotificationCenterTests.m */,
+				0AC0E33118D24D9F0078C01B /* MockTextFieldTests.m */,
 				0AC33ACF18BDC58500D3F342 /* MockURLDataTaskTests.m */,
 				0AC33AC918BDC3C700D3F342 /* MockURLSessionTests.m */,
 				0AA51B7518C06F3D00A63B92 /* SampleFileLoaderTests.m */,
@@ -396,6 +407,7 @@
 				0ABD4CCD18C6AF69003BDD76 /* LTTCoreDataAuditor.m in Sources */,
 				0A77CA9118BAA05C005230B0 /* LTTViewControllerAuditor.m in Sources */,
 				0A77CA8818B94398005230B0 /* LTTMethodSwizzler.m in Sources */,
+				0AC0E33518D24DBC0078C01B /* LTTMockTextField.m in Sources */,
 				0AC33ACD18BDC41000D3F342 /* LTTMockURLSession.m in Sources */,
 				0A369FD018C9409B008611E5 /* LTTLayoutConstraintChecker.m in Sources */,
 				0A77CAA118BABCE3005230B0 /* LTTFakeNotificationDispatchEntry.m in Sources */,
@@ -414,10 +426,12 @@
 				0A77CA8418B942EA005230B0 /* MethodSwizzlerTests.m in Sources */,
 				0A77CAA218BABCE3005230B0 /* LTTFakeNotificationDispatchEntry.m in Sources */,
 				0AC33ACE18BDC41000D3F342 /* LTTMockURLSession.m in Sources */,
+				0AC0E33618D24DBC0078C01B /* LTTMockTextField.m in Sources */,
 				0A77CA8E18BA9EB5005230B0 /* ViewControllerAuditorTests.m in Sources */,
 				0A369FD118C9409B008611E5 /* LTTLayoutConstraintChecker.m in Sources */,
 				0AC33AD418BDC5DB00D3F342 /* LTTMockURLDataTask.m in Sources */,
 				0AC33ABC18BD321F00D3F342 /* MockHTTPResponseTests.m in Sources */,
+				0AC0E33218D24D9F0078C01B /* MockTextFieldTests.m in Sources */,
 				0AC33AC018BD325700D3F342 /* LTTMockHTTPResponse.m in Sources */,
 				0A77CA9E18BABCAE005230B0 /* MockNotificationCenterTests.m in Sources */,
 				0ABD4CCA18C6AEFB003BDD76 /* CoreDataAuditorTests.m in Sources */,
