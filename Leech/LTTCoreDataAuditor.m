@@ -6,8 +6,6 @@
 //  Copyright (c) 2014 Swagger Soft. All rights reserved.
 //
 
-#import <objc/runtime.h>
-
 #import "LTTCoreDataAuditor.h"
 
 #import "LTTMethodSwizzler.h"

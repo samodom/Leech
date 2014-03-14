@@ -6,8 +6,6 @@
 //  Copyright (c) 2014 Swagger Soft. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
-
 @interface LTTLayoutConstraintChecker : NSObject
 
 + (NSArray*)constraintsForItem:(id)item attribute:(NSLayoutAttribute)attribute constraints:(NSArray*)constraints;

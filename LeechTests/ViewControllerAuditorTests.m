@@ -7,8 +7,6 @@
 //
 
 #import <XCTest/XCTest.h>
-#import <UIKit/UIKit.h>
-#import <objc/runtime.h>
 
 //  Mocks+
 #import "TestViewController.h"

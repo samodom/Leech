@@ -11,7 +11,6 @@
 //  tests to work!
 
 #import <XCTest/XCTest.h>
-#import <objc/runtime.h>
 
 //  Mocks +
 #import "LTTMockNotificationCenter.h"

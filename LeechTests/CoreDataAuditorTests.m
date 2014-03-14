@@ -7,7 +7,6 @@
 //
 
 #import <XCTest/XCTest.h>
-#import <objc/runtime.h>
 
 //  Mocks+
 
