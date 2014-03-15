@@ -70,6 +70,10 @@
 		0AED7A1B18D3955E009C6E1B /* LTTNavigationControllerAuditor.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AED7A1A18D3955E009C6E1B /* LTTNavigationControllerAuditor.m */; };
 		0AED7A1C18D3955E009C6E1B /* LTTNavigationControllerAuditor.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AED7A1A18D3955E009C6E1B /* LTTNavigationControllerAuditor.m */; };
 		0AED7A1D18D39578009C6E1B /* LTTNavigationControllerAuditor.h in Copy Files */ = {isa = PBXBuildFile; fileRef = 0AED7A1918D3955E009C6E1B /* LTTNavigationControllerAuditor.h */; };
+		0AED7A1F18D3DE7B009C6E1B /* TableViewAuditorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AED7A1E18D3DE7B009C6E1B /* TableViewAuditorTests.m */; };
+		0AED7A2218D3DE98009C6E1B /* LTTTableViewAuditor.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AED7A2118D3DE98009C6E1B /* LTTTableViewAuditor.m */; };
+		0AED7A2318D3DE98009C6E1B /* LTTTableViewAuditor.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AED7A2118D3DE98009C6E1B /* LTTTableViewAuditor.m */; };
+		0AED7A2418D3DEBD009C6E1B /* LTTTableViewAuditor.h in Copy Files */ = {isa = PBXBuildFile; fileRef = 0AED7A2018D3DE98009C6E1B /* LTTTableViewAuditor.h */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -89,6 +93,7 @@
 			dstPath = "include/$(PRODUCT_NAME)";
 			dstSubfolderSpec = 16;
 			files = (
+				0AED7A2418D3DEBD009C6E1B /* LTTTableViewAuditor.h in Copy Files */,
 				0AED7A1D18D39578009C6E1B /* LTTNavigationControllerAuditor.h in Copy Files */,
 				0AC0E33718D24DDB0078C01B /* LTTMockTextField.h in Copy Files */,
 				0A369FD218C94723008611E5 /* LTTLayoutConstraintChecker.h in Copy Files */,
@@ -165,6 +170,9 @@
 		0AED7A1718D3950D009C6E1B /* NavigationControllerAuditorTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NavigationControllerAuditorTests.m; sourceTree = "<group>"; };
 		0AED7A1918D3955E009C6E1B /* LTTNavigationControllerAuditor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTTNavigationControllerAuditor.h; sourceTree = "<group>"; };
 		0AED7A1A18D3955E009C6E1B /* LTTNavigationControllerAuditor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LTTNavigationControllerAuditor.m; sourceTree = "<group>"; };
+		0AED7A1E18D3DE7B009C6E1B /* TableViewAuditorTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableViewAuditorTests.m; sourceTree = "<group>"; };
+		0AED7A2018D3DE98009C6E1B /* LTTTableViewAuditor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTTTableViewAuditor.h; sourceTree = "<group>"; };
+		0AED7A2118D3DE98009C6E1B /* LTTTableViewAuditor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LTTTableViewAuditor.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -247,6 +255,8 @@
 				0AED7A1A18D3955E009C6E1B /* LTTNavigationControllerAuditor.m */,
 				0AA51B7118C06F2100A63B92 /* LTTSampleFileLoader.h */,
 				0AA51B7218C06F2100A63B92 /* LTTSampleFileLoader.m */,
+				0AED7A2018D3DE98009C6E1B /* LTTTableViewAuditor.h */,
+				0AED7A2118D3DE98009C6E1B /* LTTTableViewAuditor.m */,
 				0AA51B8E18C40ABA00A63B92 /* LTTTimeFreezer.h */,
 				0AA51B8F18C40ABA00A63B92 /* LTTTimeFreezer.m */,
 				0A77CA8F18BAA05C005230B0 /* LTTViewControllerAuditor.h */,
@@ -297,6 +307,7 @@
 				0AC33AC918BDC3C700D3F342 /* MockURLSessionTests.m */,
 				0AED7A1718D3950D009C6E1B /* NavigationControllerAuditorTests.m */,
 				0AA51B7518C06F3D00A63B92 /* SampleFileLoaderTests.m */,
+				0AED7A1E18D3DE7B009C6E1B /* TableViewAuditorTests.m */,
 				0AA51B8818C409F800A63B92 /* TimeFreezerTests.m */,
 				0A77CA8D18BA9EB5005230B0 /* ViewControllerAuditorTests.m */,
 			);
@@ -423,6 +434,7 @@
 				0A369FD018C9409B008611E5 /* LTTLayoutConstraintChecker.m in Sources */,
 				0A77CAA118BABCE3005230B0 /* LTTFakeNotificationDispatchEntry.m in Sources */,
 				0AA51B7318C06F2100A63B92 /* LTTSampleFileLoader.m in Sources */,
+				0AED7A2218D3DE98009C6E1B /* LTTTableViewAuditor.m in Sources */,
 				0AA51B9018C40ABA00A63B92 /* LTTTimeFreezer.m in Sources */,
 				0AC33AD318BDC5DB00D3F342 /* LTTMockURLDataTask.m in Sources */,
 				0AED7A1B18D3955E009C6E1B /* LTTNavigationControllerAuditor.m in Sources */,
@@ -442,6 +454,7 @@
 				0A77CA8E18BA9EB5005230B0 /* ViewControllerAuditorTests.m in Sources */,
 				0A369FD118C9409B008611E5 /* LTTLayoutConstraintChecker.m in Sources */,
 				0AC33AD418BDC5DB00D3F342 /* LTTMockURLDataTask.m in Sources */,
+				0AED7A1F18D3DE7B009C6E1B /* TableViewAuditorTests.m in Sources */,
 				0AC33ABC18BD321F00D3F342 /* MockHTTPResponseTests.m in Sources */,
 				0AC0E33218D24D9F0078C01B /* MockTextFieldTests.m in Sources */,
 				0AC33AC018BD325700D3F342 /* LTTMockHTTPResponse.m in Sources */,
@@ -456,6 +469,7 @@
 				0A77CA9518BAA17B005230B0 /* TestViewController.m in Sources */,
 				0AA51B8918C409F800A63B92 /* TimeFreezerTests.m in Sources */,
 				0AA51B9118C40ABA00A63B92 /* LTTTimeFreezer.m in Sources */,
+				0AED7A2318D3DE98009C6E1B /* LTTTableViewAuditor.m in Sources */,
 				0AA51B7618C06F3D00A63B92 /* SampleFileLoaderTests.m in Sources */,
 				0AC33ACA18BDC3C700D3F342 /* MockURLSessionTests.m in Sources */,
 				0AED7A1C18D3955E009C6E1B /* LTTNavigationControllerAuditor.m in Sources */,

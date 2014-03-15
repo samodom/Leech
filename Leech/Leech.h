@@ -22,6 +22,7 @@
 #import "LTTLayoutConstraintChecker.h"
 #import "LTTMockTextField.h"
 #import "LTTNavigationControllerAuditor.h"
+#import "LTTTableViewAuditor.h"
 
 
 #endif
