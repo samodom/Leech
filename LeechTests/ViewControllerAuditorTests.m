@@ -106,4 +106,50 @@
     XCTAssertEqual(currentImplementation, realImplementation, @"The method should no longer be swizzled");
 }
 
+#pragma mark - View controller presentation
+
+- (void)testAuditingOfPresentViewControllerMethod {
+    realImplementation = method_getImplementation(class_getInstanceMethod([TestViewController class], @selector(presentViewController:animated:completion:)));
+    [LTTViewControllerAuditor auditPresentViewControllerMethod:controller forward:YES];
+    currentImplementation = method_getImplementation(class_getInstanceMethod([TestViewController class], @selector(presentViewController:animated:completion:)));
+    XCTAssertNotEqual(currentImplementation, realImplementation, @"The method should be swizzled");
+    UIViewController *sampleController = [UIViewController new];
+    __block BOOL completionCalled = NO;
+    leech_completion_block_t completion = ^{
+        completionCalled = YES;
+    };
+    [controller presentViewController:sampleController animated:YES completion:completion];
+    XCTAssertEqualObjects([LTTViewControllerAuditor viewControllerToPresent:controller], sampleController, @"The view controller to present should be captured");
+    XCTAssertTrue([LTTViewControllerAuditor presentViewControllerAnimatedFlag:controller], @"The animated flag should have been audited");
+    leech_completion_block_t capturedBlock = [LTTViewControllerAuditor presentViewControllerCompletionBlock:controller];
+    XCTAssertEqualObjects(capturedBlock, completion, @"The completion block should be captured");
+    capturedBlock();
+    XCTAssertTrue(completionCalled, @"The completion handler should be the same");
+    [LTTViewControllerAuditor stopAuditingPresentViewControllerMethod:controller];
+    currentImplementation = method_getImplementation(class_getInstanceMethod([TestViewController class], @selector(presentViewController:animated:completion:)));
+    XCTAssertEqual(currentImplementation, realImplementation, @"The method should no longer be swizzled");
+}
+
+#pragma mark - View controller dismissal
+
+- (void)testAuditingOfDismissViewControllerMethod {
+    realImplementation = method_getImplementation(class_getInstanceMethod([TestViewController class], @selector(dismissViewControllerAnimated:completion:)));
+    [LTTViewControllerAuditor auditDismissViewControllerMethod:controller forward:YES];
+    currentImplementation = method_getImplementation(class_getInstanceMethod([TestViewController class], @selector(dismissViewControllerAnimated:completion:)));
+    XCTAssertNotEqual(currentImplementation, realImplementation, @"The method should be swizzled");
+    __block BOOL completionCalled = NO;
+    leech_completion_block_t completion = ^{
+        completionCalled = YES;
+    };
+    [controller dismissViewControllerAnimated:YES completion:completion];
+    XCTAssertTrue([LTTViewControllerAuditor dismissViewControllerAnimatedFlag:controller], @"The animated flag should have been audited");
+    leech_completion_block_t capturedBlock = [LTTViewControllerAuditor dismissViewControllerCompletionBlock:controller];
+    XCTAssertEqualObjects(capturedBlock, completion, @"The completion block should be captured");
+    capturedBlock();
+    XCTAssertTrue(completionCalled, @"The completion handler should be the same");
+    [LTTViewControllerAuditor stopAuditingDismissViewControllerMethod:controller];
+    currentImplementation = method_getImplementation(class_getInstanceMethod([TestViewController class], @selector(dismissViewControllerAnimated:completion:)));
+    XCTAssertEqual(currentImplementation, realImplementation, @"The method should no longer be swizzled");
+}
+
 @end

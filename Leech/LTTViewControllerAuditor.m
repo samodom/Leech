@@ -25,6 +25,14 @@ const char *ShouldForwardViewDidDisappearCall = "ShouldForwardViewDidDisappearCa
 const char *ViewDidDisappearCalled = "ViewDidDisappearCalled";
 const char *ViewDidDisappearAnimatedFlag = "ViewDidDisappearAnimatedFlag";
 
+const char *ShouldForwardPresentViewControllerCall = "ShouldForwardPresentViewControllerCall";
+const char *ViewControllerToPresent = "ViewControllerToPresent";
+const char *PresentViewControllerAnimatedFlag = "PresentViewControllerAnimatedFlag";
+const char *PresentViewControllerCompletionBlock = "PresentViewControllerCompletionBlock";
+const char *ShouldForwardDismissViewControllerCall = "ShouldForwardDismissViewControllerCall";
+const char *DismissViewControllerAnimatedFlag = "DismissViewControllerAnimatedFlag";
+const char *DismissViewControllerCompletionBlock = "DismissViewControllerCompletionBlock";
+
 ////////////////////////////////////////////////////////////////////////////////
 //  Category on UIViewController
 ////////////////////////////////////////////////////////////////////////////////
@@ -70,6 +78,25 @@ const char *ViewDidDisappearAnimatedFlag = "ViewDidDisappearAnimatedFlag";
     NSNumber *forward = objc_getAssociatedObject([LTTViewControllerAuditor class], ShouldForwardViewDidDisappearCall);
     if (forward.boolValue)
         [self Leech_ViewDidDisappear:animated];
+}
+
+#pragma mark - Present/dismiss view controller methods
+
+- (void)Leech_PresentViewController:(UIViewController *)viewControllerToPresent animated:(BOOL)flag completion:(leech_completion_block_t)completion {
+    objc_setAssociatedObject(self, ViewControllerToPresent, viewControllerToPresent, OBJC_ASSOCIATION_RETAIN);
+    objc_setAssociatedObject(self, PresentViewControllerAnimatedFlag, @(flag), OBJC_ASSOCIATION_RETAIN);
+    objc_setAssociatedObject(self, PresentViewControllerCompletionBlock, completion, OBJC_ASSOCIATION_RETAIN);
+    NSNumber *forward = objc_getAssociatedObject(self, ShouldForwardPresentViewControllerCall);
+    if (forward.boolValue)
+        [self Leech_PresentViewController:viewControllerToPresent animated:flag completion:completion];
+}
+
+- (void)Leech_DismissViewControllerAnimated:(BOOL)flag completion:(leech_completion_block_t)completion {
+    objc_setAssociatedObject(self, DismissViewControllerAnimatedFlag, @(flag), OBJC_ASSOCIATION_RETAIN);
+    objc_setAssociatedObject(self, DismissViewControllerCompletionBlock, completion, OBJC_ASSOCIATION_RETAIN);
+    NSNumber *forward = objc_getAssociatedObject(self, ShouldForwardDismissViewControllerCall);
+    if (forward.boolValue)
+        [self Leech_DismissViewControllerAnimated:flag completion:completion];
 }
 
 @end
@@ -194,6 +221,55 @@ const char *ViewDidDisappearAnimatedFlag = "ViewDidDisappearAnimatedFlag";
 + (BOOL)viewDidDisappearAnimatedFlag {
     NSNumber *value = objc_getAssociatedObject(self, ViewDidDisappearAnimatedFlag);
     return value.boolValue;
+}
+
+#pragma mark - Present/dismiss view controller methods
+
+#pragma mark -presentViewController:animated:completion:
+
++ (void)auditPresentViewControllerMethod:(UIViewController *)viewController forward:(BOOL)forward {
+    [LTTMethodSwizzler swapInstanceMethodsForClass:[viewController class] selectorOne:@selector(presentViewController:animated:completion:) selectorTwo:@selector(Leech_PresentViewController:animated:completion:)];
+}
+
++ (void)stopAuditingPresentViewControllerMethod:(UIViewController *)auditedController {
+    objc_setAssociatedObject(auditedController, ViewControllerToPresent, nil, OBJC_ASSOCIATION_ASSIGN);
+    objc_setAssociatedObject(auditedController, PresentViewControllerAnimatedFlag, nil, OBJC_ASSOCIATION_ASSIGN);
+    objc_setAssociatedObject(auditedController, PresentViewControllerCompletionBlock, nil, OBJC_ASSOCIATION_ASSIGN);
+    [LTTMethodSwizzler swapInstanceMethodsForClass:[auditedController class] selectorOne:@selector(presentViewController:animated:completion:) selectorTwo:@selector(Leech_PresentViewController:animated:completion:)];
+}
+
++ (UIViewController *)viewControllerToPresent:(UIViewController *)auditedController {
+    return objc_getAssociatedObject(auditedController, ViewControllerToPresent);
+}
+
++ (BOOL)presentViewControllerAnimatedFlag:(UIViewController *)auditedController {
+    NSNumber *boxedFlag = objc_getAssociatedObject(auditedController, PresentViewControllerAnimatedFlag);
+    return boxedFlag.boolValue;
+}
+
++ (leech_completion_block_t)presentViewControllerCompletionBlock:(UIViewController *)auditedController {
+    return objc_getAssociatedObject(auditedController, PresentViewControllerCompletionBlock);
+}
+
+#pragma mark -dismissViewControllerAnimated:completion:
+
++ (void)auditDismissViewControllerMethod:(UIViewController*)viewController forward:(BOOL)forward {
+    [LTTMethodSwizzler swapInstanceMethodsForClass:[viewController class] selectorOne:@selector(dismissViewControllerAnimated:completion:) selectorTwo:@selector(Leech_DismissViewControllerAnimated:completion:)];
+}
+
++ (void)stopAuditingDismissViewControllerMethod:(UIViewController *)auditedController {
+    objc_setAssociatedObject(auditedController, DismissViewControllerAnimatedFlag, nil, OBJC_ASSOCIATION_ASSIGN);
+    objc_setAssociatedObject(auditedController, DismissViewControllerCompletionBlock, nil, OBJC_ASSOCIATION_ASSIGN);
+    [LTTMethodSwizzler swapInstanceMethodsForClass:[auditedController class] selectorOne:@selector(dismissViewControllerAnimated:completion:) selectorTwo:@selector(Leech_DismissViewControllerAnimated:completion:)];
+}
+
++ (BOOL)dismissViewControllerAnimatedFlag:(UIViewController *)auditedController {
+    NSNumber *boxedFlag = objc_getAssociatedObject(auditedController, DismissViewControllerAnimatedFlag);
+    return boxedFlag.boolValue;
+}
+
++ (leech_completion_block_t)dismissViewControllerCompletionBlock:(UIViewController *)auditedController {
+    return objc_getAssociatedObject(auditedController, DismissViewControllerCompletionBlock);
 }
 
 @end

@@ -6,6 +6,8 @@
 //  Copyright (c) 2014 Swagger Soft. All rights reserved.
 //
 
+typedef void(^leech_completion_block_t)(void);
+
 @interface LTTViewControllerAuditor : NSObject
 
 #pragma mark - View
@@ -43,5 +45,22 @@
 + (void)stopAuditingViewDidDisappearMethod;
 + (BOOL)didCallSuperViewDidDisappear;
 + (BOOL)viewDidDisappearAnimatedFlag;
+
+#pragma mark - Present/Dismiss view controller
+
+#pragma mark -presentViewController:animated:completion:
+
++ (void)auditPresentViewControllerMethod:(UIViewController*)viewController forward:(BOOL)forward;
++ (void)stopAuditingPresentViewControllerMethod:(UIViewController*)auditedController;
++ (UIViewController*)viewControllerToPresent:(UIViewController*)auditedController;
++ (BOOL)presentViewControllerAnimatedFlag:(UIViewController*)auditedController;
++ (leech_completion_block_t)presentViewControllerCompletionBlock:(UIViewController*)auditedController;
+
+#pragma mark -dismissViewControllerAnimated:completion:
+
++ (void)auditDismissViewControllerMethod:(UIViewController*)viewController forward:(BOOL)forward;
++ (void)stopAuditingDismissViewControllerMethod:(UIViewController*)auditedController;
++ (BOOL)dismissViewControllerAnimatedFlag:(UIViewController*)auditedController;
++ (leech_completion_block_t)dismissViewControllerCompletionBlock:(UIViewController*)auditedController;
 
 @end
