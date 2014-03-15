@@ -21,6 +21,7 @@
 #import "LTTViewControllerAuditor.h"
 #import "LTTLayoutConstraintChecker.h"
 #import "LTTMockTextField.h"
+#import "LTTNavigationControllerAuditor.h"
 
 
 #endif
