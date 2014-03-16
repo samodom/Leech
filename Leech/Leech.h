@@ -23,6 +23,9 @@
 #import "LTTMockTextField.h"
 #import "LTTNavigationControllerAuditor.h"
 #import "LTTTableViewAuditor.h"
+#import "LTTMockMapView.h"
+#import "LTTMockUserLocation.h"
+#import "LTTMapViewAuditor.h"
 
 
 #endif
