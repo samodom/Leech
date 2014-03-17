@@ -165,4 +165,19 @@ const char *MockNotificationCenterTestingHandlerCalled = "MockNotificationCenter
     XCTAssertEqualObjects(NSStringFromSelector(entry.selector), NSStringFromSelector(@selector(handler)), @"Entry should have correct selector");
 }
 
+#pragma mark - Default center replacement
+
+- (void)testCenterReplacesDefaultCenter {
+    IMP realImplementation = method_getImplementation(class_getClassMethod([NSNotificationCenter class], @selector(defaultCenter)));
+    NSNotificationCenter *defaultCenter = [NSNotificationCenter defaultCenter];
+    [LTTMockNotificationCenter replaceDefaultCenter:center];
+    IMP currentImplementation = method_getImplementation(class_getClassMethod([NSNotificationCenter class], @selector(defaultCenter)));
+    XCTAssertNotEqual(currentImplementation, realImplementation, @"The method should be swizzled");
+    XCTAssertEqualObjects((LTTMockNotificationCenter*)[NSNotificationCenter defaultCenter], center, @"The default notification center should be replaced with the mock");
+    [LTTMockNotificationCenter restoreDefaultCenter];
+    currentImplementation = method_getImplementation(class_getClassMethod([NSNotificationCenter class], @selector(defaultCenter)));
+    XCTAssertEqual(currentImplementation, realImplementation, @"The method should no longer be swizzled");
+    XCTAssertEqualObjects([NSNotificationCenter defaultCenter], defaultCenter, @"The default center should be restored");
+}
+
 @end

@@ -12,6 +12,9 @@
 
 @interface LTTMockNotificationCenter : NSObject
 
++ (void)replaceDefaultCenter:(LTTMockNotificationCenter*)mockCenter;
++ (void)restoreDefaultCenter;
+
 - (void)addObserver:(id)notificationObserver selector:(SEL)notificationSelector name:(NSString *)notificationName object:(id)notificationSender;
 - (id)addObserverForName:(NSString *)notificationName object:(id)notificationSender queue:(NSOperationQueue *)queue usingBlock:(handler_block_t)handlerBlock;
 
@@ -30,5 +33,6 @@
 - (NSNotification*)notification:(NSString*)name fromObject:(id)object;
 
 - (LTTFakeNotificationDispatchEntry*)dispatchEntryForObserver:(id)observer name:(NSString*)notificationName object:(id)publisher;
+
 
 @end

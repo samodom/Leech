@@ -8,9 +8,41 @@
 
 #import "LTTMockNotificationCenter.h"
 
+#import "LTTMethodSwizzler.h"
+
+const char *ReplacementDefaultCenter = "ReplacementDefaultCenter";
+
+////////////////////////////////////////////////////////////////////////////////
+//  Category on NSNotificationCenter
+////////////////////////////////////////////////////////////////////////////////
+
+@implementation NSNotificationCenter (Leech)
+
++ (instancetype)Leech_DefaultCenter {
+    return objc_getAssociatedObject([NSNotificationCenter class], ReplacementDefaultCenter);
+}
+
+@end
+
+////////////////////////////////////////////////////////////////////////////////
+//  Mock Notification Center implementation
+////////////////////////////////////////////////////////////////////////////////
+
 @implementation LTTMockNotificationCenter {
     NSMutableSet *dispatchTable;
     NSMutableSet *receivedNotifications;
+}
+
+#pragma mark - Default Center replacement
+
++ (void)replaceDefaultCenter:(LTTMockNotificationCenter *)mockCenter {
+    [LTTMethodSwizzler swapClassMethodsForClass:[NSNotificationCenter class] selectorOne:@selector(defaultCenter) selectorTwo:@selector(Leech_DefaultCenter)];
+    objc_setAssociatedObject([NSNotificationCenter class], ReplacementDefaultCenter, mockCenter, OBJC_ASSOCIATION_RETAIN);
+}
+
++ (void)restoreDefaultCenter {
+    objc_setAssociatedObject([NSNotificationCenter class], ReplacementDefaultCenter, nil, OBJC_ASSOCIATION_ASSIGN);
+    [LTTMethodSwizzler swapClassMethodsForClass:[NSNotificationCenter class] selectorOne:@selector(defaultCenter) selectorTwo:@selector(Leech_DefaultCenter)];
 }
 
 #pragma mark - Dispatch Entry
