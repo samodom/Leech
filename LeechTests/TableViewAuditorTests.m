@@ -35,45 +35,45 @@
 }
 
 - (void)testAuditingOfReloadDataMethod {
-    IMP realImplementation = method_getImplementation(class_getInstanceMethod([tableView class], @selector(reloadData)));
+    IMP realImplementation = class_getMethodImplementation([tableView class], @selector(reloadData));
     [LTTTableViewAuditor auditReloadDataMethod:tableView forward:YES];
-    IMP currentImplementation = method_getImplementation(class_getInstanceMethod([tableView class], @selector(reloadData)));
+    IMP currentImplementation = class_getMethodImplementation([tableView class], @selector(reloadData));
     XCTAssertNotEqual(currentImplementation, realImplementation, @"The method should be swizzled");
     [tableView reloadData];
     XCTAssertTrue([LTTTableViewAuditor didCallReloadData:tableView], @"The call to reload data should be captured");
     [LTTTableViewAuditor stopAuditingReloadDataMethod:tableView];
-    currentImplementation = method_getImplementation(class_getInstanceMethod([tableView class], @selector(reloadData)));
+    currentImplementation = class_getMethodImplementation([tableView class], @selector(reloadData));
     XCTAssertEqual(currentImplementation, realImplementation, @"The method should no longer be swizzled");
 }
 
 - (void)testAuditingOfBeginUpdatesMethod {
-    IMP realImplementation = method_getImplementation(class_getInstanceMethod([tableView class], @selector(beginUpdates)));
+    IMP realImplementation = class_getMethodImplementation([tableView class], @selector(beginUpdates));
     [LTTTableViewAuditor auditBeginUpdatesMethod:tableView forward:YES];
-    IMP currentImplementation = method_getImplementation(class_getInstanceMethod([tableView class], @selector(beginUpdates)));
+    IMP currentImplementation = class_getMethodImplementation([tableView class], @selector(beginUpdates));
     XCTAssertNotEqual(currentImplementation, realImplementation, @"The method should be swizzled");
     [tableView beginUpdates];
     XCTAssertTrue([LTTTableViewAuditor didCallBeginUpdates:tableView], @"The call to begin updates should be captured");
     [LTTTableViewAuditor stopAuditingBeginUpdatesMethod:tableView];
-    currentImplementation = method_getImplementation(class_getInstanceMethod([tableView class], @selector(beginUpdates)));
+    currentImplementation = class_getMethodImplementation([tableView class], @selector(beginUpdates));
     XCTAssertEqual(currentImplementation, realImplementation, @"The method should no longer be swizzled");
 }
 
 - (void)testAuditingOfEndUpdatesMethod {
-    IMP realImplementation = method_getImplementation(class_getInstanceMethod([tableView class], @selector(endUpdates)));
+    IMP realImplementation = class_getMethodImplementation([tableView class], @selector(endUpdates));
     [LTTTableViewAuditor auditEndUpdatesMethod:tableView forward:YES];
-    IMP currentImplementation = method_getImplementation(class_getInstanceMethod([tableView class], @selector(endUpdates)));
+    IMP currentImplementation = class_getMethodImplementation([tableView class], @selector(endUpdates));
     XCTAssertNotEqual(currentImplementation, realImplementation, @"The method should be swizzled");
     [tableView endUpdates];
     XCTAssertTrue([LTTTableViewAuditor didCallEndUpdates:tableView], @"The call to end updates should be captured");
     [LTTTableViewAuditor stopAuditingEndUpdatesMethod:tableView];
-    currentImplementation = method_getImplementation(class_getInstanceMethod([tableView class], @selector(endUpdates)));
+    currentImplementation = class_getMethodImplementation([tableView class], @selector(endUpdates));
     XCTAssertEqual(currentImplementation, realImplementation, @"The method should no longer be swizzled");
 }
 
 - (void)testAuditingOfInsertSectionsMethod {
-    IMP realImplementation = method_getImplementation(class_getInstanceMethod([tableView class], @selector(insertSections:withRowAnimation:)));
+    IMP realImplementation = class_getMethodImplementation([tableView class], @selector(insertSections:withRowAnimation:));
     [LTTTableViewAuditor auditInsertSectionsMethod:tableView forward:YES];
-    IMP currentImplementation = method_getImplementation(class_getInstanceMethod([tableView class], @selector(insertSections:withRowAnimation:)));
+    IMP currentImplementation = class_getMethodImplementation([tableView class], @selector(insertSections:withRowAnimation:));
     XCTAssertNotEqual(currentImplementation, realImplementation, @"The method should be swizzled");
     NSMutableIndexSet *indexSet = [NSMutableIndexSet indexSet];
     [indexSet addIndex:0];
@@ -83,14 +83,14 @@
     XCTAssertEqualObjects(auditedIndexSet, indexSet, @"The index set should be captured");
     XCTAssertEqual([LTTTableViewAuditor insertSectionsRowAnimation:tableView], UITableViewRowAnimationFade, @"The row animation should be captured");
     [LTTTableViewAuditor stopAuditingInsertSectionsMethod:tableView];
-    currentImplementation = method_getImplementation(class_getInstanceMethod([tableView class], @selector(insertSections:withRowAnimation:)));
+    currentImplementation = class_getMethodImplementation([tableView class], @selector(insertSections:withRowAnimation:));
     XCTAssertEqual(currentImplementation, realImplementation, @"The method should no longer be swizzled");
 }
 
 - (void)testAuditingOfDeleteSectionsMethod {
-    IMP realImplementation = method_getImplementation(class_getInstanceMethod([tableView class], @selector(deleteSections:withRowAnimation:)));
+    IMP realImplementation = class_getMethodImplementation([tableView class], @selector(deleteSections:withRowAnimation:));
     [LTTTableViewAuditor auditDeleteSectionsMethod:tableView forward:YES];
-    IMP currentImplementation = method_getImplementation(class_getInstanceMethod([tableView class], @selector(deleteSections:withRowAnimation:)));
+    IMP currentImplementation = class_getMethodImplementation([tableView class], @selector(deleteSections:withRowAnimation:));
     XCTAssertNotEqual(currentImplementation, realImplementation, @"The method should be swizzled");
     NSMutableIndexSet *indexSet = [NSMutableIndexSet indexSet];
     [indexSet addIndex:0];
@@ -100,14 +100,14 @@
     XCTAssertEqualObjects(auditedIndexSet, indexSet, @"The index set should be captured");
     XCTAssertEqual([LTTTableViewAuditor deleteSectionsRowAnimation:tableView], UITableViewRowAnimationFade, @"The row animation should be captured");
     [LTTTableViewAuditor stopAuditingDeleteSectionsMethod:tableView];
-    currentImplementation = method_getImplementation(class_getInstanceMethod([tableView class], @selector(deleteSections:withRowAnimation:)));
+    currentImplementation = class_getMethodImplementation([tableView class], @selector(deleteSections:withRowAnimation:));
     XCTAssertEqual(currentImplementation, realImplementation, @"The method should no longer be swizzled");
 }
 
 - (void)testAuditingOfReloadSectionsMethod {
-    IMP realImplementation = method_getImplementation(class_getInstanceMethod([tableView class], @selector(reloadSections:withRowAnimation:)));
+    IMP realImplementation = class_getMethodImplementation([tableView class], @selector(reloadSections:withRowAnimation:));
     [LTTTableViewAuditor auditReloadSectionsMethod:tableView forward:YES];
-    IMP currentImplementation = method_getImplementation(class_getInstanceMethod([tableView class], @selector(reloadSections:withRowAnimation:)));
+    IMP currentImplementation = class_getMethodImplementation([tableView class], @selector(reloadSections:withRowAnimation:));
     XCTAssertNotEqual(currentImplementation, realImplementation, @"The method should be swizzled");
     NSMutableIndexSet *indexSet = [NSMutableIndexSet indexSet];
     [indexSet addIndex:0];
@@ -117,14 +117,14 @@
     XCTAssertEqualObjects(auditedIndexSet, indexSet, @"The index set should be captured");
     XCTAssertEqual([LTTTableViewAuditor reloadSectionsRowAnimation:tableView], UITableViewRowAnimationFade, @"The row animation should be captured");
     [LTTTableViewAuditor stopAuditingReloadSectionsMethod:tableView];
-    currentImplementation = method_getImplementation(class_getInstanceMethod([tableView class], @selector(reloadSections:withRowAnimation:)));
+    currentImplementation = class_getMethodImplementation([tableView class], @selector(reloadSections:withRowAnimation:));
     XCTAssertEqual(currentImplementation, realImplementation, @"The method should no longer be swizzled");
 }
 
 - (void)testAuditingOfInsertRowsMethod {
-    IMP realImplementation = method_getImplementation(class_getInstanceMethod([tableView class], @selector(insertRowsAtIndexPaths:withRowAnimation:)));
+    IMP realImplementation = class_getMethodImplementation([tableView class], @selector(insertRowsAtIndexPaths:withRowAnimation:));
     [LTTTableViewAuditor auditInsertRowsMethod:tableView forward:YES];
-    IMP currentImplementation = method_getImplementation(class_getInstanceMethod([tableView class], @selector(insertRowsAtIndexPaths:withRowAnimation:)));
+    IMP currentImplementation = class_getMethodImplementation([tableView class], @selector(insertRowsAtIndexPaths:withRowAnimation:));
     XCTAssertNotEqual(currentImplementation, realImplementation, @"The method should be swizzled");
     NSArray *indexPaths = @[[NSIndexPath indexPathForRow:0 inSection:0], [NSIndexPath indexPathForRow:1 inSection:1]];
     [tableView insertRowsAtIndexPaths:indexPaths withRowAnimation:UITableViewRowAnimationFade];
@@ -132,14 +132,14 @@
     XCTAssertEqualObjects(auditedIndexPaths, indexPaths, @"The index paths should be captured");
     XCTAssertEqual([LTTTableViewAuditor insertRowsRowAnimation:tableView], UITableViewRowAnimationFade, @"The row animation should be captured");
     [LTTTableViewAuditor stopAuditingInsertRowsMethod:tableView];
-    currentImplementation = method_getImplementation(class_getInstanceMethod([tableView class], @selector(insertRowsAtIndexPaths:withRowAnimation:)));
+    currentImplementation = class_getMethodImplementation([tableView class], @selector(insertRowsAtIndexPaths:withRowAnimation:));
     XCTAssertEqual(currentImplementation, realImplementation, @"The method should no longer be swizzled");
 }
 
 - (void)testAuditingOfDeleteRowsMethod {
-    IMP realImplementation = method_getImplementation(class_getInstanceMethod([tableView class], @selector(deleteRowsAtIndexPaths:withRowAnimation:)));
+    IMP realImplementation = class_getMethodImplementation([tableView class], @selector(deleteRowsAtIndexPaths:withRowAnimation:));
     [LTTTableViewAuditor auditDeleteRowsMethod:tableView forward:YES];
-    IMP currentImplementation = method_getImplementation(class_getInstanceMethod([tableView class], @selector(deleteRowsAtIndexPaths:withRowAnimation:)));
+    IMP currentImplementation = class_getMethodImplementation([tableView class], @selector(deleteRowsAtIndexPaths:withRowAnimation:));
     XCTAssertNotEqual(currentImplementation, realImplementation, @"The method should be swizzled");
     NSArray *indexPaths = @[[NSIndexPath indexPathForRow:0 inSection:0], [NSIndexPath indexPathForRow:1 inSection:1]];
     [tableView deleteRowsAtIndexPaths:indexPaths withRowAnimation:UITableViewRowAnimationFade];
@@ -147,14 +147,14 @@
     XCTAssertEqualObjects(auditedIndexPaths, indexPaths, @"The index paths should be captured");
     XCTAssertEqual([LTTTableViewAuditor deleteRowsRowAnimation:tableView], UITableViewRowAnimationFade, @"The row animation should be captured");
     [LTTTableViewAuditor stopAuditingDeleteRowsMethod:tableView];
-    currentImplementation = method_getImplementation(class_getInstanceMethod([tableView class], @selector(deleteRowsAtIndexPaths:withRowAnimation:)));
+    currentImplementation = class_getMethodImplementation([tableView class], @selector(deleteRowsAtIndexPaths:withRowAnimation:));
     XCTAssertEqual(currentImplementation, realImplementation, @"The method should no longer be swizzled");
 }
 
 - (void)testAuditingOfMoveRowMethod {
-    IMP realImplementation = method_getImplementation(class_getInstanceMethod([tableView class], @selector(moveRowAtIndexPath:toIndexPath:)));
+    IMP realImplementation = class_getMethodImplementation([tableView class], @selector(moveRowAtIndexPath:toIndexPath:));
     [LTTTableViewAuditor auditMoveRowMethod:tableView forward:YES];
-    IMP currentImplementation = method_getImplementation(class_getInstanceMethod([tableView class], @selector(moveRowAtIndexPath:toIndexPath:)));
+    IMP currentImplementation = class_getMethodImplementation([tableView class], @selector(moveRowAtIndexPath:toIndexPath:));
     XCTAssertNotEqual(currentImplementation, realImplementation, @"The method should be swizzled");
     NSIndexPath *fromPath = [NSIndexPath indexPathForRow:0 inSection:0];
     NSIndexPath *toPath = [NSIndexPath indexPathForRow:1 inSection:1];
@@ -164,14 +164,14 @@
     NSIndexPath *destinationPath = [LTTTableViewAuditor moveRowDestinationIndexPath:tableView];
     XCTAssertEqualObjects(destinationPath, toPath, @"The destination index path should be captured");
     [LTTTableViewAuditor stopAuditingMoveRowMethod:tableView];
-    currentImplementation = method_getImplementation(class_getInstanceMethod([tableView class], @selector(moveRowAtIndexPath:toIndexPath:)));
+    currentImplementation = class_getMethodImplementation([tableView class], @selector(moveRowAtIndexPath:toIndexPath:));
     XCTAssertEqual(currentImplementation, realImplementation, @"The method should no longer be swizzled");
 }
 
 - (void)testAuditingOfReloadRowsMethod {
-    IMP realImplementation = method_getImplementation(class_getInstanceMethod([tableView class], @selector(reloadRowsAtIndexPaths:withRowAnimation:)));
+    IMP realImplementation = class_getMethodImplementation([tableView class], @selector(reloadRowsAtIndexPaths:withRowAnimation:));
     [LTTTableViewAuditor auditReloadRowsMethod:tableView forward:YES];
-    IMP currentImplementation = method_getImplementation(class_getInstanceMethod([tableView class], @selector(reloadRowsAtIndexPaths:withRowAnimation:)));
+    IMP currentImplementation = class_getMethodImplementation([tableView class], @selector(reloadRowsAtIndexPaths:withRowAnimation:));
     XCTAssertNotEqual(currentImplementation, realImplementation, @"The method should be swizzled");
     NSArray *indexPaths = @[[NSIndexPath indexPathForRow:0 inSection:0], [NSIndexPath indexPathForRow:1 inSection:1]];
     [tableView reloadRowsAtIndexPaths:indexPaths withRowAnimation:UITableViewRowAnimationFade];
@@ -179,7 +179,7 @@
     XCTAssertEqualObjects(auditedIndexPaths, indexPaths, @"The index paths should be captured");
     XCTAssertEqual([LTTTableViewAuditor reloadRowsRowAnimation:tableView], UITableViewRowAnimationFade, @"The row animation should be captured");
     [LTTTableViewAuditor stopAuditingReloadRowsMethod:tableView];
-    currentImplementation = method_getImplementation(class_getInstanceMethod([tableView class], @selector(reloadRowsAtIndexPaths:withRowAnimation:)));
+    currentImplementation = class_getMethodImplementation([tableView class], @selector(reloadRowsAtIndexPaths:withRowAnimation:));
     XCTAssertEqual(currentImplementation, realImplementation, @"The method should no longer be swizzled");
 }
 
