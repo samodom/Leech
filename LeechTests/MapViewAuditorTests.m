@@ -49,4 +49,18 @@
     XCTAssertEqual(currentImplementation, realImplementation, @"The method should no longer be swizzled");
 }
 
+- (void)testAuditingOfSelectAnnotationMethod {
+    id<MKAnnotation> annotation = [TestMapAnnotation new];
+    IMP realImplementation = method_getImplementation(class_getInstanceMethod([mapView class], @selector(selectAnnotation:animated:)));
+    [LTTMapViewAuditor auditSelectAnnotationMethod:mapView forward:YES];
+    IMP currentImplementation = method_getImplementation(class_getInstanceMethod([mapView class], @selector(selectAnnotation:animated:)));
+    XCTAssertNotEqual(currentImplementation, realImplementation, @"The method should be swizzled");
+    [mapView selectAnnotation:annotation animated:YES];
+    XCTAssertEqualObjects([LTTMapViewAuditor annotationToSelect:mapView], annotation, @"The annotation to select should be captured");
+    XCTAssertTrue([LTTMapViewAuditor selectAnnotationAnimatedFlag:mapView], @"The animated flag should have been audited");
+    [LTTMapViewAuditor stopAuditingSelectAnnotationMethod:mapView];
+    currentImplementation = method_getImplementation(class_getInstanceMethod([mapView class], @selector(selectAnnotation:animated:)));
+    XCTAssertEqual(currentImplementation, realImplementation, @"The method should no longer be swizzled");
+}
+
 @end
