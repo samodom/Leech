@@ -26,6 +26,7 @@
 #import "LTTMockMapView.h"
 #import "LTTMockUserLocation.h"
 #import "LTTMapViewAuditor.h"
+#import "LTTBarButtonItemAuditor.h"
 
 
 #endif

@@ -70,6 +70,10 @@
 		0ACA5E2418D5512F0052F2CD /* LTTMapViewAuditor.m in Sources */ = {isa = PBXBuildFile; fileRef = 0ACA5E2218D5512F0052F2CD /* LTTMapViewAuditor.m */; };
 		0ACA5E2518D551FD0052F2CD /* LTTMapViewAuditor.h in Copy Files */ = {isa = PBXBuildFile; fileRef = 0ACA5E2118D5512F0052F2CD /* LTTMapViewAuditor.h */; };
 		0ACA5E2818D5561D0052F2CD /* TestMapAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 0ACA5E2718D5561D0052F2CD /* TestMapAnnotation.m */; };
+		0ACA5E3618D58A280052F2CD /* BarButtonItemAuditorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0ACA5E3518D58A280052F2CD /* BarButtonItemAuditorTests.m */; };
+		0ACA5E3918D58A650052F2CD /* LTTBarButtonItemAuditor.m in Sources */ = {isa = PBXBuildFile; fileRef = 0ACA5E3818D58A650052F2CD /* LTTBarButtonItemAuditor.m */; };
+		0ACA5E3A18D58A650052F2CD /* LTTBarButtonItemAuditor.m in Sources */ = {isa = PBXBuildFile; fileRef = 0ACA5E3818D58A650052F2CD /* LTTBarButtonItemAuditor.m */; };
+		0ACA5E3B18D61A850052F2CD /* LTTBarButtonItemAuditor.h in Copy Files */ = {isa = PBXBuildFile; fileRef = 0ACA5E3718D58A650052F2CD /* LTTBarButtonItemAuditor.h */; };
 		0AED669018C93BB200D3DFE5 /* LayoutConstraintTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AED668F18C93BB200D3DFE5 /* LayoutConstraintTests.m */; };
 		0AED7A1818D3950D009C6E1B /* NavigationControllerAuditorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AED7A1718D3950D009C6E1B /* NavigationControllerAuditorTests.m */; };
 		0AED7A1B18D3955E009C6E1B /* LTTNavigationControllerAuditor.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AED7A1A18D3955E009C6E1B /* LTTNavigationControllerAuditor.m */; };
@@ -106,6 +110,7 @@
 			dstPath = "include/$(PRODUCT_NAME)";
 			dstSubfolderSpec = 16;
 			files = (
+				0ACA5E3B18D61A850052F2CD /* LTTBarButtonItemAuditor.h in Copy Files */,
 				0ACA5E2518D551FD0052F2CD /* LTTMapViewAuditor.h in Copy Files */,
 				0AED7A3218D50167009C6E1B /* LTTMockUserLocation.h in Copy Files */,
 				0AED7A2B18D4FF2C009C6E1B /* LTTMockMapView.h in Copy Files */,
@@ -187,6 +192,9 @@
 		0ACA5E2218D5512F0052F2CD /* LTTMapViewAuditor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LTTMapViewAuditor.m; sourceTree = "<group>"; };
 		0ACA5E2618D5561D0052F2CD /* TestMapAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestMapAnnotation.h; sourceTree = "<group>"; };
 		0ACA5E2718D5561D0052F2CD /* TestMapAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestMapAnnotation.m; sourceTree = "<group>"; };
+		0ACA5E3518D58A280052F2CD /* BarButtonItemAuditorTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BarButtonItemAuditorTests.m; sourceTree = "<group>"; };
+		0ACA5E3718D58A650052F2CD /* LTTBarButtonItemAuditor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTTBarButtonItemAuditor.h; sourceTree = "<group>"; };
+		0ACA5E3818D58A650052F2CD /* LTTBarButtonItemAuditor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LTTBarButtonItemAuditor.m; sourceTree = "<group>"; };
 		0AED668F18C93BB200D3DFE5 /* LayoutConstraintTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LayoutConstraintTests.m; sourceTree = "<group>"; };
 		0AED7A1718D3950D009C6E1B /* NavigationControllerAuditorTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NavigationControllerAuditorTests.m; sourceTree = "<group>"; };
 		0AED7A1918D3955E009C6E1B /* LTTNavigationControllerAuditor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTTNavigationControllerAuditor.h; sourceTree = "<group>"; };
@@ -260,6 +268,8 @@
 			isa = PBXGroup;
 			children = (
 				0AC33AAE18BD0DA100D3F342 /* Leech.h */,
+				0ACA5E3718D58A650052F2CD /* LTTBarButtonItemAuditor.h */,
+				0ACA5E3818D58A650052F2CD /* LTTBarButtonItemAuditor.m */,
 				0ABD4CCB18C6AF69003BDD76 /* LTTCoreDataAuditor.h */,
 				0ABD4CCC18C6AF69003BDD76 /* LTTCoreDataAuditor.m */,
 				0A77CA9F18BABCE3005230B0 /* LTTFakeNotificationDispatchEntry.h */,
@@ -330,6 +340,7 @@
 		0A77CA8518B942EF005230B0 /* Test Classes */ = {
 			isa = PBXGroup;
 			children = (
+				0ACA5E3518D58A280052F2CD /* BarButtonItemAuditorTests.m */,
 				0ABD4CC918C6AEFB003BDD76 /* CoreDataAuditorTests.m */,
 				0AED668F18C93BB200D3DFE5 /* LayoutConstraintTests.m */,
 				0ACA5E1F18D551070052F2CD /* MapViewAuditorTests.m */,
@@ -479,6 +490,7 @@
 				0AC33AD318BDC5DB00D3F342 /* LTTMockURLDataTask.m in Sources */,
 				0AED7A1B18D3955E009C6E1B /* LTTNavigationControllerAuditor.m in Sources */,
 				0A77CA9B18BABC89005230B0 /* LTTMockNotificationCenter.m in Sources */,
+				0ACA5E3918D58A650052F2CD /* LTTBarButtonItemAuditor.m in Sources */,
 				0ACA5E2318D5512F0052F2CD /* LTTMapViewAuditor.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -512,6 +524,7 @@
 				0AED7A1818D3950D009C6E1B /* NavigationControllerAuditorTests.m in Sources */,
 				0AC33AD018BDC58500D3F342 /* MockURLDataTaskTests.m in Sources */,
 				0AA51B7418C06F2100A63B92 /* LTTSampleFileLoader.m in Sources */,
+				0ACA5E3A18D58A650052F2CD /* LTTBarButtonItemAuditor.m in Sources */,
 				0A77CA9518BAA17B005230B0 /* TestViewController.m in Sources */,
 				0AA51B8918C409F800A63B92 /* TimeFreezerTests.m in Sources */,
 				0AA51B9118C40ABA00A63B92 /* LTTTimeFreezer.m in Sources */,
@@ -520,6 +533,7 @@
 				0AA51B7618C06F3D00A63B92 /* SampleFileLoaderTests.m in Sources */,
 				0AC33ACA18BDC3C700D3F342 /* MockURLSessionTests.m in Sources */,
 				0AED7A1C18D3955E009C6E1B /* LTTNavigationControllerAuditor.m in Sources */,
+				0ACA5E3618D58A280052F2CD /* BarButtonItemAuditorTests.m in Sources */,
 				0AED669018C93BB200D3DFE5 /* LayoutConstraintTests.m in Sources */,
 				0ACA5E2418D5512F0052F2CD /* LTTMapViewAuditor.m in Sources */,
 			);
