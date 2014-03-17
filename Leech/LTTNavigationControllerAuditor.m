@@ -28,15 +28,16 @@ const char *PushViewControllerAnimatedFlag = "PushViewControllerAnimatedFlag";
 
 @implementation LTTNavigationControllerAuditor
 
-+ (void)auditPushViewControllerMethod:(BOOL)forward {
-    [LTTMethodSwizzler swapInstanceMethodsForClass:[UINavigationController class] selectorOne:@selector(pushViewController:animated:) selectorTwo:@selector(Leech_PushViewController:animated:)];
++ (void)auditPushViewControllerMethod:(UINavigationController *)navController forward:(BOOL)forward {
+    objc_setAssociatedObject(navController, ForwardPushViewControllerCall, @(forward), OBJC_ASSOCIATION_RETAIN);
+    [LTTMethodSwizzler swapInstanceMethodsForClass:[navController class] selectorOne:@selector(pushViewController:animated:) selectorTwo:@selector(Leech_PushViewController:animated:)];
 }
 
 + (void)stopAuditingPushViewControllerMethod:(UINavigationController *)auditedController {
     objc_setAssociatedObject(auditedController, ForwardPushViewControllerCall, nil, OBJC_ASSOCIATION_ASSIGN);
     objc_setAssociatedObject(auditedController, ViewControllerToPush, nil, OBJC_ASSOCIATION_ASSIGN);
     objc_setAssociatedObject(auditedController, PushViewControllerAnimatedFlag, nil, OBJC_ASSOCIATION_ASSIGN);
-    [LTTMethodSwizzler swapInstanceMethodsForClass:[UINavigationController class] selectorOne:@selector(pushViewController:animated:) selectorTwo:@selector(Leech_PushViewController:animated:)];
+    [LTTMethodSwizzler swapInstanceMethodsForClass:[auditedController class] selectorOne:@selector(pushViewController:animated:) selectorTwo:@selector(Leech_PushViewController:animated:)];
 }
 
 + (UIViewController *)viewControllerToPush:(UINavigationController *)auditedController {

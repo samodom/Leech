@@ -12,7 +12,7 @@
 
 #pragma mark - Push view controller
 
-+ (void)auditPushViewControllerMethod:(BOOL)forward;
++ (void)auditPushViewControllerMethod:(UINavigationController*)navController forward:(BOOL)forward;
 + (void)stopAuditingPushViewControllerMethod:(UINavigationController*)auditedController;
 + (UIViewController*)viewControllerToPush:(UINavigationController*)auditedController;
 + (BOOL)pushViewControllerAnimatedFlag:(UINavigationController*)auditedController;

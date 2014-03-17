@@ -37,16 +37,16 @@
 #pragma mark - Pushing view controller
 
 - (void)testAuditingOfPushViewControllerMethod {
-    IMP realImplementation = method_getImplementation(class_getInstanceMethod([UINavigationController class], @selector(pushViewController:animated:)));
-    [LTTNavigationControllerAuditor auditPushViewControllerMethod:YES];
-    IMP currentImplementation = method_getImplementation(class_getInstanceMethod([UINavigationController class], @selector(pushViewController:animated:)));
+    IMP realImplementation = class_getMethodImplementation([navController class], @selector(pushViewController:animated:));
+    [LTTNavigationControllerAuditor auditPushViewControllerMethod:navController forward:YES];
+    IMP currentImplementation = class_getMethodImplementation([navController class], @selector(pushViewController:animated:));
     XCTAssertNotEqual(currentImplementation, realImplementation, @"The method should be swizzled");
     UIViewController *sampleController = [UIViewController new];
     [navController pushViewController:sampleController animated:YES];
     XCTAssertEqualObjects([LTTNavigationControllerAuditor viewControllerToPush:navController], sampleController, @"The view controller to push should be captured");
     XCTAssertTrue([LTTNavigationControllerAuditor pushViewControllerAnimatedFlag:navController], @"The animated flag should have been audited");
     [LTTNavigationControllerAuditor stopAuditingPushViewControllerMethod:navController];
-    currentImplementation = method_getImplementation(class_getInstanceMethod([UINavigationController class], @selector(pushViewController:animated:)));
+    currentImplementation = class_getMethodImplementation([navController class], @selector(pushViewController:animated:));
     XCTAssertEqual(currentImplementation, realImplementation, @"The method should no longer be swizzled");
 }
 
