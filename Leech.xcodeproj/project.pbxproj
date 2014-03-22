@@ -15,6 +15,10 @@
 		0A72943918DB9C40008A1E71 /* LTTViewAuditor.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A72943718DB9C40008A1E71 /* LTTViewAuditor.m */; };
 		0A72943C18DB9D7D008A1E71 /* TestView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A72943B18DB9D7D008A1E71 /* TestView.m */; };
 		0A72943D18DBA0ED008A1E71 /* LTTViewAuditor.h in Copy Files */ = {isa = PBXBuildFile; fileRef = 0A72943618DB9C40008A1E71 /* LTTViewAuditor.h */; };
+		0A72944C18DCF43F008A1E71 /* LTTActionSheetAuditor.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A72944B18DCF43F008A1E71 /* LTTActionSheetAuditor.m */; };
+		0A72944D18DCF43F008A1E71 /* LTTActionSheetAuditor.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A72944B18DCF43F008A1E71 /* LTTActionSheetAuditor.m */; };
+		0A72944F18DCF44D008A1E71 /* ActionSheetAuditorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A72944E18DCF44D008A1E71 /* ActionSheetAuditorTests.m */; };
+		0A72945218DCF5B5008A1E71 /* FakeActionSheetDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A72945118DCF5B5008A1E71 /* FakeActionSheetDelegate.m */; };
 		0A77CA5C18B94045005230B0 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A77CA5B18B94045005230B0 /* Foundation.framework */; };
 		0A77CA6A18B94045005230B0 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A77CA6918B94045005230B0 /* XCTest.framework */; };
 		0A77CA6B18B94045005230B0 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A77CA5B18B94045005230B0 /* Foundation.framework */; };
@@ -70,6 +74,7 @@
 		0AC33AD418BDC5DB00D3F342 /* LTTMockURLDataTask.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AC33AD218BDC5DB00D3F342 /* LTTMockURLDataTask.m */; };
 		0AC33AD518BDC7D400D3F342 /* LTTMockURLDataTask.h in Copy Files */ = {isa = PBXBuildFile; fileRef = 0AC33AD118BDC5DB00D3F342 /* LTTMockURLDataTask.h */; };
 		0AC33AD618BDCCA400D3F342 /* LTTMockURLSession.h in Copy Files */ = {isa = PBXBuildFile; fileRef = 0AC33ACB18BDC41000D3F342 /* LTTMockURLSession.h */; };
+		0AC71E7218DD090E00C0AAF9 /* LTTActionSheetAuditor.h in Copy Files */ = {isa = PBXBuildFile; fileRef = 0A72944A18DCF43F008A1E71 /* LTTActionSheetAuditor.h */; };
 		0ACA5E2018D551070052F2CD /* MapViewAuditorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0ACA5E1F18D551070052F2CD /* MapViewAuditorTests.m */; };
 		0ACA5E2318D5512F0052F2CD /* LTTMapViewAuditor.m in Sources */ = {isa = PBXBuildFile; fileRef = 0ACA5E2218D5512F0052F2CD /* LTTMapViewAuditor.m */; };
 		0ACA5E2418D5512F0052F2CD /* LTTMapViewAuditor.m in Sources */ = {isa = PBXBuildFile; fileRef = 0ACA5E2218D5512F0052F2CD /* LTTMapViewAuditor.m */; };
@@ -115,6 +120,7 @@
 			dstPath = "include/$(PRODUCT_NAME)";
 			dstSubfolderSpec = 16;
 			files = (
+				0AC71E7218DD090E00C0AAF9 /* LTTActionSheetAuditor.h in Copy Files */,
 				0A72943D18DBA0ED008A1E71 /* LTTViewAuditor.h in Copy Files */,
 				0ACA5E3B18D61A850052F2CD /* LTTBarButtonItemAuditor.h in Copy Files */,
 				0ACA5E2518D551FD0052F2CD /* LTTMapViewAuditor.h in Copy Files */,
@@ -149,6 +155,11 @@
 		0A72943718DB9C40008A1E71 /* LTTViewAuditor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LTTViewAuditor.m; sourceTree = "<group>"; };
 		0A72943A18DB9D7D008A1E71 /* TestView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestView.h; sourceTree = "<group>"; };
 		0A72943B18DB9D7D008A1E71 /* TestView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestView.m; sourceTree = "<group>"; };
+		0A72944A18DCF43F008A1E71 /* LTTActionSheetAuditor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTTActionSheetAuditor.h; sourceTree = "<group>"; };
+		0A72944B18DCF43F008A1E71 /* LTTActionSheetAuditor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LTTActionSheetAuditor.m; sourceTree = "<group>"; };
+		0A72944E18DCF44D008A1E71 /* ActionSheetAuditorTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActionSheetAuditorTests.m; sourceTree = "<group>"; };
+		0A72945018DCF5B5008A1E71 /* FakeActionSheetDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FakeActionSheetDelegate.h; sourceTree = "<group>"; };
+		0A72945118DCF5B5008A1E71 /* FakeActionSheetDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FakeActionSheetDelegate.m; sourceTree = "<group>"; };
 		0A77CA5818B94045005230B0 /* libLeech.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libLeech.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		0A77CA5B18B94045005230B0 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		0A77CA5F18B94045005230B0 /* Leech-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Leech-Prefix.pch"; sourceTree = "<group>"; };
@@ -279,6 +290,8 @@
 			isa = PBXGroup;
 			children = (
 				0AC33AAE18BD0DA100D3F342 /* Leech.h */,
+				0A72944A18DCF43F008A1E71 /* LTTActionSheetAuditor.h */,
+				0A72944B18DCF43F008A1E71 /* LTTActionSheetAuditor.m */,
 				0ACA5E3718D58A650052F2CD /* LTTBarButtonItemAuditor.h */,
 				0ACA5E3818D58A650052F2CD /* LTTBarButtonItemAuditor.m */,
 				0ABD4CCB18C6AF69003BDD76 /* LTTCoreDataAuditor.h */,
@@ -353,6 +366,7 @@
 		0A77CA8518B942EF005230B0 /* Test Classes */ = {
 			isa = PBXGroup;
 			children = (
+				0A72944E18DCF44D008A1E71 /* ActionSheetAuditorTests.m */,
 				0ACA5E3518D58A280052F2CD /* BarButtonItemAuditorTests.m */,
 				0ABD4CC918C6AEFB003BDD76 /* CoreDataAuditorTests.m */,
 				0AED668F18C93BB200D3DFE5 /* LayoutConstraintTests.m */,
@@ -378,6 +392,8 @@
 		0A77CA9618BAA180005230B0 /* Mocks+ */ = {
 			isa = PBXGroup;
 			children = (
+				0A72945018DCF5B5008A1E71 /* FakeActionSheetDelegate.h */,
+				0A72945118DCF5B5008A1E71 /* FakeActionSheetDelegate.m */,
 				0ACA5E2618D5561D0052F2CD /* TestMapAnnotation.h */,
 				0ACA5E2718D5561D0052F2CD /* TestMapAnnotation.m */,
 				0A72943A18DB9D7D008A1E71 /* TestView.h */,
@@ -495,6 +511,7 @@
 				0A72943818DB9C40008A1E71 /* LTTViewAuditor.m in Sources */,
 				0A77CA9118BAA05C005230B0 /* LTTViewControllerAuditor.m in Sources */,
 				0A77CA8818B94398005230B0 /* LTTMethodSwizzler.m in Sources */,
+				0A72944C18DCF43F008A1E71 /* LTTActionSheetAuditor.m in Sources */,
 				0AED7A3018D5015A009C6E1B /* LTTMockUserLocation.m in Sources */,
 				0AC0E33518D24DBC0078C01B /* LTTMockTextField.m in Sources */,
 				0AC33ACD18BDC41000D3F342 /* LTTMockURLSession.m in Sources */,
@@ -518,6 +535,7 @@
 			files = (
 				0AED7A2618D4FD21009C6E1B /* MockMapViewTests.m in Sources */,
 				0A77CA9218BAA05C005230B0 /* LTTViewControllerAuditor.m in Sources */,
+				0A72944D18DCF43F008A1E71 /* LTTActionSheetAuditor.m in Sources */,
 				0A77CA8418B942EA005230B0 /* MethodSwizzlerTests.m in Sources */,
 				0A72943918DB9C40008A1E71 /* LTTViewAuditor.m in Sources */,
 				0A77CAA218BABCE3005230B0 /* LTTFakeNotificationDispatchEntry.m in Sources */,
@@ -526,6 +544,7 @@
 				0ACA5E2818D5561D0052F2CD /* TestMapAnnotation.m in Sources */,
 				0AC33ACE18BDC41000D3F342 /* LTTMockURLSession.m in Sources */,
 				0AC0E33618D24DBC0078C01B /* LTTMockTextField.m in Sources */,
+				0A72945218DCF5B5008A1E71 /* FakeActionSheetDelegate.m in Sources */,
 				0A77CA8E18BA9EB5005230B0 /* ViewControllerAuditorTests.m in Sources */,
 				0A369FD118C9409B008611E5 /* LTTLayoutConstraintChecker.m in Sources */,
 				0AED7A2A18D4FD3E009C6E1B /* LTTMockMapView.m in Sources */,
@@ -541,6 +560,7 @@
 				0A77CA8918B94398005230B0 /* LTTMethodSwizzler.m in Sources */,
 				0AED7A1818D3950D009C6E1B /* NavigationControllerAuditorTests.m in Sources */,
 				0AC33AD018BDC58500D3F342 /* MockURLDataTaskTests.m in Sources */,
+				0A72944F18DCF44D008A1E71 /* ActionSheetAuditorTests.m in Sources */,
 				0AA51B7418C06F2100A63B92 /* LTTSampleFileLoader.m in Sources */,
 				0ACA5E3A18D58A650052F2CD /* LTTBarButtonItemAuditor.m in Sources */,
 				0A77CA9518BAA17B005230B0 /* TestViewController.m in Sources */,
