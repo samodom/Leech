@@ -228,10 +228,12 @@ const char *DismissViewControllerCompletionBlock = "DismissViewControllerComplet
 #pragma mark -presentViewController:animated:completion:
 
 + (void)auditPresentViewControllerMethod:(UIViewController *)viewController forward:(BOOL)forward {
+    objc_setAssociatedObject(viewController, ShouldForwardPresentViewControllerCall, @(forward), OBJC_ASSOCIATION_RETAIN);
     [LTTMethodSwizzler swapInstanceMethodsForClass:[viewController class] selectorOne:@selector(presentViewController:animated:completion:) selectorTwo:@selector(Leech_PresentViewController:animated:completion:)];
 }
 
 + (void)stopAuditingPresentViewControllerMethod:(UIViewController *)auditedController {
+    objc_setAssociatedObject(auditedController, ShouldForwardPresentViewControllerCall, nil, OBJC_ASSOCIATION_ASSIGN);
     objc_setAssociatedObject(auditedController, ViewControllerToPresent, nil, OBJC_ASSOCIATION_ASSIGN);
     objc_setAssociatedObject(auditedController, PresentViewControllerAnimatedFlag, nil, OBJC_ASSOCIATION_ASSIGN);
     objc_setAssociatedObject(auditedController, PresentViewControllerCompletionBlock, nil, OBJC_ASSOCIATION_ASSIGN);
@@ -254,10 +256,12 @@ const char *DismissViewControllerCompletionBlock = "DismissViewControllerComplet
 #pragma mark -dismissViewControllerAnimated:completion:
 
 + (void)auditDismissViewControllerMethod:(UIViewController*)viewController forward:(BOOL)forward {
+    objc_setAssociatedObject(viewController, ShouldForwardDismissViewControllerCall, @(forward), OBJC_ASSOCIATION_RETAIN);
     [LTTMethodSwizzler swapInstanceMethodsForClass:[viewController class] selectorOne:@selector(dismissViewControllerAnimated:completion:) selectorTwo:@selector(Leech_DismissViewControllerAnimated:completion:)];
 }
 
 + (void)stopAuditingDismissViewControllerMethod:(UIViewController *)auditedController {
+    objc_setAssociatedObject(auditedController, ShouldForwardDismissViewControllerCall, nil, OBJC_ASSOCIATION_RETAIN);
     objc_setAssociatedObject(auditedController, DismissViewControllerAnimatedFlag, nil, OBJC_ASSOCIATION_ASSIGN);
     objc_setAssociatedObject(auditedController, DismissViewControllerCompletionBlock, nil, OBJC_ASSOCIATION_ASSIGN);
     [LTTMethodSwizzler swapInstanceMethodsForClass:[auditedController class] selectorOne:@selector(dismissViewControllerAnimated:completion:) selectorTwo:@selector(Leech_DismissViewControllerAnimated:completion:)];
