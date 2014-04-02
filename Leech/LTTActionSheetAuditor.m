@@ -11,11 +11,11 @@
 #import "LTTMethodSwizzler.h"
 
 const char *InitializedActionSheet = "InitializedActionSheet";
-const char *InitializationTitle = "InitializationTitle";
-const char *InitializationDelegate = "InitializationDelegate";
-const char *InitializationCancelTitle = "InitializationCancelTitle";
-const char *InitializationDestructTitle = "InitializationDestructTitle";
-const char *InitializationOtherTitles = "InitializationOtherTitles";
+const char *InitializationActionSheetTitle = "InitializationActionSheetTitle";
+const char *InitializationActionSheetDelegate = "InitializationActionSheetDelegate";
+const char *InitializationActionSheetCancelTitle = "InitializationActionSheetCancelTitle";
+const char *InitializationActionSheetDestructTitle = "InitializationActionSheetDestructTitle";
+const char *InitializationActionSheetOtherTitles = "InitializationActionSheetOtherTitles";
 
 const char *ActionSheetToShow = "ActionSheetToShow";
 const char *TabBarToShowFrom = "TabBarToShowFrom";
@@ -27,10 +27,10 @@ const char *TabBarToShowFrom = "TabBarToShowFrom";
 @implementation UIActionSheet (Leech)
 
 - (id)initLeechWithTitle:(NSString *)title delegate:(id<UIActionSheetDelegate>)delegate cancelButtonTitle:(NSString *)cancelButtonTitle destructiveButtonTitle:(NSString *)destructiveButtonTitle otherButtonTitles:(NSString *)otherButtonTitles, ... NS_REQUIRES_NIL_TERMINATION {
-    objc_setAssociatedObject([LTTActionSheetAuditor class], InitializationTitle, title, OBJC_ASSOCIATION_RETAIN);
-    objc_setAssociatedObject([LTTActionSheetAuditor class], InitializationDelegate, delegate, OBJC_ASSOCIATION_RETAIN);
-    objc_setAssociatedObject([LTTActionSheetAuditor class], InitializationCancelTitle, cancelButtonTitle, OBJC_ASSOCIATION_RETAIN);
-    objc_setAssociatedObject([LTTActionSheetAuditor class], InitializationDestructTitle, destructiveButtonTitle, OBJC_ASSOCIATION_RETAIN);
+    objc_setAssociatedObject([LTTActionSheetAuditor class], InitializationActionSheetTitle, title, OBJC_ASSOCIATION_RETAIN);
+    objc_setAssociatedObject([LTTActionSheetAuditor class], InitializationActionSheetDelegate, delegate, OBJC_ASSOCIATION_RETAIN);
+    objc_setAssociatedObject([LTTActionSheetAuditor class], InitializationActionSheetCancelTitle, cancelButtonTitle, OBJC_ASSOCIATION_RETAIN);
+    objc_setAssociatedObject([LTTActionSheetAuditor class], InitializationActionSheetDestructTitle, destructiveButtonTitle, OBJC_ASSOCIATION_RETAIN);
 
     if (otherButtonTitles) {
         va_list arguments;
@@ -40,7 +40,7 @@ const char *TabBarToShowFrom = "TabBarToShowFrom";
         while ((tempTitle = va_arg(arguments, id)) != nil)
             [titles addObject:tempTitle];
         va_end(arguments);
-        objc_setAssociatedObject([LTTActionSheetAuditor class], InitializationOtherTitles, [NSArray arrayWithArray:titles], OBJC_ASSOCIATION_RETAIN);
+        objc_setAssociatedObject([LTTActionSheetAuditor class], InitializationActionSheetOtherTitles, [NSArray arrayWithArray:titles], OBJC_ASSOCIATION_RETAIN);
     }
 
     objc_setAssociatedObject([LTTActionSheetAuditor class], InitializedActionSheet, self, OBJC_ASSOCIATION_RETAIN);
@@ -69,11 +69,11 @@ const char *TabBarToShowFrom = "TabBarToShowFrom";
 
 + (void)stopAuditingInitWithTitleDelegateButtonTitlesMethod {
     objc_setAssociatedObject(self, InitializedActionSheet, nil, OBJC_ASSOCIATION_ASSIGN);
-    objc_setAssociatedObject(self, InitializationTitle, nil, OBJC_ASSOCIATION_ASSIGN);
-    objc_setAssociatedObject(self, InitializationDelegate, nil, OBJC_ASSOCIATION_ASSIGN);
-    objc_setAssociatedObject(self, InitializationCancelTitle, nil, OBJC_ASSOCIATION_ASSIGN);
-    objc_setAssociatedObject(self, InitializationDestructTitle, nil, OBJC_ASSOCIATION_ASSIGN);
-    objc_setAssociatedObject(self, InitializationOtherTitles, nil, OBJC_ASSOCIATION_ASSIGN);
+    objc_setAssociatedObject(self, InitializationActionSheetTitle, nil, OBJC_ASSOCIATION_ASSIGN);
+    objc_setAssociatedObject(self, InitializationActionSheetDelegate, nil, OBJC_ASSOCIATION_ASSIGN);
+    objc_setAssociatedObject(self, InitializationActionSheetCancelTitle, nil, OBJC_ASSOCIATION_ASSIGN);
+    objc_setAssociatedObject(self, InitializationActionSheetDestructTitle, nil, OBJC_ASSOCIATION_ASSIGN);
+    objc_setAssociatedObject(self, InitializationActionSheetOtherTitles, nil, OBJC_ASSOCIATION_ASSIGN);
     [LTTMethodSwizzler swapInstanceMethodsForClass:[UIActionSheet class] selectorOne:@selector(initWithTitle:delegate:cancelButtonTitle:destructiveButtonTitle:otherButtonTitles:) selectorTwo:@selector(initLeechWithTitle:delegate:cancelButtonTitle:destructiveButtonTitle:otherButtonTitles:)];
 }
 
@@ -82,23 +82,23 @@ const char *TabBarToShowFrom = "TabBarToShowFrom";
 }
 
 + (NSString *)initializationTitle {
-    return objc_getAssociatedObject(self, InitializationTitle);
+    return objc_getAssociatedObject(self, InitializationActionSheetTitle);
 }
 
 + (id<UIActionSheetDelegate>)initializationDelegate {
-    return objc_getAssociatedObject(self, InitializationDelegate);
+    return objc_getAssociatedObject(self, InitializationActionSheetDelegate);
 }
 
 + (NSString *)initializationCancelTitle {
-    return objc_getAssociatedObject(self, InitializationCancelTitle);
+    return objc_getAssociatedObject(self, InitializationActionSheetCancelTitle);
 }
 
 + (NSString *)initializationDestructTitle {
-    return objc_getAssociatedObject(self, InitializationDestructTitle);
+    return objc_getAssociatedObject(self, InitializationActionSheetDestructTitle);
 }
 
 + (NSArray *)initializationOtherTitles {
-    return objc_getAssociatedObject(self, InitializationOtherTitles);
+    return objc_getAssociatedObject(self, InitializationActionSheetOtherTitles);
 }
 
 #pragma mark -show

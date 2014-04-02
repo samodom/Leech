@@ -29,6 +29,7 @@
 #import "LTTBarButtonItemAuditor.h"
 #import "LTTViewAuditor.h"
 #import "LTTActionSheetAuditor.h"
+#import "LTTAlertViewAuditor.h"
 
 
 #endif
