@@ -10,11 +10,17 @@
 
 @interface LTTNavigationControllerAuditor : NSObject
 
-#pragma mark - Push view controller
+#pragma mark -pushViewController:animated:
 
 + (void)auditPushViewControllerMethod:(UINavigationController*)navController forward:(BOOL)forward;
 + (void)stopAuditingPushViewControllerMethod:(UINavigationController*)auditedController;
 + (UIViewController*)viewControllerToPush:(UINavigationController*)auditedController;
 + (BOOL)pushViewControllerAnimatedFlag:(UINavigationController*)auditedController;
+
+#pragma mark -popViewControllerAnimated:
+
++ (void)auditPopViewControllerMethod:(UINavigationController*)navController forward:(BOOL)forward;
++ (void)stopAuditingPopViewControllerMethod:(UINavigationController*)auditedController;
++ (BOOL)popViewControllerAnimatedFlag:(UINavigationController*)auditedController;
 
 @end

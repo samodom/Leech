@@ -50,4 +50,18 @@
     XCTAssertEqual(currentImplementation, realImplementation, @"The method should no longer be swizzled");
 }
 
+#pragma mark - Popping view controller
+
+- (void)testAuditingOfPopViewControllerMethod {
+    IMP realImplementation = class_getMethodImplementation([navController class], @selector(popViewControllerAnimated:));
+    [LTTNavigationControllerAuditor auditPopViewControllerMethod:navController forward:YES];
+    IMP currentImplementation = class_getMethodImplementation([navController class], @selector(popViewControllerAnimated:));
+    XCTAssertNotEqual(currentImplementation, realImplementation, @"The method should be swizzled");
+    [navController popViewControllerAnimated:YES];
+    XCTAssertTrue([LTTNavigationControllerAuditor popViewControllerAnimatedFlag:navController], @"The animated flag should have been audited");
+    [LTTNavigationControllerAuditor stopAuditingPopViewControllerMethod:navController];
+    currentImplementation = class_getMethodImplementation([navController class], @selector(popViewControllerAnimated:));
+    XCTAssertEqual(currentImplementation, realImplementation, @"The method should no longer be swizzled");
+}
+
 @end
