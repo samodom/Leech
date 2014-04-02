@@ -30,6 +30,7 @@
 #import "LTTViewAuditor.h"
 #import "LTTActionSheetAuditor.h"
 #import "LTTAlertViewAuditor.h"
+#import "LTTObjectAuditor.h"
 
 
 #endif
