@@ -82,6 +82,7 @@
 		0AC33AD418BDC5DB00D3F342 /* LTTMockURLDataTask.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AC33AD218BDC5DB00D3F342 /* LTTMockURLDataTask.m */; };
 		0AC33AD518BDC7D400D3F342 /* LTTMockURLDataTask.h in Copy Files */ = {isa = PBXBuildFile; fileRef = 0AC33AD118BDC5DB00D3F342 /* LTTMockURLDataTask.h */; };
 		0AC33AD618BDCCA400D3F342 /* LTTMockURLSession.h in Copy Files */ = {isa = PBXBuildFile; fileRef = 0AC33ACB18BDC41000D3F342 /* LTTMockURLSession.h */; };
+		0AC6222718F1F14000E9D289 /* LTTObjectAuditor.h in Copy Files */ = {isa = PBXBuildFile; fileRef = 0A6D23DB18EB91B500D705E2 /* LTTObjectAuditor.h */; };
 		0AC71E7218DD090E00C0AAF9 /* LTTActionSheetAuditor.h in Copy Files */ = {isa = PBXBuildFile; fileRef = 0A72944A18DCF43F008A1E71 /* LTTActionSheetAuditor.h */; };
 		0ACA5E2018D551070052F2CD /* MapViewAuditorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0ACA5E1F18D551070052F2CD /* MapViewAuditorTests.m */; };
 		0ACA5E2318D5512F0052F2CD /* LTTMapViewAuditor.m in Sources */ = {isa = PBXBuildFile; fileRef = 0ACA5E2218D5512F0052F2CD /* LTTMapViewAuditor.m */; };
@@ -128,6 +129,7 @@
 			dstPath = "include/$(PRODUCT_NAME)";
 			dstSubfolderSpec = 16;
 			files = (
+				0AC6222718F1F14000E9D289 /* LTTObjectAuditor.h in Copy Files */,
 				0A6D23E118EC84B600D705E2 /* LTTAlertViewAuditor.h in Copy Files */,
 				0AC71E7218DD090E00C0AAF9 /* LTTActionSheetAuditor.h in Copy Files */,
 				0A72943D18DBA0ED008A1E71 /* LTTViewAuditor.h in Copy Files */,
