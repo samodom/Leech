@@ -8,9 +8,19 @@
 
 #import <Foundation/Foundation.h>
 
+/**
+ Mock object representing a UITextField
+ */
 @interface LTTMockTextField : NSObject
 
+/**
+ @return BOOL value indicating whether or not the text field was asked to assume first responder status
+ */
 - (BOOL)wasAskedToBecomeFirstResponder;
+
+/**
+ @return BOOL value indicating whether or not the text field was asked to resign first responder status
+ */
 - (BOOL)wasAskedToResignFirstResponder;
 
 @end
