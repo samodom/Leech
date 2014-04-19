@@ -10,8 +10,12 @@
 
 @class CLLocation;
 
+/**
+ Mock object representing an MKUserLocation
+ */
 @interface LTTMockUserLocation : NSObject
 
+/** Represents the Core Location location object for this user location object */
 @property (strong) CLLocation *location;
 
 @end
