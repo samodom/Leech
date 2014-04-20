@@ -44,7 +44,7 @@
 /**
  Loads a given JSON file and returns the parsed contents as a dictionary
  
- @param fileName The name of the sample file without its extension
+ @param jsonFileName The name of the sample file without its extension
  
  @return NSDictionary representing the parsed contents of the file
  */
@@ -53,7 +53,7 @@
 /**
  Loads a given JSON file and returns the parsed contents as an array
  
- @param fileName The name of the sample file without its extension
+ @param jsonFileName The name of the sample file without its extension
  
  @return NSArray representing the parsed contents of the file
  */
