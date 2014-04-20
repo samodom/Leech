@@ -58,6 +58,7 @@
     IMP currentImplementation = class_getMethodImplementation([navController class], @selector(popViewControllerAnimated:));
     XCTAssertNotEqual(currentImplementation, realImplementation, @"The method should be swizzled");
     [navController popViewControllerAnimated:YES];
+    XCTAssertTrue([LTTNavigationControllerAuditor didPopViewController:navController], @"The stack pop should be captured");
     XCTAssertTrue([LTTNavigationControllerAuditor popViewControllerAnimatedFlag:navController], @"The animated flag should have been audited");
     [LTTNavigationControllerAuditor stopAuditingPopViewControllerMethod:navController];
     currentImplementation = class_getMethodImplementation([navController class], @selector(popViewControllerAnimated:));

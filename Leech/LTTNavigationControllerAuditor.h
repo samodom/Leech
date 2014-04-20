@@ -21,6 +21,7 @@
 
 + (void)auditPopViewControllerMethod:(UINavigationController*)navController forward:(BOOL)forward;
 + (void)stopAuditingPopViewControllerMethod:(UINavigationController*)auditedController;
++ (BOOL)didPopViewController:(UINavigationController*)auditedController;
 + (BOOL)popViewControllerAnimatedFlag:(UINavigationController*)auditedController;
 
 @end

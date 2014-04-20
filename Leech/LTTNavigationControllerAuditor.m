@@ -15,6 +15,7 @@ const char *ViewControllerToPush = "ViewControllerToPush";
 const char *PushViewControllerAnimatedFlag = "PushViewControllerAnimatedFlag";
 
 const char *ForwardPopViewControllerCall = "ForwardPopViewControllerCall";
+const char *DidPopViewController = "DidPopViewController";
 const char *PopViewControllerAnimatedFlag = "PopViewControllerAnimatedFlag";
 
 @implementation UINavigationController (Leech)
@@ -28,6 +29,7 @@ const char *PopViewControllerAnimatedFlag = "PopViewControllerAnimatedFlag";
 }
 
 - (void)Leech_PopViewControllerAnimated:(BOOL)animated {
+    objc_setAssociatedObject(self, DidPopViewController, @(YES), OBJC_ASSOCIATION_RETAIN);
     objc_setAssociatedObject(self, PopViewControllerAnimatedFlag, @(animated), OBJC_ASSOCIATION_RETAIN);
     NSNumber *forward = objc_getAssociatedObject(self, ForwardPopViewControllerCall);
     if (forward.boolValue)
@@ -70,8 +72,14 @@ const char *PopViewControllerAnimatedFlag = "PopViewControllerAnimatedFlag";
 
 + (void)stopAuditingPopViewControllerMethod:(UINavigationController *)auditedController {
     objc_setAssociatedObject(auditedController, ForwardPopViewControllerCall, nil, OBJC_ASSOCIATION_ASSIGN);
+    objc_setAssociatedObject(auditedController, DidPopViewController, nil, OBJC_ASSOCIATION_ASSIGN);
     objc_setAssociatedObject(auditedController, PopViewControllerAnimatedFlag, nil, OBJC_ASSOCIATION_ASSIGN);
     [LTTMethodSwizzler swapInstanceMethodsForClass:[auditedController class] selectorOne:@selector(popViewControllerAnimated:) selectorTwo:@selector(Leech_PopViewControllerAnimated:)];
+}
+
++ (BOOL)didPopViewController:(UINavigationController *)auditedController {
+    NSNumber *popped = objc_getAssociatedObject(auditedController, DidPopViewController);
+    return popped.boolValue;
 }
 
 + (BOOL)popViewControllerAnimatedFlag:(UINavigationController *)auditedController {
