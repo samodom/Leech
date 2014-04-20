@@ -72,6 +72,7 @@
 /**
  Ends auditing of navigation controller push method and clears captured data
  
+ @param auditedController UINavigationController that is being audited
  */
 + (void)stopAuditingPushViewControllerMethod:(UINavigationController*)auditedController;
 
