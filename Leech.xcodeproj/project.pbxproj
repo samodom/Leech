@@ -6,6 +6,20 @@
 	objectVersion = 46;
 	objects = {
 
+/* Begin PBXAggregateTarget section */
+		0AD1EE1A1901CD4300F8DB69 /* Documentation */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = 0AD1EE1D1901CD4300F8DB69 /* Build configuration list for PBXAggregateTarget "Documentation" */;
+			buildPhases = (
+				0AD1EE1E1901CD5400F8DB69 /* Run Appledoc */,
+			);
+			dependencies = (
+			);
+			name = Documentation;
+			productName = Documentation;
+		};
+/* End PBXAggregateTarget section */
+
 /* Begin PBXBuildFile section */
 		0A369FD018C9409B008611E5 /* LTTLayoutConstraintChecker.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A369FCF18C9409B008611E5 /* LTTLayoutConstraintChecker.m */; };
 		0A369FD118C9409B008611E5 /* LTTLayoutConstraintChecker.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A369FCF18C9409B008611E5 /* LTTLayoutConstraintChecker.m */; };
@@ -581,6 +595,7 @@
 			targets = (
 				0A77CA5718B94045005230B0 /* Leech */,
 				0A77CA6718B94045005230B0 /* LeechTests */,
+				0AD1EE1A1901CD4300F8DB69 /* Documentation */,
 			);
 		};
 /* End PBXProject section */
@@ -599,6 +614,23 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		0AD1EE1E1901CD5400F8DB69 /* Run Appledoc */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Run Appledoc";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "#appledoc Xcode script\n# Start constants\ncompany=\"SwaggerSoft\";\ncompanyID=\"com.samodom\";\ntarget=\"iphoneos\";\n#target=\"macosx\";\noutputPath=\"~/help\";\n# End constants\n/usr/local/bin/appledoc \\\n--verbose 5 \\\n--project-name \"${PROJECT_NAME}\" \\\n--project-company \"${company}\" \\\n--company-id \"${companyID}\" \\\n--output \"${outputPath}\" \\\n--docset-platform-family \"${target}\" \\\n--logformat xcode \\\n--keep-intermediate-files \\\n--no-repeat-first-par \\\n--no-warn-invalid-crossref \\\n--ignore .m \\\n\"${PROJECT_DIR}\"";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		0A77CA5418B94045005230B0 /* Sources */ = {
@@ -843,6 +875,20 @@
 			};
 			name = Release;
 		};
+		0AD1EE1B1901CD4300F8DB69 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		0AD1EE1C1901CD4300F8DB69 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -872,6 +918,14 @@
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
+		};
+		0AD1EE1D1901CD4300F8DB69 /* Build configuration list for PBXAggregateTarget "Documentation" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0AD1EE1B1901CD4300F8DB69 /* Debug */,
+				0AD1EE1C1901CD4300F8DB69 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
 	};
