@@ -10,14 +10,18 @@
 #import <MapKit/MapKit.h>
 
 /**
- Mock object representing a UIMapView
+ Mock object representing an MKMapView
  */
 @interface LTTMockMapView : NSObject
 
-/** Represents a user-specified location instead of relying on the actual location services */
+/** 
+ Represents a user-specified location instead of relying on the actual location services 
+ */
 @property (strong) MKUserLocation *userLocation;
 
-/** Represents a user-specified region of the map */
+/** 
+ Represents a user-specified region of the map
+ */
 @property MKCoordinateRegion region;
 
 @end

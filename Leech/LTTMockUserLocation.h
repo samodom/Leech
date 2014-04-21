@@ -15,7 +15,7 @@
  */
 @interface LTTMockUserLocation : NSObject
 
-/** Represents the Core Location location object for this user location object */
+/** Represents the CLLocation object for this object */
 @property (strong) CLLocation *location;
 
 @end

@@ -1,5 +1,5 @@
 //
-//  MockUserLocation.m
+//  MockUserLocationTests.m
 //  Leech
 //
 //  Created by Sam Odom on 3/15/14.
@@ -15,11 +15,11 @@
 //  Production
 #import "LTTMockUserLocation.h"
 
-@interface MockUserLocation : XCTestCase
+@interface MockUserLocationTests : XCTestCase
 
 @end
 
-@implementation MockUserLocation {
+@implementation MockUserLocationTests {
     LTTMockUserLocation *userLocation;
 }
 
