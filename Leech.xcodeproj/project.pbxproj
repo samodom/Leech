@@ -127,6 +127,7 @@
 		0AF15C231907234C0068EC2C /* LocationManagerAuditorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AF15C221907234C0068EC2C /* LocationManagerAuditorTests.m */; };
 		0AF15C261907236E0068EC2C /* LTTLocationManagerAuditor.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AF15C251907236E0068EC2C /* LTTLocationManagerAuditor.m */; };
 		0AF15C271907236E0068EC2C /* LTTLocationManagerAuditor.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AF15C251907236E0068EC2C /* LTTLocationManagerAuditor.m */; };
+		0AF15C2819072D220068EC2C /* LTTLocationManagerAuditor.h in Copy Files */ = {isa = PBXBuildFile; fileRef = 0AF15C241907236E0068EC2C /* LTTLocationManagerAuditor.h */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -146,6 +147,7 @@
 			dstPath = "include/$(PRODUCT_NAME)";
 			dstSubfolderSpec = 16;
 			files = (
+				0AF15C2819072D220068EC2C /* LTTLocationManagerAuditor.h in Copy Files */,
 				0AC6222718F1F14000E9D289 /* LTTObjectAuditor.h in Copy Files */,
 				0A6D23E118EC84B600D705E2 /* LTTAlertViewAuditor.h in Copy Files */,
 				0AC71E7218DD090E00C0AAF9 /* LTTActionSheetAuditor.h in Copy Files */,

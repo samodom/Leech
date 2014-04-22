@@ -31,6 +31,7 @@
 #import "LTTActionSheetAuditor.h"
 #import "LTTAlertViewAuditor.h"
 #import "LTTObjectAuditor.h"
+#import "LTTLocationManagerAuditor.h"
 
 
 #endif
