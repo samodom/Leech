@@ -124,6 +124,9 @@
 		0AED7A3018D5015A009C6E1B /* LTTMockUserLocation.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AED7A2F18D5015A009C6E1B /* LTTMockUserLocation.m */; };
 		0AED7A3118D5015A009C6E1B /* LTTMockUserLocation.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AED7A2F18D5015A009C6E1B /* LTTMockUserLocation.m */; };
 		0AED7A3218D50167009C6E1B /* LTTMockUserLocation.h in Copy Files */ = {isa = PBXBuildFile; fileRef = 0AED7A2E18D5015A009C6E1B /* LTTMockUserLocation.h */; };
+		0AF15C231907234C0068EC2C /* LocationManagerAuditorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AF15C221907234C0068EC2C /* LocationManagerAuditorTests.m */; };
+		0AF15C261907236E0068EC2C /* LTTLocationManagerAuditor.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AF15C251907236E0068EC2C /* LTTLocationManagerAuditor.m */; };
+		0AF15C271907236E0068EC2C /* LTTLocationManagerAuditor.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AF15C251907236E0068EC2C /* LTTLocationManagerAuditor.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -263,6 +266,9 @@
 		0AED7A2C18D5013C009C6E1B /* MockUserLocationTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MockUserLocationTests.m; sourceTree = "<group>"; };
 		0AED7A2E18D5015A009C6E1B /* LTTMockUserLocation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTTMockUserLocation.h; sourceTree = "<group>"; };
 		0AED7A2F18D5015A009C6E1B /* LTTMockUserLocation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LTTMockUserLocation.m; sourceTree = "<group>"; };
+		0AF15C221907234C0068EC2C /* LocationManagerAuditorTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationManagerAuditorTests.m; sourceTree = "<group>"; };
+		0AF15C241907236E0068EC2C /* LTTLocationManagerAuditor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTTLocationManagerAuditor.h; sourceTree = "<group>"; };
+		0AF15C251907236E0068EC2C /* LTTLocationManagerAuditor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LTTLocationManagerAuditor.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -371,6 +377,7 @@
 				0ACA5E3518D58A280052F2CD /* BarButtonItemAuditorTests.m */,
 				0ABD4CC918C6AEFB003BDD76 /* CoreDataAuditorTests.m */,
 				0AED668F18C93BB200D3DFE5 /* LayoutConstraintTests.m */,
+				0AF15C221907234C0068EC2C /* LocationManagerAuditorTests.m */,
 				0ACA5E1F18D551070052F2CD /* MapViewAuditorTests.m */,
 				0A77CA8318B942EA005230B0 /* MethodSwizzlerTests.m */,
 				0AC33ABB18BD321F00D3F342 /* MockHTTPResponseTests.m */,
@@ -512,6 +519,8 @@
 		0AD1EE28190238E600F8DB69 /* Location */ = {
 			isa = PBXGroup;
 			children = (
+				0AF15C241907236E0068EC2C /* LTTLocationManagerAuditor.h */,
+				0AF15C251907236E0068EC2C /* LTTLocationManagerAuditor.m */,
 				0ACA5E2118D5512F0052F2CD /* LTTMapViewAuditor.h */,
 				0ACA5E2218D5512F0052F2CD /* LTTMapViewAuditor.m */,
 				0AD1EE23190237EA00F8DB69 /* Mocks */,
@@ -654,6 +663,7 @@
 				0AA51B7318C06F2100A63B92 /* LTTSampleFileLoader.m in Sources */,
 				0AED7A2218D3DE98009C6E1B /* LTTTableViewAuditor.m in Sources */,
 				0AA51B9018C40ABA00A63B92 /* LTTTimeFreezer.m in Sources */,
+				0AF15C261907236E0068EC2C /* LTTLocationManagerAuditor.m in Sources */,
 				0AC33AD318BDC5DB00D3F342 /* LTTMockURLDataTask.m in Sources */,
 				0AED7A1B18D3955E009C6E1B /* LTTNavigationControllerAuditor.m in Sources */,
 				0A77CA9B18BABC89005230B0 /* LTTMockNotificationCenter.m in Sources */,
@@ -680,6 +690,7 @@
 				0AC33ACE18BDC41000D3F342 /* LTTMockURLSession.m in Sources */,
 				0AC0E33618D24DBC0078C01B /* LTTMockTextField.m in Sources */,
 				0A72945218DCF5B5008A1E71 /* FakeActionSheetDelegate.m in Sources */,
+				0AF15C271907236E0068EC2C /* LTTLocationManagerAuditor.m in Sources */,
 				0A77CA8E18BA9EB5005230B0 /* ViewControllerAuditorTests.m in Sources */,
 				0A369FD118C9409B008611E5 /* LTTLayoutConstraintChecker.m in Sources */,
 				0AED7A2A18D4FD3E009C6E1B /* LTTMockMapView.m in Sources */,
@@ -710,6 +721,7 @@
 				0AA51B7618C06F3D00A63B92 /* SampleFileLoaderTests.m in Sources */,
 				0AC33ACA18BDC3C700D3F342 /* MockURLSessionTests.m in Sources */,
 				0AED7A1C18D3955E009C6E1B /* LTTNavigationControllerAuditor.m in Sources */,
+				0AF15C231907234C0068EC2C /* LocationManagerAuditorTests.m in Sources */,
 				0ACA5E3618D58A280052F2CD /* BarButtonItemAuditorTests.m in Sources */,
 				0A72943518DB9C21008A1E71 /* ViewAuditorTests.m in Sources */,
 				0AED669018C93BB200D3DFE5 /* LayoutConstraintTests.m in Sources */,
@@ -926,6 +938,7 @@
 				0AD1EE1C1901CD4300F8DB69 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
