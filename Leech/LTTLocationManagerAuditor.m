@@ -16,6 +16,9 @@ const char *RegionToStartMonitoring = "RegionToStartMonitoring";
 const char *RegionToStopMonitoring = "RegionToStopMonitoring";
 
 const char *RangingAvailableFlag = "RangingAvailableFlag";
+const char *RegionToStartRanging = "RegionToStartRanging";
+const char *RegionToStopRanging = "RegionToStopRanging";
+
 
 ////////////////////////////////////////////////////////////////////////////////
 //  Category on CLLocationManager
@@ -23,15 +26,12 @@ const char *RangingAvailableFlag = "RangingAvailableFlag";
 
 @implementation CLLocationManager (Leech)
 
+#pragma mark - Region monitoring
+
 + (BOOL)Leech_IsMonitoringAvailableForClass:(Class)regionClass {
     NSDictionary *classes = objc_getAssociatedObject([LTTLocationManagerAuditor class], RegionClassesDictionary);
     NSNumber *monitoringAvailable = classes[NSStringFromClass([regionClass class])];
     return monitoringAvailable.boolValue;
-}
-
-+ (BOOL)Leech_IsRangingAvailable {
-    NSNumber *rangingAvailable = objc_getAssociatedObject([LTTLocationManagerAuditor class], RangingAvailableFlag);
-    return rangingAvailable.boolValue;
 }
 
 - (void)Leech_StartMonitoringForRegion:(CLRegion *)region {
@@ -40,6 +40,21 @@ const char *RangingAvailableFlag = "RangingAvailableFlag";
 
 - (void)Leech_StopMonitoringForRegion:(CLRegion *)region {
     objc_setAssociatedObject(self, RegionToStopMonitoring, region, OBJC_ASSOCIATION_RETAIN);
+}
+
+#pragma mark - Beacon ranging
+
++ (BOOL)Leech_IsRangingAvailable {
+    NSNumber *rangingAvailable = objc_getAssociatedObject([LTTLocationManagerAuditor class], RangingAvailableFlag);
+    return rangingAvailable.boolValue;
+}
+
+- (void)Leech_StartRangingBeaconsInRegion:(CLBeaconRegion *)region {
+    objc_setAssociatedObject(self, RegionToStartRanging, region, OBJC_ASSOCIATION_RETAIN);
+}
+
+- (void)Leech_StopRangingBeaconsInRegion:(CLBeaconRegion *)region {
+    objc_setAssociatedObject(self, RegionToStopRanging, region, OBJC_ASSOCIATION_RETAIN);
 }
 
 @end
@@ -111,6 +126,8 @@ const char *RangingAvailableFlag = "RangingAvailableFlag";
 
 #pragma mark - Ranging
 
+#pragma mark Ranging available
+
 + (void)overrideRangingAvailable {
     [LTTMethodSwizzler swapClassMethodsForClass:[CLLocationManager class] selectorOne:@selector(isRangingAvailable) selectorTwo:@selector(Leech_IsRangingAvailable)];
 }
@@ -124,5 +141,34 @@ const char *RangingAvailableFlag = "RangingAvailableFlag";
     objc_setAssociatedObject(self, RangingAvailableFlag, @(rangingAvailable), OBJC_ASSOCIATION_RETAIN);
 }
 
+#pragma mark Start ranging
+
++ (void)auditStartRangingBeaconsInRegionMethod:(CLLocationManager *)locationManager {
+    [LTTMethodSwizzler swapInstanceMethodsForClass:[locationManager class] selectorOne:@selector(startRangingBeaconsInRegion:) selectorTwo:@selector(Leech_StartRangingBeaconsInRegion:)];
+}
+
++ (void)stopAuditingStartRangingBeaconsInRegionMethod:(CLLocationManager *)locationManager {
+    objc_setAssociatedObject(locationManager, RegionToStartRanging, nil, OBJC_ASSOCIATION_ASSIGN);
+    [LTTMethodSwizzler swapInstanceMethodsForClass:[locationManager class] selectorOne:@selector(startRangingBeaconsInRegion:) selectorTwo:@selector(Leech_StartRangingBeaconsInRegion:)];
+}
+
++ (CLBeaconRegion*)regionToStartRanging:(CLLocationManager*)locationManager {
+    return objc_getAssociatedObject(locationManager, RegionToStartRanging);
+}
+
+#pragma mark Stop ranging
+
++ (void)auditStopRangingBeaconsInRegionMethod:(CLLocationManager *)locationManager {
+    [LTTMethodSwizzler swapInstanceMethodsForClass:[locationManager class] selectorOne:@selector(stopRangingBeaconsInRegion:) selectorTwo:@selector(Leech_StopRangingBeaconsInRegion:)];
+}
+
++ (void)stopAuditingStopRangingBeaconsInRegionMethod:(CLLocationManager *)locationManager {
+    objc_setAssociatedObject(locationManager, RegionToStopRanging, nil, OBJC_ASSOCIATION_ASSIGN);
+    [LTTMethodSwizzler swapInstanceMethodsForClass:[locationManager class] selectorOne:@selector(stopRangingBeaconsInRegion:) selectorTwo:@selector(Leech_StopRangingBeaconsInRegion:)];
+}
+
++ (CLBeaconRegion*)regionToStopRanging:(CLLocationManager*)locationManager {
+    return objc_getAssociatedObject(locationManager, RegionToStopRanging);
+}
 
 @end

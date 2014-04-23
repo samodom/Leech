@@ -36,6 +36,8 @@
     [super tearDown];
 }
 
+#pragma mark - Region monitoring
+
 - (void)testAuditorOverridesMonitoringAvailabilityForClassMethod {
     IMP realImplementation = method_getImplementation(class_getClassMethod([CLLocationManager class], @selector(isMonitoringAvailableForClass:)));
     [LTTLocationManagerAuditor overrideMonitoringAvailable];
@@ -50,6 +52,28 @@
     currentImplementation = method_getImplementation(class_getClassMethod([CLLocationManager class], @selector(isMonitoringAvailableForClass:)));
     XCTAssertEqual(currentImplementation, realImplementation, @"The method should no longer be swizzled");
 }
+
+- (void)testAuditorCapturesRegionToStartMonitoring {
+    CLLocationCoordinate2D center = CLLocationCoordinate2DMake(24.0, -12.0);
+    CLCircularRegion *region = [[CLCircularRegion alloc] initWithCenter:center radius:14.2 identifier:@"circular region"];
+    [LTTLocationManagerAuditor auditStartMonitoringForRegionMethod:locationManager];
+    [locationManager startMonitoringForRegion:region];
+    CLRegion *capturedRegion = [LTTLocationManagerAuditor regionToStartMonitoring:locationManager];
+    XCTAssertEqualObjects(capturedRegion, region, @"The region to start monitoring should be captured");
+    [LTTLocationManagerAuditor stopAuditingStartMonitoringForRegionMethod:locationManager];
+}
+
+- (void)testAuditorCapturesRegionToStopMonitoring {
+    CLLocationCoordinate2D center = CLLocationCoordinate2DMake(24.0, -12.0);
+    CLCircularRegion *region = [[CLCircularRegion alloc] initWithCenter:center radius:14.2 identifier:@"circular region"];
+    [LTTLocationManagerAuditor auditStopMonitoringForRegionMethod:locationManager];
+    [locationManager stopMonitoringForRegion:region];
+    CLRegion *capturedRegion = [LTTLocationManagerAuditor regionToStopMonitoring:locationManager];
+    XCTAssertEqualObjects(capturedRegion, region, @"The region to stop monitoring should be captured");
+    [LTTLocationManagerAuditor stopAuditingStopMonitoringForRegionMethod:locationManager];
+}
+
+#pragma mark - Beacon ranging
 
 - (void)testAuditorOverridesRangingAvailabilityMethod {
     IMP realImplementation = method_getImplementation(class_getClassMethod([CLLocationManager class], @selector(isRangingAvailable)));
@@ -66,24 +90,24 @@
     XCTAssertEqual(currentImplementation, realImplementation, @"The method should no longer be swizzled");
 }
 
-- (void)testMockLocationManagerCapturesRegionToStartMonitoring {
-    CLLocationCoordinate2D center = CLLocationCoordinate2DMake(24.0, -12.0);
-    CLCircularRegion *region = [[CLCircularRegion alloc] initWithCenter:center radius:14.2 identifier:@"circular region"];
-    [LTTLocationManagerAuditor auditStartMonitoringForRegionMethod:locationManager];
-    [locationManager startMonitoringForRegion:region];
-    CLRegion *capturedRegion = [LTTLocationManagerAuditor regionToStartMonitoring:locationManager];
-    XCTAssertEqualObjects(capturedRegion, region, @"The region to start monitoring should be captured");
-    [LTTLocationManagerAuditor stopAuditingStartMonitoringForRegionMethod:locationManager];
+- (void)testAuditorCapturesBeaconRegionToStartRanging {
+    NSUUID *uuid = [NSUUID UUID];
+    CLBeaconRegion *region = [[CLBeaconRegion alloc] initWithProximityUUID:uuid identifier:uuid.UUIDString];
+    [LTTLocationManagerAuditor auditStartRangingBeaconsInRegionMethod:locationManager];
+    [locationManager startRangingBeaconsInRegion:region];
+    CLBeaconRegion *capturedRegion = [LTTLocationManagerAuditor regionToStartRanging:locationManager];
+    XCTAssertEqualObjects(capturedRegion, region, @"The region to start ranging should be captured");
+    [LTTLocationManagerAuditor stopAuditingStartRangingBeaconsInRegionMethod:locationManager];
 }
 
-- (void)testMockLocationManagerCapturesRegionToStopMonitoring {
-    CLLocationCoordinate2D center = CLLocationCoordinate2DMake(24.0, -12.0);
-    CLCircularRegion *region = [[CLCircularRegion alloc] initWithCenter:center radius:14.2 identifier:@"circular region"];
-    [LTTLocationManagerAuditor auditStopMonitoringForRegionMethod:locationManager];
-    [locationManager stopMonitoringForRegion:region];
-    CLRegion *capturedRegion = [LTTLocationManagerAuditor regionToStopMonitoring:locationManager];
-    XCTAssertEqualObjects(capturedRegion, region, @"The region to stop monitoring should be captured");
-    [LTTLocationManagerAuditor stopAuditingStopMonitoringForRegionMethod:locationManager];
+- (void)testAuditorCapturesBeaconRegionToStopRanging {
+    NSUUID *uuid = [NSUUID UUID];
+    CLBeaconRegion *region = [[CLBeaconRegion alloc] initWithProximityUUID:uuid identifier:uuid.UUIDString];
+    [LTTLocationManagerAuditor auditStopRangingBeaconsInRegionMethod:locationManager];
+    [locationManager stopRangingBeaconsInRegion:region];
+    CLBeaconRegion *capturedRegion = [LTTLocationManagerAuditor regionToStopRanging:locationManager];
+    XCTAssertEqualObjects(capturedRegion, region, @"The region to stop ranging should be captured");
+    [LTTLocationManagerAuditor stopAuditingStopRangingBeaconsInRegionMethod:locationManager];
 }
 
 @end

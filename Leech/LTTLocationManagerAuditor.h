@@ -30,5 +30,13 @@
 + (void)reverseRangingAvailableOverride;
 + (void)setRangingAvailable:(BOOL)rangingAvailable;
 
++ (void)auditStartRangingBeaconsInRegionMethod:(CLLocationManager*)locationManager;
++ (void)stopAuditingStartRangingBeaconsInRegionMethod:(CLLocationManager*)locationManager;
++ (CLBeaconRegion*)regionToStartRanging:(CLLocationManager*)locationManager;
+
++ (void)auditStopRangingBeaconsInRegionMethod:(CLLocationManager*)locationManager;
++ (void)stopAuditingStopRangingBeaconsInRegionMethod:(CLLocationManager*)locationManager;
++ (CLBeaconRegion*)regionToStopRanging:(CLLocationManager*)locationManager;
+
 
 @end
