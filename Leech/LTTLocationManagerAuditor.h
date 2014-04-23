@@ -24,6 +24,10 @@
 + (void)stopAuditingStopMonitoringForRegionMethod:(CLLocationManager*)locationManager;
 + (CLRegion*)regionToStopMonitoring:(CLLocationManager*)locationManager;
 
++ (void)setMonitoredRegions:(NSSet*)regions forLocationManager:(CLLocationManager*)locationManager;
++ (void)clearMonitoredRegionsForLocationManager:(CLLocationManager*)locationManager;
+
+
 #pragma mark - Ranging
 
 + (void)overrideRangingAvailable;
@@ -37,6 +41,9 @@
 + (void)auditStopRangingBeaconsInRegionMethod:(CLLocationManager*)locationManager;
 + (void)stopAuditingStopRangingBeaconsInRegionMethod:(CLLocationManager*)locationManager;
 + (CLBeaconRegion*)regionToStopRanging:(CLLocationManager*)locationManager;
+
++ (void)setRangedRegions:(NSSet*)regions forLocationManager:(CLLocationManager*)locationManager;
++ (void)clearRangedRegionsForLocationManager:(CLLocationManager*)locationManager;
 
 
 @end
