@@ -32,6 +32,7 @@
 #import "LTTAlertViewAuditor.h"
 #import "LTTObjectAuditor.h"
 #import "LTTLocationManagerAuditor.h"
+#import "LTTMockBeacon.h"
 
 
 #endif

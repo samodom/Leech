@@ -128,6 +128,10 @@
 		0AF15C261907236E0068EC2C /* LTTLocationManagerAuditor.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AF15C251907236E0068EC2C /* LTTLocationManagerAuditor.m */; };
 		0AF15C271907236E0068EC2C /* LTTLocationManagerAuditor.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AF15C251907236E0068EC2C /* LTTLocationManagerAuditor.m */; };
 		0AF15C2819072D220068EC2C /* LTTLocationManagerAuditor.h in Copy Files */ = {isa = PBXBuildFile; fileRef = 0AF15C241907236E0068EC2C /* LTTLocationManagerAuditor.h */; };
+		0AF15C2A190809C20068EC2C /* MockBeaconTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AF15C29190809C20068EC2C /* MockBeaconTests.m */; };
+		0AF15C2D190809DE0068EC2C /* LTTMockBeacon.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AF15C2C190809DE0068EC2C /* LTTMockBeacon.m */; };
+		0AF15C2E190809DE0068EC2C /* LTTMockBeacon.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AF15C2C190809DE0068EC2C /* LTTMockBeacon.m */; };
+		0AF15C2F19080B620068EC2C /* LTTMockBeacon.h in Copy Files */ = {isa = PBXBuildFile; fileRef = 0AF15C2B190809DE0068EC2C /* LTTMockBeacon.h */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -147,6 +151,7 @@
 			dstPath = "include/$(PRODUCT_NAME)";
 			dstSubfolderSpec = 16;
 			files = (
+				0AF15C2F19080B620068EC2C /* LTTMockBeacon.h in Copy Files */,
 				0AF15C2819072D220068EC2C /* LTTLocationManagerAuditor.h in Copy Files */,
 				0AC6222718F1F14000E9D289 /* LTTObjectAuditor.h in Copy Files */,
 				0A6D23E118EC84B600D705E2 /* LTTAlertViewAuditor.h in Copy Files */,
@@ -271,6 +276,9 @@
 		0AF15C221907234C0068EC2C /* LocationManagerAuditorTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationManagerAuditorTests.m; sourceTree = "<group>"; };
 		0AF15C241907236E0068EC2C /* LTTLocationManagerAuditor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTTLocationManagerAuditor.h; sourceTree = "<group>"; };
 		0AF15C251907236E0068EC2C /* LTTLocationManagerAuditor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LTTLocationManagerAuditor.m; sourceTree = "<group>"; };
+		0AF15C29190809C20068EC2C /* MockBeaconTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MockBeaconTests.m; sourceTree = "<group>"; };
+		0AF15C2B190809DE0068EC2C /* LTTMockBeacon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTTMockBeacon.h; sourceTree = "<group>"; };
+		0AF15C2C190809DE0068EC2C /* LTTMockBeacon.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LTTMockBeacon.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -382,6 +390,7 @@
 				0AF15C221907234C0068EC2C /* LocationManagerAuditorTests.m */,
 				0ACA5E1F18D551070052F2CD /* MapViewAuditorTests.m */,
 				0A77CA8318B942EA005230B0 /* MethodSwizzlerTests.m */,
+				0AF15C29190809C20068EC2C /* MockBeaconTests.m */,
 				0AC33ABB18BD321F00D3F342 /* MockHTTPResponseTests.m */,
 				0AED7A2518D4FD21009C6E1B /* MockMapViewTests.m */,
 				0A77CA9D18BABCAE005230B0 /* MockNotificationCenterTests.m */,
@@ -455,6 +464,8 @@
 		0AD1EE23190237EA00F8DB69 /* Mocks */ = {
 			isa = PBXGroup;
 			children = (
+				0AF15C2B190809DE0068EC2C /* LTTMockBeacon.h */,
+				0AF15C2C190809DE0068EC2C /* LTTMockBeacon.m */,
 				0AED7A2718D4FD3E009C6E1B /* LTTMockMapView.h */,
 				0AED7A2818D4FD3E009C6E1B /* LTTMockMapView.m */,
 				0AED7A2E18D5015A009C6E1B /* LTTMockUserLocation.h */,
@@ -648,6 +659,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0AF15C2D190809DE0068EC2C /* LTTMockBeacon.m in Sources */,
 				0AC33ABF18BD325700D3F342 /* LTTMockHTTPResponse.m in Sources */,
 				0ABD4CCD18C6AF69003BDD76 /* LTTCoreDataAuditor.m in Sources */,
 				0A72943818DB9C40008A1E71 /* LTTViewAuditor.m in Sources */,
@@ -678,6 +690,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0AF15C2E190809DE0068EC2C /* LTTMockBeacon.m in Sources */,
 				0A6D23DE18EB91B500D705E2 /* LTTObjectAuditor.m in Sources */,
 				0AED7A2618D4FD21009C6E1B /* MockMapViewTests.m in Sources */,
 				0A77CA9218BAA05C005230B0 /* LTTViewControllerAuditor.m in Sources */,
@@ -715,6 +728,7 @@
 				0ACA5E3A18D58A650052F2CD /* LTTBarButtonItemAuditor.m in Sources */,
 				0A77CA9518BAA17B005230B0 /* TestViewController.m in Sources */,
 				0A6D23C518EA24A600D705E2 /* FakeAlertViewDelegate.m in Sources */,
+				0AF15C2A190809C20068EC2C /* MockBeaconTests.m in Sources */,
 				0AA51B8918C409F800A63B92 /* TimeFreezerTests.m in Sources */,
 				0AA51B9118C40ABA00A63B92 /* LTTTimeFreezer.m in Sources */,
 				0AED7A2318D3DE98009C6E1B /* LTTTableViewAuditor.m in Sources */,
