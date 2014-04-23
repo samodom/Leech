@@ -22,33 +22,32 @@
 
 @implementation MockBeaconTests {
     LTTMockBeacon *beacon;
+    NSUUID *proximityUUID;
 }
 
 - (void)setUp {
     [super setUp];
 
-    beacon = [LTTMockBeacon new];
+    proximityUUID = [NSUUID UUID];
+    beacon = [[LTTMockBeacon alloc] initWithProximityUUID:proximityUUID major:14 minor:42];
 }
 
 - (void)tearDown {
+    proximityUUID = nil;
     beacon = nil;
 
     [super tearDown];
 }
 
 - (void)testBeaconHasProximityUUID {
-    NSUUID *uuid = [NSUUID UUID];
-    beacon.proximityUUID = uuid;
-    XCTAssertEqualObjects(beacon.proximityUUID, uuid, @"The beacon should keep track of its proximity UUID");
+    XCTAssertEqualObjects(beacon.proximityUUID, proximityUUID, @"The beacon should keep track of its proximity UUID");
 }
 
 - (void)testBeaconHasMajorNumber {
-    beacon.major = @(14);
     XCTAssertEqualObjects(beacon.major, @(14), @"The beacon should keep track of its major number");
 }
 
 - (void)testBeaconHasMinorNumber {
-    beacon.minor = @(42);
     XCTAssertEqualObjects(beacon.minor, @(42), @"The beacon should keep track of its minor number");
 }
 

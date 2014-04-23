@@ -10,4 +10,14 @@
 
 @implementation LTTMockBeacon
 
+- (instancetype)initWithProximityUUID:(NSUUID *)proximityUUID major:(CLBeaconMajorValue)major minor:(CLBeaconMinorValue)minor {
+    if (self = [super init]) {
+        _proximityUUID = proximityUUID;
+        _major = @(major);
+        _minor = @(minor);
+    }
+    
+    return self;
+}
+
 @end

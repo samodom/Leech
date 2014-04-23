@@ -19,4 +19,6 @@
 @property CLLocationAccuracy accuracy;
 @property NSInteger rssi;
 
+- (instancetype)initWithProximityUUID:(NSUUID*)proximityUUID major:(CLBeaconMajorValue)major minor:(CLBeaconMinorValue)minor;
+
 @end
