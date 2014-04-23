@@ -133,14 +133,16 @@ const char *MockNotificationCenterTestingHandlerCalled = "MockNotificationCenter
     XCTAssertTrue([center hasObserver:observer forNotificationName:@"another name"], @"Center should still have an entry for notification and no object");
 }
 
-- (void) testCenterCannotRemoveObserverForNilNotificationNameAndObject {
+- (void) testCenterCanRemoveObserverForNilNotificationNameAndObject {
     [center addObserver:observer selector:@selector(handler) name:FakeNotificationName object:publisher];
-    XCTAssertThrows([center removeObserver:observer name:nil object:publisher], @"Center should not allow removing observer with nil notification name and object");
+    [center removeObserver:observer name:nil object:publisher];
+    XCTAssertFalse([center hasObserver:observer], @"Center should allow removing observer with nil notification name and object");
 }
 
-- (void) testCenterCannotRemoveObserverForEmptyNotificationNameAndObject {
+- (void) testCenterCanRemoveObserverForEmptyNotificationNameAndObject {
     [center addObserver:observer selector:@selector(handler) name:FakeNotificationName object:publisher];
-    XCTAssertThrows([center removeObserver:observer name:@"" object:publisher], @"Center should not allow removing observer with empty notification name and object");
+    XCTAssertNoThrow([center removeObserver:observer name:@"" object:publisher], @"Center should not crash trying to remove observer with empty notification name and object");
+    XCTAssertTrue([center hasObserver:observer forNotificationName:FakeNotificationName object:publisher], @"The dispatch entry should still be there");
 }
 
 - (void) testCenterCanRemoveObserverForNotificationNameAndNilObject {

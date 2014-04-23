@@ -87,11 +87,11 @@ const char *ReplacementDefaultCenter = "ReplacementDefaultCenter";
 - (void)removeObserver:(id)notificationObserver name:(NSString *)notificationName object:(id)notificationSender {
     if (!notificationObserver)
         return;
-    NSParameterAssert(notificationName.length > 0);
 
     for (LTTFakeNotificationDispatchEntry *entry in [dispatchTable copy]) {
         BOOL sendersEqual = (notificationSender == nil) || [entry.publisher isEqual:notificationSender];
-        if ([entry.observer isEqual:notificationObserver] && [entry.notificationName isEqualToString:notificationName] && sendersEqual)
+        BOOL notificationNameMatch = notificationName == nil || [entry.notificationName isEqualToString:notificationName];
+        if ([entry.observer isEqual:notificationObserver] && notificationNameMatch && sendersEqual)
             [dispatchTable removeObject:entry];
     }
 }
