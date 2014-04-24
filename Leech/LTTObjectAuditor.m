@@ -50,8 +50,8 @@ const char *ObjectWaitUntilDoneFlag = "ObjectWaitUntilDoneFlag";
     return NSSelectorFromString(selectorString);
 }
 
-+ (id)argumentToSelector:(NSObject *)auditedObjecdt {
-    return objc_getAssociatedObject(auditedObjecdt, ObjectArgumentToSelector);
++ (id)argumentToSelector:(NSObject *)auditedObject {
+    return objc_getAssociatedObject(auditedObject, ObjectArgumentToSelector);
 }
 
 + (BOOL)waitUntilDoneFlag:(NSObject *)auditedObject {
