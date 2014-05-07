@@ -30,38 +30,24 @@ const char *DisabledTitleTextAttributes = "DisabledTitleTextAttributes";
 }
 
 - (void)Leech_SetTitleTextAttributes:(NSDictionary *)attributes forState:(UIControlState)state {
-    const char *stateKey;
-    switch (state) {
-        case UIControlStateNormal:
-            stateKey = NormalTitleTextAttributes;
-            break;
+    const char *stateKey = nil;
+    if (state == UIControlStateNormal)
+        stateKey = NormalTitleTextAttributes;
 
-        case UIControlStateDisabled:
-            stateKey = DisabledTitleTextAttributes;
-            break;
-
-        default:
-            break;
-    }
+    else if (state == UIControlStateDisabled)
+        stateKey = DisabledTitleTextAttributes;
 
     if (stateKey)
         objc_setAssociatedObject(self, stateKey, attributes, OBJC_ASSOCIATION_RETAIN);
 }
 
 - (NSDictionary *)Leech_TitleTextAttributesForState:(UIControlState)state {
-    const char *stateKey;
-    switch (state) {
-        case UIControlStateNormal:
-            stateKey = NormalTitleTextAttributes;
-            break;
+    const char *stateKey = nil;
+    if (state == UIControlStateNormal)
+        stateKey = NormalTitleTextAttributes;
 
-        case UIControlStateDisabled:
-            stateKey = DisabledTitleTextAttributes;
-            break;
-
-        default:
-            break;
-    }
+    else if (state == UIControlStateDisabled)
+        stateKey = DisabledTitleTextAttributes;
 
     if (stateKey)
         return objc_getAssociatedObject(self, stateKey);
