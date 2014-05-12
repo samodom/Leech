@@ -33,6 +33,7 @@
 #import "LTTObjectAuditor.h"
 #import "LTTLocationManagerAuditor.h"
 #import "LTTMockBeacon.h"
+#import "LTTCollectionViewLayoutAuditor.h"
 
 
 #endif
