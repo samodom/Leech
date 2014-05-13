@@ -202,17 +202,86 @@ typedef void(^leech_completion_block_t)(void);
 
 #pragma mark -presentViewController:animated:completion:
 
+
+/**
+ Audits calls to superclass implementation of -presentViewController:animated:completion:
+ 
+ @param viewController View controller to audit for presentation of other view controllers
+ @param forward BOOL specifying whether or not to forward the call to the real method implementation
+ 
+ @discussion This method replaces the real method implementation of `-[UIViewController presentViewController:animated:completion:]` with another method that captures the call and optionally forwards the call to the real method implementation
+ */
 + (void)auditPresentViewControllerMethod:(UIViewController*)viewController forward:(BOOL)forward;
+
+/**
+ Ends auditing of `-presentViewController:animated:completion:` and clears captured data
+ 
+ @param auditedController View controller being audited
+ */
 + (void)stopAuditingPresentViewControllerMethod:(UIViewController*)auditedController;
+
+/**
+ Retrieves the captured view controller being presented by the audited controller
+ 
+ @return UIViewController that was captured
+ 
+ @param auditedController View controller being audited
+ */
 + (UIViewController*)viewControllerToPresent:(UIViewController*)auditedController;
+
+/**
+ Indicates whether or not the animated flag was used in the call to present a new view controller
+ 
+ @return BOOL indicating whether or not the presentation was animated
+ 
+ @param auditedController View controller being audited
+ */
 + (BOOL)presentViewControllerAnimatedFlag:(UIViewController*)auditedController;
+
+/**
+ Retrieves the captured completion block to be performed after successful invocation of the presentation method
+ 
+ @return leech_completion_block_t block that was passed to the presentation method
+ 
+ @param auditedController View controller being audited
+ */
 + (leech_completion_block_t)presentViewControllerCompletionBlock:(UIViewController*)auditedController;
 
 #pragma mark -dismissViewControllerAnimated:completion:
 
+/**
+ Audits calls to superclass implementation of -dismissViewController:animated:completion:
+ 
+ @param viewController View controller to audit for dismissal of other view controllers
+ @param forward BOOL specifying whether or not to forward the call to the real method implementation
+ 
+ @discussion This method replaces the real method implementation of `-[UIViewController dismissViewController:animated:completion:]` with another method that captures the call and optionally forwards the call to the real method implementation
+ */
 + (void)auditDismissViewControllerMethod:(UIViewController*)viewController forward:(BOOL)forward;
+
+/**
+ Ends auditing of `-dismissViewController:animated:completion:` and clears captured data
+ 
+ @param auditedController View controller being audited
+ */
 + (void)stopAuditingDismissViewControllerMethod:(UIViewController*)auditedController;
+
+/**
+ Indicates whether or not the animated flag was used in the call to dismiss another view controller
+ 
+ @return BOOL indicating whether or not the dismissal was animated
+ 
+ @param auditedController View controller being audited
+ */
 + (BOOL)dismissViewControllerAnimatedFlag:(UIViewController*)auditedController;
+
+/**
+ Retrieves the captured completion block to be performed after successful invocation of the dismissal method
+ 
+ @return leech_completion_block_t block that was passed to the dismissal method
+ 
+ @param auditedController View controller being audited
+ */
 + (leech_completion_block_t)dismissViewControllerCompletionBlock:(UIViewController*)auditedController;
 
 @end
