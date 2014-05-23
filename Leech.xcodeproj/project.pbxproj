@@ -21,6 +21,8 @@
 /* End PBXAggregateTarget section */
 
 /* Begin PBXBuildFile section */
+		0A298BE5192FB2C50001CB92 /* PopoverControllerAuditorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A298BE4192FB2C50001CB92 /* PopoverControllerAuditorTests.m */; };
+		0A298BE8192FB2E70001CB92 /* LTTPopoverControllerAuditor.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A298BE7192FB2E70001CB92 /* LTTPopoverControllerAuditor.m */; };
 		0A369FD018C9409B008611E5 /* LTTLayoutConstraintChecker.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A369FCF18C9409B008611E5 /* LTTLayoutConstraintChecker.m */; };
 		0A369FD118C9409B008611E5 /* LTTLayoutConstraintChecker.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A369FCF18C9409B008611E5 /* LTTLayoutConstraintChecker.m */; };
 		0A369FD218C94723008611E5 /* LTTLayoutConstraintChecker.h in Copy Files */ = {isa = PBXBuildFile; fileRef = 0A369FCE18C9409B008611E5 /* LTTLayoutConstraintChecker.h */; };
@@ -186,6 +188,9 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		0A298BE4192FB2C50001CB92 /* PopoverControllerAuditorTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PopoverControllerAuditorTests.m; sourceTree = "<group>"; };
+		0A298BE6192FB2E70001CB92 /* LTTPopoverControllerAuditor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTTPopoverControllerAuditor.h; sourceTree = "<group>"; };
+		0A298BE7192FB2E70001CB92 /* LTTPopoverControllerAuditor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LTTPopoverControllerAuditor.m; sourceTree = "<group>"; };
 		0A369FCE18C9409B008611E5 /* LTTLayoutConstraintChecker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTTLayoutConstraintChecker.h; sourceTree = "<group>"; };
 		0A369FCF18C9409B008611E5 /* LTTLayoutConstraintChecker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LTTLayoutConstraintChecker.m; sourceTree = "<group>"; };
 		0A503F10192060510007BE07 /* CollectionViewLayoutAuditorTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CollectionViewLayoutAuditorTests.m; sourceTree = "<group>"; };
@@ -390,10 +395,10 @@
 		0A77CA8518B942EF005230B0 /* Test Classes */ = {
 			isa = PBXGroup;
 			children = (
-				0A503F10192060510007BE07 /* CollectionViewLayoutAuditorTests.m */,
 				0A72944E18DCF44D008A1E71 /* ActionSheetAuditorTests.m */,
 				0A6D23BC18EA20DA00D705E2 /* AlertViewAuditorTests.m */,
 				0ACA5E3518D58A280052F2CD /* BarButtonItemAuditorTests.m */,
+				0A503F10192060510007BE07 /* CollectionViewLayoutAuditorTests.m */,
 				0ABD4CC918C6AEFB003BDD76 /* CoreDataAuditorTests.m */,
 				0AED668F18C93BB200D3DFE5 /* LayoutConstraintTests.m */,
 				0AF15C221907234C0068EC2C /* LocationManagerAuditorTests.m */,
@@ -409,6 +414,7 @@
 				0AED7A2C18D5013C009C6E1B /* MockUserLocationTests.m */,
 				0AED7A1718D3950D009C6E1B /* NavigationControllerAuditorTests.m */,
 				0A6D23D918EB918100D705E2 /* ObjectAuditorTests.m */,
+				0A298BE4192FB2C50001CB92 /* PopoverControllerAuditorTests.m */,
 				0AA51B7518C06F3D00A63B92 /* SampleFileLoaderTests.m */,
 				0AED7A1E18D3DE7B009C6E1B /* TableViewAuditorTests.m */,
 				0AA51B8818C409F800A63B92 /* TimeFreezerTests.m */,
@@ -520,6 +526,8 @@
 				0A369FCF18C9409B008611E5 /* LTTLayoutConstraintChecker.m */,
 				0AED7A1918D3955E009C6E1B /* LTTNavigationControllerAuditor.h */,
 				0AED7A1A18D3955E009C6E1B /* LTTNavigationControllerAuditor.m */,
+				0A298BE6192FB2E70001CB92 /* LTTPopoverControllerAuditor.h */,
+				0A298BE7192FB2E70001CB92 /* LTTPopoverControllerAuditor.m */,
 				0AED7A2018D3DE98009C6E1B /* LTTTableViewAuditor.h */,
 				0AED7A2118D3DE98009C6E1B /* LTTTableViewAuditor.m */,
 				0A72943618DB9C40008A1E71 /* LTTViewAuditor.h */,
@@ -681,6 +689,7 @@
 				0A77CA8818B94398005230B0 /* LTTMethodSwizzler.m in Sources */,
 				0A6D23DD18EB91B500D705E2 /* LTTObjectAuditor.m in Sources */,
 				0A72944C18DCF43F008A1E71 /* LTTActionSheetAuditor.m in Sources */,
+				0A298BE8192FB2E70001CB92 /* LTTPopoverControllerAuditor.m in Sources */,
 				0AED7A3018D5015A009C6E1B /* LTTMockUserLocation.m in Sources */,
 				0AC0E33518D24DBC0078C01B /* LTTMockTextField.m in Sources */,
 				0A503F14192109980007BE07 /* LTTCollectionViewLayoutAuditor.m in Sources */,
@@ -737,6 +746,7 @@
 				0ABD4CCE18C6AF69003BDD76 /* LTTCoreDataAuditor.m in Sources */,
 				0A77CA8918B94398005230B0 /* LTTMethodSwizzler.m in Sources */,
 				0AED7A1818D3950D009C6E1B /* NavigationControllerAuditorTests.m in Sources */,
+				0A298BE5192FB2C50001CB92 /* PopoverControllerAuditorTests.m in Sources */,
 				0AC33AD018BDC58500D3F342 /* MockURLDataTaskTests.m in Sources */,
 				0A72944F18DCF44D008A1E71 /* ActionSheetAuditorTests.m in Sources */,
 				0AA51B7418C06F2100A63B92 /* LTTSampleFileLoader.m in Sources */,
