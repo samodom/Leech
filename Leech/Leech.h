@@ -34,6 +34,7 @@
 #import "LTTLocationManagerAuditor.h"
 #import "LTTMockBeacon.h"
 #import "LTTCollectionViewLayoutAuditor.h"
+#import "LTTPopoverControllerAuditor.h"
 
 
 #endif

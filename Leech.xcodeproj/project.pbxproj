@@ -21,6 +21,7 @@
 /* End PBXAggregateTarget section */
 
 /* Begin PBXBuildFile section */
+		0A1C9EA9192FE5DD00122B88 /* LTTPopoverControllerAuditor.h in Copy Files */ = {isa = PBXBuildFile; fileRef = 0A298BE6192FB2E70001CB92 /* LTTPopoverControllerAuditor.h */; };
 		0A298BE5192FB2C50001CB92 /* PopoverControllerAuditorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A298BE4192FB2C50001CB92 /* PopoverControllerAuditorTests.m */; };
 		0A298BE8192FB2E70001CB92 /* LTTPopoverControllerAuditor.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A298BE7192FB2E70001CB92 /* LTTPopoverControllerAuditor.m */; };
 		0A369FD018C9409B008611E5 /* LTTLayoutConstraintChecker.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A369FCF18C9409B008611E5 /* LTTLayoutConstraintChecker.m */; };
@@ -156,6 +157,7 @@
 			dstPath = "include/$(PRODUCT_NAME)";
 			dstSubfolderSpec = 16;
 			files = (
+				0A1C9EA9192FE5DD00122B88 /* LTTPopoverControllerAuditor.h in Copy Files */,
 				0AF15C2F19080B620068EC2C /* LTTMockBeacon.h in Copy Files */,
 				0AF15C2819072D220068EC2C /* LTTLocationManagerAuditor.h in Copy Files */,
 				0AC6222718F1F14000E9D289 /* LTTObjectAuditor.h in Copy Files */,
