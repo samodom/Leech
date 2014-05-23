@@ -36,20 +36,20 @@ const char *LTTPopoverControllerDismissalAnimationFlag = "LTTPopoverControllerDi
 }
 
 - (void)Leech_PresentPopoverFromRect:(CGRect)rect inView:(UIView *)view permittedArrowDirections:(UIPopoverArrowDirection)arrowDirections animated:(BOOL)animated {
-    objc_setAssociatedObject(self, LTTPopoverControllerPresentationRect, [NSValue valueWithCGRect:rect], OBJC_ASSOCIATION_RETAIN);
-    objc_setAssociatedObject(self, LTTPopoverControllerPresentationView, view, OBJC_ASSOCIATION_RETAIN);
-    objc_setAssociatedObject(self, LTTPopoverControllerPresentationArrowDirections, @(arrowDirections), OBJC_ASSOCIATION_RETAIN);
-    objc_setAssociatedObject(self, LTTPopoverControllerPresentationAnimationFlag, @(animated), OBJC_ASSOCIATION_RETAIN);
+    objc_setAssociatedObject([LTTPopoverControllerAuditor class], LTTPopoverControllerPresentationRect, [NSValue valueWithCGRect:rect], OBJC_ASSOCIATION_RETAIN);
+    objc_setAssociatedObject([LTTPopoverControllerAuditor class], LTTPopoverControllerPresentationView, view, OBJC_ASSOCIATION_RETAIN);
+    objc_setAssociatedObject([LTTPopoverControllerAuditor class], LTTPopoverControllerPresentationArrowDirections, @(arrowDirections), OBJC_ASSOCIATION_RETAIN);
+    objc_setAssociatedObject([LTTPopoverControllerAuditor class], LTTPopoverControllerPresentationAnimationFlag, @(animated), OBJC_ASSOCIATION_RETAIN);
 }
 
 - (void)Leech_PresentPopoverFromBarButtonItem:(UIBarButtonItem *)item permittedArrowDirections:(UIPopoverArrowDirection)arrowDirections animated:(BOOL)animated {
-    objc_setAssociatedObject(self, LTTPopoverControllerPresentationBarButtonItem, item, OBJC_ASSOCIATION_RETAIN);
-    objc_setAssociatedObject(self, LTTPopoverControllerPresentationArrowDirections, @(arrowDirections), OBJC_ASSOCIATION_RETAIN);
-    objc_setAssociatedObject(self, LTTPopoverControllerPresentationAnimationFlag, @(animated), OBJC_ASSOCIATION_RETAIN);
+    objc_setAssociatedObject([LTTPopoverControllerAuditor class], LTTPopoverControllerPresentationBarButtonItem, item, OBJC_ASSOCIATION_RETAIN);
+    objc_setAssociatedObject([LTTPopoverControllerAuditor class], LTTPopoverControllerPresentationArrowDirections, @(arrowDirections), OBJC_ASSOCIATION_RETAIN);
+    objc_setAssociatedObject([LTTPopoverControllerAuditor class], LTTPopoverControllerPresentationAnimationFlag, @(animated), OBJC_ASSOCIATION_RETAIN);
 }
 
 - (void)Leech_DismissPopoverAnimated:(BOOL)animated {
-    objc_setAssociatedObject(self, LTTPopoverControllerDismissalAnimationFlag, @(animated), OBJC_ASSOCIATION_RETAIN);
+    objc_setAssociatedObject([LTTPopoverControllerAuditor class], LTTPopoverControllerDismissalAnimationFlag, @(animated), OBJC_ASSOCIATION_RETAIN);
 }
 
 @end
@@ -86,15 +86,15 @@ const char *LTTPopoverControllerDismissalAnimationFlag = "LTTPopoverControllerDi
 
 #pragma mark -presentPopoverFromRect:inView:permittedArrowDirections:animated:
 
-+ (void)auditPresentFromRectMethod:(UIPopoverController *)popoverController {
++ (void)auditPresentFromRectMethod {
     [self swizzlePresentFromRectMethods];
 }
 
-+ (void)stopAuditingPresentFromRectMethod:(UIPopoverController *)auditedController {
-    objc_setAssociatedObject(auditedController, LTTPopoverControllerPresentationRect, nil, OBJC_ASSOCIATION_ASSIGN);
-    objc_setAssociatedObject(auditedController, LTTPopoverControllerPresentationView, nil, OBJC_ASSOCIATION_ASSIGN);
-    objc_setAssociatedObject(auditedController, LTTPopoverControllerPresentationArrowDirections, nil, OBJC_ASSOCIATION_ASSIGN);
-    objc_setAssociatedObject(auditedController, LTTPopoverControllerPresentationAnimationFlag, nil, OBJC_ASSOCIATION_ASSIGN);
++ (void)stopAuditingPresentFromRectMethod {
+    objc_setAssociatedObject([self class], LTTPopoverControllerPresentationRect, nil, OBJC_ASSOCIATION_ASSIGN);
+    objc_setAssociatedObject([self class], LTTPopoverControllerPresentationView, nil, OBJC_ASSOCIATION_ASSIGN);
+    objc_setAssociatedObject([self class], LTTPopoverControllerPresentationArrowDirections, nil, OBJC_ASSOCIATION_ASSIGN);
+    objc_setAssociatedObject([self class], LTTPopoverControllerPresentationAnimationFlag, nil, OBJC_ASSOCIATION_ASSIGN);
     [self swizzlePresentFromRectMethods];
 }
 
@@ -102,35 +102,35 @@ const char *LTTPopoverControllerDismissalAnimationFlag = "LTTPopoverControllerDi
     [LTTMethodSwizzler swapInstanceMethodsForClass:[UIPopoverController class] selectorOne:@selector(presentPopoverFromRect:inView:permittedArrowDirections:animated:) selectorTwo:@selector(Leech_PresentPopoverFromRect:inView:permittedArrowDirections:animated:)];
 }
 
-+ (CGRect)rectFromWhichToPresentPopover:(UIPopoverController *)auditedController {
-    NSValue *value = objc_getAssociatedObject(auditedController, LTTPopoverControllerPresentationRect);
++ (CGRect)rectFromWhichToPresentPopover {
+    NSValue *value = objc_getAssociatedObject([self class], LTTPopoverControllerPresentationRect);
     return [value CGRectValue];
 }
 
-+ (UIView *)viewInWhichToPresentPopover:(UIPopoverController *)auditedController {
-    return objc_getAssociatedObject(auditedController, LTTPopoverControllerPresentationView);
++ (UIView *)viewInWhichToPresentPopover {
+    return objc_getAssociatedObject([self class], LTTPopoverControllerPresentationView);
 }
 
-+ (UIPopoverArrowDirection)arrowDirectionsForPopover:(UIPopoverController *)auditedController {
-    NSNumber *directions = objc_getAssociatedObject(auditedController, LTTPopoverControllerPresentationArrowDirections);
++ (UIPopoverArrowDirection)arrowDirectionsForPopover {
+    NSNumber *directions = objc_getAssociatedObject([self class], LTTPopoverControllerPresentationArrowDirections);
     return directions.integerValue;
 }
 
-+ (BOOL)presentPopoverAnimationFlag:(UIPopoverController *)auditedController {
-    NSNumber *animated = objc_getAssociatedObject(auditedController, LTTPopoverControllerPresentationAnimationFlag);
++ (BOOL)presentPopoverAnimationFlag {
+    NSNumber *animated = objc_getAssociatedObject([self class], LTTPopoverControllerPresentationAnimationFlag);
     return animated.boolValue;
 }
 
 #pragma mark -presentPopoverFromBarButtonItem:permittedArrowDirections:animated:
 
-+ (void)auditPresentFromBarButtonMethod:(UIPopoverController *)auditedController {
++ (void)auditPresentFromBarButtonMethod {
     [self swizzlePresentFromBarButtonItemMethods];
 }
 
-+ (void)stopAuditingPresentFromBarButtonMethod:(UIPopoverController *)auditedController {
-    objc_setAssociatedObject(auditedController, LTTPopoverControllerPresentationBarButtonItem, nil, OBJC_ASSOCIATION_ASSIGN);
-    objc_setAssociatedObject(auditedController, LTTPopoverControllerPresentationArrowDirections, nil, OBJC_ASSOCIATION_ASSIGN);
-    objc_setAssociatedObject(auditedController, LTTPopoverControllerPresentationAnimationFlag, nil, OBJC_ASSOCIATION_ASSIGN);
++ (void)stopAuditingPresentFromBarButtonMethod {
+    objc_setAssociatedObject([self class], LTTPopoverControllerPresentationBarButtonItem, nil, OBJC_ASSOCIATION_ASSIGN);
+    objc_setAssociatedObject([self class], LTTPopoverControllerPresentationArrowDirections, nil, OBJC_ASSOCIATION_ASSIGN);
+    objc_setAssociatedObject([self class], LTTPopoverControllerPresentationAnimationFlag, nil, OBJC_ASSOCIATION_ASSIGN);
     [self swizzlePresentFromBarButtonItemMethods];
 }
 
@@ -138,18 +138,18 @@ const char *LTTPopoverControllerDismissalAnimationFlag = "LTTPopoverControllerDi
     [LTTMethodSwizzler swapInstanceMethodsForClass:[UIPopoverController class] selectorOne:@selector(presentPopoverFromBarButtonItem:permittedArrowDirections:animated:) selectorTwo:@selector(Leech_PresentPopoverFromBarButtonItem:permittedArrowDirections:animated:)];
 }
 
-+ (UIBarButtonItem *)barButtonItemFromWhichToPresentPopover:(UIPopoverController *)auditedController {
-    return objc_getAssociatedObject(auditedController, LTTPopoverControllerPresentationBarButtonItem);
++ (UIBarButtonItem *)barButtonItemFromWhichToPresentPopover {
+    return objc_getAssociatedObject([self class], LTTPopoverControllerPresentationBarButtonItem);
 }
 
 #pragma mark -dismissPopoverAnimated:
 
-+ (void)auditDismissPopoverAnimatedMethod:(UIPopoverController *)auditedController {
++ (void)auditDismissPopoverAnimatedMethod {
     [self swizzleDismissPopoverMethods];
 }
 
-+ (void)stopAuditingDismissPopoverAnimatedMethod:(UIPopoverController *)auditedController {
-    objc_setAssociatedObject(auditedController, LTTPopoverControllerDismissalAnimationFlag, nil, OBJC_ASSOCIATION_ASSIGN);
++ (void)stopAuditingDismissPopoverAnimatedMethod {
+    objc_setAssociatedObject([self class], LTTPopoverControllerDismissalAnimationFlag, nil, OBJC_ASSOCIATION_ASSIGN);
     [self swizzleDismissPopoverMethods];
 }
 
@@ -157,8 +157,8 @@ const char *LTTPopoverControllerDismissalAnimationFlag = "LTTPopoverControllerDi
     [LTTMethodSwizzler swapInstanceMethodsForClass:[UIPopoverController class] selectorOne:@selector(dismissPopoverAnimated:) selectorTwo:@selector(Leech_DismissPopoverAnimated:)];
 }
 
-+ (BOOL)dismissPopoverAnimationFlag:(UIPopoverController *)auditedController {
-    NSNumber *animated = objc_getAssociatedObject(auditedController, LTTPopoverControllerDismissalAnimationFlag);
++ (BOOL)dismissPopoverAnimationFlag {
+    NSNumber *animated = objc_getAssociatedObject([self class], LTTPopoverControllerDismissalAnimationFlag);
     return animated.boolValue;
 }
 

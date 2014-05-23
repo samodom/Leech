@@ -15,20 +15,20 @@
 + (UIPopoverController*)initializedPopoverController;
 + (UIViewController*)initializationContentViewController;
 
-+ (void)auditPresentFromRectMethod:(UIPopoverController*)popoverController;
-+ (void)stopAuditingPresentFromRectMethod:(UIPopoverController*)auditedController;
-+ (CGRect)rectFromWhichToPresentPopover:(UIPopoverController*)auditedController;
-+ (UIView*)viewInWhichToPresentPopover:(UIPopoverController*)auditedController;
++ (void)auditPresentFromRectMethod;
++ (void)stopAuditingPresentFromRectMethod;
++ (CGRect)rectFromWhichToPresentPopover;
++ (UIView*)viewInWhichToPresentPopover;
 
-+ (void)auditPresentFromBarButtonMethod:(UIPopoverController*)auditedController;
-+ (void)stopAuditingPresentFromBarButtonMethod:(UIPopoverController*)auditedController;
-+ (UIBarButtonItem*)barButtonItemFromWhichToPresentPopover:(UIPopoverController*)auditedController;
++ (void)auditPresentFromBarButtonMethod;
++ (void)stopAuditingPresentFromBarButtonMethod;
++ (UIBarButtonItem*)barButtonItemFromWhichToPresentPopover;
 
-+ (UIPopoverArrowDirection)arrowDirectionsForPopover:(UIPopoverController*)auditedController;
-+ (BOOL)presentPopoverAnimationFlag:(UIPopoverController*)auditedController;
++ (UIPopoverArrowDirection)arrowDirectionsForPopover;
++ (BOOL)presentPopoverAnimationFlag;
 
-+ (void)auditDismissPopoverAnimatedMethod:(UIPopoverController*)auditedController;
-+ (void)stopAuditingDismissPopoverAnimatedMethod:(UIPopoverController*)auditedController;
-+ (BOOL)dismissPopoverAnimationFlag:(UIPopoverController*)auditedController;
++ (void)auditDismissPopoverAnimatedMethod;
++ (void)stopAuditingDismissPopoverAnimatedMethod;
++ (BOOL)dismissPopoverAnimationFlag;
 
 @end
