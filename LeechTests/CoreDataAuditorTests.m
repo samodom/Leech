@@ -90,4 +90,33 @@
     [LTTCoreDataAuditor stopAuditingPerformBlockAndWait];
 }
 
+- (void)testAuditingOfNestedPerformBlockAndWait {
+    __block BOOL otherBlockPerformed = NO;
+    core_data_perform_t otherBlockToPerform = ^{
+        otherBlockPerformed = YES;
+    };
+
+    __block BOOL blockPerformed = NO;
+    __block __weak NSManagedObjectContext *weakContext = context;
+    blockToPerform = ^{
+        blockPerformed = YES;
+        [weakContext performBlockAndWait:otherBlockToPerform];
+    };
+    
+    [LTTCoreDataAuditor auditPerformBlockAndWait];
+    [context performBlockAndWait:blockToPerform];
+    core_data_perform_t capturedBlock = [LTTCoreDataAuditor blockToPerform];
+    XCTAssertEqualObjects(capturedBlock, blockToPerform, @"The block to perform should be captured");
+    XCTAssertFalse(blockPerformed, @"The block should not have been performed");
+    [LTTCoreDataAuditor stopAuditingPerformBlockAndWait];
+    [LTTCoreDataAuditor auditPerformBlockAndWait];
+    capturedBlock();
+    core_data_perform_t otherCapturedBlock = [LTTCoreDataAuditor blockToPerform];
+    XCTAssertEqualObjects(otherCapturedBlock, otherBlockToPerform, @"The second block to perform should be captured");
+    XCTAssertFalse(otherBlockPerformed, @"The block should not have been performed");
+    otherCapturedBlock();
+    XCTAssertTrue(otherBlockPerformed, @"The block should have been performed now");
+    [LTTCoreDataAuditor stopAuditingPerformBlockAndWait];
+}
+
 @end
