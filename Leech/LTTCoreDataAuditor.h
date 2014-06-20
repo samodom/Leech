@@ -63,6 +63,18 @@ typedef void (^core_data_perform_t)(void);
 + (void)stopAuditingPerformBlock;
 
 /**
+ Audits performing of Core Data operations in multiple asynchronous blocks
+ 
+ @discussion This method replaces the real method implementation of `-[NSManagedObject performBlock:]` with another method that captures each block to perform and does not perform the blocks
+ */
++ (void)auditPerformMultipleBlocks;
+
+/**
+ Ends auditing of multiple asynchronous perform block methods and clears captured data
+ */
++ (void)stopAuditingPerformMultipleBlocks;
+
+/**
  Audits performing of Core Data operations in a synchronous block
  
  @discussion This method replaces the real method implementation of `-[NSManagedObject performBlockAndWait:]` with another method that captures the block to perform and does not perform the block
@@ -74,6 +86,18 @@ typedef void (^core_data_perform_t)(void);
  */
 + (void)stopAuditingPerformBlockAndWait;
 
+/**
+ Audits performing of Core Data operations in multiple synchronous blocks
+ 
+ @discussion This method replaces the real method implementation of `-[NSManagedObject performBlockAndWait:]` with another method that captures each block to perform and does not perform the blocks
+ */
++ (void)auditPerformMultipleBlocksAndWait;
+
+/**
+ Ends auditing of multiple synchronous perform block methods and clears captured data
+ */
++ (void)stopAuditingPerformMultipleBlocksAndWait;
+
 
 /** @name Accessing audited block to perform */
 
@@ -81,5 +105,29 @@ typedef void (^core_data_perform_t)(void);
  @return core_data_perform_t block that has been captured
  */
 + (core_data_perform_t)blockToPerform;
+
+/** @name Accessing multple audited blocks to perform */
+
+/**
+ @return NSArray of core_data_perform_t blocks that have been captured
+ */
++ (NSArray*)blocksToPerform;
+
+
++ (void)auditAccessNotificationsForManagedObject:(NSManagedObject*)managedObject onAttribute:(NSString*)attributeName;
++ (void)stopAuditingAccessNotificationsForManagedObject:(NSManagedObject*)managedObject;
++ (BOOL)didCallWillAccessValueForKeyOnObject:(NSManagedObject*)object;
++ (BOOL)didCallDidAccessValueForKeyOnObject:(NSManagedObject*)object;
++ (NSString*)keyForWillAccessValueOnObject:(NSManagedObject*)object;
++ (NSString*)keyForDidAccessValueOnObject:(NSManagedObject*)object;
+
+
++ (void)auditChangeNotificationsForManagedObject:(NSManagedObject*)managedObject onAttribute:(NSString*)attributeName;
++ (void)stopAuditingChangeNotificationsForManagedObject:(NSManagedObject*)mangedObject;
++ (BOOL)didCallWillChangeValueForKeyOnObject:(NSManagedObject*)object;
++ (BOOL)didCallDidChangeValueForKeyOnObject:(NSManagedObject*)object;
++ (NSString*)keyForWillChangeValueOnObject:(NSManagedObject*)object;
++ (NSString*)keyForDidChangeValueOnObject:(NSManagedObject*)object;
+
 
 @end
