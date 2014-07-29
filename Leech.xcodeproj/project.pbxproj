@@ -30,6 +30,8 @@
 		0A503F11192060510007BE07 /* CollectionViewLayoutAuditorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A503F10192060510007BE07 /* CollectionViewLayoutAuditorTests.m */; };
 		0A503F14192109980007BE07 /* LTTCollectionViewLayoutAuditor.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A503F13192109980007BE07 /* LTTCollectionViewLayoutAuditor.m */; };
 		0A503F1719210C730007BE07 /* TestCollectionViewLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A503F1619210C730007BE07 /* TestCollectionViewLayout.m */; };
+		0A511E2219646B0A000D898D /* DeviceTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A511E2119646B0A000D898D /* DeviceTests.m */; };
+		0A511E2519646B3E000D898D /* LTTDeviceAuditor.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A511E2419646B3E000D898D /* LTTDeviceAuditor.m */; };
 		0A6D23BD18EA20DA00D705E2 /* AlertViewAuditorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A6D23BC18EA20DA00D705E2 /* AlertViewAuditorTests.m */; };
 		0A6D23C018EA211500D705E2 /* LTTAlertViewAuditor.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A6D23BF18EA211500D705E2 /* LTTAlertViewAuditor.m */; };
 		0A6D23C118EA211500D705E2 /* LTTAlertViewAuditor.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A6D23BF18EA211500D705E2 /* LTTAlertViewAuditor.m */; };
@@ -200,6 +202,9 @@
 		0A503F13192109980007BE07 /* LTTCollectionViewLayoutAuditor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LTTCollectionViewLayoutAuditor.m; sourceTree = "<group>"; };
 		0A503F1519210C730007BE07 /* TestCollectionViewLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TestCollectionViewLayout.h; path = ../Leech/TestCollectionViewLayout.h; sourceTree = "<group>"; };
 		0A503F1619210C730007BE07 /* TestCollectionViewLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TestCollectionViewLayout.m; path = ../Leech/TestCollectionViewLayout.m; sourceTree = "<group>"; };
+		0A511E2119646B0A000D898D /* DeviceTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DeviceTests.m; sourceTree = "<group>"; };
+		0A511E2319646B3E000D898D /* LTTDeviceAuditor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTTDeviceAuditor.h; sourceTree = "<group>"; };
+		0A511E2419646B3E000D898D /* LTTDeviceAuditor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LTTDeviceAuditor.m; sourceTree = "<group>"; };
 		0A6D23BC18EA20DA00D705E2 /* AlertViewAuditorTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlertViewAuditorTests.m; sourceTree = "<group>"; };
 		0A6D23BE18EA211500D705E2 /* LTTAlertViewAuditor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTTAlertViewAuditor.h; sourceTree = "<group>"; };
 		0A6D23BF18EA211500D705E2 /* LTTAlertViewAuditor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LTTAlertViewAuditor.m; sourceTree = "<group>"; };
@@ -402,6 +407,7 @@
 				0ACA5E3518D58A280052F2CD /* BarButtonItemAuditorTests.m */,
 				0A503F10192060510007BE07 /* CollectionViewLayoutAuditorTests.m */,
 				0ABD4CC918C6AEFB003BDD76 /* CoreDataAuditorTests.m */,
+				0A511E2119646B0A000D898D /* DeviceTests.m */,
 				0AED668F18C93BB200D3DFE5 /* LayoutConstraintTests.m */,
 				0AF15C221907234C0068EC2C /* LocationManagerAuditorTests.m */,
 				0ACA5E1F18D551070052F2CD /* MapViewAuditorTests.m */,
@@ -505,6 +511,8 @@
 		0AD1EE251902382000F8DB69 /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				0A511E2319646B3E000D898D /* LTTDeviceAuditor.h */,
+				0A511E2419646B3E000D898D /* LTTDeviceAuditor.m */,
 				0A6D23DB18EB91B500D705E2 /* LTTObjectAuditor.h */,
 				0A6D23DC18EB91B500D705E2 /* LTTObjectAuditor.m */,
 				0AA51B8E18C40ABA00A63B92 /* LTTTimeFreezer.h */,
@@ -687,6 +695,7 @@
 				0ABD4CCD18C6AF69003BDD76 /* LTTCoreDataAuditor.m in Sources */,
 				0A72943818DB9C40008A1E71 /* LTTViewAuditor.m in Sources */,
 				0A6D23C018EA211500D705E2 /* LTTAlertViewAuditor.m in Sources */,
+				0A511E2519646B3E000D898D /* LTTDeviceAuditor.m in Sources */,
 				0A77CA9118BAA05C005230B0 /* LTTViewControllerAuditor.m in Sources */,
 				0A77CA8818B94398005230B0 /* LTTMethodSwizzler.m in Sources */,
 				0A6D23DD18EB91B500D705E2 /* LTTObjectAuditor.m in Sources */,
@@ -729,6 +738,7 @@
 				0ACA5E2018D551070052F2CD /* MapViewAuditorTests.m in Sources */,
 				0ACA5E2818D5561D0052F2CD /* TestMapAnnotation.m in Sources */,
 				0AC33ACE18BDC41000D3F342 /* LTTMockURLSession.m in Sources */,
+				0A511E2219646B0A000D898D /* DeviceTests.m in Sources */,
 				0AC0E33618D24DBC0078C01B /* LTTMockTextField.m in Sources */,
 				0A72945218DCF5B5008A1E71 /* FakeActionSheetDelegate.m in Sources */,
 				0AF15C271907236E0068EC2C /* LTTLocationManagerAuditor.m in Sources */,
