@@ -6,6 +6,8 @@
 //  Copyright (c) 2014 Swagger Soft. All rights reserved.
 //
 
+#import <UIKit/UIKit.h>
+
 typedef void(^leech_completion_block_t)(void);
 
 @interface LTTViewControllerAuditor : NSObject
