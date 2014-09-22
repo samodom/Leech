@@ -118,6 +118,7 @@
 		0ACE718519D081EF00BC9709 /* ObjectAssociationsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0ACE718419D081EF00BC9709 /* ObjectAssociationsTests.m */; };
 		0ACE718819D0823200BC9709 /* NSObject+Association.m in Sources */ = {isa = PBXBuildFile; fileRef = 0ACE718719D0823200BC9709 /* NSObject+Association.m */; };
 		0ACE718919D083D500BC9709 /* NSObject+Association.m in Sources */ = {isa = PBXBuildFile; fileRef = 0ACE718719D0823200BC9709 /* NSObject+Association.m */; };
+		0ACE718A19D0867F00BC9709 /* NSObject+Association.h in Copy Files */ = {isa = PBXBuildFile; fileRef = 0ACE718619D0823200BC9709 /* NSObject+Association.h */; };
 		0ADA19C51987F30100BAA900 /* LTTDeviceAuditor.h in Copy Files */ = {isa = PBXBuildFile; fileRef = 0A511E2319646B3E000D898D /* LTTDeviceAuditor.h */; };
 		0AED669018C93BB200D3DFE5 /* LayoutConstraintTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AED668F18C93BB200D3DFE5 /* LayoutConstraintTests.m */; };
 		0AED7A1818D3950D009C6E1B /* NavigationControllerAuditorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AED7A1718D3950D009C6E1B /* NavigationControllerAuditorTests.m */; };
@@ -163,6 +164,7 @@
 			dstPath = "include/$(PRODUCT_NAME)";
 			dstSubfolderSpec = 16;
 			files = (
+				0ACE718A19D0867F00BC9709 /* NSObject+Association.h in Copy Files */,
 				0ADA19C51987F30100BAA900 /* LTTDeviceAuditor.h in Copy Files */,
 				0A1C9EA9192FE5DD00122B88 /* LTTPopoverControllerAuditor.h in Copy Files */,
 				0AF15C2F19080B620068EC2C /* LTTMockBeacon.h in Copy Files */,

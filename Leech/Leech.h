@@ -36,6 +36,7 @@
 #import "LTTCollectionViewLayoutAuditor.h"
 #import "LTTPopoverControllerAuditor.h"
 #import "LTTDeviceAuditor.h"
+#import "NSObject+Association.h"
 
 
 #endif
