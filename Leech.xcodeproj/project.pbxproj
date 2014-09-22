@@ -115,6 +115,9 @@
 		0ACA5E3918D58A650052F2CD /* LTTBarButtonItemAuditor.m in Sources */ = {isa = PBXBuildFile; fileRef = 0ACA5E3818D58A650052F2CD /* LTTBarButtonItemAuditor.m */; };
 		0ACA5E3A18D58A650052F2CD /* LTTBarButtonItemAuditor.m in Sources */ = {isa = PBXBuildFile; fileRef = 0ACA5E3818D58A650052F2CD /* LTTBarButtonItemAuditor.m */; };
 		0ACA5E3B18D61A850052F2CD /* LTTBarButtonItemAuditor.h in Copy Files */ = {isa = PBXBuildFile; fileRef = 0ACA5E3718D58A650052F2CD /* LTTBarButtonItemAuditor.h */; };
+		0ACE718519D081EF00BC9709 /* ObjectAssociationsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0ACE718419D081EF00BC9709 /* ObjectAssociationsTests.m */; };
+		0ACE718819D0823200BC9709 /* NSObject+Association.m in Sources */ = {isa = PBXBuildFile; fileRef = 0ACE718719D0823200BC9709 /* NSObject+Association.m */; };
+		0ACE718919D083D500BC9709 /* NSObject+Association.m in Sources */ = {isa = PBXBuildFile; fileRef = 0ACE718719D0823200BC9709 /* NSObject+Association.m */; };
 		0ADA19C51987F30100BAA900 /* LTTDeviceAuditor.h in Copy Files */ = {isa = PBXBuildFile; fileRef = 0A511E2319646B3E000D898D /* LTTDeviceAuditor.h */; };
 		0AED669018C93BB200D3DFE5 /* LayoutConstraintTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AED668F18C93BB200D3DFE5 /* LayoutConstraintTests.m */; };
 		0AED7A1818D3950D009C6E1B /* NavigationControllerAuditorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AED7A1718D3950D009C6E1B /* NavigationControllerAuditorTests.m */; };
@@ -282,6 +285,9 @@
 		0ACA5E3518D58A280052F2CD /* BarButtonItemAuditorTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BarButtonItemAuditorTests.m; sourceTree = "<group>"; };
 		0ACA5E3718D58A650052F2CD /* LTTBarButtonItemAuditor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTTBarButtonItemAuditor.h; sourceTree = "<group>"; };
 		0ACA5E3818D58A650052F2CD /* LTTBarButtonItemAuditor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LTTBarButtonItemAuditor.m; sourceTree = "<group>"; };
+		0ACE718419D081EF00BC9709 /* ObjectAssociationsTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ObjectAssociationsTests.m; sourceTree = "<group>"; };
+		0ACE718619D0823200BC9709 /* NSObject+Association.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+Association.h"; sourceTree = "<group>"; };
+		0ACE718719D0823200BC9709 /* NSObject+Association.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+Association.m"; sourceTree = "<group>"; };
 		0AED668F18C93BB200D3DFE5 /* LayoutConstraintTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LayoutConstraintTests.m; sourceTree = "<group>"; };
 		0AED7A1718D3950D009C6E1B /* NavigationControllerAuditorTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NavigationControllerAuditorTests.m; sourceTree = "<group>"; };
 		0AED7A1918D3955E009C6E1B /* LTTNavigationControllerAuditor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTTNavigationControllerAuditor.h; sourceTree = "<group>"; };
@@ -423,6 +429,7 @@
 				0AC33AC918BDC3C700D3F342 /* MockURLSessionTests.m */,
 				0AED7A2C18D5013C009C6E1B /* MockUserLocationTests.m */,
 				0AED7A1718D3950D009C6E1B /* NavigationControllerAuditorTests.m */,
+				0ACE718419D081EF00BC9709 /* ObjectAssociationsTests.m */,
 				0A6D23D918EB918100D705E2 /* ObjectAuditorTests.m */,
 				0A298BE4192FB2C50001CB92 /* PopoverControllerAuditorTests.m */,
 				0AA51B7518C06F3D00A63B92 /* SampleFileLoaderTests.m */,
@@ -558,6 +565,8 @@
 				0A77CA8718B94398005230B0 /* LTTMethodSwizzler.m */,
 				0AA51B7118C06F2100A63B92 /* LTTSampleFileLoader.h */,
 				0AA51B7218C06F2100A63B92 /* LTTSampleFileLoader.m */,
+				0ACE718619D0823200BC9709 /* NSObject+Association.h */,
+				0ACE718719D0823200BC9709 /* NSObject+Association.m */,
 			);
 			name = Tools;
 			sourceTree = "<group>";
@@ -693,6 +702,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0AF15C2D190809DE0068EC2C /* LTTMockBeacon.m in Sources */,
+				0ACE718819D0823200BC9709 /* NSObject+Association.m in Sources */,
 				0AC33ABF18BD325700D3F342 /* LTTMockHTTPResponse.m in Sources */,
 				0ABD4CCD18C6AF69003BDD76 /* LTTCoreDataAuditor.m in Sources */,
 				0A72943818DB9C40008A1E71 /* LTTViewAuditor.m in Sources */,
@@ -748,6 +758,7 @@
 				0A369FD118C9409B008611E5 /* LTTLayoutConstraintChecker.m in Sources */,
 				0AED7A2A18D4FD3E009C6E1B /* LTTMockMapView.m in Sources */,
 				0AC33AD418BDC5DB00D3F342 /* LTTMockURLDataTask.m in Sources */,
+				0ACE718519D081EF00BC9709 /* ObjectAssociationsTests.m in Sources */,
 				0A6D23BD18EA20DA00D705E2 /* AlertViewAuditorTests.m in Sources */,
 				0AED7A1F18D3DE7B009C6E1B /* TableViewAuditorTests.m in Sources */,
 				0AC33ABC18BD321F00D3F342 /* MockHTTPResponseTests.m in Sources */,
@@ -772,6 +783,7 @@
 				0AA51B8918C409F800A63B92 /* TimeFreezerTests.m in Sources */,
 				0AA51B9118C40ABA00A63B92 /* LTTTimeFreezer.m in Sources */,
 				0AED7A2318D3DE98009C6E1B /* LTTTableViewAuditor.m in Sources */,
+				0ACE718919D083D500BC9709 /* NSObject+Association.m in Sources */,
 				0AED7A2D18D5013C009C6E1B /* MockUserLocationTests.m in Sources */,
 				0A72943C18DB9D7D008A1E71 /* TestView.m in Sources */,
 				0AA51B7618C06F3D00A63B92 /* SampleFileLoaderTests.m in Sources */,
