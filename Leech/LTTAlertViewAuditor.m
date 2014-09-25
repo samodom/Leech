@@ -9,15 +9,17 @@
 #import "LTTAlertViewAuditor.h"
 
 #import "LTTMethodSwizzler.h"
+#import "NSObject+Association.h"
 
-const char *InitializedAlertView = "InitializedAlertView";
-const char *InitializationAlertViewTitle = "InitializationAlertViewTitle";
-const char *InitializationAlertViewMessage = "InitializationAlertViewMessage";
-const char *InitializationAlertViewDelegate = "InitializationAlertViewDelegate";
-const char *InitializationAlertViewCancelTitle = "InitializationAlertViewCancelTitle";
-const char *InitializationAlertViewOtherTitles = "InitializationAlertViewOtherTitles";
+const char *AlertViewAuditorInitializedAlertView = "AlertViewAuditorInitializedAlertView";
+const char *AlertViewAuditorInitializationAlertViewTitle = "AlertViewAuditorInitializationAlertViewTitle";
+const char *AlertViewAuditorInitializationAlertViewMessage = "AlertViewAuditorInitializationAlertViewMessage";
+const char *AlertViewAuditorInitializationAlertViewDelegate = "AlertViewAuditorInitializationAlertViewDelegate";
+const char *AlertViewAuditorInitializationAlertViewCancelTitle = "AlertViewAuditorInitializationAlertViewCancelTitle";
+const char *AlertViewAuditorInitializationAlertViewOtherTitles = "AlertViewAuditorInitializationAlertViewOtherTitles";
 
-const char *DidShowAlertView = "DidShowAlertView";
+const char *AlertViewAuditorDidShowAlertView = "AlertViewAuditorDidShowAlertView";
+const char *AlertViewAuditorAlertToShow = "AlertViewAuditorAlertToShow";
 
 ////////////////////////////////////////////////////////////////////////////////
 //  Category on UIAlertView
@@ -26,10 +28,11 @@ const char *DidShowAlertView = "DidShowAlertView";
 @implementation UIAlertView (Leech)
 
 - (id)initLeechWithTitle:(NSString *)title message:(NSString *)message delegate:(id)delegate cancelButtonTitle:(NSString *)cancelButtonTitle otherButtonTitles:(NSString *)otherButtonTitles, ... NS_REQUIRES_NIL_TERMINATION {
-    objc_setAssociatedObject([LTTAlertViewAuditor class], InitializationAlertViewTitle, title, OBJC_ASSOCIATION_RETAIN);
-    objc_setAssociatedObject([LTTAlertViewAuditor class], InitializationAlertViewMessage, message, OBJC_ASSOCIATION_RETAIN);
-    objc_setAssociatedObject([LTTAlertViewAuditor class], InitializationAlertViewDelegate, delegate, OBJC_ASSOCIATION_RETAIN);
-    objc_setAssociatedObject([LTTAlertViewAuditor class], InitializationAlertViewCancelTitle, cancelButtonTitle, OBJC_ASSOCIATION_RETAIN);
+    Class cls = [LTTAlertViewAuditor class];
+    [cls associateKey:AlertViewAuditorInitializationAlertViewTitle withValue:title];
+    [cls associateKey:AlertViewAuditorInitializationAlertViewMessage withValue:message];
+    [cls associateKey:AlertViewAuditorInitializationAlertViewDelegate withValue:delegate];
+    [cls associateKey:AlertViewAuditorInitializationAlertViewCancelTitle withValue:cancelButtonTitle];
 
     if (otherButtonTitles) {
         va_list arguments;
@@ -39,16 +42,19 @@ const char *DidShowAlertView = "DidShowAlertView";
         while ((tempTitle = va_arg(arguments, id)) != nil)
             [titles addObject:tempTitle];
         va_end(arguments);
-        objc_setAssociatedObject([LTTAlertViewAuditor class], InitializationAlertViewOtherTitles, [NSArray arrayWithArray:titles], OBJC_ASSOCIATION_RETAIN);
+        [cls associateKey:AlertViewAuditorInitializationAlertViewOtherTitles withValue:[NSArray arrayWithArray:titles]];
     }
 
-    objc_setAssociatedObject([LTTAlertViewAuditor class], InitializedAlertView, self, OBJC_ASSOCIATION_RETAIN);
-
+    [cls associateKey:AlertViewAuditorInitializedAlertView withValue:self];
     return self;
 }
 
 - (void)Leech_Show {
-    objc_setAssociatedObject([LTTAlertViewAuditor class], DidShowAlertView, @(YES), OBJC_ASSOCIATION_RETAIN);
+    [[LTTAlertViewAuditor class] associateKey:AlertViewAuditorDidShowAlertView withValue:@YES];
+}
+
+- (void)Leech_ShowAndCapture {
+    [[LTTAlertViewAuditor class] associateKey:AlertViewAuditorAlertToShow withValue:self];
 }
 
 @end
@@ -66,37 +72,38 @@ const char *DidShowAlertView = "DidShowAlertView";
 }
 
 + (void)stopAuditingInitWithTitleMessageDelegateButtonTitlesMethod {
-    objc_setAssociatedObject(self, InitializedAlertView, nil, OBJC_ASSOCIATION_ASSIGN);
-    objc_setAssociatedObject(self, InitializationAlertViewTitle, nil, OBJC_ASSOCIATION_ASSIGN);
-    objc_setAssociatedObject(self, InitializationAlertViewMessage, nil, OBJC_ASSOCIATION_ASSIGN);
-    objc_setAssociatedObject(self, InitializationAlertViewDelegate, nil, OBJC_ASSOCIATION_ASSIGN);
-    objc_setAssociatedObject(self, InitializationAlertViewCancelTitle, nil, OBJC_ASSOCIATION_ASSIGN);
-    objc_setAssociatedObject(self, InitializationAlertViewOtherTitles, nil, OBJC_ASSOCIATION_ASSIGN);
+    Class cls = [LTTAlertViewAuditor class];
+    [cls dissociateKey:AlertViewAuditorInitializedAlertView];
+    [cls dissociateKey:AlertViewAuditorInitializationAlertViewTitle];
+    [cls dissociateKey:AlertViewAuditorInitializationAlertViewMessage];
+    [cls dissociateKey:AlertViewAuditorInitializationAlertViewDelegate];
+    [cls dissociateKey:AlertViewAuditorInitializationAlertViewCancelTitle];
+    [cls dissociateKey:AlertViewAuditorInitializationAlertViewOtherTitles];
     [LTTMethodSwizzler swapInstanceMethodsForClass:[UIAlertView class] selectorOne:@selector(initWithTitle:message:delegate:cancelButtonTitle:otherButtonTitles:) selectorTwo:@selector(initLeechWithTitle:message:delegate:cancelButtonTitle:otherButtonTitles:)];
 }
 
 + (UIAlertView *)initializedAlertView {
-    return objc_getAssociatedObject(self, InitializedAlertView);
+    return [self associationForKey:AlertViewAuditorInitializedAlertView];
 }
 
 + (NSString *)initializationTitle {
-    return objc_getAssociatedObject(self, InitializationAlertViewTitle);
+    return [self associationForKey:AlertViewAuditorInitializationAlertViewTitle];
 }
 
 + (NSString *)initializationMessage {
-    return objc_getAssociatedObject(self, InitializationAlertViewMessage);
+    return [self associationForKey:AlertViewAuditorInitializationAlertViewMessage];
 }
 
 + (id<UIAlertViewDelegate>)initializationDelegate {
-    return objc_getAssociatedObject(self, InitializationAlertViewDelegate);
+    return [self associationForKey:AlertViewAuditorInitializationAlertViewDelegate];
 }
 
 + (NSString *)initializationCancelTitle {
-    return objc_getAssociatedObject(self, InitializationAlertViewCancelTitle);
+    return [self associationForKey:AlertViewAuditorInitializationAlertViewCancelTitle];
 }
 
 + (NSArray *)initializationOtherTitles {
-    return objc_getAssociatedObject(self, InitializationAlertViewOtherTitles);
+    return [self associationForKey:AlertViewAuditorInitializationAlertViewOtherTitles];
 }
 
 #pragma mark -show
@@ -106,14 +113,26 @@ const char *DidShowAlertView = "DidShowAlertView";
 }
 
 + (void)stopAuditingShowMethod {
-    objc_setAssociatedObject(self, DidShowAlertView, nil, OBJC_ASSOCIATION_ASSIGN);
+    [self dissociateKey:AlertViewAuditorDidShowAlertView];
     [LTTMethodSwizzler swapInstanceMethodsForClass:[UIAlertView class] selectorOne:@selector(show) selectorTwo:@selector(Leech_Show)];
 }
 
 + (BOOL)didShowAlertView {
-    NSNumber *didShow = objc_getAssociatedObject(self, DidShowAlertView);
+    NSNumber *didShow = [self associationForKey:AlertViewAuditorDidShowAlertView];
     return didShow.boolValue;
+}
 
++ (void)captureAlertToShow {
+    [LTTMethodSwizzler swapInstanceMethodsForClass:[UIAlertView class] selectorOne:@selector(show) selectorTwo:@selector(Leech_ShowAndCapture)];
+}
+
++ (void)stopCapturingAlertToShow {
+    [self dissociateKey:AlertViewAuditorAlertToShow];
+    [LTTMethodSwizzler swapInstanceMethodsForClass:[UIAlertView class] selectorOne:@selector(show) selectorTwo:@selector(Leech_ShowAndCapture)];
+}
+
++ (UIAlertView *)alertToShow {
+    return [self associationForKey:AlertViewAuditorAlertToShow];
 }
 
 @end

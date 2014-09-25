@@ -130,4 +130,21 @@
  */
 + (BOOL)didShowAlertView;
 
+/**
+ Captures alert view to be shown using the -show method.
+ 
+ @discussion This method replaces the real method implementation of `-[UIAlertView show]` with another method that captures the alert view on which the method is being invoked.
+ */
++ (void)captureAlertToShow;
+
+/**
+ Ends capturing of alert view to show.
+ */
++ (void)stopCapturingAlertToShow;
+
+/**
+ @return Captured UIAlertView that is being shown using the `-show` method
+ */
++ (UIAlertView*)alertToShow;
+
 @end

@@ -66,4 +66,19 @@
     XCTAssertEqual(currentImplementation, realImplementation, @"The method should no longer be swizzled");
 }
 
+- (void)testCapturingAlertFromShowMethod {
+    IMP realImplementation = method_getImplementation(class_getInstanceMethod([UIAlertView class], @selector(show)));
+    [LTTAlertViewAuditor captureAlertToShow];
+    IMP currentImplementation = method_getImplementation(class_getInstanceMethod([UIAlertView class], @selector(show)));
+    XCTAssertNotEqual(currentImplementation, realImplementation, @"The -show method should be swizzled");
+    alert = [[UIAlertView alloc] initWithTitle:@"Alert title" message:@"Message" delegate:nil cancelButtonTitle:@"Cancel" otherButtonTitles:@"Other title one", @"Other title two", nil];
+    [alert show];
+    UIAlertView *shownAlert = [LTTAlertViewAuditor alertToShow];
+    XCTAssertEqualObjects(shownAlert, alert, @"The alert to show should be captured");
+    [LTTAlertViewAuditor stopCapturingAlertToShow];
+    currentImplementation = method_getImplementation(class_getInstanceMethod([UIAlertView class], @selector(show)));
+    XCTAssertEqual(currentImplementation, realImplementation, @"The method should no longer be swizzled");
+
+}
+
 @end
