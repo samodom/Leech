@@ -15,7 +15,7 @@
  
  __Step 1__ Begin auditing the perform on main thread selector method
  
-     [LTTObjectAuditor auditPerformSelectorOrMainThreadMethod:<#myObject#>];
+     [LTTObjectAuditor auditPerformSelectorOnMainThread:<#myObject#>];
  
  __Step 2__ Invoke your code that performs a selector on the main thread
  
@@ -34,7 +34,7 @@
  
  __Step 4__ End auditing of the perform selector method
  
-     [LTTObjectAuditor stopAuditingPerformSelectorOnMainThreadMethod];
+     [LTTObjectAuditor stopAuditingPerformSelectorOnMainThread];
  */
 @interface LTTObjectAuditor : NSObject
 
@@ -43,14 +43,14 @@
  
  @param object NSObject representing the object performing the selector
  */
-+ (void)auditPerformSelectorOrMainThreadMethod:(NSObject*)object;
++ (void)auditPerformSelectorOnMainThread:(NSObject*)object;
 
 /**
  Ends auditing of performing selectors on the main thread and clears captured data
  
  @param object The object being audited
  */
-+ (void)stopAuditingPerformSelectorOnMainThreadMethod:(NSObject*)object;
++ (void)stopAuditingPerformSelectorOnMainThread:(NSObject*)object;
 
 /**
  Provides the selector to be performed on the main thread
