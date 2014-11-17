@@ -85,4 +85,26 @@
  */
 + (BOOL)didCallSuperLayoutSubviews;
 
+
+/**
+ Audits calls to the method -setNeedsDisplay on UIView
+
+ @param forward BOOL specifying whether or not to forward the call to the real method implementation
+
+ @discussion This method replaces the real method implementation of `-[UIView setNeedsDisplay]` with another method that captures the call and optionally forwards the call to the real method implementation
+ */
++ (void)auditSetNeedsDisplayMethod:(BOOL)forward;
+
+/**
+ Ends auditing of `setNeedsDisplay` and clears captured data
+ */
++ (void)stopAuditingSetNeedsDisplayMethod;
+
+/**
+ Indicates whether or not the view's  -setNeedsDisplay method was called
+
+ @return BOOL indicating whether or not the view's -setNeedsDisplay method was called
+ */
++ (BOOL)didCallSetNeedsDisplay;
+
 @end

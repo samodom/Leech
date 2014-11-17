@@ -58,4 +58,16 @@
     XCTAssertEqual(currentImplementation, realImplementation, @"The method should no longer be swizzled");
 }
 
+- (void)testAuditingOfSetNeedsDisplayMethod {
+    IMP realImplementation = method_getImplementation(class_getInstanceMethod([UIView class], @selector(setNeedsDisplay)));
+    [LTTViewAuditor auditSetNeedsDisplayMethod:YES];
+    IMP currentImplementation = method_getImplementation(class_getInstanceMethod([UIView class], @selector(setNeedsDisplay)));
+    XCTAssertNotEqual(currentImplementation, realImplementation, @"The method should be swizzled");
+    [view setNeedsDisplay];
+    XCTAssertTrue([LTTViewAuditor didCallSetNeedsDisplay], @"The view should capture calls to its -setNeedsDisplay method");
+    [LTTViewAuditor stopAuditingSetNeedsDisplayMethod];
+    currentImplementation = method_getImplementation(class_getInstanceMethod([UIView class], @selector(setNeedsDisplay)));
+    XCTAssertEqual(currentImplementation, realImplementation, @"The method should no longer be swizzled");
+}
+
 @end
