@@ -37,6 +37,6 @@
 #import "LTTPopoverControllerAuditor.h"
 #import "LTTDeviceAuditor.h"
 #import "NSObject+Association.h"
-
+#import "LTTMockHeading.h"
 
 #endif

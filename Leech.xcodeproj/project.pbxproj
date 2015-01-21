@@ -146,6 +146,8 @@
 		0AF15C2D190809DE0068EC2C /* LTTMockBeacon.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AF15C2C190809DE0068EC2C /* LTTMockBeacon.m */; };
 		0AF15C2E190809DE0068EC2C /* LTTMockBeacon.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AF15C2C190809DE0068EC2C /* LTTMockBeacon.m */; };
 		0AF15C2F19080B620068EC2C /* LTTMockBeacon.h in Copy Files */ = {isa = PBXBuildFile; fileRef = 0AF15C2B190809DE0068EC2C /* LTTMockBeacon.h */; };
+		0AFC99A31A704658009425BF /* LTTMockHeading.h in Copy Files */ = {isa = PBXBuildFile; fileRef = 0AA171F81A70298900628174 /* LTTMockHeading.h */; };
+		0AFC99A41A704658009425BF /* LTTCollectionViewLayoutAuditor.h in Copy Files */ = {isa = PBXBuildFile; fileRef = 0A503F12192109980007BE07 /* LTTCollectionViewLayoutAuditor.h */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -165,6 +167,8 @@
 			dstPath = "include/$(PRODUCT_NAME)";
 			dstSubfolderSpec = 16;
 			files = (
+				0AFC99A31A704658009425BF /* LTTMockHeading.h in Copy Files */,
+				0AFC99A41A704658009425BF /* LTTCollectionViewLayoutAuditor.h in Copy Files */,
 				0ACE718A19D0867F00BC9709 /* NSObject+Association.h in Copy Files */,
 				0ADA19C51987F30100BAA900 /* LTTDeviceAuditor.h in Copy Files */,
 				0A1C9EA9192FE5DD00122B88 /* LTTPopoverControllerAuditor.h in Copy Files */,
