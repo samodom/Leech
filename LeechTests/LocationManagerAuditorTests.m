@@ -14,6 +14,7 @@
 
 //  Production
 #import "LTTLocationManagerAuditor.h"
+#import "LTTMockHeading.h"
 
 @interface LocationManagerAuditorTests : XCTestCase
 
@@ -194,6 +195,64 @@
     XCTAssertEqualObjects(rangedRegions, regions, @"The ranged regions should be remebered");
     [LTTLocationManagerAuditor clearRangedRegionsForLocationManager:locationManager];
     currentImplementation = [self instanceMethodImplementation:@selector(rangedRegions)];
+    XCTAssertEqual(currentImplementation, realImplementation, @"The method should no longer be swizzled");
+}
+
+#pragma mark - Heading
+
+- (void)testAuditorOverridesHeadingAvailabilityMethod {
+    realImplementation = [self classMethodImplementation:@selector(headingAvailable)];
+    [LTTLocationManagerAuditor overrideHeadingAvailable];
+    currentImplementation = [self classMethodImplementation:@selector(headingAvailable)];
+    XCTAssertNotEqual(currentImplementation, realImplementation, @"The method should be swizzled");
+    XCTAssertFalse([CLLocationManager headingAvailable], @"The location manager should not indicate heading availability by default");
+    [LTTLocationManagerAuditor setHeadingAvailable:YES];
+    XCTAssertTrue([CLLocationManager headingAvailable], @"The location manager should remember heading availability");
+    [LTTLocationManagerAuditor reverseHeadingAvailableOverride];
+    currentImplementation = [self classMethodImplementation:@selector(headingAvailable)];
+    XCTAssertEqual(currentImplementation, realImplementation, @"The method should no longer be swizzled");
+}
+
+- (void)testStartUpdatingHeading {
+    realImplementation = [self instanceMethodImplementation:@selector(startUpdatingHeading)];
+    [LTTLocationManagerAuditor auditStartUpdatingHeading:locationManager];
+    currentImplementation = [self instanceMethodImplementation:@selector(startUpdatingHeading)];
+    XCTAssertNotEqual(currentImplementation, realImplementation, @"The method should be swizzled");
+    [locationManager startUpdatingHeading];
+    XCTAssertTrue([LTTLocationManagerAuditor startedUpdatingHeading:locationManager], @"The auditor should capture the call to start updating the heading");
+    [LTTLocationManagerAuditor stopAuditingStartUpdatingHeading:locationManager];
+    currentImplementation = [self instanceMethodImplementation:@selector(startUpdatingHeading)];
+    XCTAssertEqual(currentImplementation, realImplementation, @"The method should no longer be swizzled");
+}
+
+- (void)testStopUpdatingHeading {
+    realImplementation = [self instanceMethodImplementation:@selector(stopUpdatingHeading)];
+    [LTTLocationManagerAuditor auditStopUpdatingHeading:locationManager];
+    currentImplementation = [self instanceMethodImplementation:@selector(stopUpdatingHeading)];
+    XCTAssertNotEqual(currentImplementation, realImplementation, @"The method should be swizzled");
+    [locationManager stopUpdatingHeading];
+    XCTAssertTrue([LTTLocationManagerAuditor stoppedUpdatingHeading:locationManager], @"The auditor should capture the call to stop updating the heading");
+    [LTTLocationManagerAuditor stopAuditingStopUpdatingHeading:locationManager];
+    currentImplementation = [self instanceMethodImplementation:@selector(stopUpdatingHeading)];
+    XCTAssertEqual(currentImplementation, realImplementation, @"The method should no longer be swizzled");
+}
+
+- (void)testHeadingOverride {
+    XCTAssertNil(locationManager.heading, @"The heading should be missing by default");
+    realImplementation = [self instanceMethodImplementation:@selector(heading)];
+    [LTTLocationManagerAuditor overrideHeading];
+    XCTAssertNil(locationManager.heading, @"The heading should still be missing");
+    currentImplementation = [self instanceMethodImplementation:@selector(heading)];
+    XCTAssertNotEqual(currentImplementation, realImplementation, @"The method should be swizzled");
+    LTTMockHeading *heading = [LTTMockHeading new];
+    [LTTLocationManagerAuditor setHeadingOverride:heading forLocationManager:locationManager];
+    XCTAssertEqualObjects(locationManager.heading, heading, @"The override heading should be returned");
+    [LTTLocationManagerAuditor clearHeadingOverrideForLocationManager:locationManager];
+    XCTAssertNil(locationManager.heading, @"The heading should be missing again");
+    [LTTLocationManagerAuditor setHeadingOverride:heading forLocationManager:locationManager];
+    [LTTLocationManagerAuditor reverseHeadingOverride];
+    XCTAssertNil(locationManager.heading, @"The heading should be missing again");
+    currentImplementation = [self instanceMethodImplementation:@selector(heading)];
     XCTAssertEqual(currentImplementation, realImplementation, @"The method should no longer be swizzled");
 }
 

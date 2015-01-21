@@ -22,6 +22,11 @@ const char *LTTLocationManagerAuditorRegionToStartRanging = "LTTLocationManagerA
 const char *LTTLocationManagerAuditorRegionToStopRanging = "LTTLocationManagerAuditorRegionToStopRanging";
 const char *LTTLocationManagerAuditorRangedRegions = "LTTLocationManagerAuditorRangedRegions";
 
+const char *LTTLocationManagerAuditorHeadingAvailableFlag = "LTTLocationManagerAuditorHeadingAvailableFlag";
+const char *LTTLocationManagerAuditorStartUpdatingHeadingCalled = "LTTLocationManagerAuditorStartUpdatingHeadingCalled";
+const char *LTTLocationManagerAuditorStopUpdatingHeadingCalled = "LTTLocationManagerAuditorStopUpdatingHeadingCalled";
+const char *LTTLocationManagerAuditorHeading = "LTTLocationManagerAuditorHeading";
+
 
 ////////////////////////////////////////////////////////////////////////////////
 //  Category on CLLocationManager
@@ -68,6 +73,24 @@ const char *LTTLocationManagerAuditorRangedRegions = "LTTLocationManagerAuditorR
 
 - (NSSet *)Leech_RangedRegions {
     return [self associationForKey:LTTLocationManagerAuditorRangedRegions];
+}
+
+#pragma mark - Heading updates
+
++ (BOOL)Leech_HeadingAvailable {
+    return [[LTTLocationManagerAuditor class] associationForKey:LTTLocationManagerAuditorHeadingAvailableFlag];
+}
+
+- (void)Leech_StartUpdatingHeading {
+    [self associateKey:LTTLocationManagerAuditorStartUpdatingHeadingCalled withValue:@YES];
+}
+
+- (void)Leech_StopUpdatingHeading {
+    [self associateKey:LTTLocationManagerAuditorStopUpdatingHeadingCalled withValue:@YES];
+}
+
+- (CLHeading *)Leech_Heading {
+    return [self associationForKey:LTTLocationManagerAuditorHeading];
 }
 
 @end
@@ -213,6 +236,90 @@ const char *LTTLocationManagerAuditorRangedRegions = "LTTLocationManagerAuditorR
 + (void)clearRangedRegionsForLocationManager:(CLLocationManager *)locationManager {
     [locationManager dissociateKey:LTTLocationManagerAuditorRangedRegions];
     [LTTMethodSwizzler swapInstanceMethodsForClass:[locationManager class] selectorOne:@selector(rangedRegions) selectorTwo:@selector(Leech_RangedRegions)];
+}
+
+
+#pragma mark - Heading
+
+#pragma mark Heading Available
+
++ (void)overrideHeadingAvailable {
+    [self swapHeadingAvailableMethods];
+}
+
++ (void)reverseHeadingAvailableOverride {
+    [self swapHeadingAvailableMethods];
+    [[self class] dissociateKey:LTTLocationManagerAuditorHeadingAvailableFlag];
+}
+
++ (void)swapHeadingAvailableMethods {
+    [LTTMethodSwizzler swapClassMethodsForClass:[CLLocationManager class] selectorOne:@selector(headingAvailable) selectorTwo:@selector(Leech_HeadingAvailable)];
+}
+
++ (void)setHeadingAvailable:(BOOL)headingAvailable {
+    [[self class] associateKey:LTTLocationManagerAuditorHeadingAvailableFlag withValue:@(headingAvailable)];
+}
+
+#pragma mark Start Updating Heading
+
++ (void)auditStartUpdatingHeading:(CLLocationManager *)locationManager {
+    [self swapStartUpdatingHeadingMethods:locationManager];
+}
+
++ (void)stopAuditingStartUpdatingHeading:(CLLocationManager *)locationManager {
+    [self swapStartUpdatingHeadingMethods:locationManager];
+    [locationManager dissociateKey:LTTLocationManagerAuditorStartUpdatingHeadingCalled];
+}
+
++ (void)swapStartUpdatingHeadingMethods:(CLLocationManager*)locationManager {
+    [LTTMethodSwizzler swapInstanceMethodsForClass:[locationManager class] selectorOne:@selector(startUpdatingHeading) selectorTwo:@selector(Leech_StartUpdatingHeading)];
+}
+
++ (BOOL)startedUpdatingHeading:(CLLocationManager *)locationManager {
+    NSNumber *started = [locationManager associationForKey:LTTLocationManagerAuditorStartUpdatingHeadingCalled];
+    return started.boolValue;
+}
+
+#pragma mark Stop Updating Heading
+
++ (void)auditStopUpdatingHeading:(CLLocationManager *)locationManager {
+    [self swapStopUpdatingHeadingMethods:locationManager];
+}
+
++ (void)stopAuditingStopUpdatingHeading:(CLLocationManager *)locationManager {
+    [self swapStopUpdatingHeadingMethods:locationManager];
+    [locationManager dissociateKey:LTTLocationManagerAuditorStopUpdatingHeadingCalled];
+}
+
++ (void)swapStopUpdatingHeadingMethods:(CLLocationManager*)locationManager {
+    [LTTMethodSwizzler swapInstanceMethodsForClass:[locationManager class] selectorOne:@selector(stopUpdatingHeading) selectorTwo:@selector(Leech_StopUpdatingHeading)];
+}
+
++ (BOOL)stoppedUpdatingHeading:(CLLocationManager *)locationManager {
+    NSNumber *stoped = [locationManager associationForKey:LTTLocationManagerAuditorStopUpdatingHeadingCalled];
+    return stoped.boolValue;
+}
+
+#pragma mark Heading Override
+
++ (void)overrideHeading {
+    [self swapHeadingAccessor];
+}
+
++ (void)reverseHeadingOverride {
+    [self swapHeadingAccessor];
+}
+
++ (void)swapHeadingAccessor {
+    [LTTMethodSwizzler swapInstanceMethodsForClass:[CLLocationManager class] selectorOne:@selector(heading) selectorTwo:@selector(Leech_Heading)];
+}
+
++ (void)setHeadingOverride:(CLHeading *)heading forLocationManager:(CLLocationManager *)locationManager {
+    [locationManager associateKey:LTTLocationManagerAuditorHeading withValue:heading];
+}
+
++ (void)clearHeadingOverrideForLocationManager:(CLLocationManager *)locationManager {
+    [locationManager dissociateKey:LTTLocationManagerAuditorHeading];
 }
 
 @end
