@@ -10,6 +10,7 @@
 
 #import "LTTLocationManagerAuditor.h"
 #import "LTTMethodSwizzler.h"
+#import "NSObject+Association.h"
 
 const char *LTTLocationManagerAuditorRegionClassesDictionary = "LTTLocationManagerAuditorRegionClassesDictionary";
 const char *LTTLocationManagerAuditorRegionToStartMonitoring = "LTTLocationManagerAuditorRegionToStartMonitoring";
@@ -31,44 +32,42 @@ const char *LTTLocationManagerAuditorRangedRegions = "LTTLocationManagerAuditorR
 #pragma mark - Region monitoring
 
 + (BOOL)Leech_IsMonitoringAvailableForClass:(Class)regionClass {
-    NSDictionary *classes = objc_getAssociatedObject([LTTLocationManagerAuditor class], LTTLocationManagerAuditorRegionClassesDictionary);
+    NSDictionary *classes = [[LTTLocationManagerAuditor class] associationForKey:LTTLocationManagerAuditorRegionClassesDictionary];
     NSNumber *monitoringAvailable = classes[NSStringFromClass([regionClass class])];
     return monitoringAvailable.boolValue;
 }
 
 - (void)Leech_StartMonitoringForRegion:(CLRegion *)region {
-    objc_setAssociatedObject(self, LTTLocationManagerAuditorRegionToStartMonitoring, region, OBJC_ASSOCIATION_RETAIN);
-    NSSet *monitoredRegions = [NSSet setWithObject:region];
-    objc_setAssociatedObject(self, LTTLocationManagerAuditorMonitoredRegions, monitoredRegions, OBJC_ASSOCIATION_RETAIN);
+    [self associateKey:LTTLocationManagerAuditorRegionToStartMonitoring withValue:region];
+    [self associateKey:LTTLocationManagerAuditorMonitoredRegions withValue:[NSSet setWithObject:region]];
 }
 
 - (void)Leech_StopMonitoringForRegion:(CLRegion *)region {
-    objc_setAssociatedObject(self, LTTLocationManagerAuditorRegionToStopMonitoring, region, OBJC_ASSOCIATION_RETAIN);
+    [self associateKey:LTTLocationManagerAuditorRegionToStopMonitoring withValue:region];
 }
 
 - (NSSet *)Leech_MonitoredRegions {
-    return objc_getAssociatedObject(self, LTTLocationManagerAuditorMonitoredRegions);
+    return [self associationForKey:LTTLocationManagerAuditorMonitoredRegions];
 }
 
 #pragma mark - Beacon ranging
 
 + (BOOL)Leech_IsRangingAvailable {
-    NSNumber *rangingAvailable = objc_getAssociatedObject([LTTLocationManagerAuditor class], LTTLocationManagerAuditorRangingAvailableFlag);
+    NSNumber *rangingAvailable = [[LTTLocationManagerAuditor class] associationForKey:LTTLocationManagerAuditorRangingAvailableFlag];
     return rangingAvailable.boolValue;
 }
 
 - (void)Leech_StartRangingBeaconsInRegion:(CLBeaconRegion *)region {
-    objc_setAssociatedObject(self, LTTLocationManagerAuditorRegionToStartRanging, region, OBJC_ASSOCIATION_RETAIN);
-    NSSet *rangedRegions = [NSSet setWithObject:region];
-    objc_setAssociatedObject(self, LTTLocationManagerAuditorRangedRegions, rangedRegions, OBJC_ASSOCIATION_RETAIN);
+    [self associateKey:LTTLocationManagerAuditorRegionToStartRanging withValue:region];
+    [self associateKey:LTTLocationManagerAuditorRangedRegions withValue:[NSSet setWithObject:region]];
 }
 
 - (void)Leech_StopRangingBeaconsInRegion:(CLBeaconRegion *)region {
-    objc_setAssociatedObject(self, LTTLocationManagerAuditorRegionToStopRanging, region, OBJC_ASSOCIATION_RETAIN);
+    [self associateKey:LTTLocationManagerAuditorRegionToStopRanging withValue:region];
 }
 
 - (NSSet *)Leech_RangedRegions {
-    return objc_getAssociatedObject(self, LTTLocationManagerAuditorRangedRegions);
+    return [self associationForKey:LTTLocationManagerAuditorRangedRegions];
 }
 
 @end
@@ -89,13 +88,13 @@ const char *LTTLocationManagerAuditorRangedRegions = "LTTLocationManagerAuditorR
 }
 
 + (void)reverseMonitoringAvailableOverride {
-    objc_setAssociatedObject([LTTLocationManagerAuditor class], LTTLocationManagerAuditorRegionClassesDictionary, nil, OBJC_ASSOCIATION_ASSIGN);
+    [[LTTLocationManagerAuditor class] dissociateKey:LTTLocationManagerAuditorRegionClassesDictionary];
     [LTTMethodSwizzler swapClassMethodsForClass:[CLLocationManager class] selectorOne:@selector(isMonitoringAvailableForClass:) selectorTwo:@selector(Leech_IsMonitoringAvailableForClass:)];
 }
 
 + (void)setMonitoringAvailable:(BOOL)monitoringAvailable forClass:(Class)cls {
     NSString *className = NSStringFromClass(cls);
-    NSMutableDictionary *classes = objc_getAssociatedObject([LTTLocationManagerAuditor class], LTTLocationManagerAuditorRegionClassesDictionary);
+    NSMutableDictionary *classes = [[LTTLocationManagerAuditor class] associationForKey:LTTLocationManagerAuditorRegionClassesDictionary];
     if (!classes)
         classes = [NSMutableDictionary dictionary];
     
@@ -104,8 +103,8 @@ const char *LTTLocationManagerAuditorRangedRegions = "LTTLocationManagerAuditorR
     
     else
         [classes setObject:@(YES) forKey:className];
-    
-    objc_setAssociatedObject(self, LTTLocationManagerAuditorRegionClassesDictionary, [NSDictionary dictionaryWithDictionary:classes], OBJC_ASSOCIATION_RETAIN);
+
+    [[self class] associateKey:LTTLocationManagerAuditorRegionClassesDictionary withValue:[NSDictionary dictionaryWithDictionary:classes]];
 }
 
 #pragma mark Start monitoring
@@ -116,14 +115,14 @@ const char *LTTLocationManagerAuditorRangedRegions = "LTTLocationManagerAuditorR
 }
 
 + (void)stopAuditingStartMonitoringForRegionMethod:(CLLocationManager*)locationManager {
-    objc_setAssociatedObject(locationManager, LTTLocationManagerAuditorRegionToStartMonitoring, nil, OBJC_ASSOCIATION_ASSIGN);
-    objc_setAssociatedObject(locationManager, LTTLocationManagerAuditorMonitoredRegions, nil, OBJC_ASSOCIATION_ASSIGN);
+    [locationManager dissociateKey:LTTLocationManagerAuditorRegionToStartMonitoring];
+    [locationManager dissociateKey:LTTLocationManagerAuditorMonitoredRegions];
     [LTTMethodSwizzler swapInstanceMethodsForClass:[locationManager class] selectorOne:@selector(startMonitoringForRegion:) selectorTwo:@selector(Leech_StartMonitoringForRegion:)];
     [LTTMethodSwizzler swapInstanceMethodsForClass:[locationManager class] selectorOne:@selector(monitoredRegions) selectorTwo:@selector(Leech_MonitoredRegions)];
 }
 
 + (CLRegion *)regionToStartMonitoring:(CLLocationManager *)locationManager {
-    return objc_getAssociatedObject(locationManager, LTTLocationManagerAuditorRegionToStartMonitoring);
+    return [locationManager associationForKey:LTTLocationManagerAuditorRegionToStartMonitoring];
 }
 
 #pragma mark Stop monitoring
@@ -133,23 +132,23 @@ const char *LTTLocationManagerAuditorRangedRegions = "LTTLocationManagerAuditorR
 }
 
 + (void)stopAuditingStopMonitoringForRegionMethod:(CLLocationManager*)locationManager {
-    objc_setAssociatedObject(locationManager, LTTLocationManagerAuditorRegionToStopMonitoring, nil, OBJC_ASSOCIATION_ASSIGN);
+    [locationManager dissociateKey:LTTLocationManagerAuditorRegionToStopMonitoring];
     [LTTMethodSwizzler swapInstanceMethodsForClass:[locationManager class] selectorOne:@selector(stopMonitoringForRegion:) selectorTwo:@selector(Leech_StopMonitoringForRegion:)];
 }
 
 + (CLRegion *)regionToStopMonitoring:(CLLocationManager *)locationManager {
-    return objc_getAssociatedObject(locationManager, LTTLocationManagerAuditorRegionToStopMonitoring);
+    return [locationManager associationForKey:LTTLocationManagerAuditorRegionToStopMonitoring];
 }
 
 #pragma mark Monitored Regions
 
 + (void)setMonitoredRegions:(NSSet *)regions forLocationManager:(CLLocationManager *)locationManager {
-    objc_setAssociatedObject(locationManager, LTTLocationManagerAuditorMonitoredRegions, regions, OBJC_ASSOCIATION_RETAIN);
+    [locationManager associateKey:LTTLocationManagerAuditorMonitoredRegions withValue:regions];
     [LTTMethodSwizzler swapInstanceMethodsForClass:[locationManager class] selectorOne:@selector(monitoredRegions) selectorTwo:@selector(Leech_MonitoredRegions)];
 }
 
 + (void)clearMonitoredRegionsForLocationManager:(CLLocationManager *)locationManager {
-    objc_setAssociatedObject(locationManager, LTTLocationManagerAuditorMonitoredRegions, nil, OBJC_ASSOCIATION_ASSIGN);
+    [locationManager dissociateKey:LTTLocationManagerAuditorMonitoredRegions];
     [LTTMethodSwizzler swapInstanceMethodsForClass:[locationManager class] selectorOne:@selector(monitoredRegions) selectorTwo:@selector(Leech_MonitoredRegions)];
 }
 
@@ -163,12 +162,12 @@ const char *LTTLocationManagerAuditorRangedRegions = "LTTLocationManagerAuditorR
 }
 
 + (void)reverseRangingAvailableOverride {
-    objc_setAssociatedObject([LTTLocationManagerAuditor class], LTTLocationManagerAuditorRangingAvailableFlag, nil, OBJC_ASSOCIATION_ASSIGN);
+    [[LTTLocationManagerAuditor class] dissociateKey:LTTLocationManagerAuditorRangingAvailableFlag];
     [LTTMethodSwizzler swapClassMethodsForClass:[CLLocationManager class] selectorOne:@selector(isRangingAvailable) selectorTwo:@selector(Leech_IsRangingAvailable)];
 }
 
 + (void)setRangingAvailable:(BOOL)rangingAvailable {
-    objc_setAssociatedObject(self, LTTLocationManagerAuditorRangingAvailableFlag, @(rangingAvailable), OBJC_ASSOCIATION_RETAIN);
+    [[self class] associateKey:LTTLocationManagerAuditorRangingAvailableFlag withValue:@(rangingAvailable)];
 }
 
 #pragma mark Start ranging
@@ -179,14 +178,14 @@ const char *LTTLocationManagerAuditorRangedRegions = "LTTLocationManagerAuditorR
 }
 
 + (void)stopAuditingStartRangingBeaconsInRegionMethod:(CLLocationManager *)locationManager {
-    objc_setAssociatedObject(locationManager, LTTLocationManagerAuditorRegionToStartRanging, nil, OBJC_ASSOCIATION_ASSIGN);
-    objc_setAssociatedObject(locationManager, LTTLocationManagerAuditorRangedRegions, nil, OBJC_ASSOCIATION_ASSIGN);
+    [locationManager dissociateKey:LTTLocationManagerAuditorRegionToStartRanging];
+    [locationManager dissociateKey:LTTLocationManagerAuditorRangedRegions];
     [LTTMethodSwizzler swapInstanceMethodsForClass:[locationManager class] selectorOne:@selector(startRangingBeaconsInRegion:) selectorTwo:@selector(Leech_StartRangingBeaconsInRegion:)];
     [LTTMethodSwizzler swapInstanceMethodsForClass:[locationManager class] selectorOne:@selector(rangedRegions) selectorTwo:@selector(Leech_RangedRegions)];
 }
 
 + (CLBeaconRegion*)regionToStartRanging:(CLLocationManager*)locationManager {
-    return objc_getAssociatedObject(locationManager, LTTLocationManagerAuditorRegionToStartRanging);
+    return [locationManager associationForKey:LTTLocationManagerAuditorRegionToStartRanging];
 }
 
 #pragma mark Stop ranging
@@ -196,23 +195,23 @@ const char *LTTLocationManagerAuditorRangedRegions = "LTTLocationManagerAuditorR
 }
 
 + (void)stopAuditingStopRangingBeaconsInRegionMethod:(CLLocationManager *)locationManager {
-    objc_setAssociatedObject(locationManager, LTTLocationManagerAuditorRegionToStopRanging, nil, OBJC_ASSOCIATION_ASSIGN);
+    [locationManager dissociateKey:LTTLocationManagerAuditorRegionToStopRanging];
     [LTTMethodSwizzler swapInstanceMethodsForClass:[locationManager class] selectorOne:@selector(stopRangingBeaconsInRegion:) selectorTwo:@selector(Leech_StopRangingBeaconsInRegion:)];
 }
 
 + (CLBeaconRegion*)regionToStopRanging:(CLLocationManager*)locationManager {
-    return objc_getAssociatedObject(locationManager, LTTLocationManagerAuditorRegionToStopRanging);
+    return [locationManager associationForKey:LTTLocationManagerAuditorRegionToStopRanging];
 }
 
 #pragma mark Ranged Regions
 
 + (void)setRangedRegions:(NSSet *)regions forLocationManager:(CLLocationManager *)locationManager {
-    objc_setAssociatedObject(locationManager, LTTLocationManagerAuditorRangedRegions, regions, OBJC_ASSOCIATION_RETAIN);
+    [locationManager associateKey:LTTLocationManagerAuditorRangedRegions withValue:regions];
     [LTTMethodSwizzler swapInstanceMethodsForClass:[locationManager class] selectorOne:@selector(rangedRegions) selectorTwo:@selector(Leech_RangedRegions)];
 }
 
 + (void)clearRangedRegionsForLocationManager:(CLLocationManager *)locationManager {
-    objc_setAssociatedObject(locationManager, LTTLocationManagerAuditorRangedRegions, nil, OBJC_ASSOCIATION_ASSIGN);
+    [locationManager dissociateKey:LTTLocationManagerAuditorRangedRegions];
     [LTTMethodSwizzler swapInstanceMethodsForClass:[locationManager class] selectorOne:@selector(rangedRegions) selectorTwo:@selector(Leech_RangedRegions)];
 }
 
