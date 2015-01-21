@@ -67,6 +67,7 @@
 		0A77CA9E18BABCAE005230B0 /* MockNotificationCenterTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A77CA9D18BABCAE005230B0 /* MockNotificationCenterTests.m */; };
 		0A77CAA118BABCE3005230B0 /* LTTFakeNotificationDispatchEntry.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A77CAA018BABCE3005230B0 /* LTTFakeNotificationDispatchEntry.m */; };
 		0A77CAA218BABCE3005230B0 /* LTTFakeNotificationDispatchEntry.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A77CAA018BABCE3005230B0 /* LTTFakeNotificationDispatchEntry.m */; };
+		0AA171FA1A70298900628174 /* LTTMockHeading.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AA171F91A70298900628174 /* LTTMockHeading.m */; };
 		0AA51B7318C06F2100A63B92 /* LTTSampleFileLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AA51B7218C06F2100A63B92 /* LTTSampleFileLoader.m */; };
 		0AA51B7418C06F2100A63B92 /* LTTSampleFileLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AA51B7218C06F2100A63B92 /* LTTSampleFileLoader.m */; };
 		0AA51B7618C06F3D00A63B92 /* SampleFileLoaderTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AA51B7518C06F3D00A63B92 /* SampleFileLoaderTests.m */; };
@@ -252,6 +253,8 @@
 		0A77CA9D18BABCAE005230B0 /* MockNotificationCenterTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MockNotificationCenterTests.m; sourceTree = "<group>"; };
 		0A77CA9F18BABCE3005230B0 /* LTTFakeNotificationDispatchEntry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTTFakeNotificationDispatchEntry.h; sourceTree = "<group>"; };
 		0A77CAA018BABCE3005230B0 /* LTTFakeNotificationDispatchEntry.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LTTFakeNotificationDispatchEntry.m; sourceTree = "<group>"; };
+		0AA171F81A70298900628174 /* LTTMockHeading.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTTMockHeading.h; sourceTree = "<group>"; };
+		0AA171F91A70298900628174 /* LTTMockHeading.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LTTMockHeading.m; sourceTree = "<group>"; };
 		0AA51B7118C06F2100A63B92 /* LTTSampleFileLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTTSampleFileLoader.h; sourceTree = "<group>"; };
 		0AA51B7218C06F2100A63B92 /* LTTSampleFileLoader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LTTSampleFileLoader.m; sourceTree = "<group>"; };
 		0AA51B7518C06F3D00A63B92 /* SampleFileLoaderTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SampleFileLoaderTests.m; sourceTree = "<group>"; };
@@ -502,6 +505,8 @@
 			children = (
 				0AF15C2B190809DE0068EC2C /* LTTMockBeacon.h */,
 				0AF15C2C190809DE0068EC2C /* LTTMockBeacon.m */,
+				0AA171F81A70298900628174 /* LTTMockHeading.h */,
+				0AA171F91A70298900628174 /* LTTMockHeading.m */,
 				0AED7A2718D4FD3E009C6E1B /* LTTMockMapView.h */,
 				0AED7A2818D4FD3E009C6E1B /* LTTMockMapView.m */,
 				0AED7A2E18D5015A009C6E1B /* LTTMockUserLocation.h */,
@@ -712,6 +717,7 @@
 				0A511E2519646B3E000D898D /* LTTDeviceAuditor.m in Sources */,
 				0A77CA9118BAA05C005230B0 /* LTTViewControllerAuditor.m in Sources */,
 				0A77CA8818B94398005230B0 /* LTTMethodSwizzler.m in Sources */,
+				0AA171FA1A70298900628174 /* LTTMockHeading.m in Sources */,
 				0A6D23DD18EB91B500D705E2 /* LTTObjectAuditor.m in Sources */,
 				0A72944C18DCF43F008A1E71 /* LTTActionSheetAuditor.m in Sources */,
 				0A298BE8192FB2E70001CB92 /* LTTPopoverControllerAuditor.m in Sources */,
