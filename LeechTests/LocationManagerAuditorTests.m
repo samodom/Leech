@@ -208,6 +208,8 @@
     XCTAssertFalse([CLLocationManager headingAvailable], @"The location manager should not indicate heading availability by default");
     [LTTLocationManagerAuditor setHeadingAvailable:YES];
     XCTAssertTrue([CLLocationManager headingAvailable], @"The location manager should remember heading availability");
+    [LTTLocationManagerAuditor setHeadingAvailable:NO];
+    XCTAssertFalse([CLLocationManager headingAvailable], @"The location manager should remember heading availability");
     [LTTLocationManagerAuditor reverseHeadingAvailableOverride];
     currentImplementation = [self classMethodImplementation:@selector(headingAvailable)];
     XCTAssertEqual(currentImplementation, realImplementation, @"The method should no longer be swizzled");

@@ -78,7 +78,8 @@ const char *LTTLocationManagerAuditorHeading = "LTTLocationManagerAuditorHeading
 #pragma mark - Heading updates
 
 + (BOOL)Leech_HeadingAvailable {
-    return [[LTTLocationManagerAuditor class] associationForKey:LTTLocationManagerAuditorHeadingAvailableFlag];
+    NSNumber *headingAvailable = [[LTTLocationManagerAuditor class] associationForKey:LTTLocationManagerAuditorHeadingAvailableFlag];
+    return headingAvailable.boolValue;
 }
 
 - (void)Leech_StartUpdatingHeading {
@@ -249,7 +250,7 @@ const char *LTTLocationManagerAuditorHeading = "LTTLocationManagerAuditorHeading
 
 + (void)reverseHeadingAvailableOverride {
     [self swapHeadingAvailableMethods];
-    [[self class] dissociateKey:LTTLocationManagerAuditorHeadingAvailableFlag];
+    [self dissociateKey:LTTLocationManagerAuditorHeadingAvailableFlag];
 }
 
 + (void)swapHeadingAvailableMethods {
@@ -257,7 +258,7 @@ const char *LTTLocationManagerAuditorHeading = "LTTLocationManagerAuditorHeading
 }
 
 + (void)setHeadingAvailable:(BOOL)headingAvailable {
-    [[self class] associateKey:LTTLocationManagerAuditorHeadingAvailableFlag withValue:@(headingAvailable)];
+    [self associateKey:LTTLocationManagerAuditorHeadingAvailableFlag withValue:@(headingAvailable)];
 }
 
 #pragma mark Start Updating Heading
