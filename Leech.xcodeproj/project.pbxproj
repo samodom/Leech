@@ -6,613 +6,121 @@
 	objectVersion = 46;
 	objects = {
 
-/* Begin PBXAggregateTarget section */
-		0AD1EE1A1901CD4300F8DB69 /* Documentation */ = {
-			isa = PBXAggregateTarget;
-			buildConfigurationList = 0AD1EE1D1901CD4300F8DB69 /* Build configuration list for PBXAggregateTarget "Documentation" */;
-			buildPhases = (
-				0AD1EE1E1901CD5400F8DB69 /* Run Appledoc */,
-			);
-			dependencies = (
-			);
-			name = Documentation;
-			productName = Documentation;
-		};
-/* End PBXAggregateTarget section */
-
 /* Begin PBXBuildFile section */
-		0A1C9EA9192FE5DD00122B88 /* LTTPopoverControllerAuditor.h in Copy Files */ = {isa = PBXBuildFile; fileRef = 0A298BE6192FB2E70001CB92 /* LTTPopoverControllerAuditor.h */; };
-		0A298BE5192FB2C50001CB92 /* PopoverControllerAuditorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A298BE4192FB2C50001CB92 /* PopoverControllerAuditorTests.m */; };
-		0A298BE8192FB2E70001CB92 /* LTTPopoverControllerAuditor.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A298BE7192FB2E70001CB92 /* LTTPopoverControllerAuditor.m */; };
-		0A369FD018C9409B008611E5 /* LTTLayoutConstraintChecker.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A369FCF18C9409B008611E5 /* LTTLayoutConstraintChecker.m */; };
-		0A369FD118C9409B008611E5 /* LTTLayoutConstraintChecker.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A369FCF18C9409B008611E5 /* LTTLayoutConstraintChecker.m */; };
-		0A369FD218C94723008611E5 /* LTTLayoutConstraintChecker.h in Copy Files */ = {isa = PBXBuildFile; fileRef = 0A369FCE18C9409B008611E5 /* LTTLayoutConstraintChecker.h */; };
-		0A503F11192060510007BE07 /* CollectionViewLayoutAuditorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A503F10192060510007BE07 /* CollectionViewLayoutAuditorTests.m */; };
-		0A503F14192109980007BE07 /* LTTCollectionViewLayoutAuditor.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A503F13192109980007BE07 /* LTTCollectionViewLayoutAuditor.m */; };
-		0A503F1719210C730007BE07 /* TestCollectionViewLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A503F1619210C730007BE07 /* TestCollectionViewLayout.m */; };
-		0A511E2219646B0A000D898D /* DeviceTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A511E2119646B0A000D898D /* DeviceTests.m */; };
-		0A511E2519646B3E000D898D /* LTTDeviceAuditor.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A511E2419646B3E000D898D /* LTTDeviceAuditor.m */; };
-		0A6D23BD18EA20DA00D705E2 /* AlertViewAuditorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A6D23BC18EA20DA00D705E2 /* AlertViewAuditorTests.m */; };
-		0A6D23C018EA211500D705E2 /* LTTAlertViewAuditor.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A6D23BF18EA211500D705E2 /* LTTAlertViewAuditor.m */; };
-		0A6D23C118EA211500D705E2 /* LTTAlertViewAuditor.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A6D23BF18EA211500D705E2 /* LTTAlertViewAuditor.m */; };
-		0A6D23C518EA24A600D705E2 /* FakeAlertViewDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A6D23C418EA24A600D705E2 /* FakeAlertViewDelegate.m */; };
-		0A6D23DA18EB918100D705E2 /* ObjectAuditorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A6D23D918EB918100D705E2 /* ObjectAuditorTests.m */; };
-		0A6D23DD18EB91B500D705E2 /* LTTObjectAuditor.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A6D23DC18EB91B500D705E2 /* LTTObjectAuditor.m */; };
-		0A6D23DE18EB91B500D705E2 /* LTTObjectAuditor.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A6D23DC18EB91B500D705E2 /* LTTObjectAuditor.m */; };
-		0A6D23E118EC84B600D705E2 /* LTTAlertViewAuditor.h in Copy Files */ = {isa = PBXBuildFile; fileRef = 0A6D23BE18EA211500D705E2 /* LTTAlertViewAuditor.h */; };
-		0A72943518DB9C21008A1E71 /* ViewAuditorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A72943418DB9C21008A1E71 /* ViewAuditorTests.m */; };
-		0A72943818DB9C40008A1E71 /* LTTViewAuditor.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A72943718DB9C40008A1E71 /* LTTViewAuditor.m */; };
-		0A72943918DB9C40008A1E71 /* LTTViewAuditor.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A72943718DB9C40008A1E71 /* LTTViewAuditor.m */; };
-		0A72943C18DB9D7D008A1E71 /* TestView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A72943B18DB9D7D008A1E71 /* TestView.m */; };
-		0A72943D18DBA0ED008A1E71 /* LTTViewAuditor.h in Copy Files */ = {isa = PBXBuildFile; fileRef = 0A72943618DB9C40008A1E71 /* LTTViewAuditor.h */; };
-		0A72944C18DCF43F008A1E71 /* LTTActionSheetAuditor.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A72944B18DCF43F008A1E71 /* LTTActionSheetAuditor.m */; };
-		0A72944D18DCF43F008A1E71 /* LTTActionSheetAuditor.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A72944B18DCF43F008A1E71 /* LTTActionSheetAuditor.m */; };
-		0A72944F18DCF44D008A1E71 /* ActionSheetAuditorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A72944E18DCF44D008A1E71 /* ActionSheetAuditorTests.m */; };
-		0A72945218DCF5B5008A1E71 /* FakeActionSheetDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A72945118DCF5B5008A1E71 /* FakeActionSheetDelegate.m */; };
-		0A77CA5C18B94045005230B0 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A77CA5B18B94045005230B0 /* Foundation.framework */; };
-		0A77CA6A18B94045005230B0 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A77CA6918B94045005230B0 /* XCTest.framework */; };
-		0A77CA6B18B94045005230B0 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A77CA5B18B94045005230B0 /* Foundation.framework */; };
-		0A77CA6D18B94045005230B0 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A77CA6C18B94045005230B0 /* UIKit.framework */; };
-		0A77CA7018B94045005230B0 /* libLeech.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A77CA5818B94045005230B0 /* libLeech.a */; };
-		0A77CA7618B94045005230B0 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0A77CA7418B94045005230B0 /* InfoPlist.strings */; };
-		0A77CA8418B942EA005230B0 /* MethodSwizzlerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A77CA8318B942EA005230B0 /* MethodSwizzlerTests.m */; };
-		0A77CA8818B94398005230B0 /* LTTMethodSwizzler.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A77CA8718B94398005230B0 /* LTTMethodSwizzler.m */; };
-		0A77CA8918B94398005230B0 /* LTTMethodSwizzler.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A77CA8718B94398005230B0 /* LTTMethodSwizzler.m */; };
-		0A77CA8E18BA9EB5005230B0 /* ViewControllerAuditorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A77CA8D18BA9EB5005230B0 /* ViewControllerAuditorTests.m */; };
-		0A77CA9118BAA05C005230B0 /* LTTViewControllerAuditor.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A77CA9018BAA05C005230B0 /* LTTViewControllerAuditor.m */; };
-		0A77CA9218BAA05C005230B0 /* LTTViewControllerAuditor.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A77CA9018BAA05C005230B0 /* LTTViewControllerAuditor.m */; };
-		0A77CA9518BAA17B005230B0 /* TestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A77CA9418BAA17B005230B0 /* TestViewController.m */; };
-		0A77CA9B18BABC89005230B0 /* LTTMockNotificationCenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A77CA9A18BABC89005230B0 /* LTTMockNotificationCenter.m */; };
-		0A77CA9C18BABC89005230B0 /* LTTMockNotificationCenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A77CA9A18BABC89005230B0 /* LTTMockNotificationCenter.m */; };
-		0A77CA9E18BABCAE005230B0 /* MockNotificationCenterTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A77CA9D18BABCAE005230B0 /* MockNotificationCenterTests.m */; };
-		0A77CAA118BABCE3005230B0 /* LTTFakeNotificationDispatchEntry.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A77CAA018BABCE3005230B0 /* LTTFakeNotificationDispatchEntry.m */; };
-		0A77CAA218BABCE3005230B0 /* LTTFakeNotificationDispatchEntry.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A77CAA018BABCE3005230B0 /* LTTFakeNotificationDispatchEntry.m */; };
-		0AA171FA1A70298900628174 /* LTTMockHeading.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AA171F91A70298900628174 /* LTTMockHeading.m */; };
-		0AA51B7318C06F2100A63B92 /* LTTSampleFileLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AA51B7218C06F2100A63B92 /* LTTSampleFileLoader.m */; };
-		0AA51B7418C06F2100A63B92 /* LTTSampleFileLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AA51B7218C06F2100A63B92 /* LTTSampleFileLoader.m */; };
-		0AA51B7618C06F3D00A63B92 /* SampleFileLoaderTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AA51B7518C06F3D00A63B92 /* SampleFileLoaderTests.m */; };
-		0AA51B7818C06F7B00A63B92 /* dictionary.json in Resources */ = {isa = PBXBuildFile; fileRef = 0AA51B7718C06F7B00A63B92 /* dictionary.json */; };
-		0AA51B7A18C06F8500A63B92 /* array.json in Resources */ = {isa = PBXBuildFile; fileRef = 0AA51B7918C06F8500A63B92 /* array.json */; };
-		0AA51B7B18C0725200A63B92 /* LTTSampleFileLoader.h in Copy Files */ = {isa = PBXBuildFile; fileRef = 0AA51B7118C06F2100A63B92 /* LTTSampleFileLoader.h */; };
-		0AA51B8918C409F800A63B92 /* TimeFreezerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AA51B8818C409F800A63B92 /* TimeFreezerTests.m */; };
-		0AA51B9018C40ABA00A63B92 /* LTTTimeFreezer.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AA51B8F18C40ABA00A63B92 /* LTTTimeFreezer.m */; };
-		0AA51B9118C40ABA00A63B92 /* LTTTimeFreezer.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AA51B8F18C40ABA00A63B92 /* LTTTimeFreezer.m */; };
-		0AA51B9218C40F3100A63B92 /* LTTTimeFreezer.h in Copy Files */ = {isa = PBXBuildFile; fileRef = 0AA51B8E18C40ABA00A63B92 /* LTTTimeFreezer.h */; };
-		0ABD4CC118C67912003BDD76 /* sample.txt in Resources */ = {isa = PBXBuildFile; fileRef = 0ABD4CC018C67912003BDD76 /* sample.txt */; };
-		0ABD4CCA18C6AEFB003BDD76 /* CoreDataAuditorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0ABD4CC918C6AEFB003BDD76 /* CoreDataAuditorTests.m */; };
-		0ABD4CCD18C6AF69003BDD76 /* LTTCoreDataAuditor.m in Sources */ = {isa = PBXBuildFile; fileRef = 0ABD4CCC18C6AF69003BDD76 /* LTTCoreDataAuditor.m */; };
-		0ABD4CCE18C6AF69003BDD76 /* LTTCoreDataAuditor.m in Sources */ = {isa = PBXBuildFile; fileRef = 0ABD4CCC18C6AF69003BDD76 /* LTTCoreDataAuditor.m */; };
-		0ABD4CCF18C6B8DA003BDD76 /* LTTCoreDataAuditor.h in Copy Files */ = {isa = PBXBuildFile; fileRef = 0ABD4CCB18C6AF69003BDD76 /* LTTCoreDataAuditor.h */; };
-		0AC0E33218D24D9F0078C01B /* MockTextFieldTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AC0E33118D24D9F0078C01B /* MockTextFieldTests.m */; };
-		0AC0E33518D24DBC0078C01B /* LTTMockTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AC0E33418D24DBC0078C01B /* LTTMockTextField.m */; };
-		0AC0E33618D24DBC0078C01B /* LTTMockTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AC0E33418D24DBC0078C01B /* LTTMockTextField.m */; };
-		0AC0E33718D24DDB0078C01B /* LTTMockTextField.h in Copy Files */ = {isa = PBXBuildFile; fileRef = 0AC0E33318D24DBC0078C01B /* LTTMockTextField.h */; };
-		0AC33AAF18BD107D00D3F342 /* Leech.h in Copy Files */ = {isa = PBXBuildFile; fileRef = 0AC33AAE18BD0DA100D3F342 /* Leech.h */; };
-		0AC33ABC18BD321F00D3F342 /* MockHTTPResponseTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AC33ABB18BD321F00D3F342 /* MockHTTPResponseTests.m */; };
-		0AC33ABF18BD325700D3F342 /* LTTMockHTTPResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AC33ABE18BD325700D3F342 /* LTTMockHTTPResponse.m */; };
-		0AC33AC018BD325700D3F342 /* LTTMockHTTPResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AC33ABE18BD325700D3F342 /* LTTMockHTTPResponse.m */; };
-		0AC33AC318BD3D3C00D3F342 /* Boston City Flow.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 0AC33AC218BD3D3C00D3F342 /* Boston City Flow.jpg */; };
-		0AC33AC418BD3F7100D3F342 /* LTTFakeNotificationDispatchEntry.h in Copy Files */ = {isa = PBXBuildFile; fileRef = 0A77CA9F18BABCE3005230B0 /* LTTFakeNotificationDispatchEntry.h */; };
-		0AC33AC518BD3F7100D3F342 /* LTTMethodSwizzler.h in Copy Files */ = {isa = PBXBuildFile; fileRef = 0A77CA8618B94398005230B0 /* LTTMethodSwizzler.h */; };
-		0AC33AC618BD3F7100D3F342 /* LTTMockHTTPResponse.h in Copy Files */ = {isa = PBXBuildFile; fileRef = 0AC33ABD18BD325700D3F342 /* LTTMockHTTPResponse.h */; };
-		0AC33AC718BD3F7100D3F342 /* LTTMockNotificationCenter.h in Copy Files */ = {isa = PBXBuildFile; fileRef = 0A77CA9918BABC89005230B0 /* LTTMockNotificationCenter.h */; };
-		0AC33AC818BD3F7100D3F342 /* LTTViewControllerAuditor.h in Copy Files */ = {isa = PBXBuildFile; fileRef = 0A77CA8F18BAA05C005230B0 /* LTTViewControllerAuditor.h */; };
-		0AC33ACA18BDC3C700D3F342 /* MockURLSessionTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AC33AC918BDC3C700D3F342 /* MockURLSessionTests.m */; };
-		0AC33ACD18BDC41000D3F342 /* LTTMockURLSession.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AC33ACC18BDC41000D3F342 /* LTTMockURLSession.m */; };
-		0AC33ACE18BDC41000D3F342 /* LTTMockURLSession.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AC33ACC18BDC41000D3F342 /* LTTMockURLSession.m */; };
-		0AC33AD018BDC58500D3F342 /* MockURLDataTaskTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AC33ACF18BDC58500D3F342 /* MockURLDataTaskTests.m */; };
-		0AC33AD318BDC5DB00D3F342 /* LTTMockURLDataTask.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AC33AD218BDC5DB00D3F342 /* LTTMockURLDataTask.m */; };
-		0AC33AD418BDC5DB00D3F342 /* LTTMockURLDataTask.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AC33AD218BDC5DB00D3F342 /* LTTMockURLDataTask.m */; };
-		0AC33AD518BDC7D400D3F342 /* LTTMockURLDataTask.h in Copy Files */ = {isa = PBXBuildFile; fileRef = 0AC33AD118BDC5DB00D3F342 /* LTTMockURLDataTask.h */; };
-		0AC33AD618BDCCA400D3F342 /* LTTMockURLSession.h in Copy Files */ = {isa = PBXBuildFile; fileRef = 0AC33ACB18BDC41000D3F342 /* LTTMockURLSession.h */; };
-		0AC6222718F1F14000E9D289 /* LTTObjectAuditor.h in Copy Files */ = {isa = PBXBuildFile; fileRef = 0A6D23DB18EB91B500D705E2 /* LTTObjectAuditor.h */; };
-		0AC71E7218DD090E00C0AAF9 /* LTTActionSheetAuditor.h in Copy Files */ = {isa = PBXBuildFile; fileRef = 0A72944A18DCF43F008A1E71 /* LTTActionSheetAuditor.h */; };
-		0ACA5E2018D551070052F2CD /* MapViewAuditorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0ACA5E1F18D551070052F2CD /* MapViewAuditorTests.m */; };
-		0ACA5E2318D5512F0052F2CD /* LTTMapViewAuditor.m in Sources */ = {isa = PBXBuildFile; fileRef = 0ACA5E2218D5512F0052F2CD /* LTTMapViewAuditor.m */; };
-		0ACA5E2418D5512F0052F2CD /* LTTMapViewAuditor.m in Sources */ = {isa = PBXBuildFile; fileRef = 0ACA5E2218D5512F0052F2CD /* LTTMapViewAuditor.m */; };
-		0ACA5E2518D551FD0052F2CD /* LTTMapViewAuditor.h in Copy Files */ = {isa = PBXBuildFile; fileRef = 0ACA5E2118D5512F0052F2CD /* LTTMapViewAuditor.h */; };
-		0ACA5E2818D5561D0052F2CD /* TestMapAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 0ACA5E2718D5561D0052F2CD /* TestMapAnnotation.m */; };
-		0ACA5E3618D58A280052F2CD /* BarButtonItemAuditorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0ACA5E3518D58A280052F2CD /* BarButtonItemAuditorTests.m */; };
-		0ACA5E3918D58A650052F2CD /* LTTBarButtonItemAuditor.m in Sources */ = {isa = PBXBuildFile; fileRef = 0ACA5E3818D58A650052F2CD /* LTTBarButtonItemAuditor.m */; };
-		0ACA5E3A18D58A650052F2CD /* LTTBarButtonItemAuditor.m in Sources */ = {isa = PBXBuildFile; fileRef = 0ACA5E3818D58A650052F2CD /* LTTBarButtonItemAuditor.m */; };
-		0ACA5E3B18D61A850052F2CD /* LTTBarButtonItemAuditor.h in Copy Files */ = {isa = PBXBuildFile; fileRef = 0ACA5E3718D58A650052F2CD /* LTTBarButtonItemAuditor.h */; };
-		0ACE718519D081EF00BC9709 /* ObjectAssociationsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0ACE718419D081EF00BC9709 /* ObjectAssociationsTests.m */; };
-		0ACE718819D0823200BC9709 /* NSObject+Association.m in Sources */ = {isa = PBXBuildFile; fileRef = 0ACE718719D0823200BC9709 /* NSObject+Association.m */; };
-		0ACE718919D083D500BC9709 /* NSObject+Association.m in Sources */ = {isa = PBXBuildFile; fileRef = 0ACE718719D0823200BC9709 /* NSObject+Association.m */; };
-		0ACE718A19D0867F00BC9709 /* NSObject+Association.h in Copy Files */ = {isa = PBXBuildFile; fileRef = 0ACE718619D0823200BC9709 /* NSObject+Association.h */; };
-		0ADA19C51987F30100BAA900 /* LTTDeviceAuditor.h in Copy Files */ = {isa = PBXBuildFile; fileRef = 0A511E2319646B3E000D898D /* LTTDeviceAuditor.h */; };
-		0AED669018C93BB200D3DFE5 /* LayoutConstraintTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AED668F18C93BB200D3DFE5 /* LayoutConstraintTests.m */; };
-		0AED7A1818D3950D009C6E1B /* NavigationControllerAuditorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AED7A1718D3950D009C6E1B /* NavigationControllerAuditorTests.m */; };
-		0AED7A1B18D3955E009C6E1B /* LTTNavigationControllerAuditor.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AED7A1A18D3955E009C6E1B /* LTTNavigationControllerAuditor.m */; };
-		0AED7A1C18D3955E009C6E1B /* LTTNavigationControllerAuditor.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AED7A1A18D3955E009C6E1B /* LTTNavigationControllerAuditor.m */; };
-		0AED7A1D18D39578009C6E1B /* LTTNavigationControllerAuditor.h in Copy Files */ = {isa = PBXBuildFile; fileRef = 0AED7A1918D3955E009C6E1B /* LTTNavigationControllerAuditor.h */; };
-		0AED7A1F18D3DE7B009C6E1B /* TableViewAuditorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AED7A1E18D3DE7B009C6E1B /* TableViewAuditorTests.m */; };
-		0AED7A2218D3DE98009C6E1B /* LTTTableViewAuditor.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AED7A2118D3DE98009C6E1B /* LTTTableViewAuditor.m */; };
-		0AED7A2318D3DE98009C6E1B /* LTTTableViewAuditor.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AED7A2118D3DE98009C6E1B /* LTTTableViewAuditor.m */; };
-		0AED7A2418D3DEBD009C6E1B /* LTTTableViewAuditor.h in Copy Files */ = {isa = PBXBuildFile; fileRef = 0AED7A2018D3DE98009C6E1B /* LTTTableViewAuditor.h */; };
-		0AED7A2618D4FD21009C6E1B /* MockMapViewTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AED7A2518D4FD21009C6E1B /* MockMapViewTests.m */; };
-		0AED7A2918D4FD3E009C6E1B /* LTTMockMapView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AED7A2818D4FD3E009C6E1B /* LTTMockMapView.m */; };
-		0AED7A2A18D4FD3E009C6E1B /* LTTMockMapView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AED7A2818D4FD3E009C6E1B /* LTTMockMapView.m */; };
-		0AED7A2B18D4FF2C009C6E1B /* LTTMockMapView.h in Copy Files */ = {isa = PBXBuildFile; fileRef = 0AED7A2718D4FD3E009C6E1B /* LTTMockMapView.h */; };
-		0AED7A2D18D5013C009C6E1B /* MockUserLocationTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AED7A2C18D5013C009C6E1B /* MockUserLocationTests.m */; };
-		0AED7A3018D5015A009C6E1B /* LTTMockUserLocation.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AED7A2F18D5015A009C6E1B /* LTTMockUserLocation.m */; };
-		0AED7A3118D5015A009C6E1B /* LTTMockUserLocation.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AED7A2F18D5015A009C6E1B /* LTTMockUserLocation.m */; };
-		0AED7A3218D50167009C6E1B /* LTTMockUserLocation.h in Copy Files */ = {isa = PBXBuildFile; fileRef = 0AED7A2E18D5015A009C6E1B /* LTTMockUserLocation.h */; };
-		0AF15C231907234C0068EC2C /* LocationManagerAuditorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AF15C221907234C0068EC2C /* LocationManagerAuditorTests.m */; };
-		0AF15C261907236E0068EC2C /* LTTLocationManagerAuditor.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AF15C251907236E0068EC2C /* LTTLocationManagerAuditor.m */; };
-		0AF15C271907236E0068EC2C /* LTTLocationManagerAuditor.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AF15C251907236E0068EC2C /* LTTLocationManagerAuditor.m */; };
-		0AF15C2819072D220068EC2C /* LTTLocationManagerAuditor.h in Copy Files */ = {isa = PBXBuildFile; fileRef = 0AF15C241907236E0068EC2C /* LTTLocationManagerAuditor.h */; };
-		0AF15C2A190809C20068EC2C /* MockBeaconTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AF15C29190809C20068EC2C /* MockBeaconTests.m */; };
-		0AF15C2D190809DE0068EC2C /* LTTMockBeacon.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AF15C2C190809DE0068EC2C /* LTTMockBeacon.m */; };
-		0AF15C2E190809DE0068EC2C /* LTTMockBeacon.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AF15C2C190809DE0068EC2C /* LTTMockBeacon.m */; };
-		0AF15C2F19080B620068EC2C /* LTTMockBeacon.h in Copy Files */ = {isa = PBXBuildFile; fileRef = 0AF15C2B190809DE0068EC2C /* LTTMockBeacon.h */; };
-		0AFC99A31A704658009425BF /* LTTMockHeading.h in Copy Files */ = {isa = PBXBuildFile; fileRef = 0AA171F81A70298900628174 /* LTTMockHeading.h */; };
-		0AFC99A41A704658009425BF /* LTTCollectionViewLayoutAuditor.h in Copy Files */ = {isa = PBXBuildFile; fileRef = 0A503F12192109980007BE07 /* LTTCollectionViewLayoutAuditor.h */; };
+		0ADE30BF1A90553B0099CBA7 /* Leech.h in Headers */ = {isa = PBXBuildFile; fileRef = 0ADE30BE1A90553B0099CBA7 /* Leech.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		0ADE30C51A90553B0099CBA7 /* Leech.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0ADE30B91A90553B0099CBA7 /* Leech.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		0A77CA6E18B94045005230B0 /* PBXContainerItemProxy */ = {
+		0ADE30C61A90553B0099CBA7 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 0A77CA5018B94045005230B0 /* Project object */;
+			containerPortal = 0ADE30B01A90553B0099CBA7 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 0A77CA5718B94045005230B0;
+			remoteGlobalIDString = 0ADE30B81A90553B0099CBA7;
 			remoteInfo = Leech;
 		};
 /* End PBXContainerItemProxy section */
 
-/* Begin PBXCopyFilesBuildPhase section */
-		0A77CA5618B94045005230B0 /* Copy Files */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "include/$(PRODUCT_NAME)";
-			dstSubfolderSpec = 16;
-			files = (
-				0AFC99A31A704658009425BF /* LTTMockHeading.h in Copy Files */,
-				0AFC99A41A704658009425BF /* LTTCollectionViewLayoutAuditor.h in Copy Files */,
-				0ACE718A19D0867F00BC9709 /* NSObject+Association.h in Copy Files */,
-				0ADA19C51987F30100BAA900 /* LTTDeviceAuditor.h in Copy Files */,
-				0A1C9EA9192FE5DD00122B88 /* LTTPopoverControllerAuditor.h in Copy Files */,
-				0AF15C2F19080B620068EC2C /* LTTMockBeacon.h in Copy Files */,
-				0AF15C2819072D220068EC2C /* LTTLocationManagerAuditor.h in Copy Files */,
-				0AC6222718F1F14000E9D289 /* LTTObjectAuditor.h in Copy Files */,
-				0A6D23E118EC84B600D705E2 /* LTTAlertViewAuditor.h in Copy Files */,
-				0AC71E7218DD090E00C0AAF9 /* LTTActionSheetAuditor.h in Copy Files */,
-				0A72943D18DBA0ED008A1E71 /* LTTViewAuditor.h in Copy Files */,
-				0ACA5E3B18D61A850052F2CD /* LTTBarButtonItemAuditor.h in Copy Files */,
-				0ACA5E2518D551FD0052F2CD /* LTTMapViewAuditor.h in Copy Files */,
-				0AED7A3218D50167009C6E1B /* LTTMockUserLocation.h in Copy Files */,
-				0AED7A2B18D4FF2C009C6E1B /* LTTMockMapView.h in Copy Files */,
-				0AED7A2418D3DEBD009C6E1B /* LTTTableViewAuditor.h in Copy Files */,
-				0AED7A1D18D39578009C6E1B /* LTTNavigationControllerAuditor.h in Copy Files */,
-				0AC0E33718D24DDB0078C01B /* LTTMockTextField.h in Copy Files */,
-				0A369FD218C94723008611E5 /* LTTLayoutConstraintChecker.h in Copy Files */,
-				0ABD4CCF18C6B8DA003BDD76 /* LTTCoreDataAuditor.h in Copy Files */,
-				0AA51B9218C40F3100A63B92 /* LTTTimeFreezer.h in Copy Files */,
-				0AA51B7B18C0725200A63B92 /* LTTSampleFileLoader.h in Copy Files */,
-				0AC33AD618BDCCA400D3F342 /* LTTMockURLSession.h in Copy Files */,
-				0AC33AD518BDC7D400D3F342 /* LTTMockURLDataTask.h in Copy Files */,
-				0AC33AC418BD3F7100D3F342 /* LTTFakeNotificationDispatchEntry.h in Copy Files */,
-				0AC33AC518BD3F7100D3F342 /* LTTMethodSwizzler.h in Copy Files */,
-				0AC33AC618BD3F7100D3F342 /* LTTMockHTTPResponse.h in Copy Files */,
-				0AC33AC718BD3F7100D3F342 /* LTTMockNotificationCenter.h in Copy Files */,
-				0AC33AC818BD3F7100D3F342 /* LTTViewControllerAuditor.h in Copy Files */,
-				0AC33AAF18BD107D00D3F342 /* Leech.h in Copy Files */,
-			);
-			name = "Copy Files";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXCopyFilesBuildPhase section */
-
 /* Begin PBXFileReference section */
-		0A298BE4192FB2C50001CB92 /* PopoverControllerAuditorTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PopoverControllerAuditorTests.m; sourceTree = "<group>"; };
-		0A298BE6192FB2E70001CB92 /* LTTPopoverControllerAuditor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTTPopoverControllerAuditor.h; sourceTree = "<group>"; };
-		0A298BE7192FB2E70001CB92 /* LTTPopoverControllerAuditor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LTTPopoverControllerAuditor.m; sourceTree = "<group>"; };
-		0A369FCE18C9409B008611E5 /* LTTLayoutConstraintChecker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTTLayoutConstraintChecker.h; sourceTree = "<group>"; };
-		0A369FCF18C9409B008611E5 /* LTTLayoutConstraintChecker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LTTLayoutConstraintChecker.m; sourceTree = "<group>"; };
-		0A503F10192060510007BE07 /* CollectionViewLayoutAuditorTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CollectionViewLayoutAuditorTests.m; sourceTree = "<group>"; };
-		0A503F12192109980007BE07 /* LTTCollectionViewLayoutAuditor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTTCollectionViewLayoutAuditor.h; sourceTree = "<group>"; };
-		0A503F13192109980007BE07 /* LTTCollectionViewLayoutAuditor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LTTCollectionViewLayoutAuditor.m; sourceTree = "<group>"; };
-		0A503F1519210C730007BE07 /* TestCollectionViewLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TestCollectionViewLayout.h; path = ../Leech/TestCollectionViewLayout.h; sourceTree = "<group>"; };
-		0A503F1619210C730007BE07 /* TestCollectionViewLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TestCollectionViewLayout.m; path = ../Leech/TestCollectionViewLayout.m; sourceTree = "<group>"; };
-		0A511E2119646B0A000D898D /* DeviceTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DeviceTests.m; sourceTree = "<group>"; };
-		0A511E2319646B3E000D898D /* LTTDeviceAuditor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTTDeviceAuditor.h; sourceTree = "<group>"; };
-		0A511E2419646B3E000D898D /* LTTDeviceAuditor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LTTDeviceAuditor.m; sourceTree = "<group>"; };
-		0A6D23BC18EA20DA00D705E2 /* AlertViewAuditorTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlertViewAuditorTests.m; sourceTree = "<group>"; };
-		0A6D23BE18EA211500D705E2 /* LTTAlertViewAuditor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTTAlertViewAuditor.h; sourceTree = "<group>"; };
-		0A6D23BF18EA211500D705E2 /* LTTAlertViewAuditor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LTTAlertViewAuditor.m; sourceTree = "<group>"; };
-		0A6D23C318EA24A600D705E2 /* FakeAlertViewDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FakeAlertViewDelegate.h; sourceTree = "<group>"; };
-		0A6D23C418EA24A600D705E2 /* FakeAlertViewDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FakeAlertViewDelegate.m; sourceTree = "<group>"; };
-		0A6D23D918EB918100D705E2 /* ObjectAuditorTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ObjectAuditorTests.m; sourceTree = "<group>"; };
-		0A6D23DB18EB91B500D705E2 /* LTTObjectAuditor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTTObjectAuditor.h; sourceTree = "<group>"; };
-		0A6D23DC18EB91B500D705E2 /* LTTObjectAuditor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LTTObjectAuditor.m; sourceTree = "<group>"; };
-		0A72943418DB9C21008A1E71 /* ViewAuditorTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewAuditorTests.m; sourceTree = "<group>"; };
-		0A72943618DB9C40008A1E71 /* LTTViewAuditor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTTViewAuditor.h; sourceTree = "<group>"; };
-		0A72943718DB9C40008A1E71 /* LTTViewAuditor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LTTViewAuditor.m; sourceTree = "<group>"; };
-		0A72943A18DB9D7D008A1E71 /* TestView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestView.h; sourceTree = "<group>"; };
-		0A72943B18DB9D7D008A1E71 /* TestView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestView.m; sourceTree = "<group>"; };
-		0A72944A18DCF43F008A1E71 /* LTTActionSheetAuditor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTTActionSheetAuditor.h; sourceTree = "<group>"; };
-		0A72944B18DCF43F008A1E71 /* LTTActionSheetAuditor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LTTActionSheetAuditor.m; sourceTree = "<group>"; };
-		0A72944E18DCF44D008A1E71 /* ActionSheetAuditorTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActionSheetAuditorTests.m; sourceTree = "<group>"; };
-		0A72945018DCF5B5008A1E71 /* FakeActionSheetDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FakeActionSheetDelegate.h; sourceTree = "<group>"; };
-		0A72945118DCF5B5008A1E71 /* FakeActionSheetDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FakeActionSheetDelegate.m; sourceTree = "<group>"; };
-		0A77CA5818B94045005230B0 /* libLeech.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libLeech.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		0A77CA5B18B94045005230B0 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
-		0A77CA5F18B94045005230B0 /* Leech-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Leech-Prefix.pch"; sourceTree = "<group>"; };
-		0A77CA6818B94045005230B0 /* LeechTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LeechTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		0A77CA6918B94045005230B0 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
-		0A77CA6C18B94045005230B0 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
-		0A77CA7318B94045005230B0 /* LeechTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "LeechTests-Info.plist"; sourceTree = "<group>"; };
-		0A77CA7518B94045005230B0 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		0A77CA8318B942EA005230B0 /* MethodSwizzlerTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MethodSwizzlerTests.m; sourceTree = "<group>"; };
-		0A77CA8618B94398005230B0 /* LTTMethodSwizzler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTTMethodSwizzler.h; sourceTree = "<group>"; };
-		0A77CA8718B94398005230B0 /* LTTMethodSwizzler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LTTMethodSwizzler.m; sourceTree = "<group>"; };
-		0A77CA8A18B94AE1005230B0 /* libobjc.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libobjc.dylib; path = usr/lib/libobjc.dylib; sourceTree = SDKROOT; };
-		0A77CA8D18BA9EB5005230B0 /* ViewControllerAuditorTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewControllerAuditorTests.m; sourceTree = "<group>"; };
-		0A77CA8F18BAA05C005230B0 /* LTTViewControllerAuditor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTTViewControllerAuditor.h; sourceTree = "<group>"; };
-		0A77CA9018BAA05C005230B0 /* LTTViewControllerAuditor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LTTViewControllerAuditor.m; sourceTree = "<group>"; };
-		0A77CA9318BAA17B005230B0 /* TestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestViewController.h; sourceTree = "<group>"; };
-		0A77CA9418BAA17B005230B0 /* TestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestViewController.m; sourceTree = "<group>"; };
-		0A77CA9918BABC89005230B0 /* LTTMockNotificationCenter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTTMockNotificationCenter.h; sourceTree = "<group>"; };
-		0A77CA9A18BABC89005230B0 /* LTTMockNotificationCenter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LTTMockNotificationCenter.m; sourceTree = "<group>"; };
-		0A77CA9D18BABCAE005230B0 /* MockNotificationCenterTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MockNotificationCenterTests.m; sourceTree = "<group>"; };
-		0A77CA9F18BABCE3005230B0 /* LTTFakeNotificationDispatchEntry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTTFakeNotificationDispatchEntry.h; sourceTree = "<group>"; };
-		0A77CAA018BABCE3005230B0 /* LTTFakeNotificationDispatchEntry.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LTTFakeNotificationDispatchEntry.m; sourceTree = "<group>"; };
-		0AA171F81A70298900628174 /* LTTMockHeading.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTTMockHeading.h; sourceTree = "<group>"; };
-		0AA171F91A70298900628174 /* LTTMockHeading.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LTTMockHeading.m; sourceTree = "<group>"; };
-		0AA51B7118C06F2100A63B92 /* LTTSampleFileLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTTSampleFileLoader.h; sourceTree = "<group>"; };
-		0AA51B7218C06F2100A63B92 /* LTTSampleFileLoader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LTTSampleFileLoader.m; sourceTree = "<group>"; };
-		0AA51B7518C06F3D00A63B92 /* SampleFileLoaderTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SampleFileLoaderTests.m; sourceTree = "<group>"; };
-		0AA51B7718C06F7B00A63B92 /* dictionary.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = dictionary.json; sourceTree = "<group>"; };
-		0AA51B7918C06F8500A63B92 /* array.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = array.json; sourceTree = "<group>"; };
-		0AA51B8818C409F800A63B92 /* TimeFreezerTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TimeFreezerTests.m; sourceTree = "<group>"; };
-		0AA51B8E18C40ABA00A63B92 /* LTTTimeFreezer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTTTimeFreezer.h; sourceTree = "<group>"; };
-		0AA51B8F18C40ABA00A63B92 /* LTTTimeFreezer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LTTTimeFreezer.m; sourceTree = "<group>"; };
-		0ABD4CC018C67912003BDD76 /* sample.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = sample.txt; sourceTree = "<group>"; };
-		0ABD4CC918C6AEFB003BDD76 /* CoreDataAuditorTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoreDataAuditorTests.m; sourceTree = "<group>"; };
-		0ABD4CCB18C6AF69003BDD76 /* LTTCoreDataAuditor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTTCoreDataAuditor.h; sourceTree = "<group>"; };
-		0ABD4CCC18C6AF69003BDD76 /* LTTCoreDataAuditor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LTTCoreDataAuditor.m; sourceTree = "<group>"; };
-		0ABD4CD018C6F2C0003BDD76 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
-		0AC0E33118D24D9F0078C01B /* MockTextFieldTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MockTextFieldTests.m; sourceTree = "<group>"; };
-		0AC0E33318D24DBC0078C01B /* LTTMockTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTTMockTextField.h; sourceTree = "<group>"; };
-		0AC0E33418D24DBC0078C01B /* LTTMockTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LTTMockTextField.m; sourceTree = "<group>"; };
-		0AC33AAE18BD0DA100D3F342 /* Leech.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Leech.h; sourceTree = "<group>"; };
-		0AC33ABB18BD321F00D3F342 /* MockHTTPResponseTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MockHTTPResponseTests.m; sourceTree = "<group>"; };
-		0AC33ABD18BD325700D3F342 /* LTTMockHTTPResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTTMockHTTPResponse.h; sourceTree = "<group>"; };
-		0AC33ABE18BD325700D3F342 /* LTTMockHTTPResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LTTMockHTTPResponse.m; sourceTree = "<group>"; };
-		0AC33AC218BD3D3C00D3F342 /* Boston City Flow.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Boston City Flow.jpg"; sourceTree = "<group>"; };
-		0AC33AC918BDC3C700D3F342 /* MockURLSessionTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MockURLSessionTests.m; sourceTree = "<group>"; };
-		0AC33ACB18BDC41000D3F342 /* LTTMockURLSession.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTTMockURLSession.h; sourceTree = "<group>"; };
-		0AC33ACC18BDC41000D3F342 /* LTTMockURLSession.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LTTMockURLSession.m; sourceTree = "<group>"; };
-		0AC33ACF18BDC58500D3F342 /* MockURLDataTaskTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MockURLDataTaskTests.m; sourceTree = "<group>"; };
-		0AC33AD118BDC5DB00D3F342 /* LTTMockURLDataTask.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTTMockURLDataTask.h; sourceTree = "<group>"; };
-		0AC33AD218BDC5DB00D3F342 /* LTTMockURLDataTask.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LTTMockURLDataTask.m; sourceTree = "<group>"; };
-		0ACA5E1F18D551070052F2CD /* MapViewAuditorTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapViewAuditorTests.m; sourceTree = "<group>"; };
-		0ACA5E2118D5512F0052F2CD /* LTTMapViewAuditor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTTMapViewAuditor.h; sourceTree = "<group>"; };
-		0ACA5E2218D5512F0052F2CD /* LTTMapViewAuditor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LTTMapViewAuditor.m; sourceTree = "<group>"; };
-		0ACA5E2618D5561D0052F2CD /* TestMapAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestMapAnnotation.h; sourceTree = "<group>"; };
-		0ACA5E2718D5561D0052F2CD /* TestMapAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestMapAnnotation.m; sourceTree = "<group>"; };
-		0ACA5E3518D58A280052F2CD /* BarButtonItemAuditorTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BarButtonItemAuditorTests.m; sourceTree = "<group>"; };
-		0ACA5E3718D58A650052F2CD /* LTTBarButtonItemAuditor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTTBarButtonItemAuditor.h; sourceTree = "<group>"; };
-		0ACA5E3818D58A650052F2CD /* LTTBarButtonItemAuditor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LTTBarButtonItemAuditor.m; sourceTree = "<group>"; };
-		0ACE718419D081EF00BC9709 /* ObjectAssociationsTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ObjectAssociationsTests.m; sourceTree = "<group>"; };
-		0ACE718619D0823200BC9709 /* NSObject+Association.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+Association.h"; sourceTree = "<group>"; };
-		0ACE718719D0823200BC9709 /* NSObject+Association.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+Association.m"; sourceTree = "<group>"; };
-		0AED668F18C93BB200D3DFE5 /* LayoutConstraintTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LayoutConstraintTests.m; sourceTree = "<group>"; };
-		0AED7A1718D3950D009C6E1B /* NavigationControllerAuditorTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NavigationControllerAuditorTests.m; sourceTree = "<group>"; };
-		0AED7A1918D3955E009C6E1B /* LTTNavigationControllerAuditor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTTNavigationControllerAuditor.h; sourceTree = "<group>"; };
-		0AED7A1A18D3955E009C6E1B /* LTTNavigationControllerAuditor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LTTNavigationControllerAuditor.m; sourceTree = "<group>"; };
-		0AED7A1E18D3DE7B009C6E1B /* TableViewAuditorTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableViewAuditorTests.m; sourceTree = "<group>"; };
-		0AED7A2018D3DE98009C6E1B /* LTTTableViewAuditor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTTTableViewAuditor.h; sourceTree = "<group>"; };
-		0AED7A2118D3DE98009C6E1B /* LTTTableViewAuditor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LTTTableViewAuditor.m; sourceTree = "<group>"; };
-		0AED7A2518D4FD21009C6E1B /* MockMapViewTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MockMapViewTests.m; sourceTree = "<group>"; };
-		0AED7A2718D4FD3E009C6E1B /* LTTMockMapView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTTMockMapView.h; sourceTree = "<group>"; };
-		0AED7A2818D4FD3E009C6E1B /* LTTMockMapView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LTTMockMapView.m; sourceTree = "<group>"; };
-		0AED7A2C18D5013C009C6E1B /* MockUserLocationTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MockUserLocationTests.m; sourceTree = "<group>"; };
-		0AED7A2E18D5015A009C6E1B /* LTTMockUserLocation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTTMockUserLocation.h; sourceTree = "<group>"; };
-		0AED7A2F18D5015A009C6E1B /* LTTMockUserLocation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LTTMockUserLocation.m; sourceTree = "<group>"; };
-		0AF15C221907234C0068EC2C /* LocationManagerAuditorTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationManagerAuditorTests.m; sourceTree = "<group>"; };
-		0AF15C241907236E0068EC2C /* LTTLocationManagerAuditor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTTLocationManagerAuditor.h; sourceTree = "<group>"; };
-		0AF15C251907236E0068EC2C /* LTTLocationManagerAuditor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LTTLocationManagerAuditor.m; sourceTree = "<group>"; };
-		0AF15C29190809C20068EC2C /* MockBeaconTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MockBeaconTests.m; sourceTree = "<group>"; };
-		0AF15C2B190809DE0068EC2C /* LTTMockBeacon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTTMockBeacon.h; sourceTree = "<group>"; };
-		0AF15C2C190809DE0068EC2C /* LTTMockBeacon.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LTTMockBeacon.m; sourceTree = "<group>"; };
+		0ADE30B91A90553B0099CBA7 /* Leech.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Leech.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		0ADE30BD1A90553B0099CBA7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0ADE30BE1A90553B0099CBA7 /* Leech.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Leech.h; sourceTree = "<group>"; };
+		0ADE30C41A90553B0099CBA7 /* LeechTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LeechTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		0ADE30CA1A90553B0099CBA7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		0A77CA5518B94045005230B0 /* Frameworks */ = {
+		0ADE30B51A90553B0099CBA7 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0A77CA5C18B94045005230B0 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		0A77CA6518B94045005230B0 /* Frameworks */ = {
+		0ADE30C11A90553B0099CBA7 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0A77CA6A18B94045005230B0 /* XCTest.framework in Frameworks */,
-				0A77CA7018B94045005230B0 /* libLeech.a in Frameworks */,
-				0A77CA6D18B94045005230B0 /* UIKit.framework in Frameworks */,
-				0A77CA6B18B94045005230B0 /* Foundation.framework in Frameworks */,
+				0ADE30C51A90553B0099CBA7 /* Leech.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		0A77CA4F18B94045005230B0 = {
+		0ADE30AF1A90553B0099CBA7 = {
 			isa = PBXGroup;
 			children = (
-				0A77CA5D18B94045005230B0 /* Leech */,
-				0A77CA7118B94045005230B0 /* LeechTests */,
-				0A77CA5A18B94045005230B0 /* Frameworks */,
-				0A77CA5918B94045005230B0 /* Products */,
+				0ADE30BB1A90553B0099CBA7 /* Leech */,
+				0ADE30C81A90553B0099CBA7 /* LeechTests */,
+				0ADE30BA1A90553B0099CBA7 /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		0A77CA5918B94045005230B0 /* Products */ = {
+		0ADE30BA1A90553B0099CBA7 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				0A77CA5818B94045005230B0 /* libLeech.a */,
-				0A77CA6818B94045005230B0 /* LeechTests.xctest */,
+				0ADE30B91A90553B0099CBA7 /* Leech.framework */,
+				0ADE30C41A90553B0099CBA7 /* LeechTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		0A77CA5A18B94045005230B0 /* Frameworks */ = {
+		0ADE30BB1A90553B0099CBA7 /* Leech */ = {
 			isa = PBXGroup;
 			children = (
-				0ABD4CD018C6F2C0003BDD76 /* UIKit.framework */,
-				0A77CA8A18B94AE1005230B0 /* libobjc.dylib */,
-				0A77CA5B18B94045005230B0 /* Foundation.framework */,
-				0A77CA6918B94045005230B0 /* XCTest.framework */,
-				0A77CA6C18B94045005230B0 /* UIKit.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		0A77CA5D18B94045005230B0 /* Leech */ = {
-			isa = PBXGroup;
-			children = (
-				0AC33AAE18BD0DA100D3F342 /* Leech.h */,
-				0AD1EE251902382000F8DB69 /* Core */,
-				0AD1EE291902393200F8DB69 /* Core Data */,
-				0AD1EE28190238E600F8DB69 /* Location */,
-				0AD1EE22190237BD00F8DB69 /* Networking */,
-				0AD1EE21190237A500F8DB69 /* Notification Center */,
-				0A77CA5E18B94045005230B0 /* Supporting Files */,
-				0AD1EE271902385600F8DB69 /* Tools */,
-				0AD1EE261902383B00F8DB69 /* User Interface */,
+				0ADE30BE1A90553B0099CBA7 /* Leech.h */,
+				0ADE30BC1A90553B0099CBA7 /* Supporting Files */,
 			);
 			path = Leech;
 			sourceTree = "<group>";
 		};
-		0A77CA5E18B94045005230B0 /* Supporting Files */ = {
+		0ADE30BC1A90553B0099CBA7 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				0A77CA5F18B94045005230B0 /* Leech-Prefix.pch */,
+				0ADE30BD1A90553B0099CBA7 /* Info.plist */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		0A77CA7118B94045005230B0 /* LeechTests */ = {
+		0ADE30C81A90553B0099CBA7 /* LeechTests */ = {
 			isa = PBXGroup;
 			children = (
-				0AC33AC118BD3CF600D3F342 /* Sample Data */,
-				0A77CA9618BAA180005230B0 /* Mocks+ */,
-				0A77CA7218B94045005230B0 /* Supporting Files */,
-				0A77CA8518B942EF005230B0 /* Test Classes */,
+				0ADE30C91A90553B0099CBA7 /* Supporting Files */,
 			);
 			path = LeechTests;
 			sourceTree = "<group>";
 		};
-		0A77CA7218B94045005230B0 /* Supporting Files */ = {
+		0ADE30C91A90553B0099CBA7 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				0A77CA7318B94045005230B0 /* LeechTests-Info.plist */,
-				0A77CA7418B94045005230B0 /* InfoPlist.strings */,
+				0ADE30CA1A90553B0099CBA7 /* Info.plist */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		0A77CA8518B942EF005230B0 /* Test Classes */ = {
-			isa = PBXGroup;
-			children = (
-				0A72944E18DCF44D008A1E71 /* ActionSheetAuditorTests.m */,
-				0A6D23BC18EA20DA00D705E2 /* AlertViewAuditorTests.m */,
-				0ACA5E3518D58A280052F2CD /* BarButtonItemAuditorTests.m */,
-				0A503F10192060510007BE07 /* CollectionViewLayoutAuditorTests.m */,
-				0ABD4CC918C6AEFB003BDD76 /* CoreDataAuditorTests.m */,
-				0A511E2119646B0A000D898D /* DeviceTests.m */,
-				0AED668F18C93BB200D3DFE5 /* LayoutConstraintTests.m */,
-				0AF15C221907234C0068EC2C /* LocationManagerAuditorTests.m */,
-				0ACA5E1F18D551070052F2CD /* MapViewAuditorTests.m */,
-				0A77CA8318B942EA005230B0 /* MethodSwizzlerTests.m */,
-				0AF15C29190809C20068EC2C /* MockBeaconTests.m */,
-				0AC33ABB18BD321F00D3F342 /* MockHTTPResponseTests.m */,
-				0AED7A2518D4FD21009C6E1B /* MockMapViewTests.m */,
-				0A77CA9D18BABCAE005230B0 /* MockNotificationCenterTests.m */,
-				0AC0E33118D24D9F0078C01B /* MockTextFieldTests.m */,
-				0AC33ACF18BDC58500D3F342 /* MockURLDataTaskTests.m */,
-				0AC33AC918BDC3C700D3F342 /* MockURLSessionTests.m */,
-				0AED7A2C18D5013C009C6E1B /* MockUserLocationTests.m */,
-				0AED7A1718D3950D009C6E1B /* NavigationControllerAuditorTests.m */,
-				0ACE718419D081EF00BC9709 /* ObjectAssociationsTests.m */,
-				0A6D23D918EB918100D705E2 /* ObjectAuditorTests.m */,
-				0A298BE4192FB2C50001CB92 /* PopoverControllerAuditorTests.m */,
-				0AA51B7518C06F3D00A63B92 /* SampleFileLoaderTests.m */,
-				0AED7A1E18D3DE7B009C6E1B /* TableViewAuditorTests.m */,
-				0AA51B8818C409F800A63B92 /* TimeFreezerTests.m */,
-				0A72943418DB9C21008A1E71 /* ViewAuditorTests.m */,
-				0A77CA8D18BA9EB5005230B0 /* ViewControllerAuditorTests.m */,
-			);
-			name = "Test Classes";
-			sourceTree = "<group>";
-		};
-		0A77CA9618BAA180005230B0 /* Mocks+ */ = {
-			isa = PBXGroup;
-			children = (
-				0A72945018DCF5B5008A1E71 /* FakeActionSheetDelegate.h */,
-				0A72945118DCF5B5008A1E71 /* FakeActionSheetDelegate.m */,
-				0A6D23C318EA24A600D705E2 /* FakeAlertViewDelegate.h */,
-				0A6D23C418EA24A600D705E2 /* FakeAlertViewDelegate.m */,
-				0A503F1519210C730007BE07 /* TestCollectionViewLayout.h */,
-				0A503F1619210C730007BE07 /* TestCollectionViewLayout.m */,
-				0ACA5E2618D5561D0052F2CD /* TestMapAnnotation.h */,
-				0ACA5E2718D5561D0052F2CD /* TestMapAnnotation.m */,
-				0A72943A18DB9D7D008A1E71 /* TestView.h */,
-				0A72943B18DB9D7D008A1E71 /* TestView.m */,
-				0A77CA9318BAA17B005230B0 /* TestViewController.h */,
-				0A77CA9418BAA17B005230B0 /* TestViewController.m */,
-			);
-			name = "Mocks+";
-			sourceTree = "<group>";
-		};
-		0AC33AC118BD3CF600D3F342 /* Sample Data */ = {
-			isa = PBXGroup;
-			children = (
-				0AA51B7918C06F8500A63B92 /* array.json */,
-				0AC33AC218BD3D3C00D3F342 /* Boston City Flow.jpg */,
-				0AA51B7718C06F7B00A63B92 /* dictionary.json */,
-				0ABD4CC018C67912003BDD76 /* sample.txt */,
-			);
-			name = "Sample Data";
-			sourceTree = "<group>";
-		};
-		0AD1EE21190237A500F8DB69 /* Notification Center */ = {
-			isa = PBXGroup;
-			children = (
-				0A77CA9918BABC89005230B0 /* LTTMockNotificationCenter.h */,
-				0A77CA9A18BABC89005230B0 /* LTTMockNotificationCenter.m */,
-				0A77CA9F18BABCE3005230B0 /* LTTFakeNotificationDispatchEntry.h */,
-				0A77CAA018BABCE3005230B0 /* LTTFakeNotificationDispatchEntry.m */,
-			);
-			name = "Notification Center";
-			sourceTree = "<group>";
-		};
-		0AD1EE22190237BD00F8DB69 /* Networking */ = {
-			isa = PBXGroup;
-			children = (
-				0AC33ABD18BD325700D3F342 /* LTTMockHTTPResponse.h */,
-				0AC33ABE18BD325700D3F342 /* LTTMockHTTPResponse.m */,
-				0AC33AD118BDC5DB00D3F342 /* LTTMockURLDataTask.h */,
-				0AC33AD218BDC5DB00D3F342 /* LTTMockURLDataTask.m */,
-				0AC33ACB18BDC41000D3F342 /* LTTMockURLSession.h */,
-				0AC33ACC18BDC41000D3F342 /* LTTMockURLSession.m */,
-			);
-			name = Networking;
-			sourceTree = "<group>";
-		};
-		0AD1EE23190237EA00F8DB69 /* Mocks */ = {
-			isa = PBXGroup;
-			children = (
-				0AF15C2B190809DE0068EC2C /* LTTMockBeacon.h */,
-				0AF15C2C190809DE0068EC2C /* LTTMockBeacon.m */,
-				0AA171F81A70298900628174 /* LTTMockHeading.h */,
-				0AA171F91A70298900628174 /* LTTMockHeading.m */,
-				0AED7A2718D4FD3E009C6E1B /* LTTMockMapView.h */,
-				0AED7A2818D4FD3E009C6E1B /* LTTMockMapView.m */,
-				0AED7A2E18D5015A009C6E1B /* LTTMockUserLocation.h */,
-				0AED7A2F18D5015A009C6E1B /* LTTMockUserLocation.m */,
-			);
-			name = Mocks;
-			sourceTree = "<group>";
-		};
-		0AD1EE241902380B00F8DB69 /* Mocks */ = {
-			isa = PBXGroup;
-			children = (
-				0AC0E33318D24DBC0078C01B /* LTTMockTextField.h */,
-				0AC0E33418D24DBC0078C01B /* LTTMockTextField.m */,
-			);
-			name = Mocks;
-			sourceTree = "<group>";
-		};
-		0AD1EE251902382000F8DB69 /* Core */ = {
-			isa = PBXGroup;
-			children = (
-				0A511E2319646B3E000D898D /* LTTDeviceAuditor.h */,
-				0A511E2419646B3E000D898D /* LTTDeviceAuditor.m */,
-				0A6D23DB18EB91B500D705E2 /* LTTObjectAuditor.h */,
-				0A6D23DC18EB91B500D705E2 /* LTTObjectAuditor.m */,
-				0AA51B8E18C40ABA00A63B92 /* LTTTimeFreezer.h */,
-				0AA51B8F18C40ABA00A63B92 /* LTTTimeFreezer.m */,
-			);
-			name = Core;
-			sourceTree = "<group>";
-		};
-		0AD1EE261902383B00F8DB69 /* User Interface */ = {
-			isa = PBXGroup;
-			children = (
-				0A72944A18DCF43F008A1E71 /* LTTActionSheetAuditor.h */,
-				0A72944B18DCF43F008A1E71 /* LTTActionSheetAuditor.m */,
-				0A6D23BE18EA211500D705E2 /* LTTAlertViewAuditor.h */,
-				0A6D23BF18EA211500D705E2 /* LTTAlertViewAuditor.m */,
-				0ACA5E3718D58A650052F2CD /* LTTBarButtonItemAuditor.h */,
-				0ACA5E3818D58A650052F2CD /* LTTBarButtonItemAuditor.m */,
-				0A503F12192109980007BE07 /* LTTCollectionViewLayoutAuditor.h */,
-				0A503F13192109980007BE07 /* LTTCollectionViewLayoutAuditor.m */,
-				0A369FCE18C9409B008611E5 /* LTTLayoutConstraintChecker.h */,
-				0A369FCF18C9409B008611E5 /* LTTLayoutConstraintChecker.m */,
-				0AED7A1918D3955E009C6E1B /* LTTNavigationControllerAuditor.h */,
-				0AED7A1A18D3955E009C6E1B /* LTTNavigationControllerAuditor.m */,
-				0A298BE6192FB2E70001CB92 /* LTTPopoverControllerAuditor.h */,
-				0A298BE7192FB2E70001CB92 /* LTTPopoverControllerAuditor.m */,
-				0AED7A2018D3DE98009C6E1B /* LTTTableViewAuditor.h */,
-				0AED7A2118D3DE98009C6E1B /* LTTTableViewAuditor.m */,
-				0A72943618DB9C40008A1E71 /* LTTViewAuditor.h */,
-				0A72943718DB9C40008A1E71 /* LTTViewAuditor.m */,
-				0A77CA8F18BAA05C005230B0 /* LTTViewControllerAuditor.h */,
-				0A77CA9018BAA05C005230B0 /* LTTViewControllerAuditor.m */,
-				0AD1EE241902380B00F8DB69 /* Mocks */,
-			);
-			name = "User Interface";
-			sourceTree = "<group>";
-		};
-		0AD1EE271902385600F8DB69 /* Tools */ = {
-			isa = PBXGroup;
-			children = (
-				0A77CA8618B94398005230B0 /* LTTMethodSwizzler.h */,
-				0A77CA8718B94398005230B0 /* LTTMethodSwizzler.m */,
-				0AA51B7118C06F2100A63B92 /* LTTSampleFileLoader.h */,
-				0AA51B7218C06F2100A63B92 /* LTTSampleFileLoader.m */,
-				0ACE718619D0823200BC9709 /* NSObject+Association.h */,
-				0ACE718719D0823200BC9709 /* NSObject+Association.m */,
-			);
-			name = Tools;
-			sourceTree = "<group>";
-		};
-		0AD1EE28190238E600F8DB69 /* Location */ = {
-			isa = PBXGroup;
-			children = (
-				0AF15C241907236E0068EC2C /* LTTLocationManagerAuditor.h */,
-				0AF15C251907236E0068EC2C /* LTTLocationManagerAuditor.m */,
-				0ACA5E2118D5512F0052F2CD /* LTTMapViewAuditor.h */,
-				0ACA5E2218D5512F0052F2CD /* LTTMapViewAuditor.m */,
-				0AD1EE23190237EA00F8DB69 /* Mocks */,
-			);
-			name = Location;
-			sourceTree = "<group>";
-		};
-		0AD1EE291902393200F8DB69 /* Core Data */ = {
-			isa = PBXGroup;
-			children = (
-				0ABD4CCB18C6AF69003BDD76 /* LTTCoreDataAuditor.h */,
-				0ABD4CCC18C6AF69003BDD76 /* LTTCoreDataAuditor.m */,
-			);
-			name = "Core Data";
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
+/* Begin PBXHeadersBuildPhase section */
+		0ADE30B61A90553B0099CBA7 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0ADE30BF1A90553B0099CBA7 /* Leech.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
 /* Begin PBXNativeTarget section */
-		0A77CA5718B94045005230B0 /* Leech */ = {
+		0ADE30B81A90553B0099CBA7 /* Leech */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 0A77CA7B18B94045005230B0 /* Build configuration list for PBXNativeTarget "Leech" */;
+			buildConfigurationList = 0ADE30CF1A90553B0099CBA7 /* Build configuration list for PBXNativeTarget "Leech" */;
 			buildPhases = (
-				0A77CA5418B94045005230B0 /* Sources */,
-				0A77CA5518B94045005230B0 /* Frameworks */,
-				0A77CA5618B94045005230B0 /* Copy Files */,
+				0ADE30B41A90553B0099CBA7 /* Sources */,
+				0ADE30B51A90553B0099CBA7 /* Frameworks */,
+				0ADE30B61A90553B0099CBA7 /* Headers */,
+				0ADE30B71A90553B0099CBA7 /* Resources */,
 			);
 			buildRules = (
 			);
@@ -620,218 +128,106 @@
 			);
 			name = Leech;
 			productName = Leech;
-			productReference = 0A77CA5818B94045005230B0 /* libLeech.a */;
-			productType = "com.apple.product-type.library.static";
+			productReference = 0ADE30B91A90553B0099CBA7 /* Leech.framework */;
+			productType = "com.apple.product-type.framework";
 		};
-		0A77CA6718B94045005230B0 /* LeechTests */ = {
+		0ADE30C31A90553B0099CBA7 /* LeechTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 0A77CA7E18B94045005230B0 /* Build configuration list for PBXNativeTarget "LeechTests" */;
+			buildConfigurationList = 0ADE30D21A90553B0099CBA7 /* Build configuration list for PBXNativeTarget "LeechTests" */;
 			buildPhases = (
-				0A77CA6418B94045005230B0 /* Sources */,
-				0A77CA6518B94045005230B0 /* Frameworks */,
-				0A77CA6618B94045005230B0 /* Resources */,
+				0ADE30C01A90553B0099CBA7 /* Sources */,
+				0ADE30C11A90553B0099CBA7 /* Frameworks */,
+				0ADE30C21A90553B0099CBA7 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				0A77CA6F18B94045005230B0 /* PBXTargetDependency */,
+				0ADE30C71A90553B0099CBA7 /* PBXTargetDependency */,
 			);
 			name = LeechTests;
 			productName = LeechTests;
-			productReference = 0A77CA6818B94045005230B0 /* LeechTests.xctest */;
+			productReference = 0ADE30C41A90553B0099CBA7 /* LeechTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		0A77CA5018B94045005230B0 /* Project object */ = {
+		0ADE30B01A90553B0099CBA7 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				CLASSPREFIX = LTT;
-				LastUpgradeCheck = 0510;
+				LastUpgradeCheck = 0630;
 				ORGANIZATIONNAME = "Swagger Soft";
 				TargetAttributes = {
-					0A77CA6718B94045005230B0 = {
-						TestTargetID = 0A77CA5718B94045005230B0;
+					0ADE30B81A90553B0099CBA7 = {
+						CreatedOnToolsVersion = 6.3;
+					};
+					0ADE30C31A90553B0099CBA7 = {
+						CreatedOnToolsVersion = 6.3;
 					};
 				};
 			};
-			buildConfigurationList = 0A77CA5318B94045005230B0 /* Build configuration list for PBXProject "Leech" */;
+			buildConfigurationList = 0ADE30B31A90553B0099CBA7 /* Build configuration list for PBXProject "Leech" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
 			);
-			mainGroup = 0A77CA4F18B94045005230B0;
-			productRefGroup = 0A77CA5918B94045005230B0 /* Products */;
+			mainGroup = 0ADE30AF1A90553B0099CBA7;
+			productRefGroup = 0ADE30BA1A90553B0099CBA7 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				0A77CA5718B94045005230B0 /* Leech */,
-				0A77CA6718B94045005230B0 /* LeechTests */,
-				0AD1EE1A1901CD4300F8DB69 /* Documentation */,
+				0ADE30B81A90553B0099CBA7 /* Leech */,
+				0ADE30C31A90553B0099CBA7 /* LeechTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		0A77CA6618B94045005230B0 /* Resources */ = {
+		0ADE30B71A90553B0099CBA7 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0A77CA7618B94045005230B0 /* InfoPlist.strings in Resources */,
-				0AA51B7A18C06F8500A63B92 /* array.json in Resources */,
-				0AA51B7818C06F7B00A63B92 /* dictionary.json in Resources */,
-				0AC33AC318BD3D3C00D3F342 /* Boston City Flow.jpg in Resources */,
-				0ABD4CC118C67912003BDD76 /* sample.txt in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0ADE30C21A90553B0099CBA7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
-/* Begin PBXShellScriptBuildPhase section */
-		0AD1EE1E1901CD5400F8DB69 /* Run Appledoc */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Run Appledoc";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "#appledoc Xcode script\n# Start constants\ncompany=\"SwaggerSoft\";\ncompanyID=\"com.samodom\";\ntarget=\"iphoneos\";\n#target=\"macosx\";\noutputPath=\"~/help\";\n# End constants\n/usr/local/bin/appledoc \\\n--verbose 5 \\\n--project-name \"${PROJECT_NAME}\" \\\n--project-company \"${company}\" \\\n--company-id \"${companyID}\" \\\n--output \"${outputPath}\" \\\n--docset-platform-family \"${target}\" \\\n--logformat xcode \\\n--keep-intermediate-files \\\n--no-repeat-first-par \\\n--no-warn-invalid-crossref \\\n--ignore .m \\\n\"${PROJECT_DIR}\"";
-		};
-/* End PBXShellScriptBuildPhase section */
-
 /* Begin PBXSourcesBuildPhase section */
-		0A77CA5418B94045005230B0 /* Sources */ = {
+		0ADE30B41A90553B0099CBA7 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0AF15C2D190809DE0068EC2C /* LTTMockBeacon.m in Sources */,
-				0ACE718819D0823200BC9709 /* NSObject+Association.m in Sources */,
-				0AC33ABF18BD325700D3F342 /* LTTMockHTTPResponse.m in Sources */,
-				0ABD4CCD18C6AF69003BDD76 /* LTTCoreDataAuditor.m in Sources */,
-				0A72943818DB9C40008A1E71 /* LTTViewAuditor.m in Sources */,
-				0A6D23C018EA211500D705E2 /* LTTAlertViewAuditor.m in Sources */,
-				0A511E2519646B3E000D898D /* LTTDeviceAuditor.m in Sources */,
-				0A77CA9118BAA05C005230B0 /* LTTViewControllerAuditor.m in Sources */,
-				0A77CA8818B94398005230B0 /* LTTMethodSwizzler.m in Sources */,
-				0AA171FA1A70298900628174 /* LTTMockHeading.m in Sources */,
-				0A6D23DD18EB91B500D705E2 /* LTTObjectAuditor.m in Sources */,
-				0A72944C18DCF43F008A1E71 /* LTTActionSheetAuditor.m in Sources */,
-				0A298BE8192FB2E70001CB92 /* LTTPopoverControllerAuditor.m in Sources */,
-				0AED7A3018D5015A009C6E1B /* LTTMockUserLocation.m in Sources */,
-				0AC0E33518D24DBC0078C01B /* LTTMockTextField.m in Sources */,
-				0A503F14192109980007BE07 /* LTTCollectionViewLayoutAuditor.m in Sources */,
-				0AC33ACD18BDC41000D3F342 /* LTTMockURLSession.m in Sources */,
-				0A369FD018C9409B008611E5 /* LTTLayoutConstraintChecker.m in Sources */,
-				0A77CAA118BABCE3005230B0 /* LTTFakeNotificationDispatchEntry.m in Sources */,
-				0AED7A2918D4FD3E009C6E1B /* LTTMockMapView.m in Sources */,
-				0AA51B7318C06F2100A63B92 /* LTTSampleFileLoader.m in Sources */,
-				0AED7A2218D3DE98009C6E1B /* LTTTableViewAuditor.m in Sources */,
-				0AA51B9018C40ABA00A63B92 /* LTTTimeFreezer.m in Sources */,
-				0AF15C261907236E0068EC2C /* LTTLocationManagerAuditor.m in Sources */,
-				0AC33AD318BDC5DB00D3F342 /* LTTMockURLDataTask.m in Sources */,
-				0AED7A1B18D3955E009C6E1B /* LTTNavigationControllerAuditor.m in Sources */,
-				0A77CA9B18BABC89005230B0 /* LTTMockNotificationCenter.m in Sources */,
-				0ACA5E3918D58A650052F2CD /* LTTBarButtonItemAuditor.m in Sources */,
-				0ACA5E2318D5512F0052F2CD /* LTTMapViewAuditor.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		0A77CA6418B94045005230B0 /* Sources */ = {
+		0ADE30C01A90553B0099CBA7 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0A503F1719210C730007BE07 /* TestCollectionViewLayout.m in Sources */,
-				0AF15C2E190809DE0068EC2C /* LTTMockBeacon.m in Sources */,
-				0A6D23DE18EB91B500D705E2 /* LTTObjectAuditor.m in Sources */,
-				0AED7A2618D4FD21009C6E1B /* MockMapViewTests.m in Sources */,
-				0A77CA9218BAA05C005230B0 /* LTTViewControllerAuditor.m in Sources */,
-				0A72944D18DCF43F008A1E71 /* LTTActionSheetAuditor.m in Sources */,
-				0A77CA8418B942EA005230B0 /* MethodSwizzlerTests.m in Sources */,
-				0A72943918DB9C40008A1E71 /* LTTViewAuditor.m in Sources */,
-				0A77CAA218BABCE3005230B0 /* LTTFakeNotificationDispatchEntry.m in Sources */,
-				0A6D23C118EA211500D705E2 /* LTTAlertViewAuditor.m in Sources */,
-				0AED7A3118D5015A009C6E1B /* LTTMockUserLocation.m in Sources */,
-				0ACA5E2018D551070052F2CD /* MapViewAuditorTests.m in Sources */,
-				0ACA5E2818D5561D0052F2CD /* TestMapAnnotation.m in Sources */,
-				0AC33ACE18BDC41000D3F342 /* LTTMockURLSession.m in Sources */,
-				0A511E2219646B0A000D898D /* DeviceTests.m in Sources */,
-				0AC0E33618D24DBC0078C01B /* LTTMockTextField.m in Sources */,
-				0A72945218DCF5B5008A1E71 /* FakeActionSheetDelegate.m in Sources */,
-				0AF15C271907236E0068EC2C /* LTTLocationManagerAuditor.m in Sources */,
-				0A77CA8E18BA9EB5005230B0 /* ViewControllerAuditorTests.m in Sources */,
-				0A369FD118C9409B008611E5 /* LTTLayoutConstraintChecker.m in Sources */,
-				0AED7A2A18D4FD3E009C6E1B /* LTTMockMapView.m in Sources */,
-				0AC33AD418BDC5DB00D3F342 /* LTTMockURLDataTask.m in Sources */,
-				0ACE718519D081EF00BC9709 /* ObjectAssociationsTests.m in Sources */,
-				0A6D23BD18EA20DA00D705E2 /* AlertViewAuditorTests.m in Sources */,
-				0AED7A1F18D3DE7B009C6E1B /* TableViewAuditorTests.m in Sources */,
-				0AC33ABC18BD321F00D3F342 /* MockHTTPResponseTests.m in Sources */,
-				0A6D23DA18EB918100D705E2 /* ObjectAuditorTests.m in Sources */,
-				0AC0E33218D24D9F0078C01B /* MockTextFieldTests.m in Sources */,
-				0AC33AC018BD325700D3F342 /* LTTMockHTTPResponse.m in Sources */,
-				0A77CA9E18BABCAE005230B0 /* MockNotificationCenterTests.m in Sources */,
-				0ABD4CCA18C6AEFB003BDD76 /* CoreDataAuditorTests.m in Sources */,
-				0A77CA9C18BABC89005230B0 /* LTTMockNotificationCenter.m in Sources */,
-				0ABD4CCE18C6AF69003BDD76 /* LTTCoreDataAuditor.m in Sources */,
-				0A77CA8918B94398005230B0 /* LTTMethodSwizzler.m in Sources */,
-				0AED7A1818D3950D009C6E1B /* NavigationControllerAuditorTests.m in Sources */,
-				0A298BE5192FB2C50001CB92 /* PopoverControllerAuditorTests.m in Sources */,
-				0AC33AD018BDC58500D3F342 /* MockURLDataTaskTests.m in Sources */,
-				0A72944F18DCF44D008A1E71 /* ActionSheetAuditorTests.m in Sources */,
-				0AA51B7418C06F2100A63B92 /* LTTSampleFileLoader.m in Sources */,
-				0ACA5E3A18D58A650052F2CD /* LTTBarButtonItemAuditor.m in Sources */,
-				0A77CA9518BAA17B005230B0 /* TestViewController.m in Sources */,
-				0A503F11192060510007BE07 /* CollectionViewLayoutAuditorTests.m in Sources */,
-				0A6D23C518EA24A600D705E2 /* FakeAlertViewDelegate.m in Sources */,
-				0AF15C2A190809C20068EC2C /* MockBeaconTests.m in Sources */,
-				0AA51B8918C409F800A63B92 /* TimeFreezerTests.m in Sources */,
-				0AA51B9118C40ABA00A63B92 /* LTTTimeFreezer.m in Sources */,
-				0AED7A2318D3DE98009C6E1B /* LTTTableViewAuditor.m in Sources */,
-				0ACE718919D083D500BC9709 /* NSObject+Association.m in Sources */,
-				0AED7A2D18D5013C009C6E1B /* MockUserLocationTests.m in Sources */,
-				0A72943C18DB9D7D008A1E71 /* TestView.m in Sources */,
-				0AA51B7618C06F3D00A63B92 /* SampleFileLoaderTests.m in Sources */,
-				0AC33ACA18BDC3C700D3F342 /* MockURLSessionTests.m in Sources */,
-				0AED7A1C18D3955E009C6E1B /* LTTNavigationControllerAuditor.m in Sources */,
-				0AF15C231907234C0068EC2C /* LocationManagerAuditorTests.m in Sources */,
-				0ACA5E3618D58A280052F2CD /* BarButtonItemAuditorTests.m in Sources */,
-				0A72943518DB9C21008A1E71 /* ViewAuditorTests.m in Sources */,
-				0AED669018C93BB200D3DFE5 /* LayoutConstraintTests.m in Sources */,
-				0ACA5E2418D5512F0052F2CD /* LTTMapViewAuditor.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		0A77CA6F18B94045005230B0 /* PBXTargetDependency */ = {
+		0ADE30C71A90553B0099CBA7 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 0A77CA5718B94045005230B0 /* Leech */;
-			targetProxy = 0A77CA6E18B94045005230B0 /* PBXContainerItemProxy */;
+			target = 0ADE30B81A90553B0099CBA7 /* Leech */;
+			targetProxy = 0ADE30C61A90553B0099CBA7 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
-/* Begin PBXVariantGroup section */
-		0A77CA7418B94045005230B0 /* InfoPlist.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				0A77CA7518B94045005230B0 /* en */,
-			);
-			name = InfoPlist.strings;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
-
 /* Begin XCBuildConfiguration section */
-		0A77CA7918B94045005230B0 /* Debug */ = {
+		0ADE30CD1A90553B0099CBA7 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -846,8 +242,13 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -862,13 +263,17 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
 			};
 			name = Debug;
 		};
-		0A77CA7A18B94045005230B0 /* Release */ = {
+		0ADE30CE1A90553B0099CBA7 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -883,9 +288,14 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				COPY_PHASE_STRIP = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
@@ -893,90 +303,72 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
 			};
 			name = Release;
 		};
-		0A77CA7C18B94045005230B0 /* Debug */ = {
+		0ADE30D01A90553B0099CBA7 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				DSTROOT = /tmp/Leech.dst;
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "Leech/Leech-Prefix.pch";
-				OTHER_LDFLAGS = "-ObjC";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = Leech/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
-		0A77CA7D18B94045005230B0 /* Release */ = {
+		0ADE30D11A90553B0099CBA7 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				DSTROOT = /tmp/Leech.dst;
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "Leech/Leech-Prefix.pch";
-				OTHER_LDFLAGS = "-ObjC";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = Leech/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
-		0A77CA7F18B94045005230B0 /* Debug */ = {
+		0ADE30D31A90553B0099CBA7 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
-					"$(DEVELOPER_FRAMEWORKS_DIR)",
 				);
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "Leech/Leech-Prefix.pch";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
 				);
-				"GCC_PREPROCESSOR_DEFINITIONS[arch=*]" = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = "LeechTests/LeechTests-Info.plist";
+				INFOPLIST_FILE = LeechTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TARGETED_DEVICE_FAMILY = "1,2";
-				WRAPPER_EXTENSION = xctest;
 			};
 			name = Debug;
 		};
-		0A77CA8018B94045005230B0 /* Release */ = {
+		0ADE30D41A90553B0099CBA7 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
-					"$(DEVELOPER_FRAMEWORKS_DIR)",
 				);
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "Leech/Leech-Prefix.pch";
-				INFOPLIST_FILE = "LeechTests/LeechTests-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TARGETED_DEVICE_FAMILY = "1,2";
-				WRAPPER_EXTENSION = xctest;
-			};
-			name = Release;
-		};
-		0AD1EE1B1901CD4300F8DB69 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				PRODUCT_NAME = "$(TARGET_NAME)";
-			};
-			name = Debug;
-		};
-		0AD1EE1C1901CD4300F8DB69 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
+				INFOPLIST_FILE = LeechTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
@@ -984,43 +376,34 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		0A77CA5318B94045005230B0 /* Build configuration list for PBXProject "Leech" */ = {
+		0ADE30B31A90553B0099CBA7 /* Build configuration list for PBXProject "Leech" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				0A77CA7918B94045005230B0 /* Debug */,
-				0A77CA7A18B94045005230B0 /* Release */,
+				0ADE30CD1A90553B0099CBA7 /* Debug */,
+				0ADE30CE1A90553B0099CBA7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		0A77CA7B18B94045005230B0 /* Build configuration list for PBXNativeTarget "Leech" */ = {
+		0ADE30CF1A90553B0099CBA7 /* Build configuration list for PBXNativeTarget "Leech" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				0A77CA7C18B94045005230B0 /* Debug */,
-				0A77CA7D18B94045005230B0 /* Release */,
+				0ADE30D01A90553B0099CBA7 /* Debug */,
+				0ADE30D11A90553B0099CBA7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		0A77CA7E18B94045005230B0 /* Build configuration list for PBXNativeTarget "LeechTests" */ = {
+		0ADE30D21A90553B0099CBA7 /* Build configuration list for PBXNativeTarget "LeechTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				0A77CA7F18B94045005230B0 /* Debug */,
-				0A77CA8018B94045005230B0 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		0AD1EE1D1901CD4300F8DB69 /* Build configuration list for PBXAggregateTarget "Documentation" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				0AD1EE1B1901CD4300F8DB69 /* Debug */,
-				0AD1EE1C1901CD4300F8DB69 /* Release */,
+				0ADE30D31A90553B0099CBA7 /* Debug */,
+				0ADE30D41A90553B0099CBA7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = 0A77CA5018B94045005230B0 /* Project object */;
+	rootObject = 0ADE30B01A90553B0099CBA7 /* Project object */;
 }

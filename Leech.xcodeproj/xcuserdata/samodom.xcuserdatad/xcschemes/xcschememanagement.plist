@@ -4,12 +4,7 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
-		<key>Documentation.xcscheme</key>
-		<dict>
-			<key>orderHint</key>
-			<integer>1</integer>
-		</dict>
-		<key>Leech.xcscheme_^#shared#^_</key>
+		<key>Leech.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
 			<integer>0</integer>
@@ -17,17 +12,12 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>0A77CA5718B94045005230B0</key>
+		<key>0ADE30B81A90553B0099CBA7</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>0A77CA6718B94045005230B0</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>0AD1EE1A1901CD4300F8DB69</key>
+		<key>0ADE30C31A90553B0099CBA7</key>
 		<dict>
 			<key>primary</key>
 			<true/>
