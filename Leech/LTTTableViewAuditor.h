@@ -33,16 +33,16 @@
  
  __Grouping table updates (begin)__
  
-     [LTTTableViewAuditor auditBeginUpdatesMethod:<#tableView#>];
-     [<#controller#> controllerWillChangeContents:<#fetchedResultsController#>];
+     [LTTTableViewAuditor auditBeginUpdatesMethod:<#tableView#> forward:YES];
+     [<#controller#> controllerWillChangeContent:<#fetchedResultsController#>];
      XCTAssertTrue([LTTTableViewAuditor didCallBeginUpdates:<#tableView#>],
                    @"The table should be put into update mode");
-     [LTTTableViewAuditor stopAuditingBeginUpdatesMethod:<#tableView>];
+     [LTTTableViewAuditor stopAuditingBeginUpdatesMethod:<#tableView#>];
 
  __Grouping table updates (end)__
  
-     [LTTTableViewAuditor auditEndUpdatesMethod:<#tableView#>];
-     [<#controller#> controllerDidChangeContents:<#fetchedResultsController#>];
+     [LTTTableViewAuditor auditEndUpdatesMethod:<#tableView#> forward:YES];
+     [<#controller#> controllerDidChangeContent:<#fetchedResultsController#>];
      XCTAssertTrue([LTTTableViewAuditor didCallEndUpdates:<#tableView#>],
                    @"The table should be taken out of update mode");
      [LTTTableViewAuditor stopAuditingEndUpdatesMethod:<#tableView#>];
@@ -51,7 +51,7 @@
  
      [LTTTableViewAuditor auditInsertSectionsMethod:<#tableView#> forward:YES];
      //  insert code that will cause your fetched results controller to have new sections of data
-     XCTAssertEqualObjects([LTTTableViewAuditor insertSectionsIndexSet:<#tableView#>,
+     XCTAssertEqualObjects([LTTTableViewAuditor insertSectionsIndexSet:<#tableView#>],
                            <#newIndices#>,
                            @"The table should have new sections at the following indices: <#indices#>");
      XCTAssertEqual([LTTTableViewAuditor insertSectionsRowAnimation:<#tableView#>],
@@ -63,7 +63,7 @@
  
      [LTTTableViewAuditor auditDeleteSectionsMethod:<#tableView#> forward:YES];
      //  insert code that will cause your fetched results controller to have sections of data removed
-     XCTAssertEqualObjects([LTTTableViewAuditor deleteSectionsIndexSet:<#tableView#>,
+     XCTAssertEqualObjects([LTTTableViewAuditor deleteSectionsIndexSet:<#tableView#>],
                            <#indicesToDelete#>,
                            @"The table should have sections removed from the following indices: <#indices#>");
      XCTAssertEqual([LTTTableViewAuditor deleteSectionsRowAnimation:<#tableView#>],
@@ -75,7 +75,7 @@
  
      [LTTTableViewAuditor auditReloadSectionsMethod:<#tableView#> forward:YES];
      //  insert code that will cause your fetched results controller to have sections of data updated
-     XCTAssertEqualObjects([LTTTableViewAuditor reloadSectionsIndexSet:<#tableView#>,
+     XCTAssertEqualObjects([LTTTableViewAuditor reloadSectionsIndexSet:<#tableView#>],
                            <#indicesToReload#>,
                            @"The table should have sections reloaded at the following indices: <#indices#>");
      XCTAssertEqual([LTTTableViewAuditor reloadSectionsRowAnimation:<#tableView#>],
@@ -87,7 +87,7 @@
  
      [LTTTableViewAuditor auditInsertRowsMethod:<#tableView#> forward:YES];
      //  insert code that will cause your fetched results controller to have new rows of data
-     XCTAssertEqualObjects([LTTTableViewAuditor insertRowsIndexPaths:<#tableView#>,
+     XCTAssertEqualObjects([LTTTableViewAuditor insertRowsIndexPaths:<#tableView#>],
                            <#newIndexPaths#>,
                            @"The table should have new rows at the following index paths: <#indexPaths#>");
      XCTAssertEqual([LTTTableViewAuditor insertRowsRowAnimation:<#tableView#>],
@@ -99,7 +99,7 @@
  
      [LTTTableViewAuditor auditDeleteRowsMethod:<#tableView#> forward:YES];
      //  insert code that will cause your fetched results controller to delete rows of data
-     XCTAssertEqualObjects([LTTTableViewAuditor deleteRowsIndexPaths:<#tableView#>,
+     XCTAssertEqualObjects([LTTTableViewAuditor deleteRowsIndexPaths:<#tableView#>],
                            <#deletedIndexPaths#>,
                            @"The table should have deleted rows at the following index paths: <#indexPaths#>");
      XCTAssertEqual([LTTTableViewAuditor deleteRowsRowAnimation:<#tableView#>],
@@ -111,10 +111,10 @@
  
      [LTTTableViewAuditor auditMoveRowMethod:<#tableView#> forward:YES];
      //  insert code that will cause a row of your fetched results controller data to move to a new index path
-     XCTAssertEqualObjects([LTTTableViewAuditor moveRowSourceIndexPath:<#tableView#>,
+     XCTAssertEqualObjects([LTTTableViewAuditor moveRowSourceIndexPath:<#tableView#>],
                            <#sourceIndexPath#>,
                            @"The table should move the row from the original index path");
-     XCTAssertEqualObjects([LTTTableViewAuditor moveRowDestinationIndexPath:<#tableView#>,
+     XCTAssertEqualObjects([LTTTableViewAuditor moveRowDestinationIndexPath:<#tableView#>],
                            <#destinationIndexPath#>,
                            @"The table should have move the row to the new index path");
      [LTTTableViewAuditor stopAuditingMoveRowMethod:<#tableView#>];
@@ -123,7 +123,7 @@
  
      [LTTTableViewAuditor auditReloadRowsMethod:<#tableView#> forward:YES];
      //  insert code that will cause your fetched results controller to update rows of data
-     XCTAssertEqualObjects([LTTTableViewAuditor reloadRowsIndexPaths:<#tableView#>,
+     XCTAssertEqualObjects([LTTTableViewAuditor reloadRowsIndexPaths:<#tableView#>],
                            <#reloadIndexPath#>,
                            @"The table should have reloaded rows at the following index paths: <#indexPaths#>");
      XCTAssertEqual([LTTTableViewAuditor reloadRowsRowAnimation:<#tableView#>],

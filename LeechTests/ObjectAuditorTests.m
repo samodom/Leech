@@ -52,7 +52,7 @@
 
 - (void)testAuditingOfPerformSelectorOnMainThreadMethod {
     IMP realImplementation = method_getImplementation(class_getInstanceMethod([auditedObject class], @selector(performSelectorOnMainThread:withObject:waitUntilDone:)));
-    [LTTObjectAuditor auditPerformSelectorOrMainThreadMethod:auditedObject];
+    [LTTObjectAuditor auditPerformSelectorOnMainThread:auditedObject];
     IMP currentImplementation = method_getImplementation(class_getInstanceMethod([auditedObject class], @selector(performSelectorOnMainThread:withObject:waitUntilDone:)));
     XCTAssertNotEqual(currentImplementation, realImplementation, @"The method should be swizzled");
     [auditedObject performSelectorOnMainThread:@selector(sampleMethod:) withObject:argument waitUntilDone:YES];
@@ -60,9 +60,12 @@
     XCTAssertEqual(selector, @selector(sampleMethod:), @"The selector to perform should be captured");
     id arg = [LTTObjectAuditor argumentToSelector:auditedObject];
     XCTAssertEqualObjects(arg, argument, @"The argument to the selector should be captured");
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Warc-performSelector-leaks"
     XCTAssertEqualObjects([auditedObject performSelector:selector withObject:arg], argument, @"The method should work with the audited values");
+#pragma clang diagnostic pop
     XCTAssertTrue([LTTObjectAuditor waitUntilDoneFlag:auditedObject], @"The wait until done flag should be captured");
-    [LTTObjectAuditor stopAuditingPerformSelectorOnMainThreadMethod:auditedObject];
+    [LTTObjectAuditor stopAuditingPerformSelectorOnMainThread:auditedObject];
     currentImplementation = method_getImplementation(class_getInstanceMethod([auditedObject class], @selector(performSelectorOnMainThread:withObject:waitUntilDone:)));
     XCTAssertEqual(currentImplementation, realImplementation, @"The method should no longer be swizzled");
 }

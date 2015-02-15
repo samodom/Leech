@@ -33,6 +33,10 @@
 #import "LTTObjectAuditor.h"
 #import "LTTLocationManagerAuditor.h"
 #import "LTTMockBeacon.h"
-
+#import "LTTCollectionViewLayoutAuditor.h"
+#import "LTTPopoverControllerAuditor.h"
+#import "LTTDeviceAuditor.h"
+#import "NSObject+Association.h"
+#import "LTTMockHeading.h"
 
 #endif

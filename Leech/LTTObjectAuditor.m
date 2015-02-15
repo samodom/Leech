@@ -34,11 +34,11 @@ const char *ObjectWaitUntilDoneFlag = "ObjectWaitUntilDoneFlag";
 
 @implementation LTTObjectAuditor
 
-+ (void)auditPerformSelectorOrMainThreadMethod:(NSObject *)object {
++ (void)auditPerformSelectorOnMainThread:(NSObject *)object {
     [LTTMethodSwizzler swapInstanceMethodsForClass:[object class] selectorOne:@selector(performSelectorOnMainThread:withObject:waitUntilDone:) selectorTwo:@selector(Leech_PerformSelectorOnMainThread:withObject:waitUntilDone:)];
 }
 
-+ (void)stopAuditingPerformSelectorOnMainThreadMethod:(NSObject *)object {
++ (void)stopAuditingPerformSelectorOnMainThread:(NSObject *)object {
     objc_setAssociatedObject(object, ObjectSelectorToPerform, nil, OBJC_ASSOCIATION_ASSIGN);
     objc_setAssociatedObject(object, ObjectArgumentToSelector, nil, OBJC_ASSOCIATION_ASSIGN);
     objc_setAssociatedObject(object, ObjectWaitUntilDoneFlag, nil, OBJC_ASSOCIATION_ASSIGN);

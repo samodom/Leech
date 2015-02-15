@@ -9,9 +9,17 @@
 #import "LTTViewAuditor.h"
 
 #import "LTTMethodSwizzler.h"
+#import "NSObject+Association.h"
 
-const char *ShouldForwardAwakeFromNibCall = "ShouldForwardAwakeFromNibCall";
-const char *AwakeFromNibCalled = "AwakeFromNibCalled";
+const char *UIViewShouldForwardAwakeFromNibCall = "UIViewShouldForwardAwakeFromNibCall";
+const char *UIViewAwakeFromNibCalled = "UIViewAwakeFromNibCalled";
+
+const char *UIViewShouldForwardLayoutSubviewsCall = "UIViewShouldForwardLayoutSubviewsCall";
+const char *UIViewLayoutSubviewsCalled = "UIViewLayoutSubviewsCalled";
+
+const char *UIViewShouldForwardSetNeedsDisplayCall = "UIViewShouldForwardSetNeedsDisplayCall";
+const char *UIViewSetNeedsDisplayCalled = "UIViewSetNeedsDisplayCalled";
+
 
 ////////////////////////////////////////////////////////////////////////////////
 //  Category on UIView
@@ -20,10 +28,27 @@ const char *AwakeFromNibCalled = "AwakeFromNibCalled";
 @implementation UIView (Leech)
 
 - (void)Leech_AwakeFromNib {
-    objc_setAssociatedObject([LTTViewAuditor class], AwakeFromNibCalled, @(YES), OBJC_ASSOCIATION_RETAIN);
-    NSNumber *forward = objc_getAssociatedObject([LTTViewAuditor class], ShouldForwardAwakeFromNibCall);
-    if (forward.boolValue)
+    [[LTTViewAuditor class] associateKey:UIViewAwakeFromNibCalled withValue:@YES];
+    NSNumber *forward = [[LTTViewAuditor class] associationForKey:UIViewShouldForwardAwakeFromNibCall];
+    if (forward.boolValue) {
         [self Leech_AwakeFromNib];
+    }
+}
+
+- (void)Leech_LayoutSubviews {
+    [[LTTViewAuditor class] associateKey:UIViewLayoutSubviewsCalled withValue:@YES];
+    NSNumber *forward = [[LTTViewAuditor class] associationForKey:UIViewShouldForwardLayoutSubviewsCall];
+    if (forward.boolValue) {
+        [self Leech_LayoutSubviews];
+    }
+}
+
+- (void)Leech_SetNeedsDisplay {
+    [[LTTViewAuditor class] associateKey:UIViewSetNeedsDisplayCalled withValue:@YES];
+    NSNumber *forward = [[LTTViewAuditor class] associationForKey:UIViewShouldForwardSetNeedsDisplayCall];
+    if (forward.boolValue) {
+        [self Leech_SetNeedsDisplay];
+    }
 }
 
 @end
@@ -35,19 +60,51 @@ const char *AwakeFromNibCalled = "AwakeFromNibCalled";
 @implementation LTTViewAuditor
 
 + (void)auditAwakeFromNibMethod:(BOOL)forward {
-    objc_setAssociatedObject(self, ShouldForwardAwakeFromNibCall, @(forward), OBJC_ASSOCIATION_RETAIN);
+    [self associateKey:UIViewShouldForwardAwakeFromNibCall withValue:@(forward)];
     [LTTMethodSwizzler swapInstanceMethodsForClass:[UIView class] selectorOne:@selector(awakeFromNib) selectorTwo:@selector(Leech_AwakeFromNib)];
 }
 
 + (void)stopAuditingAwakeFromNibMethod {
-    objc_setAssociatedObject(self, ShouldForwardAwakeFromNibCall, nil, OBJC_ASSOCIATION_ASSIGN);
-    objc_setAssociatedObject(self, AwakeFromNibCalled, nil, OBJC_ASSOCIATION_ASSIGN);
+    [self dissociateKey:UIViewShouldForwardAwakeFromNibCall];
+    [self dissociateKey:UIViewAwakeFromNibCalled];
     [LTTMethodSwizzler swapInstanceMethodsForClass:[UIView class] selectorOne:@selector(awakeFromNib) selectorTwo:@selector(Leech_AwakeFromNib)];
 }
 
 + (BOOL)didCallSuperAwakeFromNib {
-    NSNumber *awakeCalled = objc_getAssociatedObject(self, AwakeFromNibCalled);
+    NSNumber *awakeCalled = [self associationForKey:UIViewAwakeFromNibCalled];
     return awakeCalled.boolValue;
+}
+
++ (void)auditLayoutSubviewsMethod:(BOOL)forward {
+    [self associateKey:UIViewShouldForwardLayoutSubviewsCall withValue:@(forward)];
+    [LTTMethodSwizzler swapInstanceMethodsForClass:[UIView class] selectorOne:@selector(layoutSubviews) selectorTwo:@selector(Leech_LayoutSubviews)];
+}
+
++ (void)stopAuditingLayoutSubviewsMethod {
+    [self dissociateKey:UIViewShouldForwardLayoutSubviewsCall];
+    [self dissociateKey:UIViewLayoutSubviewsCalled];
+    [LTTMethodSwizzler swapInstanceMethodsForClass:[UIView class] selectorOne:@selector(layoutSubviews) selectorTwo:@selector(Leech_LayoutSubviews)];
+}
+
++ (BOOL)didCallSuperLayoutSubviews {
+    NSNumber *layoutCalled = [self associationForKey:UIViewLayoutSubviewsCalled];
+    return layoutCalled.boolValue;
+}
+
++ (void)auditSetNeedsDisplayMethod:(BOOL)forward {
+    [self associateKey:UIViewShouldForwardSetNeedsDisplayCall withValue:@(forward)];
+    [LTTMethodSwizzler swapInstanceMethodsForClass:[UIView class] selectorOne:@selector(setNeedsDisplay) selectorTwo:@selector(Leech_SetNeedsDisplay)];
+}
+
++ (void)stopAuditingSetNeedsDisplayMethod {
+    [self dissociateKey:UIViewShouldForwardSetNeedsDisplayCall];
+    [self dissociateKey:UIViewSetNeedsDisplayCalled];
+    [LTTMethodSwizzler swapInstanceMethodsForClass:[UIView class] selectorOne:@selector(setNeedsDisplay) selectorTwo:@selector(Leech_SetNeedsDisplay)];
+}
+
++ (BOOL)didCallSetNeedsDisplay {
+    NSNumber *needsCalled = [self associationForKey:UIViewSetNeedsDisplayCalled];
+    return needsCalled.boolValue;
 }
 
 @end

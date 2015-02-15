@@ -46,4 +46,28 @@
     XCTAssertEqual(currentImplementation, realImplementation, @"The method should no longer be swizzled");
 }
 
+- (void)testAuditingOfLayoutSubviewsMethod {
+    IMP realImplementation = method_getImplementation(class_getInstanceMethod([UIView class], @selector(layoutSubviews)));
+    [LTTViewAuditor auditLayoutSubviewsMethod:YES];
+    IMP currentImplementation = method_getImplementation(class_getInstanceMethod([UIView class], @selector(layoutSubviews)));
+    XCTAssertNotEqual(currentImplementation, realImplementation, @"The method should be swizzled");
+    [view layoutSubviews];
+    XCTAssertTrue([LTTViewAuditor didCallSuperLayoutSubviews], @"The view should call its superclass' -layoutSubviews method");
+    [LTTViewAuditor stopAuditingLayoutSubviewsMethod];
+    currentImplementation = method_getImplementation(class_getInstanceMethod([UIView class], @selector(layoutSubviews)));
+    XCTAssertEqual(currentImplementation, realImplementation, @"The method should no longer be swizzled");
+}
+
+- (void)testAuditingOfSetNeedsDisplayMethod {
+    IMP realImplementation = method_getImplementation(class_getInstanceMethod([UIView class], @selector(setNeedsDisplay)));
+    [LTTViewAuditor auditSetNeedsDisplayMethod:YES];
+    IMP currentImplementation = method_getImplementation(class_getInstanceMethod([UIView class], @selector(setNeedsDisplay)));
+    XCTAssertNotEqual(currentImplementation, realImplementation, @"The method should be swizzled");
+    [view setNeedsDisplay];
+    XCTAssertTrue([LTTViewAuditor didCallSetNeedsDisplay], @"The view should capture calls to its -setNeedsDisplay method");
+    [LTTViewAuditor stopAuditingSetNeedsDisplayMethod];
+    currentImplementation = method_getImplementation(class_getInstanceMethod([UIView class], @selector(setNeedsDisplay)));
+    XCTAssertEqual(currentImplementation, realImplementation, @"The method should no longer be swizzled");
+}
+
 @end

@@ -21,9 +21,17 @@
 /* End PBXAggregateTarget section */
 
 /* Begin PBXBuildFile section */
+		0A1C9EA9192FE5DD00122B88 /* LTTPopoverControllerAuditor.h in Copy Files */ = {isa = PBXBuildFile; fileRef = 0A298BE6192FB2E70001CB92 /* LTTPopoverControllerAuditor.h */; };
+		0A298BE5192FB2C50001CB92 /* PopoverControllerAuditorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A298BE4192FB2C50001CB92 /* PopoverControllerAuditorTests.m */; };
+		0A298BE8192FB2E70001CB92 /* LTTPopoverControllerAuditor.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A298BE7192FB2E70001CB92 /* LTTPopoverControllerAuditor.m */; };
 		0A369FD018C9409B008611E5 /* LTTLayoutConstraintChecker.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A369FCF18C9409B008611E5 /* LTTLayoutConstraintChecker.m */; };
 		0A369FD118C9409B008611E5 /* LTTLayoutConstraintChecker.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A369FCF18C9409B008611E5 /* LTTLayoutConstraintChecker.m */; };
 		0A369FD218C94723008611E5 /* LTTLayoutConstraintChecker.h in Copy Files */ = {isa = PBXBuildFile; fileRef = 0A369FCE18C9409B008611E5 /* LTTLayoutConstraintChecker.h */; };
+		0A503F11192060510007BE07 /* CollectionViewLayoutAuditorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A503F10192060510007BE07 /* CollectionViewLayoutAuditorTests.m */; };
+		0A503F14192109980007BE07 /* LTTCollectionViewLayoutAuditor.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A503F13192109980007BE07 /* LTTCollectionViewLayoutAuditor.m */; };
+		0A503F1719210C730007BE07 /* TestCollectionViewLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A503F1619210C730007BE07 /* TestCollectionViewLayout.m */; };
+		0A511E2219646B0A000D898D /* DeviceTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A511E2119646B0A000D898D /* DeviceTests.m */; };
+		0A511E2519646B3E000D898D /* LTTDeviceAuditor.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A511E2419646B3E000D898D /* LTTDeviceAuditor.m */; };
 		0A6D23BD18EA20DA00D705E2 /* AlertViewAuditorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A6D23BC18EA20DA00D705E2 /* AlertViewAuditorTests.m */; };
 		0A6D23C018EA211500D705E2 /* LTTAlertViewAuditor.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A6D23BF18EA211500D705E2 /* LTTAlertViewAuditor.m */; };
 		0A6D23C118EA211500D705E2 /* LTTAlertViewAuditor.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A6D23BF18EA211500D705E2 /* LTTAlertViewAuditor.m */; };
@@ -59,6 +67,7 @@
 		0A77CA9E18BABCAE005230B0 /* MockNotificationCenterTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A77CA9D18BABCAE005230B0 /* MockNotificationCenterTests.m */; };
 		0A77CAA118BABCE3005230B0 /* LTTFakeNotificationDispatchEntry.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A77CAA018BABCE3005230B0 /* LTTFakeNotificationDispatchEntry.m */; };
 		0A77CAA218BABCE3005230B0 /* LTTFakeNotificationDispatchEntry.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A77CAA018BABCE3005230B0 /* LTTFakeNotificationDispatchEntry.m */; };
+		0AA171FA1A70298900628174 /* LTTMockHeading.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AA171F91A70298900628174 /* LTTMockHeading.m */; };
 		0AA51B7318C06F2100A63B92 /* LTTSampleFileLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AA51B7218C06F2100A63B92 /* LTTSampleFileLoader.m */; };
 		0AA51B7418C06F2100A63B92 /* LTTSampleFileLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AA51B7218C06F2100A63B92 /* LTTSampleFileLoader.m */; };
 		0AA51B7618C06F3D00A63B92 /* SampleFileLoaderTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AA51B7518C06F3D00A63B92 /* SampleFileLoaderTests.m */; };
@@ -107,6 +116,11 @@
 		0ACA5E3918D58A650052F2CD /* LTTBarButtonItemAuditor.m in Sources */ = {isa = PBXBuildFile; fileRef = 0ACA5E3818D58A650052F2CD /* LTTBarButtonItemAuditor.m */; };
 		0ACA5E3A18D58A650052F2CD /* LTTBarButtonItemAuditor.m in Sources */ = {isa = PBXBuildFile; fileRef = 0ACA5E3818D58A650052F2CD /* LTTBarButtonItemAuditor.m */; };
 		0ACA5E3B18D61A850052F2CD /* LTTBarButtonItemAuditor.h in Copy Files */ = {isa = PBXBuildFile; fileRef = 0ACA5E3718D58A650052F2CD /* LTTBarButtonItemAuditor.h */; };
+		0ACE718519D081EF00BC9709 /* ObjectAssociationsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0ACE718419D081EF00BC9709 /* ObjectAssociationsTests.m */; };
+		0ACE718819D0823200BC9709 /* NSObject+Association.m in Sources */ = {isa = PBXBuildFile; fileRef = 0ACE718719D0823200BC9709 /* NSObject+Association.m */; };
+		0ACE718919D083D500BC9709 /* NSObject+Association.m in Sources */ = {isa = PBXBuildFile; fileRef = 0ACE718719D0823200BC9709 /* NSObject+Association.m */; };
+		0ACE718A19D0867F00BC9709 /* NSObject+Association.h in Copy Files */ = {isa = PBXBuildFile; fileRef = 0ACE718619D0823200BC9709 /* NSObject+Association.h */; };
+		0ADA19C51987F30100BAA900 /* LTTDeviceAuditor.h in Copy Files */ = {isa = PBXBuildFile; fileRef = 0A511E2319646B3E000D898D /* LTTDeviceAuditor.h */; };
 		0AED669018C93BB200D3DFE5 /* LayoutConstraintTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AED668F18C93BB200D3DFE5 /* LayoutConstraintTests.m */; };
 		0AED7A1818D3950D009C6E1B /* NavigationControllerAuditorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AED7A1718D3950D009C6E1B /* NavigationControllerAuditorTests.m */; };
 		0AED7A1B18D3955E009C6E1B /* LTTNavigationControllerAuditor.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AED7A1A18D3955E009C6E1B /* LTTNavigationControllerAuditor.m */; };
@@ -132,6 +146,8 @@
 		0AF15C2D190809DE0068EC2C /* LTTMockBeacon.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AF15C2C190809DE0068EC2C /* LTTMockBeacon.m */; };
 		0AF15C2E190809DE0068EC2C /* LTTMockBeacon.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AF15C2C190809DE0068EC2C /* LTTMockBeacon.m */; };
 		0AF15C2F19080B620068EC2C /* LTTMockBeacon.h in Copy Files */ = {isa = PBXBuildFile; fileRef = 0AF15C2B190809DE0068EC2C /* LTTMockBeacon.h */; };
+		0AFC99A31A704658009425BF /* LTTMockHeading.h in Copy Files */ = {isa = PBXBuildFile; fileRef = 0AA171F81A70298900628174 /* LTTMockHeading.h */; };
+		0AFC99A41A704658009425BF /* LTTCollectionViewLayoutAuditor.h in Copy Files */ = {isa = PBXBuildFile; fileRef = 0A503F12192109980007BE07 /* LTTCollectionViewLayoutAuditor.h */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -151,6 +167,11 @@
 			dstPath = "include/$(PRODUCT_NAME)";
 			dstSubfolderSpec = 16;
 			files = (
+				0AFC99A31A704658009425BF /* LTTMockHeading.h in Copy Files */,
+				0AFC99A41A704658009425BF /* LTTCollectionViewLayoutAuditor.h in Copy Files */,
+				0ACE718A19D0867F00BC9709 /* NSObject+Association.h in Copy Files */,
+				0ADA19C51987F30100BAA900 /* LTTDeviceAuditor.h in Copy Files */,
+				0A1C9EA9192FE5DD00122B88 /* LTTPopoverControllerAuditor.h in Copy Files */,
 				0AF15C2F19080B620068EC2C /* LTTMockBeacon.h in Copy Files */,
 				0AF15C2819072D220068EC2C /* LTTLocationManagerAuditor.h in Copy Files */,
 				0AC6222718F1F14000E9D289 /* LTTObjectAuditor.h in Copy Files */,
@@ -183,8 +204,19 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		0A298BE4192FB2C50001CB92 /* PopoverControllerAuditorTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PopoverControllerAuditorTests.m; sourceTree = "<group>"; };
+		0A298BE6192FB2E70001CB92 /* LTTPopoverControllerAuditor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTTPopoverControllerAuditor.h; sourceTree = "<group>"; };
+		0A298BE7192FB2E70001CB92 /* LTTPopoverControllerAuditor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LTTPopoverControllerAuditor.m; sourceTree = "<group>"; };
 		0A369FCE18C9409B008611E5 /* LTTLayoutConstraintChecker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTTLayoutConstraintChecker.h; sourceTree = "<group>"; };
 		0A369FCF18C9409B008611E5 /* LTTLayoutConstraintChecker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LTTLayoutConstraintChecker.m; sourceTree = "<group>"; };
+		0A503F10192060510007BE07 /* CollectionViewLayoutAuditorTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CollectionViewLayoutAuditorTests.m; sourceTree = "<group>"; };
+		0A503F12192109980007BE07 /* LTTCollectionViewLayoutAuditor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTTCollectionViewLayoutAuditor.h; sourceTree = "<group>"; };
+		0A503F13192109980007BE07 /* LTTCollectionViewLayoutAuditor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LTTCollectionViewLayoutAuditor.m; sourceTree = "<group>"; };
+		0A503F1519210C730007BE07 /* TestCollectionViewLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TestCollectionViewLayout.h; path = ../Leech/TestCollectionViewLayout.h; sourceTree = "<group>"; };
+		0A503F1619210C730007BE07 /* TestCollectionViewLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TestCollectionViewLayout.m; path = ../Leech/TestCollectionViewLayout.m; sourceTree = "<group>"; };
+		0A511E2119646B0A000D898D /* DeviceTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DeviceTests.m; sourceTree = "<group>"; };
+		0A511E2319646B3E000D898D /* LTTDeviceAuditor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTTDeviceAuditor.h; sourceTree = "<group>"; };
+		0A511E2419646B3E000D898D /* LTTDeviceAuditor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LTTDeviceAuditor.m; sourceTree = "<group>"; };
 		0A6D23BC18EA20DA00D705E2 /* AlertViewAuditorTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlertViewAuditorTests.m; sourceTree = "<group>"; };
 		0A6D23BE18EA211500D705E2 /* LTTAlertViewAuditor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTTAlertViewAuditor.h; sourceTree = "<group>"; };
 		0A6D23BF18EA211500D705E2 /* LTTAlertViewAuditor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LTTAlertViewAuditor.m; sourceTree = "<group>"; };
@@ -225,6 +257,8 @@
 		0A77CA9D18BABCAE005230B0 /* MockNotificationCenterTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MockNotificationCenterTests.m; sourceTree = "<group>"; };
 		0A77CA9F18BABCE3005230B0 /* LTTFakeNotificationDispatchEntry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTTFakeNotificationDispatchEntry.h; sourceTree = "<group>"; };
 		0A77CAA018BABCE3005230B0 /* LTTFakeNotificationDispatchEntry.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LTTFakeNotificationDispatchEntry.m; sourceTree = "<group>"; };
+		0AA171F81A70298900628174 /* LTTMockHeading.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTTMockHeading.h; sourceTree = "<group>"; };
+		0AA171F91A70298900628174 /* LTTMockHeading.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LTTMockHeading.m; sourceTree = "<group>"; };
 		0AA51B7118C06F2100A63B92 /* LTTSampleFileLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTTSampleFileLoader.h; sourceTree = "<group>"; };
 		0AA51B7218C06F2100A63B92 /* LTTSampleFileLoader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LTTSampleFileLoader.m; sourceTree = "<group>"; };
 		0AA51B7518C06F3D00A63B92 /* SampleFileLoaderTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SampleFileLoaderTests.m; sourceTree = "<group>"; };
@@ -260,6 +294,9 @@
 		0ACA5E3518D58A280052F2CD /* BarButtonItemAuditorTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BarButtonItemAuditorTests.m; sourceTree = "<group>"; };
 		0ACA5E3718D58A650052F2CD /* LTTBarButtonItemAuditor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTTBarButtonItemAuditor.h; sourceTree = "<group>"; };
 		0ACA5E3818D58A650052F2CD /* LTTBarButtonItemAuditor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LTTBarButtonItemAuditor.m; sourceTree = "<group>"; };
+		0ACE718419D081EF00BC9709 /* ObjectAssociationsTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ObjectAssociationsTests.m; sourceTree = "<group>"; };
+		0ACE718619D0823200BC9709 /* NSObject+Association.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+Association.h"; sourceTree = "<group>"; };
+		0ACE718719D0823200BC9709 /* NSObject+Association.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+Association.m"; sourceTree = "<group>"; };
 		0AED668F18C93BB200D3DFE5 /* LayoutConstraintTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LayoutConstraintTests.m; sourceTree = "<group>"; };
 		0AED7A1718D3950D009C6E1B /* NavigationControllerAuditorTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NavigationControllerAuditorTests.m; sourceTree = "<group>"; };
 		0AED7A1918D3955E009C6E1B /* LTTNavigationControllerAuditor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTTNavigationControllerAuditor.h; sourceTree = "<group>"; };
@@ -385,7 +422,9 @@
 				0A72944E18DCF44D008A1E71 /* ActionSheetAuditorTests.m */,
 				0A6D23BC18EA20DA00D705E2 /* AlertViewAuditorTests.m */,
 				0ACA5E3518D58A280052F2CD /* BarButtonItemAuditorTests.m */,
+				0A503F10192060510007BE07 /* CollectionViewLayoutAuditorTests.m */,
 				0ABD4CC918C6AEFB003BDD76 /* CoreDataAuditorTests.m */,
+				0A511E2119646B0A000D898D /* DeviceTests.m */,
 				0AED668F18C93BB200D3DFE5 /* LayoutConstraintTests.m */,
 				0AF15C221907234C0068EC2C /* LocationManagerAuditorTests.m */,
 				0ACA5E1F18D551070052F2CD /* MapViewAuditorTests.m */,
@@ -399,7 +438,9 @@
 				0AC33AC918BDC3C700D3F342 /* MockURLSessionTests.m */,
 				0AED7A2C18D5013C009C6E1B /* MockUserLocationTests.m */,
 				0AED7A1718D3950D009C6E1B /* NavigationControllerAuditorTests.m */,
+				0ACE718419D081EF00BC9709 /* ObjectAssociationsTests.m */,
 				0A6D23D918EB918100D705E2 /* ObjectAuditorTests.m */,
+				0A298BE4192FB2C50001CB92 /* PopoverControllerAuditorTests.m */,
 				0AA51B7518C06F3D00A63B92 /* SampleFileLoaderTests.m */,
 				0AED7A1E18D3DE7B009C6E1B /* TableViewAuditorTests.m */,
 				0AA51B8818C409F800A63B92 /* TimeFreezerTests.m */,
@@ -416,6 +457,8 @@
 				0A72945118DCF5B5008A1E71 /* FakeActionSheetDelegate.m */,
 				0A6D23C318EA24A600D705E2 /* FakeAlertViewDelegate.h */,
 				0A6D23C418EA24A600D705E2 /* FakeAlertViewDelegate.m */,
+				0A503F1519210C730007BE07 /* TestCollectionViewLayout.h */,
+				0A503F1619210C730007BE07 /* TestCollectionViewLayout.m */,
 				0ACA5E2618D5561D0052F2CD /* TestMapAnnotation.h */,
 				0ACA5E2718D5561D0052F2CD /* TestMapAnnotation.m */,
 				0A72943A18DB9D7D008A1E71 /* TestView.h */,
@@ -466,6 +509,8 @@
 			children = (
 				0AF15C2B190809DE0068EC2C /* LTTMockBeacon.h */,
 				0AF15C2C190809DE0068EC2C /* LTTMockBeacon.m */,
+				0AA171F81A70298900628174 /* LTTMockHeading.h */,
+				0AA171F91A70298900628174 /* LTTMockHeading.m */,
 				0AED7A2718D4FD3E009C6E1B /* LTTMockMapView.h */,
 				0AED7A2818D4FD3E009C6E1B /* LTTMockMapView.m */,
 				0AED7A2E18D5015A009C6E1B /* LTTMockUserLocation.h */,
@@ -486,6 +531,8 @@
 		0AD1EE251902382000F8DB69 /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				0A511E2319646B3E000D898D /* LTTDeviceAuditor.h */,
+				0A511E2419646B3E000D898D /* LTTDeviceAuditor.m */,
 				0A6D23DB18EB91B500D705E2 /* LTTObjectAuditor.h */,
 				0A6D23DC18EB91B500D705E2 /* LTTObjectAuditor.m */,
 				0AA51B8E18C40ABA00A63B92 /* LTTTimeFreezer.h */,
@@ -503,10 +550,14 @@
 				0A6D23BF18EA211500D705E2 /* LTTAlertViewAuditor.m */,
 				0ACA5E3718D58A650052F2CD /* LTTBarButtonItemAuditor.h */,
 				0ACA5E3818D58A650052F2CD /* LTTBarButtonItemAuditor.m */,
+				0A503F12192109980007BE07 /* LTTCollectionViewLayoutAuditor.h */,
+				0A503F13192109980007BE07 /* LTTCollectionViewLayoutAuditor.m */,
 				0A369FCE18C9409B008611E5 /* LTTLayoutConstraintChecker.h */,
 				0A369FCF18C9409B008611E5 /* LTTLayoutConstraintChecker.m */,
 				0AED7A1918D3955E009C6E1B /* LTTNavigationControllerAuditor.h */,
 				0AED7A1A18D3955E009C6E1B /* LTTNavigationControllerAuditor.m */,
+				0A298BE6192FB2E70001CB92 /* LTTPopoverControllerAuditor.h */,
+				0A298BE7192FB2E70001CB92 /* LTTPopoverControllerAuditor.m */,
 				0AED7A2018D3DE98009C6E1B /* LTTTableViewAuditor.h */,
 				0AED7A2118D3DE98009C6E1B /* LTTTableViewAuditor.m */,
 				0A72943618DB9C40008A1E71 /* LTTViewAuditor.h */,
@@ -525,6 +576,8 @@
 				0A77CA8718B94398005230B0 /* LTTMethodSwizzler.m */,
 				0AA51B7118C06F2100A63B92 /* LTTSampleFileLoader.h */,
 				0AA51B7218C06F2100A63B92 /* LTTSampleFileLoader.m */,
+				0ACE718619D0823200BC9709 /* NSObject+Association.h */,
+				0ACE718719D0823200BC9709 /* NSObject+Association.m */,
 			);
 			name = Tools;
 			sourceTree = "<group>";
@@ -660,16 +713,21 @@
 			buildActionMask = 2147483647;
 			files = (
 				0AF15C2D190809DE0068EC2C /* LTTMockBeacon.m in Sources */,
+				0ACE718819D0823200BC9709 /* NSObject+Association.m in Sources */,
 				0AC33ABF18BD325700D3F342 /* LTTMockHTTPResponse.m in Sources */,
 				0ABD4CCD18C6AF69003BDD76 /* LTTCoreDataAuditor.m in Sources */,
 				0A72943818DB9C40008A1E71 /* LTTViewAuditor.m in Sources */,
 				0A6D23C018EA211500D705E2 /* LTTAlertViewAuditor.m in Sources */,
+				0A511E2519646B3E000D898D /* LTTDeviceAuditor.m in Sources */,
 				0A77CA9118BAA05C005230B0 /* LTTViewControllerAuditor.m in Sources */,
 				0A77CA8818B94398005230B0 /* LTTMethodSwizzler.m in Sources */,
+				0AA171FA1A70298900628174 /* LTTMockHeading.m in Sources */,
 				0A6D23DD18EB91B500D705E2 /* LTTObjectAuditor.m in Sources */,
 				0A72944C18DCF43F008A1E71 /* LTTActionSheetAuditor.m in Sources */,
+				0A298BE8192FB2E70001CB92 /* LTTPopoverControllerAuditor.m in Sources */,
 				0AED7A3018D5015A009C6E1B /* LTTMockUserLocation.m in Sources */,
 				0AC0E33518D24DBC0078C01B /* LTTMockTextField.m in Sources */,
+				0A503F14192109980007BE07 /* LTTCollectionViewLayoutAuditor.m in Sources */,
 				0AC33ACD18BDC41000D3F342 /* LTTMockURLSession.m in Sources */,
 				0A369FD018C9409B008611E5 /* LTTLayoutConstraintChecker.m in Sources */,
 				0A77CAA118BABCE3005230B0 /* LTTFakeNotificationDispatchEntry.m in Sources */,
@@ -690,6 +748,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0A503F1719210C730007BE07 /* TestCollectionViewLayout.m in Sources */,
 				0AF15C2E190809DE0068EC2C /* LTTMockBeacon.m in Sources */,
 				0A6D23DE18EB91B500D705E2 /* LTTObjectAuditor.m in Sources */,
 				0AED7A2618D4FD21009C6E1B /* MockMapViewTests.m in Sources */,
@@ -703,6 +762,7 @@
 				0ACA5E2018D551070052F2CD /* MapViewAuditorTests.m in Sources */,
 				0ACA5E2818D5561D0052F2CD /* TestMapAnnotation.m in Sources */,
 				0AC33ACE18BDC41000D3F342 /* LTTMockURLSession.m in Sources */,
+				0A511E2219646B0A000D898D /* DeviceTests.m in Sources */,
 				0AC0E33618D24DBC0078C01B /* LTTMockTextField.m in Sources */,
 				0A72945218DCF5B5008A1E71 /* FakeActionSheetDelegate.m in Sources */,
 				0AF15C271907236E0068EC2C /* LTTLocationManagerAuditor.m in Sources */,
@@ -710,6 +770,7 @@
 				0A369FD118C9409B008611E5 /* LTTLayoutConstraintChecker.m in Sources */,
 				0AED7A2A18D4FD3E009C6E1B /* LTTMockMapView.m in Sources */,
 				0AC33AD418BDC5DB00D3F342 /* LTTMockURLDataTask.m in Sources */,
+				0ACE718519D081EF00BC9709 /* ObjectAssociationsTests.m in Sources */,
 				0A6D23BD18EA20DA00D705E2 /* AlertViewAuditorTests.m in Sources */,
 				0AED7A1F18D3DE7B009C6E1B /* TableViewAuditorTests.m in Sources */,
 				0AC33ABC18BD321F00D3F342 /* MockHTTPResponseTests.m in Sources */,
@@ -722,16 +783,19 @@
 				0ABD4CCE18C6AF69003BDD76 /* LTTCoreDataAuditor.m in Sources */,
 				0A77CA8918B94398005230B0 /* LTTMethodSwizzler.m in Sources */,
 				0AED7A1818D3950D009C6E1B /* NavigationControllerAuditorTests.m in Sources */,
+				0A298BE5192FB2C50001CB92 /* PopoverControllerAuditorTests.m in Sources */,
 				0AC33AD018BDC58500D3F342 /* MockURLDataTaskTests.m in Sources */,
 				0A72944F18DCF44D008A1E71 /* ActionSheetAuditorTests.m in Sources */,
 				0AA51B7418C06F2100A63B92 /* LTTSampleFileLoader.m in Sources */,
 				0ACA5E3A18D58A650052F2CD /* LTTBarButtonItemAuditor.m in Sources */,
 				0A77CA9518BAA17B005230B0 /* TestViewController.m in Sources */,
+				0A503F11192060510007BE07 /* CollectionViewLayoutAuditorTests.m in Sources */,
 				0A6D23C518EA24A600D705E2 /* FakeAlertViewDelegate.m in Sources */,
 				0AF15C2A190809C20068EC2C /* MockBeaconTests.m in Sources */,
 				0AA51B8918C409F800A63B92 /* TimeFreezerTests.m in Sources */,
 				0AA51B9118C40ABA00A63B92 /* LTTTimeFreezer.m in Sources */,
 				0AED7A2318D3DE98009C6E1B /* LTTTableViewAuditor.m in Sources */,
+				0ACE718919D083D500BC9709 /* NSObject+Association.m in Sources */,
 				0AED7A2D18D5013C009C6E1B /* MockUserLocationTests.m in Sources */,
 				0A72943C18DB9D7D008A1E71 /* TestView.m in Sources */,
 				0AA51B7618C06F3D00A63B92 /* SampleFileLoaderTests.m in Sources */,

@@ -8,17 +8,25 @@
 
 #import "LTTTimeFreezer.h"
 #import "LTTMethodSwizzler.h"
+#import "NSObject+Association.h"
 
 const char *LTTTimeFreezerFrozenDateKey = "LTTTimeFreezerFrozenDateKey";
 
 @implementation NSDate (TimeFreezer)
 
 + (void)swizzleDateMethods {
-    [LTTMethodSwizzler swapClassMethodsForClass:[self class] selectorOne:@selector(date) selectorTwo:@selector(TimeFreezer_Date)];
+    Class cls = [self class];
+    [LTTMethodSwizzler swapClassMethodsForClass:cls selectorOne:@selector(date) selectorTwo:@selector(TimeFreezer_Date)];
+    [LTTMethodSwizzler swapClassMethodsForClass:cls selectorOne:@selector(timeIntervalSinceReferenceDate) selectorTwo:@selector(TimeFreezer_TimeIntervalSinceReferenceDate)];
 }
 
 + (instancetype)TimeFreezer_Date {
-    return objc_getAssociatedObject([self class], LTTTimeFreezerFrozenDateKey);
+    return [[self class] associationForKey:LTTTimeFreezerFrozenDateKey];
+}
+
++ (NSTimeInterval)TimeFreezer_TimeIntervalSinceReferenceDate {
+    NSDate *frozenDate = [[self class] associationForKey:LTTTimeFreezerFrozenDateKey];
+    return [frozenDate timeIntervalSinceReferenceDate];
 }
 
 @end
