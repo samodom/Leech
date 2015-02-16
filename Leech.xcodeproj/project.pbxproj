@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0A325E6E1A912AF700E95FCF /* ObjectAssociationTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A325E6D1A912AF700E95FCF /* ObjectAssociationTests.m */; };
+		0A325E711A912D2B00E95FCF /* NSObject+ObjectAssociation.h in Headers */ = {isa = PBXBuildFile; fileRef = 0A325E6F1A912D2B00E95FCF /* NSObject+ObjectAssociation.h */; };
+		0A325E721A912D2B00E95FCF /* NSObject+ObjectAssociation.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A325E701A912D2B00E95FCF /* NSObject+ObjectAssociation.m */; };
+		0A325E761A914F2D00E95FCF /* SampleAssociatedObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A325E751A914F2D00E95FCF /* SampleAssociatedObject.m */; };
 		0ADE30BF1A90553B0099CBA7 /* Leech.h in Headers */ = {isa = PBXBuildFile; fileRef = 0ADE30BE1A90553B0099CBA7 /* Leech.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		0ADE30C51A90553B0099CBA7 /* Leech.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0ADE30B91A90553B0099CBA7 /* Leech.framework */; };
 /* End PBXBuildFile section */
@@ -22,11 +26,17 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0A325E6D1A912AF700E95FCF /* ObjectAssociationTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ObjectAssociationTests.m; sourceTree = "<group>"; };
+		0A325E6F1A912D2B00E95FCF /* NSObject+ObjectAssociation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+ObjectAssociation.h"; sourceTree = "<group>"; };
+		0A325E701A912D2B00E95FCF /* NSObject+ObjectAssociation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+ObjectAssociation.m"; sourceTree = "<group>"; };
+		0A325E741A914F2D00E95FCF /* SampleAssociatedObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SampleAssociatedObject.h; sourceTree = "<group>"; };
+		0A325E751A914F2D00E95FCF /* SampleAssociatedObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SampleAssociatedObject.m; sourceTree = "<group>"; };
 		0ADE30B91A90553B0099CBA7 /* Leech.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Leech.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		0ADE30BD1A90553B0099CBA7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0ADE30BE1A90553B0099CBA7 /* Leech.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Leech.h; sourceTree = "<group>"; };
 		0ADE30C41A90553B0099CBA7 /* LeechTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LeechTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0ADE30CA1A90553B0099CBA7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0ADE30DC1A905A320099CBA7 /* MethodSwizzlingParametersTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MethodSwizzlingParametersTests.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -48,6 +58,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0A325E731A914EF800E95FCF /* Doubles */ = {
+			isa = PBXGroup;
+			children = (
+				0A325E741A914F2D00E95FCF /* SampleAssociatedObject.h */,
+				0A325E751A914F2D00E95FCF /* SampleAssociatedObject.m */,
+			);
+			path = Doubles;
+			sourceTree = "<group>";
+		};
 		0ADE30AF1A90553B0099CBA7 = {
 			isa = PBXGroup;
 			children = (
@@ -70,6 +89,7 @@
 			isa = PBXGroup;
 			children = (
 				0ADE30BE1A90553B0099CBA7 /* Leech.h */,
+				0ADE30D71A90585D0099CBA7 /* Runtime */,
 				0ADE30BC1A90553B0099CBA7 /* Supporting Files */,
 			);
 			path = Leech;
@@ -87,6 +107,8 @@
 			isa = PBXGroup;
 			children = (
 				0ADE30C91A90553B0099CBA7 /* Supporting Files */,
+				0ADE30D51A9058500099CBA7 /* Tests */,
+				0ADE30D61A9058500099CBA7 /* Tools */,
 			);
 			path = LeechTests;
 			sourceTree = "<group>";
@@ -99,6 +121,31 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		0ADE30D51A9058500099CBA7 /* Tests */ = {
+			isa = PBXGroup;
+			children = (
+				0A325E6D1A912AF700E95FCF /* ObjectAssociationTests.m */,
+			);
+			path = Tests;
+			sourceTree = "<group>";
+		};
+		0ADE30D61A9058500099CBA7 /* Tools */ = {
+			isa = PBXGroup;
+			children = (
+				0A325E731A914EF800E95FCF /* Doubles */,
+			);
+			path = Tools;
+			sourceTree = "<group>";
+		};
+		0ADE30D71A90585D0099CBA7 /* Runtime */ = {
+			isa = PBXGroup;
+			children = (
+				0A325E6F1A912D2B00E95FCF /* NSObject+ObjectAssociation.h */,
+				0A325E701A912D2B00E95FCF /* NSObject+ObjectAssociation.m */,
+			);
+			path = Runtime;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -107,6 +154,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0ADE30BF1A90553B0099CBA7 /* Leech.h in Headers */,
+				0A325E711A912D2B00E95FCF /* NSObject+ObjectAssociation.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -206,6 +254,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0A325E721A912D2B00E95FCF /* NSObject+ObjectAssociation.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -213,6 +262,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0A325E6E1A912AF700E95FCF /* ObjectAssociationTests.m in Sources */,
+				0A325E761A914F2D00E95FCF /* SampleAssociatedObject.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
