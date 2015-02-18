@@ -11,6 +11,7 @@
 		0A325E711A912D2B00E95FCF /* NSObject+ObjectAssociation.h in Headers */ = {isa = PBXBuildFile; fileRef = 0A325E6F1A912D2B00E95FCF /* NSObject+ObjectAssociation.h */; };
 		0A325E721A912D2B00E95FCF /* NSObject+ObjectAssociation.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A325E701A912D2B00E95FCF /* NSObject+ObjectAssociation.m */; };
 		0A325E761A914F2D00E95FCF /* SampleAssociatedObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A325E751A914F2D00E95FCF /* SampleAssociatedObject.m */; };
+		0A325E7D1A9176EE00E95FCF /* SampleSwizzlableClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A325E7C1A9176EE00E95FCF /* SampleSwizzlableClass.m */; };
 		0ADE30BF1A90553B0099CBA7 /* Leech.h in Headers */ = {isa = PBXBuildFile; fileRef = 0ADE30BE1A90553B0099CBA7 /* Leech.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		0ADE30C51A90553B0099CBA7 /* Leech.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0ADE30B91A90553B0099CBA7 /* Leech.framework */; };
 /* End PBXBuildFile section */
@@ -31,6 +32,8 @@
 		0A325E701A912D2B00E95FCF /* NSObject+ObjectAssociation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+ObjectAssociation.m"; sourceTree = "<group>"; };
 		0A325E741A914F2D00E95FCF /* SampleAssociatedObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SampleAssociatedObject.h; sourceTree = "<group>"; };
 		0A325E751A914F2D00E95FCF /* SampleAssociatedObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SampleAssociatedObject.m; sourceTree = "<group>"; };
+		0A325E7B1A9176EE00E95FCF /* SampleSwizzlableClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SampleSwizzlableClass.h; sourceTree = "<group>"; };
+		0A325E7C1A9176EE00E95FCF /* SampleSwizzlableClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SampleSwizzlableClass.m; sourceTree = "<group>"; };
 		0ADE30B91A90553B0099CBA7 /* Leech.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Leech.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		0ADE30BD1A90553B0099CBA7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0ADE30BE1A90553B0099CBA7 /* Leech.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Leech.h; sourceTree = "<group>"; };
@@ -63,6 +66,8 @@
 			children = (
 				0A325E741A914F2D00E95FCF /* SampleAssociatedObject.h */,
 				0A325E751A914F2D00E95FCF /* SampleAssociatedObject.m */,
+				0A325E7B1A9176EE00E95FCF /* SampleSwizzlableClass.h */,
+				0A325E7C1A9176EE00E95FCF /* SampleSwizzlableClass.m */,
 			);
 			path = Doubles;
 			sourceTree = "<group>";
@@ -262,6 +267,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0A325E7D1A9176EE00E95FCF /* SampleSwizzlableClass.m in Sources */,
 				0A325E6E1A912AF700E95FCF /* ObjectAssociationTests.m in Sources */,
 				0A325E761A914F2D00E95FCF /* SampleAssociatedObject.m in Sources */,
 			);
