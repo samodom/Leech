@@ -7,13 +7,26 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0A0F5C031A917F1500E382F3 /* LTTMethodSwizzlingRecord+Private.h in Headers */ = {isa = PBXBuildFile; fileRef = 0A0F5C021A917F1500E382F3 /* LTTMethodSwizzlingRecord+Private.h */; };
+		0A0F5C081A928D3000E382F3 /* LTTMethodSwizzlingRecordKeeper.h in Headers */ = {isa = PBXBuildFile; fileRef = 0A0F5C061A928D3000E382F3 /* LTTMethodSwizzlingRecordKeeper.h */; };
+		0A0F5C091A928D3000E382F3 /* LTTMethodSwizzlingRecordKeeper.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A0F5C071A928D3000E382F3 /* LTTMethodSwizzlingRecordKeeper.m */; };
+		0A0F5C0B1A928D5500E382F3 /* MethodSwizzlingRecordKeeperTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A0F5C0A1A928D5500E382F3 /* MethodSwizzlingRecordKeeperTests.m */; };
 		0A325E6E1A912AF700E95FCF /* ObjectAssociationTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A325E6D1A912AF700E95FCF /* ObjectAssociationTests.m */; };
 		0A325E711A912D2B00E95FCF /* NSObject+ObjectAssociation.h in Headers */ = {isa = PBXBuildFile; fileRef = 0A325E6F1A912D2B00E95FCF /* NSObject+ObjectAssociation.h */; };
 		0A325E721A912D2B00E95FCF /* NSObject+ObjectAssociation.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A325E701A912D2B00E95FCF /* NSObject+ObjectAssociation.m */; };
 		0A325E761A914F2D00E95FCF /* SampleAssociatedObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A325E751A914F2D00E95FCF /* SampleAssociatedObject.m */; };
+		0A325E791A91767D00E95FCF /* NSObject+MethodSwizzling.h in Headers */ = {isa = PBXBuildFile; fileRef = 0A325E771A91767D00E95FCF /* NSObject+MethodSwizzling.h */; };
+		0A325E7A1A91767D00E95FCF /* NSObject+MethodSwizzling.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A325E781A91767D00E95FCF /* NSObject+MethodSwizzling.m */; };
 		0A325E7D1A9176EE00E95FCF /* SampleSwizzlableClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A325E7C1A9176EE00E95FCF /* SampleSwizzlableClass.m */; };
+		0A325E811A91799B00E95FCF /* LTTMethodSwizzlingRecord.h in Headers */ = {isa = PBXBuildFile; fileRef = 0A325E7F1A91799B00E95FCF /* LTTMethodSwizzlingRecord.h */; };
+		0A325E821A91799B00E95FCF /* LTTMethodSwizzlingRecord.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A325E801A91799B00E95FCF /* LTTMethodSwizzlingRecord.m */; };
+		0A325E851A9179B500E95FCF /* LTTClassMethodSwizzlingRecord.h in Headers */ = {isa = PBXBuildFile; fileRef = 0A325E831A9179B500E95FCF /* LTTClassMethodSwizzlingRecord.h */; };
+		0A325E861A9179B500E95FCF /* LTTClassMethodSwizzlingRecord.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A325E841A9179B500E95FCF /* LTTClassMethodSwizzlingRecord.m */; };
+		0A325E891A9179C200E95FCF /* LTTInstanceMethodSwizzlingRecord.h in Headers */ = {isa = PBXBuildFile; fileRef = 0A325E871A9179C200E95FCF /* LTTInstanceMethodSwizzlingRecord.h */; };
+		0A325E8A1A9179C200E95FCF /* LTTInstanceMethodSwizzlingRecord.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A325E881A9179C200E95FCF /* LTTInstanceMethodSwizzlingRecord.m */; };
 		0ADE30BF1A90553B0099CBA7 /* Leech.h in Headers */ = {isa = PBXBuildFile; fileRef = 0ADE30BE1A90553B0099CBA7 /* Leech.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		0ADE30C51A90553B0099CBA7 /* Leech.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0ADE30B91A90553B0099CBA7 /* Leech.framework */; };
+		0ADE30DD1A905A320099CBA7 /* MethodSwizzlingRecordTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0ADE30DC1A905A320099CBA7 /* MethodSwizzlingRecordTests.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -27,19 +40,32 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0A0F5C021A917F1500E382F3 /* LTTMethodSwizzlingRecord+Private.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "LTTMethodSwizzlingRecord+Private.h"; sourceTree = "<group>"; };
+		0A0F5C041A91BA6900E382F3 /* MethodSwizzlingTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MethodSwizzlingTests.m; sourceTree = "<group>"; };
+		0A0F5C061A928D3000E382F3 /* LTTMethodSwizzlingRecordKeeper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTTMethodSwizzlingRecordKeeper.h; sourceTree = "<group>"; };
+		0A0F5C071A928D3000E382F3 /* LTTMethodSwizzlingRecordKeeper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LTTMethodSwizzlingRecordKeeper.m; sourceTree = "<group>"; };
+		0A0F5C0A1A928D5500E382F3 /* MethodSwizzlingRecordKeeperTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MethodSwizzlingRecordKeeperTests.m; sourceTree = "<group>"; };
 		0A325E6D1A912AF700E95FCF /* ObjectAssociationTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ObjectAssociationTests.m; sourceTree = "<group>"; };
 		0A325E6F1A912D2B00E95FCF /* NSObject+ObjectAssociation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+ObjectAssociation.h"; sourceTree = "<group>"; };
 		0A325E701A912D2B00E95FCF /* NSObject+ObjectAssociation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+ObjectAssociation.m"; sourceTree = "<group>"; };
 		0A325E741A914F2D00E95FCF /* SampleAssociatedObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SampleAssociatedObject.h; sourceTree = "<group>"; };
 		0A325E751A914F2D00E95FCF /* SampleAssociatedObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SampleAssociatedObject.m; sourceTree = "<group>"; };
+		0A325E771A91767D00E95FCF /* NSObject+MethodSwizzling.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+MethodSwizzling.h"; sourceTree = "<group>"; };
+		0A325E781A91767D00E95FCF /* NSObject+MethodSwizzling.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+MethodSwizzling.m"; sourceTree = "<group>"; };
 		0A325E7B1A9176EE00E95FCF /* SampleSwizzlableClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SampleSwizzlableClass.h; sourceTree = "<group>"; };
 		0A325E7C1A9176EE00E95FCF /* SampleSwizzlableClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SampleSwizzlableClass.m; sourceTree = "<group>"; };
+		0A325E7F1A91799B00E95FCF /* LTTMethodSwizzlingRecord.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTTMethodSwizzlingRecord.h; sourceTree = "<group>"; };
+		0A325E801A91799B00E95FCF /* LTTMethodSwizzlingRecord.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LTTMethodSwizzlingRecord.m; sourceTree = "<group>"; };
+		0A325E831A9179B500E95FCF /* LTTClassMethodSwizzlingRecord.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTTClassMethodSwizzlingRecord.h; sourceTree = "<group>"; };
+		0A325E841A9179B500E95FCF /* LTTClassMethodSwizzlingRecord.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LTTClassMethodSwizzlingRecord.m; sourceTree = "<group>"; };
+		0A325E871A9179C200E95FCF /* LTTInstanceMethodSwizzlingRecord.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTTInstanceMethodSwizzlingRecord.h; sourceTree = "<group>"; };
+		0A325E881A9179C200E95FCF /* LTTInstanceMethodSwizzlingRecord.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LTTInstanceMethodSwizzlingRecord.m; sourceTree = "<group>"; };
 		0ADE30B91A90553B0099CBA7 /* Leech.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Leech.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		0ADE30BD1A90553B0099CBA7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0ADE30BE1A90553B0099CBA7 /* Leech.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Leech.h; sourceTree = "<group>"; };
 		0ADE30C41A90553B0099CBA7 /* LeechTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LeechTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0ADE30CA1A90553B0099CBA7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		0ADE30DC1A905A320099CBA7 /* MethodSwizzlingParametersTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MethodSwizzlingParametersTests.m; sourceTree = "<group>"; };
+		0ADE30DC1A905A320099CBA7 /* MethodSwizzlingRecordTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MethodSwizzlingRecordTests.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -129,6 +155,9 @@
 		0ADE30D51A9058500099CBA7 /* Tests */ = {
 			isa = PBXGroup;
 			children = (
+				0A0F5C0A1A928D5500E382F3 /* MethodSwizzlingRecordKeeperTests.m */,
+				0ADE30DC1A905A320099CBA7 /* MethodSwizzlingRecordTests.m */,
+				0A0F5C041A91BA6900E382F3 /* MethodSwizzlingTests.m */,
 				0A325E6D1A912AF700E95FCF /* ObjectAssociationTests.m */,
 			);
 			path = Tests;
@@ -145,6 +174,17 @@
 		0ADE30D71A90585D0099CBA7 /* Runtime */ = {
 			isa = PBXGroup;
 			children = (
+				0A325E831A9179B500E95FCF /* LTTClassMethodSwizzlingRecord.h */,
+				0A325E841A9179B500E95FCF /* LTTClassMethodSwizzlingRecord.m */,
+				0A325E871A9179C200E95FCF /* LTTInstanceMethodSwizzlingRecord.h */,
+				0A325E881A9179C200E95FCF /* LTTInstanceMethodSwizzlingRecord.m */,
+				0A325E7F1A91799B00E95FCF /* LTTMethodSwizzlingRecord.h */,
+				0A325E801A91799B00E95FCF /* LTTMethodSwizzlingRecord.m */,
+				0A0F5C021A917F1500E382F3 /* LTTMethodSwizzlingRecord+Private.h */,
+				0A0F5C061A928D3000E382F3 /* LTTMethodSwizzlingRecordKeeper.h */,
+				0A0F5C071A928D3000E382F3 /* LTTMethodSwizzlingRecordKeeper.m */,
+				0A325E771A91767D00E95FCF /* NSObject+MethodSwizzling.h */,
+				0A325E781A91767D00E95FCF /* NSObject+MethodSwizzling.m */,
 				0A325E6F1A912D2B00E95FCF /* NSObject+ObjectAssociation.h */,
 				0A325E701A912D2B00E95FCF /* NSObject+ObjectAssociation.m */,
 			);
@@ -158,7 +198,13 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0A325E851A9179B500E95FCF /* LTTClassMethodSwizzlingRecord.h in Headers */,
+				0A325E791A91767D00E95FCF /* NSObject+MethodSwizzling.h in Headers */,
+				0A0F5C031A917F1500E382F3 /* LTTMethodSwizzlingRecord+Private.h in Headers */,
+				0A325E811A91799B00E95FCF /* LTTMethodSwizzlingRecord.h in Headers */,
 				0ADE30BF1A90553B0099CBA7 /* Leech.h in Headers */,
+				0A325E891A9179C200E95FCF /* LTTInstanceMethodSwizzlingRecord.h in Headers */,
+				0A0F5C081A928D3000E382F3 /* LTTMethodSwizzlingRecordKeeper.h in Headers */,
 				0A325E711A912D2B00E95FCF /* NSObject+ObjectAssociation.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -259,6 +305,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0A325E8A1A9179C200E95FCF /* LTTInstanceMethodSwizzlingRecord.m in Sources */,
+				0A325E7A1A91767D00E95FCF /* NSObject+MethodSwizzling.m in Sources */,
+				0A0F5C091A928D3000E382F3 /* LTTMethodSwizzlingRecordKeeper.m in Sources */,
+				0A325E861A9179B500E95FCF /* LTTClassMethodSwizzlingRecord.m in Sources */,
+				0A325E821A91799B00E95FCF /* LTTMethodSwizzlingRecord.m in Sources */,
 				0A325E721A912D2B00E95FCF /* NSObject+ObjectAssociation.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -269,7 +320,9 @@
 			files = (
 				0A325E7D1A9176EE00E95FCF /* SampleSwizzlableClass.m in Sources */,
 				0A325E6E1A912AF700E95FCF /* ObjectAssociationTests.m in Sources */,
+				0A0F5C0B1A928D5500E382F3 /* MethodSwizzlingRecordKeeperTests.m in Sources */,
 				0A325E761A914F2D00E95FCF /* SampleAssociatedObject.m in Sources */,
+				0ADE30DD1A905A320099CBA7 /* MethodSwizzlingRecordTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

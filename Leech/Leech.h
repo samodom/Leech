@@ -17,7 +17,15 @@ FOUNDATION_EXPORT const unsigned char LeechVersionString[];
 #pragma mark - Public Headers
 
 
-#pragma mark Runtime
+#pragma mark - Runtime
+
+#pragma mark Object Association
 
 #import "NSObject+ObjectAssociation.h"
+
+
+#pragma mark Method Swizzling
+
+#import "NSObject+MethodSwizzling.h"
+#import "LTTMethodSwizzlingRecord.h"
 
